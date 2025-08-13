@@ -1,0 +1,2192 @@
+{
+  "projectMetadata": {
+    "title": "Dja Dja",
+    "artist": "Aya Nakamura",
+    "difficulty": "beginner"
+  },
+  "originalLyrics": "Aya Nakamura, oh yeah\nHello papi, mais qué pasa? (Mais qué pasa?)\nJ'entends des bails atroces sur moi\nÀ c'qu'il paraît, j'te cours après? (Oh yeah, yeah, yeah)\nMais ça va pas? mais t'es taré, oh ouais\nMais comment ça, le monde est tit-pe? (Eh)\nTu croyais quoi, qu'on s'verrait plus jamais?\nJ'pourrais t'afficher mais c'est pas mon délire\nD'après les rumeurs, tu m'as eue dans ton lit\nOh, Djadja\nY a pas moyen, Djadja",
+  "originalVocabulary": ["mais","j'entends","des","bails","atroces","sur","moi","à ce qu'il paraît","je te cours après","ça va pas","t'es","taré","ouais","comment","ça","le","monde","est","tit-pe","tu","croyais","quoi","qu'on","se verrait","plus","jamais","je pourrais","t'afficher","c'est","pas","mon","délire","d'après","rumeurs","tu m'as eue","dans","ton","lit","y a pas moyen"],
+  "texts": [
+    {
+      "textId": "text_1",
+      "title": "Réflexions Quotidiennes",
+      "text": [
+        "J'entends des bruits dans la rue.",
+        "Est-ce que c'est ce que je croyais ?",
+        "Je pourrais sortir voir ce qui se passe.",
+        "On se verrait peut-être dehors.",
+        "Il faut que je puisse t'afficher mon soutien."
+      ]
+    },
+    {
+      "textId": "text_2",
+      "title": "Dans Mon Quartier",
+      "text": [
+        "Tout le monde parle des rumeurs du quartier.",
+        "Je lis les bails sur mon lit le soir.",
+        "C'est un vrai délire cette histoire!"
+      ]
+    },
+    {
+      "textId": "text_3",
+      "title": "Messages Sur Instagram",
+      "text": [
+        "Ouais, comment tu vas aujourd'hui ?",
+        "Je ne veux plus jamais y aller.",
+        "Ce n'est pas comme avant."
+      ]
+    },
+    {
+      "textId": "text_4",
+      "title": "Commentaires En Ligne",
+      "text": [
+        "Ces moments atroces me hantent encore.",
+        "Mon tit-pe frère est vraiment taré !"
+      ]
+    },
+    {
+      "textId": "text_5",
+      "title": "Discussion Sur Snapchat",
+      "text": [
+        "Mais des gens sur le réseau disent",
+        "À ce qu'il paraît, ça va pas.",
+        "T'es là ? Je te cours après partout !",
+        "Le message que tu cherches, c'est moi."
+      ]
+    },
+    {
+      "textId": "text_6",
+      "title": "Messages Entre Amis",
+      "text": [
+        "Tu m'as eue, c'est mon erreur !",
+        "D'après quoi qu'on dit dans ton groupe,",
+        "Y a pas moyen de se voir dans la soirée ?"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phraseId": "text_1_p1",
+      "originalFrench": "J'entends des bruits dans la rue.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p1_unit_0",
+          "frenchText": "J'entends",
+          "translations": [
+            "I hear",
+            "I can hear",
+            "I'm hearing",
+            "I am listening to"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_1",
+          "frenchText": "des bruits",
+          "translations": [
+            "noises",
+            "sounds",
+            "some noises",
+            "some sounds"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_2",
+          "frenchText": "dans",
+          "translations": [
+            "in",
+            "inside",
+            "within",
+            "on"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_3",
+          "frenchText": "la rue",
+          "translations": [
+            "the street",
+            "the road",
+            "the avenue",
+            "the roadway"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "originalFrench": "Est-ce que c'est ce que je croyais ?",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p2_unit_0",
+          "frenchText": "Est-ce que",
+          "translations": [
+            "is it",
+            "does",
+            "do",
+            "is"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_1",
+          "frenchText": "c'est",
+          "translations": [
+            "it is",
+            "that is",
+            "this is",
+            "it's"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_2",
+          "frenchText": "ce que",
+          "translations": [
+            "what",
+            "that which",
+            "the thing that",
+            "which"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_3",
+          "frenchText": "je croyais",
+          "translations": [
+            "I thought",
+            "I believed",
+            "I was thinking",
+            "I supposed"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "originalFrench": "Je pourrais sortir voir ce qui se passe.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p3_unit_1754239546985_merged",
+          "frenchText": "Je pourrais",
+          "translations": [
+            "I could",
+            "I might",
+            "I would be able to",
+            "I can"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_2",
+          "frenchText": "sortir",
+          "translations": [
+            "go out",
+            "leave",
+            "exit",
+            "step out"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_3",
+          "frenchText": "voir",
+          "translations": [
+            "to see",
+            "to check",
+            "to look at",
+            "to find out"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_4",
+          "frenchText": "ce qui",
+          "translations": [
+            "what",
+            "that which",
+            "whatever",
+            "the thing that"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_5",
+          "frenchText": "se passe",
+          "translations": [
+            "is happening",
+            "is going on",
+            "occurs",
+            "takes place"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "originalFrench": "On se verrait peut-être dehors.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p4_unit_1754239556849_merged",
+          "frenchText": "On se verrait",
+          "translations": [
+            "we might see each other",
+            "we could meet",
+            "we would see each other",
+            "we'd run into each other"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_2",
+          "frenchText": "peut-être",
+          "translations": [
+            "maybe",
+            "perhaps",
+            "possibly",
+            "might"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_3",
+          "frenchText": "dehors",
+          "translations": [
+            "outside",
+            "outdoors",
+            "out there",
+            "out"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p5",
+      "originalFrench": "Il faut que je puisse t'afficher mon soutien.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p5_unit_0",
+          "frenchText": "Il faut que",
+          "translations": [
+            "I need to",
+            "it is necessary that",
+            "I must",
+            "I have to"
+          ]
+        },
+        {
+          "unitId": "text_1_p5_unit_1",
+          "frenchText": "je puisse",
+          "translations": [
+            "I can",
+            "I am able to",
+            "I may",
+            "I could"
+          ]
+        },
+        {
+          "unitId": "text_1_p5_unit_2",
+          "frenchText": "t'afficher",
+          "translations": [
+            "show you",
+            "display to you",
+            "demonstrate to you",
+            "express to you"
+          ]
+        },
+        {
+          "unitId": "text_1_p5_unit_3",
+          "frenchText": "mon soutien",
+          "translations": [
+            "my support",
+            "my backing",
+            "my solidarity",
+            "my encouragement"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "originalFrench": "Tout le monde parle des rumeurs du quartier.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p1_unit_0",
+          "frenchText": "Tout le monde",
+          "translations": [
+            "everyone",
+            "everybody",
+            "all people",
+            "the whole world"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_1",
+          "frenchText": "parle",
+          "translations": [
+            "talks about",
+            "speaks of",
+            "discusses",
+            "is talking about"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_2",
+          "frenchText": "des rumeurs",
+          "translations": [
+            "the rumors",
+            "gossip",
+            "hearsay",
+            "the talk"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_3",
+          "frenchText": "du quartier",
+          "translations": [
+            "in the neighborhood",
+            "of the district",
+            "from the area",
+            "around the quarter"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "originalFrench": "Je lis les bails sur mon lit le soir.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p2_unit_1754239562530_merged",
+          "frenchText": "Je lis",
+          "translations": [
+            "I read",
+            "I am reading",
+            "I peruse",
+            "I'm reading"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_2",
+          "frenchText": "les bails",
+          "translations": [
+            "the stuff",
+            "the things",
+            "the stories",
+            "the news"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_3",
+          "frenchText": "sur",
+          "translations": [
+            "on",
+            "upon",
+            "over",
+            "atop"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_4",
+          "frenchText": "mon lit",
+          "translations": [
+            "my bed",
+            "my bedding",
+            "my mattress",
+            "my cot"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_5",
+          "frenchText": "le soir",
+          "translations": [
+            "in the evening",
+            "at night",
+            "during the evening",
+            "in the nighttime"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "originalFrench": "C'est un vrai délire cette histoire!",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p3_unit_0",
+          "frenchText": "C'est",
+          "translations": [
+            "it's",
+            "this is",
+            "that is",
+            "it is"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_1",
+          "frenchText": "un vrai délire",
+          "translations": [
+            "totally crazy",
+            "completely insane",
+            "absolutely wild",
+            "pure madness"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_2",
+          "frenchText": "cette histoire",
+          "translations": [
+            "this situation",
+            "this story",
+            "this whole thing",
+            "this matter"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "originalFrench": "Ouais, comment tu vas aujourd'hui ?",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p1_unit_0",
+          "frenchText": "Ouais",
+          "translations": [
+            "Yeah",
+            "Yep",
+            "Yes",
+            "Sure"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_1",
+          "frenchText": "comment",
+          "translations": [
+            "how",
+            "in what way",
+            "what way",
+            "how's"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_2",
+          "frenchText": "tu vas",
+          "translations": [
+            "are you",
+            "you're doing",
+            "you going",
+            "you feel"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_3",
+          "frenchText": "aujourd'hui",
+          "translations": [
+            "today",
+            "nowadays",
+            "this day",
+            "currently"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "originalFrench": "Je ne veux plus jamais y aller.",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p2_unit_1754239603247_1",
+          "frenchText": "Je ne veux",
+          "translations": [
+            "I don't want",
+            "I do not wish",
+            "I refuse",
+            "I won't"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_1754239605078_merged",
+          "frenchText": "plus jamais",
+          "translations": [
+            "ever again",
+            "never again",
+            "anymore",
+            "any longer"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_1754239610263_merged",
+          "frenchText": "y aller",
+          "translations": [
+            "to go there",
+            "to go to it",
+            "to attend",
+            "to visit there"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p3",
+      "originalFrench": "Ce n'est pas comme avant.",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p3_unit_1754239618548_merged",
+          "frenchText": "Ce n'est pas",
+          "translations": [
+            "It's not",
+            "It isn't",
+            "This isn't",
+            "That's not"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_2",
+          "frenchText": "comme",
+          "translations": [
+            "like",
+            "as",
+            "the way",
+            "compared to"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_3",
+          "frenchText": "avant",
+          "translations": [
+            "before",
+            "previously",
+            "in the past",
+            "formerly"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "originalFrench": "Ces moments atroces me hantent encore.",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p1_unit_0",
+          "frenchText": "Ces moments atroces",
+          "translations": [
+            "these awful moments",
+            "these dreadful times",
+            "these horrific moments",
+            "these atrocious moments"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1",
+          "frenchText": "me hantent",
+          "translations": [
+            "haunt me",
+            "torment me",
+            "plague me",
+            "persist in my mind"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_2",
+          "frenchText": "encore",
+          "translations": [
+            "still",
+            "yet",
+            "to this day",
+            "continue to"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "originalFrench": "Mon tit-pe frère est vraiment taré !",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p2_unit_0",
+          "frenchText": "Mon tit-pe frère",
+          "translations": [
+            "my little brother",
+            "my kid brother",
+            "my younger brother",
+            "my bro"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_1",
+          "frenchText": "est",
+          "translations": [
+            "is",
+            "happens to be",
+            "has become",
+            "turns out to be"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_2",
+          "frenchText": "vraiment",
+          "translations": [
+            "really",
+            "truly",
+            "absolutely",
+            "totally"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_3",
+          "frenchText": "taré",
+          "translations": [
+            "crazy",
+            "nuts",
+            "insane",
+            "messed up"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "originalFrench": "Mais des gens sur le réseau disent",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p1_unit_0",
+          "frenchText": "Mais",
+          "translations": [
+            "But",
+            "However",
+            "Though",
+            "Still"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_1",
+          "frenchText": "des gens",
+          "translations": [
+            "people",
+            "some people",
+            "folks",
+            "persons"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_2",
+          "frenchText": "sur",
+          "translations": [
+            "on",
+            "over",
+            "across",
+            "via"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_3",
+          "frenchText": "le réseau",
+          "translations": [
+            "the network",
+            "social media",
+            "the internet",
+            "online"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_4",
+          "frenchText": "disent",
+          "translations": [
+            "say",
+            "are saying",
+            "tell",
+            "claim"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "originalFrench": "À ce qu'il paraît, ça va pas.",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p2_unit_0",
+          "frenchText": "À ce qu'il paraît",
+          "translations": [
+            "apparently",
+            "it seems",
+            "from what I hear",
+            "supposedly"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_1754239745298_merged",
+          "frenchText": "ça va pas",
+          "translations": [
+            "things aren't good",
+            "it's not going well",
+            "it's not okay",
+            "something's wrong"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p3",
+      "originalFrench": "T'es là ? Je te cours après partout !",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p3_unit_0",
+          "frenchText": "T'es",
+          "translations": [
+            "are you",
+            "you are",
+            "you're",
+            "art thou"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_1",
+          "frenchText": "là",
+          "translations": [
+            "there",
+            "here",
+            "around",
+            "present"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_1754239787926_merged",
+          "frenchText": "Je te cours après",
+          "translations": [
+            "I'm chasing after you",
+            "I'm running after you",
+            "I'm pursuing you",
+            "I'm following you"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_5",
+          "frenchText": "partout",
+          "translations": [
+            "everywhere",
+            "all over",
+            "all around",
+            "in every place"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p4",
+      "originalFrench": "Le message que tu cherches, c'est moi.",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p4_unit_0",
+          "frenchText": "Le message",
+          "translations": [
+            "the message",
+            "the note",
+            "the communication",
+            "the meaning"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_1",
+          "frenchText": "que",
+          "translations": [
+            "that",
+            "which",
+            "whom",
+            "what"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_2",
+          "frenchText": "tu cherches",
+          "translations": [
+            "you're looking for",
+            "you seek",
+            "you're searching for",
+            "you want"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_3",
+          "frenchText": "c'est",
+          "translations": [
+            "is",
+            "it's",
+            "that's",
+            "turns out to be"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_4",
+          "frenchText": "moi",
+          "translations": [
+            "me",
+            "I",
+            "myself",
+            "the one"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "originalFrench": "Tu m'as eue, c'est mon erreur !",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p1_unit_0",
+          "frenchText": "Tu m'as eue",
+          "translations": [
+            "you got me",
+            "you fooled me",
+            "you tricked me",
+            "you caught me"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_1",
+          "frenchText": "c'est",
+          "translations": [
+            "it's",
+            "that's",
+            "this is",
+            "it was"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_2",
+          "frenchText": "mon erreur",
+          "translations": [
+            "my mistake",
+            "my error",
+            "my fault",
+            "my blunder"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "originalFrench": "D'après ce qu'on dit dans ton groupe",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p2_unit_0",
+          "frenchText": "D'après",
+          "translations": [
+            "according to",
+            "based on",
+            "from what",
+            "as per"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_1",
+          "frenchText": "ce que",
+          "translations": [
+            "what",
+            "that which",
+            "the things that",
+            "whatever"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_2",
+          "frenchText": "on dit",
+          "translations": [
+            "people say",
+            "they say",
+            "it is said",
+            "one says"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_3",
+          "frenchText": "dans",
+          "translations": [
+            "in",
+            "within",
+            "among",
+            "inside"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_4",
+          "frenchText": "ton groupe",
+          "translations": [
+            "your group",
+            "your circle",
+            "your team",
+            "your crowd"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p3",
+      "originalFrench": "Y a pas moyen de se voir dans la soirée ?",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p3_unit_0",
+          "frenchText": "Y a pas",
+          "translations": [
+            "is there no",
+            "isn't there",
+            "there isn't",
+            "there's no"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_1",
+          "frenchText": "moyen",
+          "translations": [
+            "way",
+            "possibility",
+            "chance",
+            "means"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_2",
+          "frenchText": "de",
+          "translations": [
+            "to",
+            "of",
+            "for",
+            "about"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_3",
+          "frenchText": "se voir",
+          "translations": [
+            "to meet",
+            "to see each other",
+            "to get together",
+            "to meet up"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_4",
+          "frenchText": "dans",
+          "translations": [
+            "during",
+            "in",
+            "this",
+            "throughout"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_5",
+          "frenchText": "la soirée",
+          "translations": [
+            "the evening",
+            "tonight",
+            "the party",
+            "the night"
+          ]
+        }
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "phraseId": "text_1_p1",
+      "primaryTranslation": "I hear noises in the street.",
+      "alternatives": [
+        "I can hear sounds from the street.",
+        "I'm hearing noises outside."
+      ],
+      "distractors": [
+        "I can hear the road.",
+        "I hear sounds from your road.",
+        "It's the noises on the street."
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "primaryTranslation": "Is it what I thought?",
+      "alternatives": [
+        "Could it be what I suspected?",
+        "Is this what I believed it was?"
+      ],
+      "distractors": [
+        "Should I believe that?",
+        "Is this what I was thinking?",
+        "Is it really what I thought it was?"
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "primaryTranslation": "I could go out and see what's happening.",
+      "alternatives": [
+        "I might go check what's going on.",
+        "I could take a look at what's happening outside."
+      ],
+      "distractors": [
+        "I can leave to look at whatever takes place.",
+        "I might leave and see what is happening.",
+        "I can go out and look at whatever happens."
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "primaryTranslation": "Maybe we'll see each other outside.",
+      "alternatives": [
+        "We might run into each other outside.",
+        "Perhaps we'll meet outside."
+      ],
+      "distractors": [
+        "We could meet perhaps out there.",
+        "Possibly we would see each other out.",
+        "We'd run into each other someday."
+      ]
+    },
+    {
+      "phraseId": "text_1_p5",
+      "primaryTranslation": "I need to be able to show you my support.",
+      "alternatives": [
+        "I must find a way to show you my support.",
+        "I have to demonstrate my support for you."
+      ],
+      "distractors": [
+        "It is necessary that I may display to you my backing.",
+        "I have to express to you my encouragement.",
+        "I need to demonstrate my solidarity to them."
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "primaryTranslation": "Everyone is talking about the neighborhood gossip.",
+      "alternatives": [
+        "The whole neighborhood is buzzing with rumors.",
+        "Everyone's discussing the local rumors."
+      ],
+      "distractors": [
+        "All the world speaks of the rumors of the quarter.",
+        "The whole world discusses the hearsay from the area.",
+        "All people are speaking of the talk around the quarter."
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "primaryTranslation": "I read the gossip in bed at night.",
+      "alternatives": [
+        "I check out the latest news from my bed at night.",
+        "I read about what's going on while in bed at night."
+      ],
+      "distractors": [
+        "I peruse the news atop my bedding at evening.",
+        "I read the things  in bed every night.",
+        "I am reading stuff over my bed in the evenings."
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "primaryTranslation": "This story is totally crazy!",
+      "alternatives": [
+        "This whole thing is insane!",
+        "What a wild story!"
+      ],
+      "distractors": [
+        "It is a true delirium this thing!",
+        "That is completely insane!",
+        "This is absolutely wild!"
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "primaryTranslation": "Yeah, how are you today?",
+      "alternatives": [
+        "Yeah, how're you doing today?",
+        "Yeah, how's it going today?"
+      ],
+      "distractors": [
+        "Yep, what way you're going this day?",
+        "Yes, how's you feel now?",
+        "Yeah, how are you feeling?"
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "primaryTranslation": "I never want to go there again.",
+      "alternatives": [
+        "I don't ever want to go back there.",
+        "I'm never going there again."
+      ],
+      "distractors": [
+        "I do not wish anymore to go to it.",
+        "I refuse any longer to visit there.",
+        "I want to go there again."
+      ]
+    },
+    {
+      "phraseId": "text_3_p3",
+      "primaryTranslation": "It's not like it used to be.",
+      "alternatives": [
+        "Things aren't like they were before.",
+        "It's different now.",
+        "It's not the same anymore."
+      ],
+      "distractors": [
+        "This isn't as before.",
+        "This is not like it was.",
+        "That isn't the way it was in the past."
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "primaryTranslation": "Those terrible moments still haunt me.",
+      "alternatives": [
+        "I'm still haunted by those awful moments.",
+        "Those horrific times continue to haunt me."
+      ],
+      "distractors": [
+        "These atrocious moments persist in my mind yet.",
+        "Those dreadful times continue to plague me.",
+        "The awful moments haunt to me still."
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "primaryTranslation": "My little brother is totally crazy!",
+      "alternatives": [
+        "My little bro is completely nuts!",
+        "My kid brother is absolutely insane!"
+      ],
+      "distractors": [
+        "My younger brother has become absolutely insane!",
+        "My bro turns out to be really messed up!",
+        "My younger brother becomes really nuts!"
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "primaryTranslation": "But people on the network are saying",
+      "alternatives": [
+        "But people online are saying",
+        "But people on social media are saying"
+      ],
+      "distractors": [
+        "However persons via social media tell",
+        "Though some people across the internet claim",
+        "But some people tell across internet"
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "primaryTranslation": "Apparently, things aren't going well.",
+      "alternatives": [
+        "Apparently, things aren't going well.",
+        "Word is, things aren't okay."
+      ],
+      "distractors": [
+        "It seems, it's not okay.",
+        "From what I hear, something is off.",
+        "It appears that it's not going."
+      ]
+    },
+    {
+      "phraseId": "text_5_p3",
+      "primaryTranslation": "Are you there? I've been looking everywhere for you!",
+      "alternatives": [
+        "Where are you? I've been chasing after you everywhere!",
+        "You there? I've been searching all over for you!"
+      ],
+      "distractors": [
+        "Art thou there? I am running after you all over!",
+        "You're here? I'm pursuing you in every place!",
+        "You are around? I run behind you everywhere!"
+      ]
+    },
+    {
+      "phraseId": "text_5_p4",
+      "primaryTranslation": "I'm the message you're looking for.",
+      "alternatives": [
+        "The message you seek is me.",
+        "You're looking for this message - it's me."
+      ],
+      "distractors": [
+        "The note which you seek, it's myself.",
+        "The message what you want, that's me.",
+        "The message which you seek is myself."
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "primaryTranslation": "You got me, it's my mistake!",
+      "alternatives": [
+        "You caught me, my bad!",
+        "You fooled me, that's on me!"
+      ],
+      "distractors": [
+        "You had me, that's my error!",
+        "You fooled me, this is my blunder!",
+        "You tricked me, it was my fault!"
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "primaryTranslation": "According to what people are saying in your group",
+      "alternatives": [
+        "From what they're saying in your group",
+        "Based on the talk in your group"
+      ],
+      "distractors": [
+        "Based on that which they say inside your circle",
+        "From what one says among your team",
+        "According to the things that say in your group"
+      ]
+    },
+    {
+      "phraseId": "text_6_p3",
+      "primaryTranslation": "Is there any chance we could meet up tonight?",
+      "alternatives": [
+        "Any way we could get together this evening?",
+        "Could we possibly meet later today?"
+      ],
+      "distractors": [
+        "There isn't means to see each other in the evening?",
+        "Isn't there some way to get together throughout the night?",
+        "Isn't there possibility to view ourselves in the evening?"
+      ]
+    }
+  ],
+  "unitsChallenge": [
+    {
+      "unitId": "text_1_p1_unit_0",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "J'entends",
+      "primaryTranslation": "I hear",
+      "alternatives": [
+        "I can hear",
+        "I'm hearing",
+        "I am listening to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_1",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "des bruits",
+      "primaryTranslation": "noises",
+      "alternatives": [
+        "sounds",
+        "some noises",
+        "some sounds"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_2",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "inside",
+        "within",
+        "on"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_3",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "la rue",
+      "primaryTranslation": "the street",
+      "alternatives": [
+        "the road",
+        "the avenue",
+        "the roadway"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_0",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "Est-ce que",
+      "primaryTranslation": "is it",
+      "alternatives": [
+        "does",
+        "do",
+        "is"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_1",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "c'est",
+      "primaryTranslation": "it is",
+      "alternatives": [
+        "that is",
+        "this is",
+        "it's"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_2",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "ce que",
+      "primaryTranslation": "what",
+      "alternatives": [
+        "that which",
+        "the thing that",
+        "which"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_3",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "je croyais",
+      "primaryTranslation": "I thought",
+      "alternatives": [
+        "I believed",
+        "I was thinking",
+        "I supposed"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1754239546985_merged",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "Je pourrais",
+      "primaryTranslation": "I could",
+      "alternatives": [
+        "I might",
+        "I would be able to",
+        "I can"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_2",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "sortir",
+      "primaryTranslation": "go out",
+      "alternatives": [
+        "leave",
+        "exit",
+        "step out"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_3",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "voir",
+      "primaryTranslation": "to see",
+      "alternatives": [
+        "to check",
+        "to look at",
+        "to find out"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_4",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "ce qui",
+      "primaryTranslation": "what",
+      "alternatives": [
+        "that which",
+        "whatever",
+        "the thing that"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_5",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "se passe",
+      "primaryTranslation": "is happening",
+      "alternatives": [
+        "is going on",
+        "occurs",
+        "takes place"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1754239556849_merged",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "On se verrait",
+      "primaryTranslation": "we might see each other",
+      "alternatives": [
+        "we could meet",
+        "we would see each other",
+        "we'd run into each other"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_2",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "peut-être",
+      "primaryTranslation": "maybe",
+      "alternatives": [
+        "perhaps",
+        "possibly",
+        "might"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_3",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "dehors",
+      "primaryTranslation": "outside",
+      "alternatives": [
+        "outdoors",
+        "out there",
+        "out"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_0",
+      "sourcePhrase": "text_1_p5",
+      "challengeText": "Il faut que",
+      "primaryTranslation": "I need to",
+      "alternatives": [
+        "it is necessary that",
+        "I must",
+        "I have to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_1",
+      "sourcePhrase": "text_1_p5",
+      "challengeText": "je puisse",
+      "primaryTranslation": "I can",
+      "alternatives": [
+        "I am able to",
+        "I may",
+        "I could"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_2",
+      "sourcePhrase": "text_1_p5",
+      "challengeText": "t'afficher",
+      "primaryTranslation": "show you",
+      "alternatives": [
+        "display to you",
+        "demonstrate to you",
+        "express to you"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_3",
+      "sourcePhrase": "text_1_p5",
+      "challengeText": "mon soutien",
+      "primaryTranslation": "my support",
+      "alternatives": [
+        "my backing",
+        "my solidarity",
+        "my encouragement"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_0",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "Tout le monde",
+      "primaryTranslation": "everyone",
+      "alternatives": [
+        "everybody",
+        "all people",
+        "the whole world"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_1",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "parle",
+      "primaryTranslation": "talks about",
+      "alternatives": [
+        "speaks of",
+        "discusses",
+        "is talking about"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_2",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "des rumeurs",
+      "primaryTranslation": "the rumors",
+      "alternatives": [
+        "gossip",
+        "hearsay",
+        "the talk"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_3",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "du quartier",
+      "primaryTranslation": "in the neighborhood",
+      "alternatives": [
+        "of the district",
+        "from the area",
+        "around the quarter"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1754239562530_merged",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "Je lis",
+      "primaryTranslation": "I read",
+      "alternatives": [
+        "I am reading",
+        "I peruse",
+        "I'm reading"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_2",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "les bails",
+      "primaryTranslation": "the stuff",
+      "alternatives": [
+        "the things",
+        "the stories",
+        "the news"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_3",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "sur",
+      "primaryTranslation": "on",
+      "alternatives": [
+        "upon",
+        "over",
+        "atop"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_4",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "mon lit",
+      "primaryTranslation": "my bed",
+      "alternatives": [
+        "my bedding",
+        "my mattress",
+        "my cot"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_5",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "le soir",
+      "primaryTranslation": "in the evening",
+      "alternatives": [
+        "at night",
+        "during the evening",
+        "in the nighttime"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_0",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "C'est",
+      "primaryTranslation": "it's",
+      "alternatives": [
+        "this is",
+        "that is",
+        "it is"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_1",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "un vrai délire",
+      "primaryTranslation": "totally crazy",
+      "alternatives": [
+        "completely insane",
+        "absolutely wild",
+        "pure madness"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_2",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "cette histoire",
+      "primaryTranslation": "this situation",
+      "alternatives": [
+        "this story",
+        "this whole thing",
+        "this matter"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_0",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "Ouais",
+      "primaryTranslation": "Yeah",
+      "alternatives": [
+        "Yep",
+        "Yes",
+        "Sure"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_1",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "comment",
+      "primaryTranslation": "how",
+      "alternatives": [
+        "in what way",
+        "what way",
+        "how's"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_2",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "tu vas",
+      "primaryTranslation": "are you",
+      "alternatives": [
+        "you're doing",
+        "you going",
+        "you feel"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_3",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "aujourd'hui",
+      "primaryTranslation": "today",
+      "alternatives": [
+        "nowadays",
+        "this day",
+        "currently"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_1754239603247_1",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "Je ne veux",
+      "primaryTranslation": "I don't want",
+      "alternatives": [
+        "I do not wish",
+        "I refuse",
+        "I won't"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_1754239605078_merged",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "plus jamais",
+      "primaryTranslation": "ever again",
+      "alternatives": [
+        "never again",
+        "anymore",
+        "any longer"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_1754239610263_merged",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "y aller",
+      "primaryTranslation": "to go there",
+      "alternatives": [
+        "to go to it",
+        "to attend",
+        "to visit there"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_1754239618548_merged",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "Ce n'est pas",
+      "primaryTranslation": "It's not",
+      "alternatives": [
+        "It isn't",
+        "This isn't",
+        "That's not"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_2",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "comme",
+      "primaryTranslation": "like",
+      "alternatives": [
+        "as",
+        "the way",
+        "compared to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_3",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "avant",
+      "primaryTranslation": "before",
+      "alternatives": [
+        "previously",
+        "in the past",
+        "formerly"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_0",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "Ces moments atroces",
+      "primaryTranslation": "these awful moments",
+      "alternatives": [
+        "these dreadful times",
+        "these horrific moments",
+        "these atrocious moments"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "me hantent",
+      "primaryTranslation": "haunt me",
+      "alternatives": [
+        "torment me",
+        "plague me",
+        "persist in my mind"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_2",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "encore",
+      "primaryTranslation": "still",
+      "alternatives": [
+        "yet",
+        "to this day",
+        "continue to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_0",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "Mon tit-pe frère",
+      "primaryTranslation": "my little brother",
+      "alternatives": [
+        "my kid brother",
+        "my younger brother",
+        "my bro"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_1",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "est",
+      "primaryTranslation": "is",
+      "alternatives": [
+        "happens to be",
+        "has become",
+        "turns out to be"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_2",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "vraiment",
+      "primaryTranslation": "really",
+      "alternatives": [
+        "truly",
+        "absolutely",
+        "totally"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_3",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "taré",
+      "primaryTranslation": "crazy",
+      "alternatives": [
+        "nuts",
+        "insane",
+        "messed up"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_0",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "Mais",
+      "primaryTranslation": "But",
+      "alternatives": [
+        "However",
+        "Though",
+        "Still"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_1",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "des gens",
+      "primaryTranslation": "people",
+      "alternatives": [
+        "some people",
+        "folks",
+        "persons"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_2",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "sur",
+      "primaryTranslation": "on",
+      "alternatives": [
+        "over",
+        "across",
+        "via"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_3",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "le réseau",
+      "primaryTranslation": "the network",
+      "alternatives": [
+        "social media",
+        "the internet",
+        "online"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_4",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "disent",
+      "primaryTranslation": "say",
+      "alternatives": [
+        "are saying",
+        "tell",
+        "claim"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_0",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "À ce qu'il paraît",
+      "primaryTranslation": "apparently",
+      "alternatives": [
+        "it seems",
+        "from what I hear",
+        "supposedly"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_1754239745298_merged",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "ça va pas",
+      "primaryTranslation": "things aren't good",
+      "alternatives": [
+        "it's not going well",
+        "it's not okay",
+        "something's wrong"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_0",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "T'es",
+      "primaryTranslation": "are you",
+      "alternatives": [
+        "you are",
+        "you're",
+        "art thou"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_1",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "là",
+      "primaryTranslation": "there",
+      "alternatives": [
+        "here",
+        "around",
+        "present"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_1754239787926_merged",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "Je te cours après",
+      "primaryTranslation": "I'm chasing after you",
+      "alternatives": [
+        "I'm running after you",
+        "I'm pursuing you",
+        "I'm following you"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_5",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "partout",
+      "primaryTranslation": "everywhere",
+      "alternatives": [
+        "all over",
+        "all around",
+        "in every place"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p4_unit_0",
+      "sourcePhrase": "text_5_p4",
+      "challengeText": "Le message",
+      "primaryTranslation": "the message",
+      "alternatives": [
+        "the note",
+        "the communication",
+        "the meaning"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p4_unit_1",
+      "sourcePhrase": "text_5_p4",
+      "challengeText": "que",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "which",
+        "whom",
+        "what"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p4_unit_2",
+      "sourcePhrase": "text_5_p4",
+      "challengeText": "tu cherches",
+      "primaryTranslation": "you're looking for",
+      "alternatives": [
+        "you seek",
+        "you're searching for",
+        "you want"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p4_unit_3",
+      "sourcePhrase": "text_5_p4",
+      "challengeText": "c'est",
+      "primaryTranslation": "is",
+      "alternatives": [
+        "it's",
+        "that's",
+        "turns out to be"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p4_unit_4",
+      "sourcePhrase": "text_5_p4",
+      "challengeText": "moi",
+      "primaryTranslation": "me",
+      "alternatives": [
+        "I",
+        "myself",
+        "the one"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_0",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "Tu m'as eue",
+      "primaryTranslation": "you got me",
+      "alternatives": [
+        "you fooled me",
+        "you tricked me",
+        "you caught me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_1",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "c'est",
+      "primaryTranslation": "it's",
+      "alternatives": [
+        "that's",
+        "this is",
+        "it was"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_2",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "mon erreur",
+      "primaryTranslation": "my mistake",
+      "alternatives": [
+        "my error",
+        "my fault",
+        "my blunder"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_0",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "D'après",
+      "primaryTranslation": "according to",
+      "alternatives": [
+        "based on",
+        "from what",
+        "as per"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_1",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "ce que",
+      "primaryTranslation": "what",
+      "alternatives": [
+        "that which",
+        "the things that",
+        "whatever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_2",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "on dit",
+      "primaryTranslation": "people say",
+      "alternatives": [
+        "they say",
+        "it is said",
+        "one says"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_3",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "within",
+        "among",
+        "inside"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_4",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "ton groupe",
+      "primaryTranslation": "your group",
+      "alternatives": [
+        "your circle",
+        "your team",
+        "your crowd"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_0",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "Y a pas",
+      "primaryTranslation": "is there no",
+      "alternatives": [
+        "isn't there",
+        "there isn't",
+        "there's no"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_1",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "moyen",
+      "primaryTranslation": "way",
+      "alternatives": [
+        "possibility",
+        "chance",
+        "means"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_2",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "de",
+      "primaryTranslation": "to",
+      "alternatives": [
+        "of",
+        "for",
+        "about"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_3",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "se voir",
+      "primaryTranslation": "to meet",
+      "alternatives": [
+        "to see each other",
+        "to get together",
+        "to meet up"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_4",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "dans",
+      "primaryTranslation": "during",
+      "alternatives": [
+        "in",
+        "this",
+        "throughout"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_5",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "la soirée",
+      "primaryTranslation": "the evening",
+      "alternatives": [
+        "tonight",
+        "the party",
+        "the night"
+      ],
+      "difficulty": "beginner"
+    }
+  ]
+}

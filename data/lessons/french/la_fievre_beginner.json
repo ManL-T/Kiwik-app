@@ -1,0 +1,3800 @@
+{
+  "projectMetadata": {
+    "title": "La fièvre",
+    "artist": "Julien Doré",
+    "difficulty": "beginner"
+  },
+  "originalLyrics": "Le monde a changé, il s'est déplacé quelques vertèbres\nLe monde a changé, il s'est déplacé quelques vertèbres\nJe veux plus écrire les peines que le féminin m'a fait\nDites à Jacquie et Michel de venir me chercher\nMoi je veux faire comme tout l'monde, je veux juste un peu douter\nJe crois que la Terre est ronde mais je préfère comploter\nOn peut pas changer les ombres, on peut juste les éclairer\nJusqu'à c'que le soleil tombe, lassé de nous réchauffer\nEt dans nos envies de plages, d'UV A et d'UV B\nJ'en vois quelques uns qui nagent vers c'qu'on a déjà coulé\nMais si l'époque a des puces, c'est qu'elle a pas l'bon collier\nLa beauté, tu sais, ça s'use, c'est comme ton premier baiser",
+  "originalVocabulary": ["monde","changé","il","s'est","déplacé","quelques","vertèbres","veux","plus","écrire","peines","que","féminin","m'a","fait","dites","à","venir","me","chercher","moi","faire","comme","tout","juste","peu","douter","crois","Terre","est","ronde","mais","préfère","comploter","on","peut","pas","changer","ombres","éclairer","jusqu'à","ce","que","soleil","tombe","lassé","nous","réchauffer","dans","envies","plages","en","vois","uns","qui","nagent","vers","déjà","coulé","si","l'époque","puces","qu'elle","bon","collier","beauté","sais","ça","s'use","ton","premier"],
+  "texts": [
+    {
+      "textId": "text_1",
+      "title": "Une Première Rencontre",
+      "text": [
+        "- C'est ton premier cours de danse ?",
+        "- Oui, je suis un peu lassé d'être seul.",
+        "- Viens dans notre danse ronde !",
+        "- J'aimerais faire quelques pas avec vous."
+      ]
+    },
+    {
+      "textId": "text_2",
+      "title": "Notes Personnelles",
+      "text": [
+        "Je veux écrire ce qui a changé.",
+        "On m'a déplacé de bureau aujourd'hui.",
+        "Dites-moi si vous voulez venir voir.",
+        "Je vais chercher à comprendre ce qui s'est fait."
+      ]
+    },
+    {
+      "textId": "text_3",
+      "title": "Réflexions sur la Vie",
+      "text": [
+        "Le monde tourne autour du soleil sur la Terre,",
+        "Mes vertèbres portent le poids de mes peines,",
+        "Dans l'ombre du genre féminin se cachent",
+        "Toutes mes envies d'existence pure."
+      ]
+    },
+    {
+      "textId": "text_4",
+      "title": "Réflexions du Matin",
+      "text": [
+        "Je ne peux plus attendre.",
+        "C'est déjà un peu juste.",
+        "Pas aujourd'hui, mais demain peut-être."
+      ]
+    },
+    {
+      "textId": "text_5",
+      "title": "Message à un Ami",
+      "text": [
+        "Tout va bien avec ton projet ?",
+        "C'est bon de te revoir enfin."
+      ]
+    },
+    {
+      "textId": "text_6",
+      "title": "Pensées Nocturnes",
+      "text": [
+        "Je crois qu'on peut faire changer les choses.",
+        "Est-ce qu'il faut douter quand tout tombe ?",
+        "Je préfère éclairer que comploter dans l'ombre."
+      ]
+    },
+    {
+      "textId": "text_7",
+      "title": "Observations Marines",
+      "text": [
+        "Je vois comme tout s'use et se réchauffer.",
+        "Les poissons nagent où tout a coulé.",
+        "Je sais que rien ne dure."
+      ]
+    },
+    {
+      "textId": "text_8",
+      "title": "Souvenirs d'Été",
+      "text": [
+        "Sur les plages de l'époque, les uns cherchaient",
+        "La beauté dans un simple collier,",
+        "Pendant que les puces dansaient au soleil."
+      ]
+    },
+    {
+      "textId": "text_9",
+      "title": "Message d'un Ami",
+      "text": [
+        "Il m'a dit que je suis comme",
+        "une sœur à moi, mais on sait",
+        "que ce n'est pas vrai.",
+        "Il s'est adressé à me voir demain,",
+        "je vais y réfléchir."
+      ]
+    },
+    {
+      "textId": "text_10",
+      "title": "Espoir Quotidien",
+      "text": [
+        "Jusqu'à ce que nous trouvions dans la vie",
+        "En vers qui nous guide si bien,",
+        "Qu'elle continue son chemin."
+      ]
+    },
+    {
+      "textId": "text_11",
+      "title": "Simplicité",
+      "text": [
+        "Ça arrive comme ça parfois."
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phraseId": "text_1_p1",
+      "phraseTarget": "- C'est ton premier cours de danse ?",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p1_unit_0",
+          "unitTarget": "C'est",
+          "translations": [
+            "Is this",
+            "Is it",
+            "It's"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_1",
+          "unitTarget": "ton premier cours",
+          "translations": [
+            "your first class",
+            "your first lesson",
+            "your first course",
+            "your initial lesson"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_1754953720380_merged",
+          "unitTarget": "de danse",
+          "translations": [
+            "of dance",
+            "dance",
+            "dancing",
+            "in dancing"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "phraseTarget": "- Oui, je suis un peu lassé d'être seul.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p2_unit_0",
+          "unitTarget": "Oui",
+          "translations": [
+            "Yes",
+            "Yeah",
+            "Indeed",
+            "That's right"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_1",
+          "unitTarget": "je suis",
+          "translations": [
+            "I am",
+            "I'm",
+            "I feel",
+            "I have become"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_2",
+          "unitTarget": "un peu",
+          "translations": [
+            "a bit",
+            "a little",
+            "somewhat",
+            "slightly"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_3",
+          "unitTarget": "lassé",
+          "translations": [
+            "tired",
+            "weary",
+            "fed up",
+            "worn out"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_4",
+          "unitTarget": "d'être",
+          "translations": [
+            "of being",
+            "to be",
+            "from being",
+            "with being"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_5",
+          "unitTarget": "seul",
+          "translations": [
+            "alone",
+            "lonely",
+            "by myself",
+            "on my own"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "phraseTarget": "- Viens dans notre danse ronde !",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p3_unit_0",
+          "unitTarget": "Viens",
+          "translations": [
+            "Come",
+            "Join",
+            "Come along",
+            "Come on"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_1",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "into",
+            "join",
+            "as part of"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_1754953759875_1",
+          "unitTarget": "notre danse",
+          "translations": [
+            "our dance",
+            "our dancing",
+            "our dance group",
+            "our dancers"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_1754953759875_2",
+          "unitTarget": "ronde",
+          "translations": [
+            "circle",
+            "round dance",
+            "circular",
+            "ring dance"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "phraseTarget": "- J'aimerais faire quelques pas avec vous.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p4_unit_0",
+          "unitTarget": "J'aimerais",
+          "translations": [
+            "I would like",
+            "I'd love",
+            "I wish",
+            "I'd like"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_1",
+          "unitTarget": "faire",
+          "translations": [
+            "to take",
+            "to do",
+            "to make",
+            "to perform"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_2",
+          "unitTarget": "quelques pas",
+          "translations": [
+            "a few steps",
+            "some steps",
+            "a few dance moves",
+            "several steps"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_1754953768077_merged",
+          "unitTarget": "avec vous",
+          "translations": [
+            "with you",
+            "together with you",
+            "alongside you",
+            "in your company"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "phraseTarget": "Aujourd'hui, je veux écrire ce qui a changé.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p1_unit_0",
+          "unitTarget": "Aujourd'hui",
+          "translations": [
+            "Today",
+            "On this day",
+            "Now",
+            "At present"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_1",
+          "unitTarget": "je veux",
+          "translations": [
+            "I want to",
+            "I wish to",
+            "I intend to",
+            "I will"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_2",
+          "unitTarget": "écrire",
+          "translations": [
+            "write",
+            "to write down",
+            "to record",
+            "to put in writing"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_1754953784726_1",
+          "unitTarget": "ce qui a",
+          "translations": [
+            "what has",
+            "that which has",
+            "whatever has",
+            "what's"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_1754953784726_2",
+          "unitTarget": "changé",
+          "translations": [
+            "changed",
+            "shifted",
+            "transformed",
+            "evolved"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "phraseTarget": "On m'a déplacé de bureau aujourd'hui.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p2_unit_1754953799160_1",
+          "unitTarget": "On m'a",
+          "translations": [
+            "they have",
+            "someone has",
+            "I was",
+            "I've been"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_1754953799160_2",
+          "unitTarget": "déplacé",
+          "translations": [
+            "moved",
+            "relocated",
+            "transferred",
+            "shifted"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_1754953802325_merged",
+          "unitTarget": "de bureau",
+          "translations": [
+            "offices",
+            "desks",
+            "workspaces",
+            "to a different office"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_4",
+          "unitTarget": "aujourd'hui",
+          "translations": [
+            "today",
+            "this day",
+            "nowadays",
+            "currently"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "phraseTarget": "Dites-moi si vous voulez venir voir.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p3_unit_0",
+          "unitTarget": "Dites-moi",
+          "translations": [
+            "tell me",
+            "let me know",
+            "inform me",
+            "say to me"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_1",
+          "unitTarget": "si",
+          "translations": [
+            "if",
+            "whether",
+            "in case",
+            "should"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_2",
+          "unitTarget": "vous voulez",
+          "translations": [
+            "you want to",
+            "you would like to",
+            "you wish to",
+            "you'd like to"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_3",
+          "unitTarget": "venir voir",
+          "translations": [
+            "come see",
+            "come and look",
+            "come check",
+            "come take a look"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p4",
+      "phraseTarget": "Je vais essayer de comprendre ces changements.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p4_unit_1754953835494_merged",
+          "unitTarget": "Je vais essayer",
+          "translations": [
+            "I am going to try",
+            "I will try",
+            "I'm going to attempt",
+            "I shall try"
+          ]
+        },
+        {
+          "unitId": "text_2_p4_unit_1754953842508_merged",
+          "unitTarget": "de comprendre",
+          "translations": [
+            "to understand",
+            "to comprehend",
+            "to grasp",
+            "to make sense of"
+          ]
+        },
+        {
+          "unitId": "text_2_p4_unit_4",
+          "unitTarget": "ces changements",
+          "translations": [
+            "these changes",
+            "these transformations",
+            "these modifications",
+            "these shifts"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "phraseTarget": "Le monde tourne autour du soleil,",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p1_unit_0",
+          "unitTarget": "Le monde",
+          "translations": [
+            "The world",
+            "The Earth",
+            "The globe",
+            "The planet"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_1",
+          "unitTarget": "tourne",
+          "translations": [
+            "revolves",
+            "turns",
+            "rotates",
+            "orbits"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_2",
+          "unitTarget": "autour",
+          "translations": [
+            "around",
+            "about",
+            "round",
+            "surrounding"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_3",
+          "unitTarget": "du soleil",
+          "translations": [
+            "the sun",
+            "of the sun",
+            "the solar body",
+            "our star"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "phraseTarget": "Mes vertèbres portent le poids de mes peines,",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p2_unit_0",
+          "unitTarget": "Mes vertèbres",
+          "translations": [
+            "My vertebrae",
+            "My backbone",
+            "My spinal bones",
+            "My vertebral column"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_1",
+          "unitTarget": "portent",
+          "translations": [
+            "carry",
+            "bear",
+            "support",
+            "hold"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_2",
+          "unitTarget": "le poids",
+          "translations": [
+            "the weight",
+            "the burden",
+            "the load",
+            "the heaviness"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_3",
+          "unitTarget": "de",
+          "translations": [
+            "of",
+            "from",
+            "with",
+            "by"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_4",
+          "unitTarget": "mes peines",
+          "translations": [
+            "my sorrows",
+            "my pains",
+            "my troubles",
+            "my sufferings"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p3",
+      "phraseTarget": "Dans l'ombre du genre féminin se cachent",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p3_unit_0",
+          "unitTarget": "Dans",
+          "translations": [
+            "In",
+            "Within",
+            "Inside",
+            "Among"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_1",
+          "unitTarget": "l'ombre",
+          "translations": [
+            "the shadow",
+            "the shade",
+            "the darkness",
+            "the obscurity"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_2",
+          "unitTarget": "du",
+          "translations": [
+            "of the",
+            "from the",
+            "belonging to the",
+            "pertaining to the"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_3",
+          "unitTarget": "le genre féminin",
+          "translations": [
+            "the feminine gender",
+            "femininity",
+            "womanhood",
+            "the female essence"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_4",
+          "unitTarget": "se cachent",
+          "translations": [
+            "hide themselves",
+            "are hidden",
+            "conceal themselves",
+            "lurk"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p4",
+      "phraseTarget": "Toutes mes envies d'existence pure.",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p4_unit_0",
+          "unitTarget": "Toutes mes envies",
+          "translations": [
+            "All my desires",
+            "All my longings",
+            "All my yearnings",
+            "All my wants"
+          ]
+        },
+        {
+          "unitId": "text_3_p4_unit_1",
+          "unitTarget": "d'",
+          "translations": [
+            "for",
+            "of",
+            "toward",
+            "concerning"
+          ]
+        },
+        {
+          "unitId": "text_3_p4_unit_2",
+          "unitTarget": "existence pure",
+          "translations": [
+            "pure existence",
+            "pure being",
+            "untainted existence",
+            "pristine life"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "phraseTarget": "Je ne peux plus attendre.",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p1_unit_0",
+          "unitTarget": "Je",
+          "translations": [
+            "I",
+            "I myself",
+            "me",
+            "as for me"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1",
+          "unitTarget": "ne peux plus",
+          "translations": [
+            "can't anymore",
+            "can no longer",
+            "am unable to anymore",
+            "cannot any longer"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_2",
+          "unitTarget": "attendre",
+          "translations": [
+            "wait",
+            "to wait",
+            "hold on",
+            "expect"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "phraseTarget": "En fait, c'est déjà un peu juste.",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p2_unit_0",
+          "unitTarget": "En fait",
+          "translations": [
+            "Actually",
+            "In fact",
+            "As a matter of fact",
+            "Indeed"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_1",
+          "unitTarget": "c'est",
+          "translations": [
+            "it's",
+            "it is",
+            "that's",
+            "this is"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_2",
+          "unitTarget": "déjà",
+          "translations": [
+            "already",
+            "yet",
+            "as it is",
+            "even now"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_3",
+          "unitTarget": "un peu juste",
+          "translations": [
+            "a bit tight",
+            "cutting it close",
+            "barely enough",
+            "rather close"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p3",
+      "phraseTarget": "Pas aujourd'hui, mais peut-être demain matin.",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p3_unit_0",
+          "unitTarget": "Pas",
+          "translations": [
+            "Not",
+            "Not today",
+            "No",
+            "Not now"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_1",
+          "unitTarget": "aujourd'hui",
+          "translations": [
+            "today",
+            "this day",
+            "nowadays",
+            "at present"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_2",
+          "unitTarget": "mais",
+          "translations": [
+            "but",
+            "however",
+            "yet",
+            "though"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_3",
+          "unitTarget": "peut-être",
+          "translations": [
+            "maybe",
+            "perhaps",
+            "possibly",
+            "it might be"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_4",
+          "unitTarget": "demain matin",
+          "translations": [
+            "tomorrow morning",
+            "in the morning tomorrow",
+            "next morning",
+            "tomorrow a.m."
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "phraseTarget": "Salut ! Tout va bien avec ton projet ?",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p1_unit_0",
+          "unitTarget": "Salut",
+          "translations": [
+            "Hi",
+            "Hey",
+            "Hello",
+            "Hi there"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_1",
+          "unitTarget": "Tout va bien",
+          "translations": [
+            "everything's going well",
+            "all is good",
+            "everything's fine",
+            "all good"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_2",
+          "unitTarget": "avec",
+          "translations": [
+            "with",
+            "regarding",
+            "concerning",
+            "about"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_3",
+          "unitTarget": "ton projet",
+          "translations": [
+            "your project",
+            "your work",
+            "your plan",
+            "your assignment"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "phraseTarget": "C'est bon de te revoir enfin.",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p2_unit_0",
+          "unitTarget": "C'est",
+          "translations": [
+            "it's",
+            "it is",
+            "that's",
+            "that is"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_1",
+          "unitTarget": "bon",
+          "translations": [
+            "good",
+            "nice",
+            "pleasant",
+            "great"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_2",
+          "unitTarget": "de",
+          "translations": [
+            "to",
+            "of",
+            "about",
+            "for"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_3",
+          "unitTarget": "te revoir",
+          "translations": [
+            "to see you again",
+            "to meet you again",
+            "to reunite with you",
+            "to see you once more"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_4",
+          "unitTarget": "enfin",
+          "translations": [
+            "at last",
+            "finally",
+            "at long last",
+            "eventually"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "phraseTarget": "Je crois qu'on peut faire changer les choses.",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p1_unit_0",
+          "unitTarget": "Je crois",
+          "translations": [
+            "I believe",
+            "I think",
+            "I suppose",
+            "I reckon"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_1",
+          "unitTarget": "qu'on peut",
+          "translations": [
+            "that we can",
+            "that one can",
+            "that you can",
+            "that it's possible to"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_2",
+          "unitTarget": "faire changer",
+          "translations": [
+            "make change",
+            "bring about change",
+            "cause to change",
+            "transform"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_3",
+          "unitTarget": "les choses",
+          "translations": [
+            "things",
+            "matters",
+            "situations",
+            "circumstances"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "phraseTarget": "Mais est-ce qu'il faut douter quand tout tombe ?",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p2_unit_0",
+          "unitTarget": "Mais",
+          "translations": [
+            "But",
+            "However",
+            "Yet",
+            "Though"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_1",
+          "unitTarget": "est-ce qu'il faut",
+          "translations": [
+            "should we",
+            "must we",
+            "is it necessary to",
+            "do we have to"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_2",
+          "unitTarget": "douter",
+          "translations": [
+            "doubt",
+            "have doubts",
+            "be uncertain",
+            "question"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_3",
+          "unitTarget": "quand",
+          "translations": [
+            "when",
+            "while",
+            "as",
+            "whenever"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_4",
+          "unitTarget": "tout tombe",
+          "translations": [
+            "everything falls apart",
+            "all collapses",
+            "everything crumbles",
+            "it all falls down"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p3",
+      "phraseTarget": "Je préfère éclairer que comploter dans l'ombre.",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p3_unit_0",
+          "unitTarget": "Je préfère",
+          "translations": [
+            "I prefer",
+            "I would rather",
+            "I'd rather",
+            "I favor"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_1",
+          "unitTarget": "éclairer",
+          "translations": [
+            "to enlighten",
+            "to illuminate",
+            "to shed light",
+            "to brighten"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_2",
+          "unitTarget": "que",
+          "translations": [
+            "than",
+            "rather than",
+            "instead of",
+            "as opposed to"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_3",
+          "unitTarget": "comploter",
+          "translations": [
+            "to plot",
+            "to scheme",
+            "to conspire",
+            "to connive"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_4",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "within",
+            "inside",
+            "amid"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_5",
+          "unitTarget": "l'ombre",
+          "translations": [
+            "the shadows",
+            "the darkness",
+            "the shade",
+            "obscurity"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "phraseTarget": "Je vois comme tout s'use et se réchauffe.",
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p1_unit_1754953891095_merged",
+          "unitTarget": "Je vois",
+          "translations": [
+            "I see",
+            "I notice",
+            "I observe",
+            "I can see"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_2",
+          "unitTarget": "comme",
+          "translations": [
+            "how",
+            "the way",
+            "like",
+            "as"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_3",
+          "unitTarget": "tout",
+          "translations": [
+            "everything",
+            "all",
+            "all things",
+            "it all"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_4",
+          "unitTarget": "s'use",
+          "translations": [
+            "wears out",
+            "deteriorates",
+            "becomes worn",
+            "erodes"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_5",
+          "unitTarget": "et",
+          "translations": [
+            "and",
+            "also",
+            "as well",
+            "plus"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_6",
+          "unitTarget": "se réchauffe",
+          "translations": [
+            "warms up",
+            "gets warmer",
+            "heats up",
+            "becomes warm"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p2",
+      "phraseTarget": "Et les poissons nagent où tout a coulé.",
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p2_unit_0",
+          "unitTarget": "Et",
+          "translations": [
+            "And",
+            "Moreover",
+            "Then",
+            "While"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_1",
+          "unitTarget": "les poissons",
+          "translations": [
+            "the fish",
+            "the fishes",
+            "the school of fish"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_2",
+          "unitTarget": "nagent",
+          "translations": [
+            "swim",
+            "are swimming",
+            "paddle",
+            "move through water"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_3",
+          "unitTarget": "où",
+          "translations": [
+            "where",
+            "in which",
+            "wherever",
+            "in the place where"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_4",
+          "unitTarget": "tout",
+          "translations": [
+            "everything",
+            "all",
+            "the whole",
+            "it all"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_5",
+          "unitTarget": "a coulé",
+          "translations": [
+            "has sunk",
+            "went down",
+            "has submerged",
+            "has gone under"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p3",
+      "phraseTarget": "Maintenant, je sais que rien ne dure.",
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p3_unit_0",
+          "unitTarget": "Maintenant",
+          "translations": [
+            "Now",
+            "At present",
+            "Currently",
+            "At this point"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_1754953903711_merged",
+          "unitTarget": "je sais",
+          "translations": [
+            "I know",
+            "I understand",
+            "I realize",
+            "I am aware"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_3",
+          "unitTarget": "que",
+          "translations": [
+            "that",
+            "which",
+            "what",
+            "how"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_4",
+          "unitTarget": "rien",
+          "translations": [
+            "nothing",
+            "none",
+            "not anything",
+            "none of it"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_5",
+          "unitTarget": "ne dure",
+          "translations": [
+            "lasts",
+            "endures",
+            "persists",
+            "remains"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p1",
+      "phraseTarget": "Sur les plages de l'époque, les uns cherchaient",
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p1_unit_0",
+          "unitTarget": "Sur",
+          "translations": [
+            "On",
+            "Upon",
+            "At",
+            "Along"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_1",
+          "unitTarget": "les plages",
+          "translations": [
+            "the beaches",
+            "the shores",
+            "the seaside",
+            "the coastline"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_2",
+          "unitTarget": "de",
+          "translations": [
+            "of",
+            "from",
+            "during",
+            "in"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_3",
+          "unitTarget": "l'époque",
+          "translations": [
+            "the time",
+            "the era",
+            "the period",
+            "that time"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_4",
+          "unitTarget": "les uns",
+          "translations": [
+            "some",
+            "some people",
+            "certain ones",
+            "some of them"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_5",
+          "unitTarget": "cherchaient",
+          "translations": [
+            "were looking for",
+            "searched for",
+            "sought",
+            "were seeking"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p2",
+      "phraseTarget": "La beauté dans un simple collier,",
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p2_unit_0",
+          "unitTarget": "La beauté",
+          "translations": [
+            "beauty",
+            "the beauty",
+            "loveliness",
+            "the beautiful"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_1",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "within",
+            "inside",
+            "through"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_2",
+          "unitTarget": "un simple collier",
+          "translations": [
+            "a simple necklace",
+            "a plain necklace",
+            "a mere necklace",
+            "an ordinary necklace"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p3",
+      "phraseTarget": "Pendant que les puces dansaient au soleil.",
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p3_unit_0",
+          "unitTarget": "Pendant que",
+          "translations": [
+            "while",
+            "as",
+            "during the time that",
+            "whilst"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_1",
+          "unitTarget": "les puces",
+          "translations": [
+            "the fleas",
+            "the insects",
+            "the bugs",
+            "the mites"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_2",
+          "unitTarget": "dansaient",
+          "translations": [
+            "were dancing",
+            "danced",
+            "would dance",
+            "were dancing about"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_3",
+          "unitTarget": "au",
+          "translations": [
+            "in the",
+            "under the",
+            "at the",
+            "beneath the"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_4",
+          "unitTarget": "soleil",
+          "translations": [
+            "sun",
+            "sunlight",
+            "sunshine",
+            "daylight"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p1",
+      "phraseTarget": "Il m'a dit que je suis comme une sœur pour lui",
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p1_unit_0",
+          "unitTarget": "Il",
+          "translations": [
+            "he",
+            "it",
+            "he did",
+            "he has"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_1",
+          "unitTarget": "m'a dit",
+          "translations": [
+            "told me",
+            "said to me",
+            "has told me",
+            "informed me"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_2",
+          "unitTarget": "que",
+          "translations": [
+            "that",
+            "which",
+            "how",
+            "what"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_1754953931161_merged",
+          "unitTarget": "je suis",
+          "translations": [
+            "I am",
+            "I'm",
+            "I happen to be",
+            "I've become"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_5",
+          "unitTarget": "comme",
+          "translations": [
+            "like",
+            "as",
+            "similar to",
+            "just as"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_6",
+          "unitTarget": "une sœur",
+          "translations": [
+            "a sister",
+            "a sibling",
+            "a sisterly figure",
+            "a sister-like person"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_1754953933891_merged",
+          "unitTarget": "pour lui",
+          "translations": [
+            "to him",
+            "for him",
+            "in his eyes",
+            "from his perspective"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p2",
+      "phraseTarget": "mais on sait que ce n'est pas vrai.",
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p2_unit_0",
+          "unitTarget": "mais",
+          "translations": [
+            "but",
+            "however",
+            "yet",
+            "though"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_1",
+          "unitTarget": "on",
+          "translations": [
+            "we",
+            "one",
+            "people",
+            "everyone"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_2",
+          "unitTarget": "sait",
+          "translations": [
+            "know",
+            "are aware",
+            "realize",
+            "understand"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_3",
+          "unitTarget": "que",
+          "translations": [
+            "that",
+            "which",
+            "what",
+            "how"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_4",
+          "unitTarget": "ce",
+          "translations": [
+            "it",
+            "this",
+            "that",
+            "this thing"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_5",
+          "unitTarget": "n'est pas",
+          "translations": [
+            "is not",
+            "isn't",
+            "is not at all",
+            "cannot be"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_6",
+          "unitTarget": "vrai",
+          "translations": [
+            "true",
+            "real",
+            "accurate",
+            "genuine"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p4",
+      "phraseTarget": "Il m'a proposé de nous voir demain",
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p4_unit_0",
+          "unitTarget": "Il",
+          "translations": [
+            "He",
+            "It",
+            "One"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_1",
+          "unitTarget": "m'a proposé",
+          "translations": [
+            "suggested to me",
+            "proposed to me",
+            "offered me",
+            "asked me"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_2",
+          "unitTarget": "de",
+          "translations": [
+            "to",
+            "about",
+            "of",
+            "that we"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_3",
+          "unitTarget": "nous",
+          "translations": [
+            "each other",
+            "us",
+            "ourselves",
+            "we"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_4",
+          "unitTarget": "voir",
+          "translations": [
+            "to meet",
+            "to see",
+            "to visit",
+            "to get together"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_5",
+          "unitTarget": "demain",
+          "translations": [
+            "tomorrow",
+            "the next day",
+            "the following day"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p5",
+      "phraseTarget": "je vais y réfléchir et lui répondre.",
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p5_unit_1754953946159_merged",
+          "unitTarget": "je vais y",
+          "translations": [
+            "I'm going to",
+            "I will",
+            "I shall",
+            "I'm about to"
+          ]
+        },
+        {
+          "unitId": "text_9_p5_unit_3",
+          "unitTarget": "réfléchir",
+          "translations": [
+            "think about it",
+            "consider it",
+            "reflect on it",
+            "ponder it"
+          ]
+        },
+        {
+          "unitId": "text_9_p5_unit_4",
+          "unitTarget": "et",
+          "translations": [
+            "and",
+            "then",
+            "also"
+          ]
+        },
+        {
+          "unitId": "text_9_p5_unit_1754953951709_merged",
+          "unitTarget": "lui répondre",
+          "translations": [
+            "reply to them",
+            "answer them",
+            "respond to them",
+            "give them an answer"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p1",
+      "phraseTarget": "Dans la vie, nous cherchons toujours",
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p1_unit_0",
+          "unitTarget": "Dans",
+          "translations": [
+            "in",
+            "throughout",
+            "during",
+            "within"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_1",
+          "unitTarget": "la vie",
+          "translations": [
+            "life",
+            "lifetime",
+            "living",
+            "existence"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_2",
+          "unitTarget": "nous cherchons",
+          "translations": [
+            "we search",
+            "we look for",
+            "we seek",
+            "we are looking for"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_3",
+          "unitTarget": "toujours",
+          "translations": [
+            "always",
+            "constantly",
+            "forever",
+            "still"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p2",
+      "phraseTarget": "Un chemin qui nous guide si bien,",
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p2_unit_0",
+          "unitTarget": "Un chemin",
+          "translations": [
+            "a path",
+            "a way",
+            "a road",
+            "a journey"
+          ]
+        },
+        {
+          "unitId": "text_10_p2_unit_1",
+          "unitTarget": "qui",
+          "translations": [
+            "that",
+            "which",
+            "who",
+            "that which"
+          ]
+        },
+        {
+          "unitId": "text_10_p2_unit_2",
+          "unitTarget": "nous guide",
+          "translations": [
+            "guides us",
+            "leads us",
+            "directs us",
+            "shows us the way"
+          ]
+        },
+        {
+          "unitId": "text_10_p2_unit_3",
+          "unitTarget": "si bien",
+          "translations": [
+            "so well",
+            "so perfectly",
+            "so nicely",
+            "so effectively"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p3",
+      "phraseTarget": "Et la vie continue son chemin",
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p3_unit_0",
+          "unitTarget": "Et",
+          "translations": [
+            "and",
+            "then",
+            "also",
+            "moreover"
+          ]
+        },
+        {
+          "unitId": "text_10_p3_unit_1",
+          "unitTarget": "la vie",
+          "translations": [
+            "life",
+            "existence",
+            "living",
+            "lifetime"
+          ]
+        },
+        {
+          "unitId": "text_10_p3_unit_2",
+          "unitTarget": "continue",
+          "translations": [
+            "goes on",
+            "continues",
+            "keeps going",
+            "carries on"
+          ]
+        },
+        {
+          "unitId": "text_10_p3_unit_3",
+          "unitTarget": "son chemin",
+          "translations": [
+            "its way",
+            "its path",
+            "its course",
+            "its journey"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_11_p1",
+      "phraseTarget": "Ça arrive comme ça parfois, c'est la vie.",
+      "semanticUnits": [
+        {
+          "unitId": "text_11_p1_unit_0",
+          "unitTarget": "Ça",
+          "translations": [
+            "it",
+            "that",
+            "this",
+            "things"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_1",
+          "unitTarget": "arrive",
+          "translations": [
+            "happens",
+            "occurs",
+            "comes about",
+            "takes place"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_2",
+          "unitTarget": "comme ça",
+          "translations": [
+            "like that",
+            "this way",
+            "just so",
+            "just because"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_3",
+          "unitTarget": "parfois",
+          "translations": [
+            "sometimes",
+            "at times",
+            "occasionally",
+            "now and then"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_1754953966945_merged",
+          "unitTarget": "c'est la vie",
+          "translations": [
+            "that's life",
+            "such is life",
+            "that's how it goes",
+            "life goes on"
+          ]
+        }
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "phraseId": "text_1_p1",
+      "primaryTranslation": "Is this your first dance class?",
+      "alternatives": [
+        "Is it your first dance lesson?",
+        "Are you new to dance class?"
+      ],
+      "distractors": [
+        "Is this your dance class?",
+        "Was this your last dance class?",
+        "Is this your first cooking class?"
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "primaryTranslation": "Yes, I'm a bit tired of being alone.",
+      "alternatives": [
+        "Yes, I'm getting tired of being by myself.",
+        "Yes, I'm somewhat fed up with being alone."
+      ],
+      "distractors": [
+        "Yes, I'm a bit happy being alone.",
+        "Yes, I'm a bit tired of being busy.",
+        "Yes, I'm tired of being alone."
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "primaryTranslation": "Join our circle dance!",
+      "alternatives": [
+        "Come join our dance circle!",
+        "Come dance with us in the circle!"
+      ],
+      "distractors": [
+        "Watch our circle dance!",
+        "Join our square dance!",
+        "Join our dance!"
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "primaryTranslation": "I'd like to dance a few steps with you.",
+      "alternatives": [
+        "I would love to dance with you.",
+        "I'd like to share a few dance moves with you."
+      ],
+      "distractors": [
+        "I'd like to dance many steps with you.",
+        "I'd like to dance a few steps alone.",
+        "I'd like to dance with you."
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "primaryTranslation": "Today, I want to write about what has changed.",
+      "alternatives": [
+        "I want to write about the changes today.",
+        "Today, I'll write about what's different."
+      ],
+      "distractors": [
+        "Today, I want to write about what needs to change.",
+        "Today, I want to write about what will change.",
+        "Today, I want to write about the changes."
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "primaryTranslation": "I was moved to a different office today.",
+      "alternatives": [
+        "They moved my office today.",
+        "I had to change offices today."
+      ],
+      "distractors": [
+        "I was moved in the office today.",
+        "I will be moved to a different office today.",
+        "I was moved to an office."
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "primaryTranslation": "Let me know if you want to come see.",
+      "alternatives": [
+        "Tell me if you'd like to come take a look.",
+        "Tell me if you want to come check it out."
+      ],
+      "distractors": [
+        "Let me know you want to come see.",
+        "Don't let me know if you ever want to come see.",
+        "Let me know if you wanted to come "
+      ]
+    },
+    {
+      "phraseId": "text_2_p4",
+      "primaryTranslation": "I'm going to try to understand these changes.",
+      "alternatives": [
+        "I'll try to make sense of these changes.",
+        "I'm going to attempt to understand these changes."
+      ],
+      "distractors": [
+        "I'm going to understand these changes.",
+        "I tried to understand these changes.",
+        "I'm going to try to forget these changes."
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "primaryTranslation": "The world revolves around the sun,",
+      "alternatives": [
+        "The Earth orbits the sun,",
+        "The world turns around the sun,"
+      ],
+      "distractors": [
+        "The sun revolves around the world,",
+        "The world revolves towards the sun,",
+        "The worlds revolve all around the sun"
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "primaryTranslation": "My spine bears the weight of my sorrows,",
+      "alternatives": [
+        "My vertebrae carry the burden of my pain,",
+        "My back carries the weight of my troubles,"
+      ],
+      "distractors": [
+        "My spine bears my sorrows,",
+        "My spine carries the weight of my happiness,",
+        "My spine will bear the weight of my sorrows,"
+      ]
+    },
+    {
+      "phraseId": "text_3_p3",
+      "primaryTranslation": "Hidden in the shadow of the feminine gender",
+      "alternatives": [
+        "In the feminine shadow lies",
+        "Concealed within femininity's shadow"
+      ],
+      "distractors": [
+        "Hidden in shadow of feminine",
+        "Visible in the shadow of the feminine gender",
+        "Hidden in the light of the feminine gender"
+      ]
+    },
+    {
+      "phraseId": "text_3_p4",
+      "primaryTranslation": "All my desires for pure existence.",
+      "alternatives": [
+        "Every longing for pure being.",
+        "All my yearnings for authentic life."
+      ],
+      "distractors": [
+        "Some of my desires for pure existence.",
+        "All my desires for existence.",
+        "All my hatred for pure existence."
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "primaryTranslation": "I can't wait any longer.",
+      "alternatives": [
+        "I can't take it anymore.",
+        "I'm unable to wait."
+      ],
+      "distractors": [
+        "I must wait longer.",
+        "I can wait any longer.",
+        "I couldn't wait yesterday."
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "primaryTranslation": "Actually, it's already cutting it close.",
+      "alternatives": [
+        "In fact, we're already running short on time.",
+        "Really, it's already quite tight."
+      ],
+      "distractors": [
+        "Actually, it's never cutting it close.",
+        "It's already cutting it close.",
+        "Actually, it will be cutting it close."
+      ]
+    },
+    {
+      "phraseId": "text_4_p3",
+      "primaryTranslation": "Not today, but maybe tomorrow morning.",
+      "alternatives": [
+        "Not now, perhaps tomorrow morning.",
+        "Not for today, but possibly tomorrow morning."
+      ],
+      "distractors": [
+        "Today, but maybe tomorrow morning.",
+        "Not today, but definitely tomorrow morning.",
+        "Not today, but maybe yesterday morning."
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "primaryTranslation": "Hi! How's your project going?",
+      "alternatives": [
+        "Hey! Is everything going well with your project?",
+        "Hello! How's the project coming along?"
+      ],
+      "distractors": [
+        "Hi! Your project is finished?",
+        "Hi! Why did your project fail?",
+        "Hi! Are you starting project?"
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "primaryTranslation": "It's good to finally see you again.",
+      "alternatives": [
+        "Great to see you at last.",
+        "It's nice to see you after so long."
+      ],
+      "distractors": [
+        "It's bad to finally see you again.",
+        "It's good to never see you again.",
+        "It's good finally you."
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "primaryTranslation": "I believe we can make things change.",
+      "alternatives": [
+        "I think we can make a difference.",
+        "I believe we can create change."
+      ],
+      "distractors": [
+        "I believe things will never change.",
+        "I believe we must prevent change.",
+        "I believe make things."
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "primaryTranslation": "But should we doubt when everything falls apart?",
+      "alternatives": [
+        "Should we lose faith when everything crumbles?",
+        "But must we question everything when it all comes down?"
+      ],
+      "distractors": [
+        "But we must believe when everything falls apart?",
+        "But should we celebrate when everything falls apart?",
+        "But should we doubt when everything succeeds?"
+      ]
+    },
+    {
+      "phraseId": "text_6_p3",
+      "primaryTranslation": "I prefer to illuminate rather than plot in the shadows.",
+      "alternatives": [
+        "I'd rather bring light than scheme in darkness.",
+        "Better to enlighten than conspire in shadow."
+      ],
+      "distractors": [
+        "I prefer to hide rather than illuminate truth.",
+        "I prefer to illuminate and plot in shadows.",
+        "I prefer illuminate shadows."
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "primaryTranslation": "I see how everything wears down and heats up.",
+      "alternatives": [
+        "I watch as everything deteriorates and warms",
+        "I observe how all things wear out and warm up"
+      ],
+      "distractors": [
+        "I see how everything wears down and cools down.",
+        "I see everything wears down and heats up.",
+        "I will see how everything wore down and heated up."
+      ]
+    },
+    {
+      "phraseId": "text_7_p2",
+      "primaryTranslation": "And fish swim where everything has sunk.",
+      "alternatives": [
+        "And fish swim through the sunken remains",
+        "And fish swim where all has gone under"
+      ],
+      "distractors": [
+        "And fish swim where nothing has sunk.",
+        "And fish swim where everything floats.",
+        "And fish where everything has sunk."
+      ]
+    },
+    {
+      "phraseId": "text_7_p3",
+      "primaryTranslation": "Now I know that nothing lasts.",
+      "alternatives": [
+        "Now I understand nothing is permanent",
+        "Now I realize everything is temporary"
+      ],
+      "distractors": [
+        "Now I know that everything lasts.",
+        "I know that nothing lasts.",
+        "Now I knew that nothing lasted."
+      ]
+    },
+    {
+      "phraseId": "text_8_p1",
+      "primaryTranslation": "On the beaches of that time, some people searched",
+      "alternatives": [
+        "Back then on the beaches, people were looking",
+        "On those bygone beaches, some sought"
+      ],
+      "distractors": [
+        "In the beaches of that time, some people searched",
+        "On the beaches of that time, all people searched",
+        "On the beaches, some people searched"
+      ]
+    },
+    {
+      "phraseId": "text_8_p2",
+      "primaryTranslation": "For beauty in a simple necklace,",
+      "alternatives": [
+        "Beauty in a mere necklace",
+        "For beauty within a plain necklace"
+      ],
+      "distractors": [
+        "For beauty in a complex necklace,",
+        "Beauty in a simple necklace,",
+        "For beauty with a simple necklace,"
+      ]
+    },
+    {
+      "phraseId": "text_8_p3",
+      "primaryTranslation": "While fleas danced in the sunlight.",
+      "alternatives": [
+        "As fleas danced in the sun",
+        "While fleas frolicked in the sunshine"
+      ],
+      "distractors": [
+        "While birds danced in the sunlight.",
+        "While fleas slept in the sunlight.",
+        "While fleas danced in darkness."
+      ]
+    },
+    {
+      "phraseId": "text_9_p1",
+      "primaryTranslation": "He told me I'm like a sister to him",
+      "alternatives": [
+        "He said he thinks of me as a sister",
+        "He told me he sees me as a sister"
+      ],
+      "distractors": [
+        "He told me I'm like a brother to him.",
+        "She told me I'm like a sister to him.",
+        "He told me I'm nothing like a sister to him."
+      ]
+    },
+    {
+      "phraseId": "text_9_p2",
+      "primaryTranslation": "but we know that's not true.",
+      "alternatives": [
+        "but everyone knows that isn't true",
+        "but that's obviously not true"
+      ],
+      "distractors": [
+        "but we know that's very true.",
+        "but they know that's not true.",
+        "but we think that's not true."
+      ]
+    },
+    {
+      "phraseId": "text_9_p4",
+      "primaryTranslation": "He suggested we meet tomorrow",
+      "alternatives": [
+        "He proposed we see each other tomorrow",
+        "He asked to see me tomorrow"
+      ],
+      "distractors": [
+        "He suggested we met yesterday.",
+        "She suggested we meet tomorrow.",
+        "He refused to meet tomorrow."
+      ]
+    },
+    {
+      "phraseId": "text_9_p5",
+      "primaryTranslation": "I'll think about it and get back to him.",
+      "alternatives": [
+        "I'm going to think it over and respond",
+        "I'll consider it and give him an answer"
+      ],
+      "distractors": [
+        "I won't think about it at all.",
+        "I'll think about it and ignore him.",
+        "I'll think about it."
+      ]
+    },
+    {
+      "phraseId": "text_10_p1",
+      "primaryTranslation": "In life, we're always searching",
+      "alternatives": [
+        "Throughout life, we constantly seek",
+        "In life, we never stop looking"
+      ],
+      "distractors": [
+        "In life, we're never searching",
+        "In life, searching",
+        "In life, we searched yesterday"
+      ]
+    },
+    {
+      "phraseId": "text_10_p2",
+      "primaryTranslation": "A path that guides us so well",
+      "alternatives": [
+        "A way that leads us true",
+        "A path that shows us the way so perfectly"
+      ],
+      "distractors": [
+        "A path that confuses us so well",
+        "A path guides well",
+        "A path that guided us badly"
+      ]
+    },
+    {
+      "phraseId": "text_10_p3",
+      "primaryTranslation": "And life goes on its way",
+      "alternatives": [
+        "And life continues its journey",
+        "And life keeps moving forward"
+      ],
+      "distractors": [
+        "And life stops its way",
+        "Life goes way",
+        "And life went on their way"
+      ]
+    },
+    {
+      "phraseId": "text_11_p1",
+      "primaryTranslation": "These things happen sometimes, that's life.",
+      "alternatives": [
+        "That's just how it goes sometimes, such is life",
+        "It happens like that sometimes, that's the way life is"
+      ],
+      "distractors": [
+        "These things never happen, that's life.",
+        "Things happen, life.",
+        "These things happened yesterday, that's death."
+      ]
+    }
+  ],
+  "unitsChallenge": [
+    {
+      "unitId": "text_1_p1_unit_0",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "C'est",
+      "primaryTranslation": "This is",
+      "alternatives": [
+        "Is it",
+        "It's"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_1",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "premier",
+      "primaryTranslation": "first",
+      "alternatives": [
+        "your first lesson",
+        "your first course",
+        "your initial lesson"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_1",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "je suis",
+      "primaryTranslation": "I am",
+      "alternatives": [
+        "I'm",
+        "I feel",
+        "I have become"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_2",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "un peu",
+      "primaryTranslation": "a bit",
+      "alternatives": [
+        "a little",
+        "somewhat",
+        "slightly"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_3",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "lassé",
+      "primaryTranslation": "tired",
+      "alternatives": [
+        "weary",
+        "fed up",
+        "worn out"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_4",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "d'être",
+      "primaryTranslation": "of being",
+      "alternatives": [
+        "to be",
+        "from being",
+        "with being"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_5",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "seul",
+      "primaryTranslation": "alone",
+      "alternatives": [
+        "lonely",
+        "by myself",
+        "on my own"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_0",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "viens",
+      "primaryTranslation": "come",
+      "alternatives": [
+        "Join",
+        "Come along",
+        "Come on"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "into",
+        "join",
+        "as part of"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1754953759875_1",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "notre danse",
+      "primaryTranslation": "our dance",
+      "alternatives": [
+        "our dancing",
+        "our dance group",
+        "our dancers"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1754953759875_2",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "ronde",
+      "primaryTranslation": "circle",
+      "alternatives": [
+        "round dance",
+        "circular",
+        "ring dance"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_0",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "J'aimerais",
+      "primaryTranslation": "I would like",
+      "alternatives": [
+        "I'd love",
+        "I wish",
+        "I'd like"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "faire",
+      "primaryTranslation": "to take",
+      "alternatives": [
+        "to do",
+        "to make",
+        "to perform"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_2",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "quelques pas",
+      "primaryTranslation": "a few steps",
+      "alternatives": [
+        "some steps",
+        "a few dance moves",
+        "several steps"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1754953768077_merged",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "avec vous",
+      "primaryTranslation": "with you",
+      "alternatives": [
+        "together with you",
+        "alongside you",
+        "in your company"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_0",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "Aujourd'hui",
+      "primaryTranslation": "Today",
+      "alternatives": [
+        "On this day",
+        "Now",
+        "At present"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_1",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "je veux",
+      "primaryTranslation": "I want",
+      "alternatives": [
+        "I wish to",
+        "I intend to",
+        "I will"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1754953799160_2",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "déplacé",
+      "primaryTranslation": "moved",
+      "alternatives": [
+        "relocated",
+        "transferred",
+        "shifted"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1754953802325_merged",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "bureau",
+      "primaryTranslation": "office",
+      "alternatives": [
+        "desks",
+        "workspaces",
+        "to a different office"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_0",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "Dites-moi",
+      "primaryTranslation": "tell me",
+      "alternatives": [
+        "let me know",
+        "inform me",
+        "say to me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_1",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "si",
+      "primaryTranslation": "if",
+      "alternatives": [
+        "whether",
+        "in case",
+        "should"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_2",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "vous voulez",
+      "primaryTranslation": "you want to",
+      "alternatives": [
+        "you would like to",
+        "you wish to",
+        "you'd like to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_3",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "venir voir",
+      "primaryTranslation": "come see",
+      "alternatives": [
+        "come and look",
+        "come check",
+        "come take a look"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_1754953835494_merged",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "Je vais essayer",
+      "primaryTranslation": "I am going to try",
+      "alternatives": [
+        "I will try",
+        "I'm going to attempt",
+        "I shall try"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_1754953842508_merged",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "de comprendre",
+      "primaryTranslation": "to understand",
+      "alternatives": [
+        "to comprehend",
+        "to grasp",
+        "to make sense of"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_4",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "ces changements",
+      "primaryTranslation": "these changes",
+      "alternatives": [
+        "these transformations",
+        "these modifications",
+        "these shifts"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_0",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "Le monde",
+      "primaryTranslation": "The world",
+      "alternatives": [
+        "The Earth",
+        "The globe",
+        "The planet"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_1",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "tourne",
+      "primaryTranslation": "revolves",
+      "alternatives": [
+        "turns",
+        "rotates",
+        "orbits"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_2",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "autour",
+      "primaryTranslation": "around",
+      "alternatives": [
+        "about",
+        "round",
+        "surrounding"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_3",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "du soleil",
+      "primaryTranslation": "the sun",
+      "alternatives": [
+        "of the sun",
+        "the solar body",
+        "our star"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_1",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "portent",
+      "primaryTranslation": "carry",
+      "alternatives": [
+        "bear",
+        "support",
+        "hold"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_2",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "le poids",
+      "primaryTranslation": "the weight",
+      "alternatives": [
+        "the burden",
+        "the load",
+        "the heaviness"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_3",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "de",
+      "primaryTranslation": "of",
+      "alternatives": [
+        "from",
+        "with",
+        "by"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_4",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "mes peines",
+      "primaryTranslation": "my sorrows",
+      "alternatives": [
+        "my pains",
+        "my troubles",
+        "my sufferings"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_0",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "Dans",
+      "primaryTranslation": "In",
+      "alternatives": [
+        "Within",
+        "Inside",
+        "Among"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_1",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "l'ombre",
+      "primaryTranslation": "the shadow",
+      "alternatives": [
+        "the shade",
+        "the darkness",
+        "the obscurity"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_2",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "du",
+      "primaryTranslation": "of the",
+      "alternatives": [
+        "from the",
+        "belonging to the",
+        "pertaining to the"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_3",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "le genre féminin",
+      "primaryTranslation": "the feminine gender",
+      "alternatives": [
+        "femininity",
+        "womanhood",
+        "the female essence"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p3_unit_4",
+      "sourcePhrase": "text_3_p3",
+      "challengeText": "se cachent",
+      "primaryTranslation": "hide themselves",
+      "alternatives": [
+        "are hidden",
+        "conceal themselves",
+        "lurk"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p4_unit_0",
+      "sourcePhrase": "text_3_p4",
+      "challengeText": "Toutes mes envies",
+      "primaryTranslation": "All my desires",
+      "alternatives": [
+        "All my longings",
+        "All my yearnings",
+        "All my wants"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p4_unit_2",
+      "sourcePhrase": "text_3_p4",
+      "challengeText": "existence pure",
+      "primaryTranslation": "pure existence",
+      "alternatives": [
+        "pure being",
+        "untainted existence",
+        "pristine life"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_0",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "Je",
+      "primaryTranslation": "I",
+      "alternatives": [
+        "I myself",
+        "me",
+        "as for me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "ne peux plus",
+      "primaryTranslation": "can't anymore",
+      "alternatives": [
+        "can no longer",
+        "am unable to anymore",
+        "cannot any longer"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_2",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "attendre",
+      "primaryTranslation": "wait",
+      "alternatives": [
+        "to wait",
+        "hold on",
+        "expect"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_0",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "En fait",
+      "primaryTranslation": "Actually",
+      "alternatives": [
+        "In fact",
+        "As a matter of fact",
+        "Indeed"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_1",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "c'est",
+      "primaryTranslation": "it's",
+      "alternatives": [
+        "it is",
+        "that's",
+        "this is"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_2",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "déjà",
+      "primaryTranslation": "already",
+      "alternatives": [
+        "yet",
+        "as it is",
+        "even now"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_3",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "un peu juste",
+      "primaryTranslation": "a bit tight",
+      "alternatives": [
+        "cutting it close",
+        "barely enough",
+        "rather close"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_0",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "Pas",
+      "primaryTranslation": "Not",
+      "alternatives": [
+        "Not today",
+        "No",
+        "Not now"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_1",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "aujourd'hui",
+      "primaryTranslation": "today",
+      "alternatives": [
+        "this day",
+        "nowadays",
+        "at present"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_2",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "mais",
+      "primaryTranslation": "but",
+      "alternatives": [
+        "however",
+        "yet",
+        "though"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_3",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "peut-être",
+      "primaryTranslation": "maybe",
+      "alternatives": [
+        "perhaps",
+        "possibly",
+        "it might be"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_4",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "demain matin",
+      "primaryTranslation": "tomorrow morning",
+      "alternatives": [
+        "in the morning tomorrow",
+        "next morning",
+        "tomorrow a.m."
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_0",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "Salut",
+      "primaryTranslation": "Hi",
+      "alternatives": [
+        "Hey",
+        "Hello",
+        "Hi there"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_1",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "Tout va bien",
+      "primaryTranslation": "everything's going well",
+      "alternatives": [
+        "all is good",
+        "everything's fine",
+        "all good"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_2",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "avec",
+      "primaryTranslation": "with",
+      "alternatives": [
+        "regarding",
+        "concerning",
+        "about"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_3",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "ton projet",
+      "primaryTranslation": "your project",
+      "alternatives": [
+        "your work",
+        "your plan",
+        "your assignment"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_0",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "C'est",
+      "primaryTranslation": "it's",
+      "alternatives": [
+        "it is",
+        "that's",
+        "that is"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_1",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "bon",
+      "primaryTranslation": "good",
+      "alternatives": [
+        "nice",
+        "pleasant",
+        "great"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_2",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "de",
+      "primaryTranslation": "to",
+      "alternatives": [
+        "of",
+        "about",
+        "for"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_3",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "te revoir",
+      "primaryTranslation": "to see you again",
+      "alternatives": [
+        "to meet you again",
+        "to reunite with you",
+        "to see you once more"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_4",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "enfin",
+      "primaryTranslation": "at last",
+      "alternatives": [
+        "finally",
+        "at long last",
+        "eventually"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_0",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "Je crois",
+      "primaryTranslation": "I believe",
+      "alternatives": [
+        "I think",
+        "I suppose",
+        "I reckon"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_1",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "qu'on peut",
+      "primaryTranslation": "that we can",
+      "alternatives": [
+        "that one can",
+        "that you can",
+        "that it's possible to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_2",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "faire changer",
+      "primaryTranslation": "make change",
+      "alternatives": [
+        "bring about change",
+        "cause to change",
+        "transform"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_3",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "les choses",
+      "primaryTranslation": "things",
+      "alternatives": [
+        "matters",
+        "situations",
+        "circumstances"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_1",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "est-ce qu'il faut",
+      "primaryTranslation": "should we",
+      "alternatives": [
+        "must we",
+        "is it necessary to",
+        "do we have to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_2",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "douter",
+      "primaryTranslation": "doubt",
+      "alternatives": [
+        "have doubts",
+        "be uncertain",
+        "question"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_3",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "quand",
+      "primaryTranslation": "when",
+      "alternatives": [
+        "while",
+        "as",
+        "whenever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_4",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "tout tombe",
+      "primaryTranslation": "everything falls apart",
+      "alternatives": [
+        "all collapses",
+        "everything crumbles",
+        "it all falls down"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_0",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "Je préfère",
+      "primaryTranslation": "I prefer",
+      "alternatives": [
+        "I would rather",
+        "I'd rather",
+        "I favor"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_1",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "éclairer",
+      "primaryTranslation": "to enlighten",
+      "alternatives": [
+        "to illuminate",
+        "to shed light",
+        "to brighten"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_3",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "comploter",
+      "primaryTranslation": "to plot",
+      "alternatives": [
+        "to scheme",
+        "to conspire",
+        "to connive"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p3_unit_5",
+      "sourcePhrase": "text_6_p3",
+      "challengeText": "l'ombre",
+      "primaryTranslation": "the shadows",
+      "alternatives": [
+        "the darkness",
+        "the shade",
+        "obscurity"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_1754953891095_merged",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "Je vois",
+      "primaryTranslation": "I see",
+      "alternatives": [
+        "I notice",
+        "I observe",
+        "I can see"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_2",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "comme",
+      "primaryTranslation": "how",
+      "alternatives": [
+        "the way",
+        "like",
+        "as"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_3",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "tout",
+      "primaryTranslation": "everything",
+      "alternatives": [
+        "all",
+        "all things",
+        "it all"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_4",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "s'use",
+      "primaryTranslation": "wears out",
+      "alternatives": [
+        "deteriorates",
+        "becomes worn",
+        "erodes"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_5",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "et",
+      "primaryTranslation": "and",
+      "alternatives": [
+        "also",
+        "as well",
+        "plus"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_6",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "se réchauffe",
+      "primaryTranslation": "warms up",
+      "alternatives": [
+        "gets warmer",
+        "heats up",
+        "becomes warm"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_1",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "les poissons",
+      "primaryTranslation": "the fish",
+      "alternatives": [
+        "the fishes",
+        "the school of fish"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_2",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "nagent",
+      "primaryTranslation": "swim",
+      "alternatives": [
+        "are swimming",
+        "paddle",
+        "move through water"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_3",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "où",
+      "primaryTranslation": "where",
+      "alternatives": [
+        "in which",
+        "wherever",
+        "in the place where"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_4",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "tout",
+      "primaryTranslation": "everything",
+      "alternatives": [
+        "all",
+        "the whole",
+        "it all"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_5",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "a coulé",
+      "primaryTranslation": "has sunk",
+      "alternatives": [
+        "went down",
+        "has submerged",
+        "has gone under"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p3_unit_0",
+      "sourcePhrase": "text_7_p3",
+      "challengeText": "Maintenant",
+      "primaryTranslation": "Now",
+      "alternatives": [
+        "At present",
+        "Currently",
+        "At this point"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p3_unit_1754953903711_merged",
+      "sourcePhrase": "text_7_p3",
+      "challengeText": "je sais",
+      "primaryTranslation": "I know",
+      "alternatives": [
+        "I understand",
+        "I realize",
+        "I am aware"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p3_unit_3",
+      "sourcePhrase": "text_7_p3",
+      "challengeText": "que",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "which",
+        "what",
+        "how"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p3_unit_4",
+      "sourcePhrase": "text_7_p3",
+      "challengeText": "rien",
+      "primaryTranslation": "nothing",
+      "alternatives": [
+        "none",
+        "not anything",
+        "none of it"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p3_unit_5",
+      "sourcePhrase": "text_7_p3",
+      "challengeText": "ne dure",
+      "primaryTranslation": "lasts",
+      "alternatives": [
+        "endures",
+        "persists",
+        "remains"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_0",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "Sur",
+      "primaryTranslation": "On",
+      "alternatives": [
+        "Upon",
+        "At",
+        "Along"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_1",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "les plages",
+      "primaryTranslation": "the beaches",
+      "alternatives": [
+        "the shores",
+        "the seaside",
+        "the coastline"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_2",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "de",
+      "primaryTranslation": "of",
+      "alternatives": [
+        "from",
+        "during",
+        "in"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_3",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "l'époque",
+      "primaryTranslation": "the time",
+      "alternatives": [
+        "the era",
+        "the period",
+        "that time"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p2_unit_0",
+      "sourcePhrase": "text_8_p2",
+      "challengeText": "La beauté",
+      "primaryTranslation": "beauty",
+      "alternatives": [
+        "the beauty",
+        "loveliness",
+        "the beautiful"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p2_unit_2",
+      "sourcePhrase": "text_8_p2",
+      "challengeText": "un simple collier",
+      "primaryTranslation": "a simple necklace",
+      "alternatives": [
+        "a plain necklace",
+        "a mere necklace",
+        "an ordinary necklace"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p3_unit_0",
+      "sourcePhrase": "text_8_p3",
+      "challengeText": "Pendant que",
+      "primaryTranslation": "while",
+      "alternatives": [
+        "as",
+        "during the time that",
+        "whilst"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p3_unit_1",
+      "sourcePhrase": "text_8_p3",
+      "challengeText": "les puces",
+      "primaryTranslation": "the fleas",
+      "alternatives": [
+        "the insects",
+        "the bugs",
+        "the mites"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p3_unit_2",
+      "sourcePhrase": "text_8_p3",
+      "challengeText": "dansaient",
+      "primaryTranslation": "were dancing",
+      "alternatives": [
+        "danced",
+        "would dance",
+        "were dancing about"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p3_unit_3",
+      "sourcePhrase": "text_8_p3",
+      "challengeText": "au",
+      "primaryTranslation": "in the",
+      "alternatives": [
+        "under the",
+        "at the",
+        "beneath the"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p3_unit_4",
+      "sourcePhrase": "text_8_p3",
+      "challengeText": "soleil",
+      "primaryTranslation": "sun",
+      "alternatives": [
+        "sunlight",
+        "sunshine",
+        "daylight"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p1_unit_1",
+      "sourcePhrase": "text_9_p1",
+      "challengeText": "il m'a dit",
+      "primaryTranslation": "he told me",
+      "alternatives": [
+        "said to me",
+        "has told me",
+        "informed me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p1_unit_5",
+      "sourcePhrase": "text_9_p1",
+      "challengeText": "comme",
+      "primaryTranslation": "like",
+      "alternatives": [
+        "as",
+        "similar to",
+        "just as"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p1_unit_6",
+      "sourcePhrase": "text_9_p1",
+      "challengeText": "une sœur",
+      "primaryTranslation": "a sister",
+      "alternatives": [
+        "a sibling",
+        "a sisterly figure",
+        "a sister-like person"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p2_unit_5",
+      "sourcePhrase": "text_9_p2",
+      "challengeText": "n'est pas",
+      "primaryTranslation": "is not",
+      "alternatives": [
+        "isn't",
+        "is not at all",
+        "cannot be"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p2_unit_6",
+      "sourcePhrase": "text_9_p2",
+      "challengeText": "vrai",
+      "primaryTranslation": "true",
+      "alternatives": [
+        "real",
+        "accurate",
+        "genuine"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p4_unit_5",
+      "sourcePhrase": "text_9_p4",
+      "challengeText": "demain",
+      "primaryTranslation": "tomorrow",
+      "alternatives": [
+        "the next day",
+        "the following day"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p5_unit_1754953946159_merged",
+      "sourcePhrase": "text_9_p5",
+      "challengeText": "je vais",
+      "primaryTranslation": "I'm going to",
+      "alternatives": [
+        "I will",
+        "I shall",
+        "I'm about to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_9_p5_unit_3",
+      "sourcePhrase": "text_9_p5",
+      "challengeText": "réfléchir",
+      "primaryTranslation": "think about",
+      "alternatives": [
+        "consider it",
+        "reflect on it",
+        "ponder it"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p1_unit_1",
+      "sourcePhrase": "text_10_p1",
+      "challengeText": "la vie",
+      "primaryTranslation": "life",
+      "alternatives": [
+        "lifetime",
+        "living",
+        "existence"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p1_unit_2",
+      "sourcePhrase": "text_10_p1",
+      "challengeText": "nous cherchons",
+      "primaryTranslation": "we search",
+      "alternatives": [
+        "we look for",
+        "we seek",
+        "we are looking for"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p1_unit_3",
+      "sourcePhrase": "text_10_p1",
+      "challengeText": "toujours",
+      "primaryTranslation": "always",
+      "alternatives": [
+        "constantly",
+        "forever",
+        "still"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p2_unit_0",
+      "sourcePhrase": "text_10_p2",
+      "challengeText": "Un chemin",
+      "primaryTranslation": "a path",
+      "alternatives": [
+        "a way",
+        "a road",
+        "a journey"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p2_unit_3",
+      "sourcePhrase": "text_10_p2",
+      "challengeText": "si bien",
+      "primaryTranslation": "so well",
+      "alternatives": [
+        "so perfectly",
+        "so nicely",
+        "so effectively"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p3_unit_1",
+      "sourcePhrase": "text_10_p3",
+      "challengeText": "la vie",
+      "primaryTranslation": "life",
+      "alternatives": [
+        "existence",
+        "living",
+        "lifetime"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p3_unit_2",
+      "sourcePhrase": "text_10_p3",
+      "challengeText": "continue",
+      "primaryTranslation": "goes on",
+      "alternatives": [
+        "continues",
+        "keeps going",
+        "carries on"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_10_p3_unit_3",
+      "sourcePhrase": "text_10_p3",
+      "challengeText": "son chemin",
+      "primaryTranslation": "its way",
+      "alternatives": [
+        "its path",
+        "its course",
+        "its journey"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_11_p1_unit_0",
+      "sourcePhrase": "text_11_p1",
+      "challengeText": "Ça",
+      "primaryTranslation": "it",
+      "alternatives": [
+        "that",
+        "this",
+        "things"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_11_p1_unit_1",
+      "sourcePhrase": "text_11_p1",
+      "challengeText": "arrive",
+      "primaryTranslation": "happens",
+      "alternatives": [
+        "occurs",
+        "comes about",
+        "takes place"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_11_p1_unit_2",
+      "sourcePhrase": "text_11_p1",
+      "challengeText": "comme ça",
+      "primaryTranslation": "like that",
+      "alternatives": [
+        "this way",
+        "just so",
+        "just because"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_11_p1_unit_3",
+      "sourcePhrase": "text_11_p1",
+      "challengeText": "parfois",
+      "primaryTranslation": "sometimes",
+      "alternatives": [
+        "at times",
+        "occasionally",
+        "now and then"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_11_p1_unit_1754953966945_merged",
+      "sourcePhrase": "text_11_p1",
+      "challengeText": "c'est la vie",
+      "primaryTranslation": "that's life",
+      "alternatives": [
+        "such is life",
+        "that's how it goes",
+        "life goes on"
+      ],
+      "difficulty": "beginner"
+    }
+  ]
+}

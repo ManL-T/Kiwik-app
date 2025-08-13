@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwik - Learn Languages Through Music</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2a3f3b;
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            padding: 1rem;
+            position: relative;
+            background-color: #000000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            transition: 0.3s;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #2a3f3b;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 1rem;
+        }
+
+        .nav-menu li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #3a4f4b;
+        }
+
+        .nav-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 1rem 0;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: right;
+        }
+
+        .target-language {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .target-language::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 2px;
+            background-color: #ffffff;
+        }
+
+        /* Song Cards */
+        .songs-section {
+            padding: 2rem 1rem 2rem;
+        }
+
+        .songs-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 1fr;
+        }
+
+        .song-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-card {
+            background-color: #b8d4d1;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
+        }
+
+        .song-info {
+            background-color: #ffffff;
+            color: #2a3f3b;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .song-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .song-artist {
+            font-size: 1rem;
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-menu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                background: none;
+            }
+
+            .nav-menu ul {
+                display: flex;
+                gap: 2rem;
+                padding: 0;
+            }
+
+            .nav-menu li {
+                border: none;
+                padding: 0;
+            }
+
+            main {
+                padding: 3rem 2rem;
+            }
+
+            .hero-text {
+                font-size: 1.5rem;
+                margin-bottom: 4rem;
+            }
+
+            .songs-section {
+                padding: 0 2rem 3rem;
+            }
+
+            .songs-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .song-card {
+                aspect-ratio: 16 / 9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">kiwik</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#language">native: English</a></li>
+                    <li><a href="#login">log in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-text">
+            Play against the vocabulary<br>
+            that will enable you to understand<br>
+            your favourite songs.
+        </div>
+    </main>
+
+    <section class="songs-section">
+        <div class="target-language">target: Français</div>
+        <div class="songs-grid">
+            <div class="song-item">
+                <div class="song-card" onclick="launchGame('la_fievre')"></div>
+                <div class="song-info">
+                    <div class="song-title">La fièvre</div>
+                    <div class="song-artist">Julien Doré</div>
+                </div>
+            </div>
+            <div class="song-item">
+                <div class="song-card" onclick="launchGame('la_symphonie_des_eclairs')"></div>
+                <div class="song-info">
+                    <div class="song-title">La symphonie des éclairs</div>
+                    <div class="song-artist">Zaho de Sagazan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        function launchGame(songId) {
+            // Store the selected song for the game
+            localStorage.setItem('selectedSong', songId);
+            // Navigate to the game
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

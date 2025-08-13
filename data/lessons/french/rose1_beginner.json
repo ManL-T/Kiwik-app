@@ -1,0 +1,2142 @@
+{
+  "projectMetadata": {
+    "title": "rosela",
+    "artist": "Edith Piaf",
+    "difficulty": "beginner"
+  },
+  "originalLyrics": "Des yeux qui font baisser les miens\nUn rire qui se perd sur sa bouche\nVoilà le portrait sans retouche\nDe l'homme auquel j'appartiens\n\nQuand il me prend dans ses bras\nQu'il me parle tout bas\nJe vois la vie en rose\nIl me dit des mots d'amour\nDes mots de tous les jours\nEt ça m'fait quelque chose",
+  "originalVocabulary": ["yeux","qui","font","baisser","miens","rire","se","perd","sur","sa","bouche","voilà","portrait","sans","retouche","l'homme","auquel","j'appartiens","quand","il","me","prend","dans","ses","bras","qu'il","parle","tout","bas","je","vois","vie","en","rose","dit","mots","d'amour","tous","jours","ça","m'fait","quelque","chose"],
+  "texts": [
+    {
+      "textId": "text_1",
+      "title": "Daily Observations",
+      "text": [
+        "Je vois comment il parle avec les autres,",
+        "Il dit qu'il prend son temps mais font attention,",
+        "Je baisser la voix quand j'appartiens à ce moment,",
+        "Il perd patience mais on comprend pourquoi."
+      ]
+    },
+    {
+      "textId": "text_2",
+      "title": "Portrait Description",
+      "text": [
+        "Dans sa vie, l'homme au portrait sourit,",
+        "Son rire illumine ses yeux brillants,",
+        "Les bras ouverts, sa bouche exprime la joie,",
+        "Une retouche légère parfait l'image."
+      ]
+    },
+    {
+      "textId": "text_3",
+      "title": "Simple Status",
+      "text": [
+        "Voilà, tout est bas maintenant."
+      ]
+    },
+    {
+      "textId": "text_4",
+      "title": "Quick Update",
+      "text": [
+        "Tous ont quelque chose à dire."
+      ]
+    },
+    {
+      "textId": "text_5",
+      "title": "Personal Effect",
+      "text": [
+        "Ça m'fait sourire chaque fois."
+      ]
+    },
+    {
+      "textId": "text_6",
+      "title": "Love Note",
+      "text": [
+        "Une rose et des mots d'amour,",
+        "C'est la chose qui marque mes jours."
+      ]
+    },
+    {
+      "textId": "text_7",
+      "title": "Reflection",
+      "text": [
+        "Il me regarde sur sa photo,",
+        "Quand les miens se posent sans qui comprendre,",
+        "Auquel moment se retrouver ainsi."
+      ]
+    },
+    {
+      "textId": "text_8",
+      "title": "Evening Thought",
+      "text": [
+        "Je suis dans ses pensées en ça,",
+        "Qu'il reste toujours présent."
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phraseId": "text_1_p1",
+      "originalFrench": "Je vois comment il parle avec les autres,",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p1_unit_1753992553643_merged",
+          "frenchText": "Je vois",
+          "translations": [
+            "I see",
+            "I notice",
+            "I observe",
+            "I can see"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_2",
+          "frenchText": "comment",
+          "translations": [
+            "how",
+            "the way",
+            "in what manner",
+            "how it is that"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_1753992557356_merged",
+          "frenchText": "il parle",
+          "translations": [
+            "he speaks",
+            "he talks",
+            "he is speaking",
+            "he's talking"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_5",
+          "frenchText": "avec",
+          "translations": [
+            "with",
+            "to",
+            "alongside",
+            "among"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_6",
+          "frenchText": "les autres",
+          "translations": [
+            "the others",
+            "other people",
+            "everyone else",
+            "other ones"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "originalFrench": "Il dit qu'il prend son temps mais font attention,",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p2_unit_1753992561424_merged",
+          "frenchText": "Il dit",
+          "translations": [
+            "He says",
+            "He tells",
+            "He's saying",
+            "He states"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_2",
+          "frenchText": "qu'il",
+          "translations": [
+            "that he",
+            "he",
+            "that",
+            "who"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_3",
+          "frenchText": "prend",
+          "translations": [
+            "takes",
+            "is taking",
+            "spends",
+            "uses"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_4",
+          "frenchText": "son temps",
+          "translations": [
+            "his time",
+            "his own time",
+            "his sweet time",
+            "time"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_5",
+          "frenchText": "mais",
+          "translations": [
+            "but",
+            "however",
+            "yet",
+            "though"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_6",
+          "frenchText": "font",
+          "translations": [
+            "pay",
+            "make",
+            "give",
+            "take"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_7",
+          "frenchText": "attention",
+          "translations": [
+            "attention",
+            "care",
+            "caution",
+            "notice"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "originalFrench": "Je baisser la voix quand j'appartiens à ce moment,",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p3_unit_0",
+          "frenchText": "Je",
+          "translations": [
+            "I",
+            "me",
+            "myself"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_1",
+          "frenchText": "baisser",
+          "translations": [
+            "lower",
+            "reduce",
+            "drop",
+            "turn down"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_2",
+          "frenchText": "la voix",
+          "translations": [
+            "the voice",
+            "the tone",
+            "the volume",
+            "one's voice"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_3",
+          "frenchText": "quand",
+          "translations": [
+            "when",
+            "whenever",
+            "at the time",
+            "as"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_4",
+          "frenchText": "j'appartiens",
+          "translations": [
+            "I belong",
+            "I am part of",
+            "I pertain to",
+            "I am connected to"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_5",
+          "frenchText": "à",
+          "translations": [
+            "to",
+            "at",
+            "in",
+            "within"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_6",
+          "frenchText": "ce moment",
+          "translations": [
+            "this moment",
+            "that time",
+            "this time",
+            "this instant"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "originalFrench": "Il perd patience mais on comprend pourquoi.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p4_unit_1753992578554_merged",
+          "frenchText": "Il perd",
+          "translations": [
+            "he loses",
+            "he's losing",
+            "he runs out of",
+            "he wastes"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_2",
+          "frenchText": "patience",
+          "translations": [
+            "patience",
+            "composure",
+            "forbearance",
+            "self-control"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_3",
+          "frenchText": "mais",
+          "translations": [
+            "but",
+            "however",
+            "yet",
+            "though"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_1753992580817_merged",
+          "frenchText": "on comprend",
+          "translations": [
+            "we understand",
+            "one understands",
+            "it's understandable",
+            "people understand"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_6",
+          "frenchText": "pourquoi",
+          "translations": [
+            "why",
+            "for what reason",
+            "how come",
+            "the reason"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "originalFrench": "Dans sa vie, l'homme au portrait sourit,",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p1_unit_0",
+          "frenchText": "Dans",
+          "translations": [
+            "in",
+            "during",
+            "within",
+            "throughout"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_1",
+          "frenchText": "sa vie",
+          "translations": [
+            "his life",
+            "his lifetime",
+            "his existence",
+            "his living years"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_2",
+          "frenchText": "l'homme",
+          "translations": [
+            "the man",
+            "the gentleman",
+            "the fellow",
+            "the person"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_3",
+          "frenchText": "au",
+          "translations": [
+            "in the",
+            "at the",
+            "of the",
+            "within the"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_4",
+          "frenchText": "portrait",
+          "translations": [
+            "portrait",
+            "picture",
+            "painting",
+            "likeness"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_5",
+          "frenchText": "sourit",
+          "translations": [
+            "smiles",
+            "is smiling",
+            "grins",
+            "beams"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "originalFrench": "Son rire illumine ses yeux brillants,",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p2_unit_0",
+          "frenchText": "Son rire",
+          "translations": [
+            "Her laugh",
+            "Her laughter",
+            "His laugh",
+            "His laughter"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_1",
+          "frenchText": "illumine",
+          "translations": [
+            "lights up",
+            "illuminates",
+            "brightens",
+            "makes radiant"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_1753992600473_1",
+          "frenchText": "ses yeux",
+          "translations": [
+            "her eyes",
+            "his eyes",
+            "their eyes",
+            "one's eyes"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_1753992600473_2",
+          "frenchText": "brillants",
+          "translations": [
+            "bright",
+            "shining",
+            "sparkling",
+            "brilliant"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "originalFrench": "Les bras ouverts, sa bouche exprime la joie,",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p3_unit_0",
+          "frenchText": "Les bras ouverts",
+          "translations": [
+            "Arms wide open",
+            "With open arms",
+            "Arms spread wide",
+            "Open-armed"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_1",
+          "frenchText": "sa bouche",
+          "translations": [
+            "her mouth",
+            "his mouth",
+            "their mouth",
+            "the mouth"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_2",
+          "frenchText": "exprime",
+          "translations": [
+            "expresses",
+            "shows",
+            "conveys",
+            "displays"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_3",
+          "frenchText": "la joie",
+          "translations": [
+            "joy",
+            "happiness",
+            "delight",
+            "gladness"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p4",
+      "originalFrench": "Une retouche légère parfait l'image.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p4_unit_0",
+          "frenchText": "Une retouche légère",
+          "translations": [
+            "A light touch-up",
+            "A subtle adjustment",
+            "A slight modification",
+            "A gentle retouching"
+          ]
+        },
+        {
+          "unitId": "text_2_p4_unit_1",
+          "frenchText": "parfait",
+          "translations": [
+            "perfects",
+            "completes",
+            "finishes",
+            "makes perfect"
+          ]
+        },
+        {
+          "unitId": "text_2_p4_unit_2",
+          "frenchText": "l'image",
+          "translations": [
+            "the image",
+            "the picture",
+            "the photograph",
+            "the appearance"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "originalFrench": "Voilà, tout est bas maintenant.",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p1_unit_0",
+          "frenchText": "Voilà",
+          "translations": [
+            "there",
+            "there you go",
+            "there we are",
+            "that's it"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_1",
+          "frenchText": "tout est",
+          "translations": [
+            "everything is",
+            "all is",
+            "it's all",
+            "the whole thing is"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_2",
+          "frenchText": "bas",
+          "translations": [
+            "down",
+            "low",
+            "lowered",
+            "at the bottom"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_3",
+          "frenchText": "maintenant",
+          "translations": [
+            "now",
+            "at present",
+            "at this moment",
+            "currently"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "originalFrench": "Tous ont quelque chose à dire.",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p1_unit_0",
+          "frenchText": "Tous",
+          "translations": [
+            "everyone",
+            "all",
+            "everybody",
+            "they all"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1",
+          "frenchText": "ont",
+          "translations": [
+            "have",
+            "has",
+            "possess",
+            "do have"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_2",
+          "frenchText": "quelque chose",
+          "translations": [
+            "something",
+            "some thing",
+            "anything",
+            "stuff"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1753992616441_merged",
+          "frenchText": "à dire",
+          "translations": [
+            "to say",
+            "to tell",
+            "to express",
+            "to speak about"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "originalFrench": "Ça m'fait sourire chaque fois.",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p1_unit_0",
+          "frenchText": "Ça",
+          "translations": [
+            "that",
+            "it",
+            "this",
+            "this thing"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_1",
+          "frenchText": "m'fait",
+          "translations": [
+            "makes me",
+            "causes me to",
+            "gets me to",
+            "has me"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_2",
+          "frenchText": "sourire",
+          "translations": [
+            "smile",
+            "grin",
+            "laugh",
+            "smiling"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_3",
+          "frenchText": "chaque fois",
+          "translations": [
+            "every time",
+            "each time",
+            "always",
+            "whenever"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "originalFrench": "Une rose et des mots d'amour,",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p1_unit_0",
+          "frenchText": "Une rose",
+          "translations": [
+            "a rose",
+            "one rose",
+            "a single rose",
+            "some rose"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_1",
+          "frenchText": "et",
+          "translations": [
+            "and",
+            "plus",
+            "along with",
+            "as well as"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_2",
+          "frenchText": "des mots",
+          "translations": [
+            "words",
+            "some words",
+            "expressions",
+            "phrases"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_1753992621223_merged",
+          "frenchText": "d' amour",
+          "translations": [
+            "of love",
+            "loving",
+            "romantic",
+            "love's"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "originalFrench": "C'est la chose qui marque mes jours.",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p2_unit_0",
+          "frenchText": "C'est",
+          "translations": [
+            "it's",
+            "that is",
+            "this is",
+            "it is"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_1",
+          "frenchText": "la chose",
+          "translations": [
+            "the thing",
+            "the matter",
+            "the object",
+            "what"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_2",
+          "frenchText": "qui",
+          "translations": [
+            "that",
+            "which",
+            "who",
+            "what"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_3",
+          "frenchText": "marque",
+          "translations": [
+            "marks",
+            "defines",
+            "characterizes",
+            "distinguishes"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_4",
+          "frenchText": "mes jours",
+          "translations": [
+            "my days",
+            "my daily life",
+            "my time",
+            "my existence"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "originalFrench": "Il me regarde sur sa photo,",
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p1_unit_0",
+          "frenchText": "Il",
+          "translations": [
+            "He",
+            "It",
+            "The man",
+            "The person"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_1",
+          "frenchText": "me regarde",
+          "translations": [
+            "looks at me",
+            "watches me",
+            "gazes at me",
+            "observes me"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_2",
+          "frenchText": "sur",
+          "translations": [
+            "in",
+            "on",
+            "from",
+            "within"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_3",
+          "frenchText": "sa photo",
+          "translations": [
+            "his photograph",
+            "his picture",
+            "his photo",
+            "the photograph of him"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p2",
+      "originalFrench": "Quand les miens se posent sans qui comprendre,",
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p2_unit_0",
+          "frenchText": "Quand",
+          "translations": [
+            "When",
+            "While",
+            "As",
+            "Whenever"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_1",
+          "frenchText": "les miens",
+          "translations": [
+            "mine",
+            "my eyes",
+            "my own",
+            "my gaze"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_2",
+          "frenchText": "se posent",
+          "translations": [
+            "rest",
+            "settle",
+            "fall",
+            "land"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_3",
+          "frenchText": "sans",
+          "translations": [
+            "without",
+            "lacking",
+            "devoid of",
+            "with no"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_4",
+          "frenchText": "qui",
+          "translations": [
+            "who",
+            "which",
+            "that",
+            "whom"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_5",
+          "frenchText": "comprendre",
+          "translations": [
+            "to understand",
+            "understanding",
+            "comprehend",
+            "grasp"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p3",
+      "originalFrench": "Auquel moment se retrouver ainsi.",
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p3_unit_0",
+          "frenchText": "Auquel moment",
+          "translations": [
+            "at which moment",
+            "at what time",
+            "when",
+            "at which point"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_1",
+          "frenchText": "se retrouver",
+          "translations": [
+            "to find oneself",
+            "to meet again",
+            "to end up",
+            "to recover"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_2",
+          "frenchText": "ainsi",
+          "translations": [
+            "like this",
+            "in this way",
+            "thus",
+            "so"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p1",
+      "originalFrench": "Je suis dans ses pensées en ça,",
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p1_unit_0",
+          "frenchText": "Je suis",
+          "translations": [
+            "I am",
+            "I'm",
+            "I exist",
+            "I remain"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_1",
+          "frenchText": "dans",
+          "translations": [
+            "in",
+            "within",
+            "inside",
+            "among"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_2",
+          "frenchText": "ses pensées",
+          "translations": [
+            "his/her thoughts",
+            "their thoughts",
+            "one's thoughts",
+            "the thoughts"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_3",
+          "frenchText": "en",
+          "translations": [
+            "in",
+            "about",
+            "regarding",
+            "concerning"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_4",
+          "frenchText": "ça",
+          "translations": [
+            "that",
+            "this",
+            "it",
+            "this matter"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p2",
+      "originalFrench": "Qu'il reste toujours présent.",
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p2_unit_0",
+          "frenchText": "Qu'il reste",
+          "translations": [
+            "may he remain",
+            "let him stay",
+            "that he remains",
+            "may he stay"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_1",
+          "frenchText": "toujours",
+          "translations": [
+            "always",
+            "forever",
+            "continuously",
+            "ever"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_2",
+          "frenchText": "présent",
+          "translations": [
+            "present",
+            "here",
+            "around",
+            "with us"
+          ]
+        }
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "phraseId": "text_1_p1",
+      "primaryTranslation": "I see how he talks to others",
+      "alternatives": [
+        "I notice how he speaks with others",
+        "I observe the way he talks to people"
+      ],
+      "distractors": [
+        "I observe the way they speak to them",
+        "I noticed how he shares with the others",
+        "I can see how he annoys everyone else"
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "primaryTranslation": "He says he's taking his time but be careful",
+      "alternatives": [
+        "He claims he's going slow but watch out",
+        "He says he's not rushing but pay attention"
+      ],
+      "distractors": [
+        "He says he's out of time but be cautious",
+        "He does say that it takes time but pay attention",
+        "He tells he takes his time however stay clear"
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "primaryTranslation": "I lower my voice when I'm part of this moment",
+      "alternatives": [
+        "I speak softly when I belong in this moment",
+        "I quiet down when I'm in this moment"
+      ],
+      "distractors": [
+        "I reduce the volume when present",
+        "I lower the tone whenever I am disconnected to the now",
+        "I lower the voice for belonging"
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "primaryTranslation": "He's losing patience but we understand why",
+      "alternatives": [
+        "He's getting impatient but it's understandable",
+        "He's running out of patience but we get it"
+      ],
+      "distractors": [
+        "He's fiery but we all know",
+        "He does lose his patience a lot",
+        "He is running out of patience yet we don't know why"
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "primaryTranslation": "In his life, the man in the portrait smiles",
+      "alternatives": [
+        "The man in the portrait has a smile on his face",
+        "Life shows in the smiling man's portrait"
+      ],
+      "distractors": [
+        "Out of this life, the gentleman of the picture is smiling",
+        "During his lifetime, the fellow in the painting beams",
+        "In the life, the man at portrait grins"
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "primaryTranslation": "His laughter lights up his bright eyes",
+      "alternatives": [
+        "His smile makes his bright eyes shine",
+        "His laughter brightens his sparkling eyes"
+      ],
+      "distractors": [
+        "His smile illuminates their shinning eyes",
+        "His mirth makes radiant the gleaming eyes",
+        "His laughing is brighter than his shining eyes"
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "primaryTranslation": "Arms wide open, his mouth expresses joy",
+      "alternatives": [
+        "With open arms, his face shows happiness",
+        "His open arms and smile radiate joy"
+      ],
+      "distractors": [
+        "The open arms, his lips cry happiness",
+        "With arms extended, his face displays the joy",
+        "Open armed, he is happy"
+      ]
+    },
+    {
+      "phraseId": "text_2_p4",
+      "primaryTranslation": "A light touch perfects the image",
+      "alternatives": [
+        "A subtle adjustment completes the picture",
+        "A gentle touch finishes the image"
+      ],
+      "distractors": [
+        "A subtle adjustment completes his appearance",
+        "One minor modification to finish the portrait",
+        "The subtle touch completes an image"
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "primaryTranslation": "There, everything is quiet now",
+      "alternatives": [
+        "Well, everything has calmed down now",
+        "There you have it, all is settled now"
+      ],
+      "distractors": [
+        "Here we are, all is low ",
+        "That's it, everything's at the bottom ",
+        "Here, everything has gone down "
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "primaryTranslation": "Everyone has something to say",
+      "alternatives": [
+        "They all have something to say",
+        "Each person has something to contribute"
+      ],
+      "distractors": [
+        "They all do have some their say",
+        "All but one have something to tell",
+        "They all have one thing to say"
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "primaryTranslation": "It makes me smile every time.",
+      "alternatives": [
+        "That makes me smile each time.",
+        "It brings a smile to my face every time."
+      ],
+      "distractors": [
+        "I'm laughing all time",
+        "This thing gets me to laugh ",
+        "It makes to me smile at times."
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "primaryTranslation": "A rose and words of love,",
+      "alternatives": [
+        "A rose and loving words,",
+        "A rose accompanied by love notes,"
+      ],
+      "distractors": [
+        "One rose plus romantic love,",
+        "Some rose along with affection,",
+        "A single rose as well as phrases expressing romance,"
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "primaryTranslation": "That's what marks my days.",
+      "alternatives": [
+        "It's what defines my days.",
+        "That's what makes my days special."
+      ],
+      "distractors": [
+        "It is the thing which defines my daily life.",
+        "This is the matter that characterizes my time.",
+        "This is what is making my daily life."
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "primaryTranslation": "He looks at me in his photo,",
+      "alternatives": [
+        "He's watching me from his photograph,",
+        "In his photo, he gazes at me,"
+      ],
+      "distractors": [
+        "The man watches me on his picture,",
+        "He gazes at me from his photograph,",
+        "He regards me from his picture,"
+      ]
+    },
+    {
+      "phraseId": "text_7_p2",
+      "primaryTranslation": "When my eyes rest there without understanding,",
+      "alternatives": [
+        "As my gaze lingers, not comprehending,",
+        "While my eyes settle there, confused,"
+      ],
+      "distractors": [
+        "While my ones settle without who to understand,",
+        "As mine land with no comprehending,",
+        "When mines rest themselves devoid of comprehension,"
+      ]
+    },
+    {
+      "phraseId": "text_7_p3",
+      "primaryTranslation": "At which moment we find ourselves like this.",
+      "alternatives": [
+        "How we ended up this way.",
+        "The moment we find ourselves here."
+      ],
+      "distractors": [
+        "At what time to meet again thus.",
+        "When to be found therefore.",
+        "At which point we end up in this way."
+      ]
+    },
+    {
+      "phraseId": "text_8_p1",
+      "primaryTranslation": "I am in his thoughts in this way,",
+      "alternatives": [
+        "I exist in his thoughts like this,",
+        "This is how I remain in his thoughts,"
+      ],
+      "distractors": [
+        "I find myself among their thinking about it,",
+        "I exist within his mind regarding that,",
+        "I'm inside their thoughts concerning this matter,"
+      ]
+    },
+    {
+      "phraseId": "text_8_p2",
+      "primaryTranslation": "That he remains ever present.",
+      "alternatives": [
+        "As he stays forever present.",
+        "While he remains always here."
+      ],
+      "distractors": [
+        "For him to remain still available.",
+        "That he stays continuously around.",
+        "Let him stay still here."
+      ]
+    }
+  ],
+  "unitsChallenge": [
+    {
+      "unitId": "text_1_p1_unit_1753992553643_merged",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "voire",
+      "primaryTranslation": "see",
+      "alternatives": [
+        "I notice",
+        "I observe",
+        "I can see"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_2",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "comment",
+      "primaryTranslation": "how",
+      "alternatives": [
+        "the way",
+        "in what manner",
+        "how it is that"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_1753992557356_merged",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "parle",
+      "primaryTranslation": "speaks",
+      "alternatives": [
+        "he talks",
+        "he is speaking",
+        "he's talking"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_5",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "avec",
+      "primaryTranslation": "with",
+      "alternatives": [
+        "to",
+        "alongside",
+        "among"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_6",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "les autres",
+      "primaryTranslation": "the others",
+      "alternatives": [
+        "other people",
+        "everyone else",
+        "other ones"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_1753992561424_merged",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "dit",
+      "primaryTranslation": "says",
+      "alternatives": [
+        "He tells",
+        "He's saying",
+        "He states"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_2",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "qu'il",
+      "primaryTranslation": "that he",
+      "alternatives": [
+        "he",
+        "that",
+        "who"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_3",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "prend",
+      "primaryTranslation": "takes",
+      "alternatives": [
+        "is taking",
+        "spends",
+        "uses"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_4",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "son temps",
+      "primaryTranslation": "his time",
+      "alternatives": [
+        "his own time",
+        "his sweet time",
+        "time"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_5",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "mais",
+      "primaryTranslation": "but",
+      "alternatives": [
+        "however",
+        "yet",
+        "though"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "baisser",
+      "primaryTranslation": "lower",
+      "alternatives": [
+        "reduce",
+        "drop",
+        "turn down"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_2",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "voix",
+      "primaryTranslation": "voice",
+      "alternatives": [
+        "the tone",
+        "the volume",
+        "one's voice"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_3",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "quand",
+      "primaryTranslation": "when",
+      "alternatives": [
+        "whenever",
+        "at the time",
+        "as"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_4",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "j'appartiens",
+      "primaryTranslation": "I belong",
+      "alternatives": [
+        "I am part of",
+        "I pertain to",
+        "I am connected to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_6",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "ce moment",
+      "primaryTranslation": "this moment",
+      "alternatives": [
+        "that time",
+        "this time",
+        "this instant"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1753992578554_merged",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "Il perd",
+      "primaryTranslation": "he loses",
+      "alternatives": [
+        "he's losing",
+        "he runs out of",
+        "he wastes"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1753992580817_merged",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "on comprend",
+      "primaryTranslation": "we understand",
+      "alternatives": [
+        "one understands",
+        "it's understandable",
+        "people understand"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_6",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "pourquoi",
+      "primaryTranslation": "why",
+      "alternatives": [
+        "for what reason",
+        "how come",
+        "the reason"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_0",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "Dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "during",
+        "within",
+        "throughout"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_1",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "vie",
+      "primaryTranslation": "life",
+      "alternatives": [
+        "his lifetime",
+        "his existence",
+        "his living years"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_2",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "homme",
+      "primaryTranslation": "man",
+      "alternatives": [
+        "the gentleman",
+        "the fellow",
+        "the person"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_3",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "au",
+      "primaryTranslation": "in the",
+      "alternatives": [
+        "at the",
+        "of the",
+        "within the"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_5",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "sourit",
+      "primaryTranslation": "smiles",
+      "alternatives": [
+        "is smiling",
+        "grins",
+        "beams"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_0",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "rire",
+      "primaryTranslation": "laugh",
+      "alternatives": [
+        "Her laughter",
+        "His laugh",
+        "His laughter"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "illumine",
+      "primaryTranslation": "lights up",
+      "alternatives": [
+        "illuminates",
+        "brightens",
+        "makes radiant"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1753992600473_1",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "yeux",
+      "primaryTranslation": "eyes",
+      "alternatives": [
+        "his eyes",
+        "their eyes",
+        "one's eyes"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1753992600473_2",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "brillants",
+      "primaryTranslation": "bright",
+      "alternatives": [
+        "shining",
+        "sparkling",
+        "brilliant"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_0",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "ouverts",
+      "primaryTranslation": "open",
+      "alternatives": [
+        "With open arms",
+        "Arms spread wide",
+        "Open-armed"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_1",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "bouche",
+      "primaryTranslation": "mouth",
+      "alternatives": [
+        "his mouth",
+        "their mouth",
+        "the mouth"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_2",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "exprime",
+      "primaryTranslation": "expresses",
+      "alternatives": [
+        "shows",
+        "conveys",
+        "displays"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_3",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "la joie",
+      "primaryTranslation": "joy",
+      "alternatives": [
+        "happiness",
+        "delight",
+        "gladness"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_0",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "retouche",
+      "primaryTranslation": "touch-up",
+      "alternatives": [
+        "A subtle adjustment",
+        "A slight modification",
+        "A gentle retouching"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_1",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "parfait",
+      "primaryTranslation": "perfects",
+      "alternatives": [
+        "completes",
+        "finishes",
+        "makes perfect"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_2",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "l'image",
+      "primaryTranslation": "the image",
+      "alternatives": [
+        "the picture",
+        "the photograph",
+        "the appearance"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_0",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "Voilà",
+      "primaryTranslation": "there",
+      "alternatives": [
+        "there you go",
+        "there we are",
+        "that's it"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_1",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "tout",
+      "primaryTranslation": "everything",
+      "alternatives": [
+        "all is",
+        "it's all",
+        "the whole thing is"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_2",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "bas",
+      "primaryTranslation": "down",
+      "alternatives": [
+        "low",
+        "lowered",
+        "at the bottom"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_3",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "maintenant",
+      "primaryTranslation": "now",
+      "alternatives": [
+        "at present",
+        "at this moment",
+        "currently"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_0",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "Tous",
+      "primaryTranslation": "everyone",
+      "alternatives": [
+        "all",
+        "everybody",
+        "they all"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "ont",
+      "primaryTranslation": "have",
+      "alternatives": [
+        "has",
+        "possess",
+        "do have"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_2",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "quelque chose",
+      "primaryTranslation": "something",
+      "alternatives": [
+        "some thing",
+        "anything",
+        "stuff"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1753992616441_merged",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "à dire",
+      "primaryTranslation": "to say",
+      "alternatives": [
+        "to tell",
+        "to express",
+        "to speak about"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_0",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "Ça",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "it",
+        "this",
+        "this thing"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_1",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "m'fait",
+      "primaryTranslation": "makes me",
+      "alternatives": [
+        "causes me to",
+        "gets me to",
+        "has me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_2",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "sourire",
+      "primaryTranslation": "smile",
+      "alternatives": [
+        "grin",
+        "laugh",
+        "smiling"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_3",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "chaque fois",
+      "primaryTranslation": "every time",
+      "alternatives": [
+        "each time",
+        "always",
+        "whenever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_0",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "Une rose",
+      "primaryTranslation": "a rose",
+      "alternatives": [
+        "one rose",
+        "a single rose",
+        "some rose"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_1",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "et",
+      "primaryTranslation": "and",
+      "alternatives": [
+        "plus",
+        "along with",
+        "as well as"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_2",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "des mots",
+      "primaryTranslation": "words",
+      "alternatives": [
+        "some words",
+        "expressions",
+        "phrases"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_1753992621223_merged",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "d' amour",
+      "primaryTranslation": "of love",
+      "alternatives": [
+        "loving",
+        "romantic",
+        "love's"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_0",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "C'est",
+      "primaryTranslation": "it's",
+      "alternatives": [
+        "that is",
+        "this is",
+        "it is"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_1",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "la chose",
+      "primaryTranslation": "the thing",
+      "alternatives": [
+        "the matter",
+        "the object",
+        "what"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_2",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "qui",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "which",
+        "who",
+        "what"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_3",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "marque",
+      "primaryTranslation": "marks",
+      "alternatives": [
+        "defines",
+        "characterizes",
+        "distinguishes"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_4",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "mes jours",
+      "primaryTranslation": "my days",
+      "alternatives": [
+        "my daily life",
+        "my time",
+        "my existence"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_0",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "Il",
+      "primaryTranslation": "He",
+      "alternatives": [
+        "It",
+        "The man",
+        "The person"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_1",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "me regarde",
+      "primaryTranslation": "looks at me",
+      "alternatives": [
+        "watches me",
+        "gazes at me",
+        "observes me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_2",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "sur",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "on",
+        "from",
+        "within"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_3",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "sa photo",
+      "primaryTranslation": "his photograph",
+      "alternatives": [
+        "his picture",
+        "his photo",
+        "the photograph of him"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_0",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "Quand",
+      "primaryTranslation": "When",
+      "alternatives": [
+        "While",
+        "As",
+        "Whenever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_1",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "les miens",
+      "primaryTranslation": "mine",
+      "alternatives": [
+        "my eyes",
+        "my own",
+        "my gaze"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_2",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "se posent",
+      "primaryTranslation": "rest",
+      "alternatives": [
+        "settle",
+        "fall",
+        "land"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_3",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "sans",
+      "primaryTranslation": "without",
+      "alternatives": [
+        "lacking",
+        "devoid of",
+        "with no"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_4",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "qui",
+      "primaryTranslation": "who",
+      "alternatives": [
+        "which",
+        "that",
+        "whom"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p2_unit_5",
+      "sourcePhrase": "text_7_p2",
+      "challengeText": "comprendre",
+      "primaryTranslation": "to understand",
+      "alternatives": [
+        "understanding",
+        "comprehend",
+        "grasp"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p3_unit_1",
+      "sourcePhrase": "text_7_p3",
+      "challengeText": "se retrouver",
+      "primaryTranslation": "to find oneself",
+      "alternatives": [
+        "to meet again",
+        "to end up",
+        "to recover"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p3_unit_2",
+      "sourcePhrase": "text_7_p3",
+      "challengeText": "ainsi",
+      "primaryTranslation": "like this",
+      "alternatives": [
+        "in this way",
+        "thus",
+        "so"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_0",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "Je suis",
+      "primaryTranslation": "I am",
+      "alternatives": [
+        "I'm",
+        "I exist",
+        "I remain"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_2",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "ses pensées",
+      "primaryTranslation": "his/her thoughts",
+      "alternatives": [
+        "their thoughts",
+        "one's thoughts",
+        "the thoughts"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_3",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "en",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "about",
+        "regarding",
+        "concerning"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p1_unit_4",
+      "sourcePhrase": "text_8_p1",
+      "challengeText": "ça",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "this",
+        "it",
+        "this matter"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p2_unit_0",
+      "sourcePhrase": "text_8_p2",
+      "challengeText": "Qu'il reste",
+      "primaryTranslation": "may he remain",
+      "alternatives": [
+        "let him stay",
+        "that he remains",
+        "may he stay"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p2_unit_1",
+      "sourcePhrase": "text_8_p2",
+      "challengeText": "toujours",
+      "primaryTranslation": "always",
+      "alternatives": [
+        "forever",
+        "continuously",
+        "ever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_8_p2_unit_2",
+      "sourcePhrase": "text_8_p2",
+      "challengeText": "présent",
+      "primaryTranslation": "present",
+      "alternatives": [
+        "here",
+        "around",
+        "with us"
+      ],
+      "difficulty": "beginner"
+    }
+  ]
+}

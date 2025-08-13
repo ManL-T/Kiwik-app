@@ -1,0 +1,2415 @@
+{
+  "projectMetadata": {
+    "title": "Dja Dja",
+    "artist": "Aya Nakamura",
+    "difficulty": "beginner"
+  },
+  "originalLyrics": "Tu penses à moi, j'pense à faire de l'argent\nJ'suis pas ta daronne, j'te ferai pas la morale\n\n\n\nTu parles sur moi, y a R\nCrache encore, y a R\nTu voulais m'avoir, tu savais pas comment faire\nTu jouais un rôle, tu finiras aux enfers\n\"T'façon, Nakamura, je l'ai couchée\"\nLe jour où on se croise, faut pas tchouffer\nTu jouais le grand frère pour me salir\nTu cherches des problèmes sans faire exprès\nPutain, mais tu déconnes\nC'est pas comme ça qu'on fait les choses\nPutain, mais tu déconnes\nC'est pas comme ça qu'on fait les choses\nPutain, mais tu déconnes\nC'est pas comme ça qu'on fait les choses",
+  "originalVocabulary": ["tu","penses","à","moi","j'pense","faire","l'argent","j'suis","pas","ta","daronne","j'te","ferai","morale","parles","sur","crache","encore","voulais","m'avoir","savais","comment","jouais","rôle","finiras","enfers","t'façon","l'ai","couchée","jour","où","on","se","croise","faut","tchouffer","le grand frère","pour","me","salir","cherches","problèmes","sans","exprès","mais","déconnes","c'est","comme","ça","qu'on","fait","les","choses"],
+  "texts": [
+    {
+      "textId": "text_1",
+      "title": "Réflexions Quotidiennes",
+      "text": [
+        "Je savais que tu penses toujours à moi.",
+        "Que voulais-tu faire aujourd'hui ?",
+        "Quand tu parles, je crache la vérité.",
+        "Je jouais hier, et je ferai pareil demain."
+      ]
+    },
+    {
+      "textId": "text_2",
+      "title": "Une Journée Difficile",
+      "text": [
+        "Ma daronne me parle de morale ce jour-là,",
+        "Des problèmes avec l'argent comme toujours.",
+        "Mon rôle dans toutes ces choses étranges,",
+        "Me mène directement aux enfers maintenant."
+      ]
+    },
+    {
+      "textId": "text_3",
+      "title": "Message Important",
+      "text": [
+        "Je ne sais pas encore comment",
+        "ni où tu vas exprès aujourd'hui"
+      ]
+    },
+    {
+      "textId": "text_4",
+      "title": "Avertissement",
+      "text": [
+        "Faut pas tchouffer ni salir ce qui fait mal,",
+        "Tu cherches et déconnes, mais tu finiras couchée,",
+        "Je croise les doigts pour toi."
+      ]
+    },
+    {
+      "textId": "text_5",
+      "title": "Message Direct",
+      "text": [
+        "J'te vois sur ta route,",
+        "J'suis là pour m'avoir à t'façon,",
+        "J'pense que tu comprends maintenant."
+      ]
+    },
+    {
+      "textId": "text_6",
+      "title": "Conseil Fraternel",
+      "text": [
+        "On l'ai vu se battre comme le grand frère,",
+        "Mais c'est pour me protéger sans doute."
+      ]
+    },
+    {
+      "textId": "text_7",
+      "title": "Observation Simple",
+      "text": [
+        "Ça, c'est les choses qu'on fait ensemble."
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phraseId": "text_1_p1",
+      "originalFrench": "Je savais que tu penses toujours à moi.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p1_unit_1754259931897_merged",
+          "frenchText": "Je savais",
+          "translations": [
+            "I knew",
+            "I was aware",
+            "I had known",
+            "I realized"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_2",
+          "frenchText": "que",
+          "translations": [
+            "that",
+            "which",
+            "how",
+            "what"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_1754259935746_merged",
+          "frenchText": "tu penses",
+          "translations": [
+            "you think",
+            "you are thinking",
+            "you think about",
+            "you consider"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_5",
+          "frenchText": "toujours",
+          "translations": [
+            "always",
+            "still",
+            "constantly",
+            "ever"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_1754259940980_merged",
+          "frenchText": "à moi",
+          "translations": [
+            "about me",
+            "of me",
+            "towards me",
+            "on me"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "originalFrench": "Que voulais-tu faire aujourd'hui ?",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p2_unit_0",
+          "frenchText": "Que",
+          "translations": [
+            "What",
+            "Which",
+            "How",
+            "That which"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_1",
+          "frenchText": "voulais-tu",
+          "translations": [
+            "did you want",
+            "were you wanting",
+            "did you wish",
+            "would you like"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_2",
+          "frenchText": "faire",
+          "translations": [
+            "to do",
+            "to make",
+            "to perform",
+            "to undertake"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_3",
+          "frenchText": "aujourd'hui",
+          "translations": [
+            "today",
+            "this day",
+            "nowadays",
+            "presently"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "originalFrench": "Quand tu parles, je crache la vérité.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p3_unit_0",
+          "frenchText": "Quand",
+          "translations": [
+            "When",
+            "Whenever",
+            "As",
+            "While"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_1754259945479_merged",
+          "frenchText": "tu parles",
+          "translations": [
+            "you speak",
+            "you talk",
+            "you are speaking",
+            "you say"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_1754259946861_merged",
+          "frenchText": "je crache",
+          "translations": [
+            "I spit out",
+            "I blurt out",
+            "I spew",
+            "I throw out"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_5",
+          "frenchText": "la vérité",
+          "translations": [
+            "the truth",
+            "the reality",
+            "the facts",
+            "the real story"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "originalFrench": "Je jouais hier, et je ferai pareil demain.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p4_unit_1754259949794_merged",
+          "frenchText": "Je jouais",
+          "translations": [
+            "I was playing",
+            "I played",
+            "I used to play",
+            "I would play"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_2",
+          "frenchText": "hier",
+          "translations": [
+            "yesterday",
+            "the day before",
+            "last day",
+            "the previous day"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_3",
+          "frenchText": "et",
+          "translations": [
+            "and",
+            "plus",
+            "also",
+            "as well as"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_1754259951478_merged",
+          "frenchText": "je ferai",
+          "translations": [
+            "I will do",
+            "I'll do",
+            "I'm going to do",
+            "I shall do"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_6",
+          "frenchText": "pareil",
+          "translations": [
+            "the same",
+            "likewise",
+            "similar",
+            "the same thing"
+          ]
+        },
+        {
+          "unitId": "text_1_p4_unit_7",
+          "frenchText": "demain",
+          "translations": [
+            "tomorrow",
+            "the next day",
+            "the following day",
+            "the day after"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "originalFrench": "Ma daronne me parle de morale ce jour-là,",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p1_unit_0",
+          "frenchText": "Ma daronne",
+          "translations": [
+            "My mom",
+            "my mother",
+            "my old lady",
+            "my mama"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_1754259955413_merged",
+          "frenchText": "me parle",
+          "translations": [
+            "talks to me",
+            "speaks to me",
+            "tells me",
+            "is talking to me"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_3",
+          "frenchText": "de",
+          "translations": [
+            "about",
+            "of",
+            "concerning",
+            "regarding"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_4",
+          "frenchText": "morale",
+          "translations": [
+            "morality",
+            "ethics",
+            "moral values",
+            "moral lessons"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_5",
+          "frenchText": "ce jour-là",
+          "translations": [
+            "that day",
+            "on that day",
+            "that particular day",
+            "at that time"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "originalFrench": "Des problèmes avec l'argent comme toujours.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p2_unit_0",
+          "frenchText": "Des problèmes",
+          "translations": [
+            "problems",
+            "some problems",
+            "issues",
+            "troubles"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_1",
+          "frenchText": "avec",
+          "translations": [
+            "with",
+            "regarding",
+            "concerning",
+            "about"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_2",
+          "frenchText": "l'argent",
+          "translations": [
+            "money",
+            "finances",
+            "financial matters",
+            "cash"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_3",
+          "frenchText": "comme toujours",
+          "translations": [
+            "as always",
+            "as usual",
+            "like always",
+            "as ever"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "originalFrench": "Mon rôle dans toutes ces choses étranges,",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p3_unit_0",
+          "frenchText": "Mon rôle",
+          "translations": [
+            "my role",
+            "my part",
+            "my position",
+            "my function"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_1",
+          "frenchText": "dans",
+          "translations": [
+            "in",
+            "within",
+            "among",
+            "throughout"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_1754259976663_1",
+          "frenchText": "toutes",
+          "translations": [
+            "all",
+            "all of",
+            "every",
+            "all these"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_1754259976663_2",
+          "frenchText": "ces choses",
+          "translations": [
+            "these things",
+            "these matters",
+            "these affairs",
+            "these situations"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_3",
+          "frenchText": "étranges",
+          "translations": [
+            "strange",
+            "bizarre",
+            "peculiar",
+            "odd"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p4",
+      "originalFrench": "Me mène directement aux enfers maintenant.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p4_unit_0",
+          "frenchText": "Me mène",
+          "translations": [
+            "leads me",
+            "takes me",
+            "brings me",
+            "guides me"
+          ]
+        },
+        {
+          "unitId": "text_2_p4_unit_1",
+          "frenchText": "directement",
+          "translations": [
+            "directly",
+            "straight",
+            "right",
+            "immediately"
+          ]
+        },
+        {
+          "unitId": "text_2_p4_unit_2",
+          "frenchText": "aux enfers",
+          "translations": [
+            "to hell",
+            "to the underworld",
+            "to the inferno",
+            "to the nether realm"
+          ]
+        },
+        {
+          "unitId": "text_2_p4_unit_3",
+          "frenchText": "maintenant",
+          "translations": [
+            "now",
+            "at present",
+            "at this moment",
+            "right now"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "originalFrench": "Je ne sais pas encore comment",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p1_unit_0",
+          "frenchText": "Je",
+          "translations": [
+            "I",
+            "I myself",
+            "me"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_1",
+          "frenchText": "ne sais pas",
+          "translations": [
+            "don't know",
+            "do not know",
+            "am not aware",
+            "have no idea"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_2",
+          "frenchText": "encore",
+          "translations": [
+            "yet",
+            "still",
+            "as of now",
+            "so far"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_3",
+          "frenchText": "comment",
+          "translations": [
+            "how",
+            "in what way",
+            "the way",
+            "by what means"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "originalFrench": "ni où tu vas exprès aujourd'hui",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p2_unit_0",
+          "frenchText": "ni",
+          "translations": [
+            "nor",
+            "neither",
+            "or",
+            "not even"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_1",
+          "frenchText": "où",
+          "translations": [
+            "where",
+            "to where",
+            "in which place",
+            "whither"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_2",
+          "frenchText": "tu vas",
+          "translations": [
+            "you are going",
+            "you go",
+            "you're heading",
+            "you're off to"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_3",
+          "frenchText": "exprès",
+          "translations": [
+            "on purpose",
+            "deliberately",
+            "intentionally",
+            "specifically"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_4",
+          "frenchText": "aujourd'hui",
+          "translations": [
+            "today",
+            "nowadays",
+            "this day",
+            "currently"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "originalFrench": "Faut pas tchouffer ni salir ce qui fait mal,",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p1_unit_0",
+          "frenchText": "Faut pas",
+          "translations": [
+            "must not",
+            "shouldn't",
+            "don't have to",
+            "mustn't"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1",
+          "frenchText": "tchouffer",
+          "translations": [
+            "puff",
+            "blow",
+            "huff",
+            "breathe heavily"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_2",
+          "frenchText": "ni",
+          "translations": [
+            "nor",
+            "or",
+            "neither",
+            "not even"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_3",
+          "frenchText": "salir",
+          "translations": [
+            "to soil",
+            "to dirty",
+            "to make dirty",
+            "to tarnish"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1754260032348_1",
+          "frenchText": "ce",
+          "translations": [
+            "that which",
+            "what",
+            "that",
+            "the thing that"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1754260038112_1",
+          "frenchText": "qui",
+          "translations": [
+            "which",
+            "that",
+            "who",
+            "what"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1754260039662_merged",
+          "frenchText": "fait mal",
+          "translations": [
+            "hurts",
+            "causes pain",
+            "is painful",
+            "aches"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "originalFrench": "Tu cherches et déconnes, mais tu finiras couchée,",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p2_unit_1754260042045_merged",
+          "frenchText": "Tu cherches",
+          "translations": [
+            "you're looking for trouble",
+            "you're asking for it",
+            "you seek",
+            "you're searching"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_2",
+          "frenchText": "et",
+          "translations": [
+            "and",
+            "plus",
+            "as well as",
+            "also"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_3",
+          "frenchText": "déconnes",
+          "translations": [
+            "mess around",
+            "act stupid",
+            "fool around",
+            "talk nonsense"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_4",
+          "frenchText": "mais",
+          "translations": [
+            "but",
+            "however",
+            "yet",
+            "though"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_1754260045145_merged",
+          "frenchText": "tu finiras",
+          "translations": [
+            "you'll end up",
+            "you will finish",
+            "you're going to end",
+            "you'll wind up"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_7",
+          "frenchText": "couchée",
+          "translations": [
+            "lying down",
+            "in bed",
+            "laid out",
+            "horizontal"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p3",
+      "originalFrench": "Je croise les doigts pour toi.",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p3_unit_1754260047814_merged",
+          "frenchText": "Je croise",
+          "translations": [
+            "I'm crossing",
+            "I cross",
+            "I am crossing",
+            "I'll cross"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_2",
+          "frenchText": "les doigts",
+          "translations": [
+            "fingers",
+            "the fingers",
+            "my fingers",
+            "digits"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_3",
+          "frenchText": "pour",
+          "translations": [
+            "for",
+            "on behalf of",
+            "in support of",
+            "to help"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_4",
+          "frenchText": "toi",
+          "translations": [
+            "you",
+            "your sake",
+            "your benefit",
+            "yourself"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "originalFrench": "J'te vois sur ta route,",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p1_unit_1754260068713_merged",
+          "frenchText": "J'te vois",
+          "translations": [
+            "I see you",
+            "I can see you",
+            "I'm watching you",
+            "I notice you"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_2",
+          "frenchText": "sur",
+          "translations": [
+            "on",
+            "along",
+            "upon",
+            "following"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_3",
+          "frenchText": "ta route",
+          "translations": [
+            "your path",
+            "your way",
+            "your road",
+            "your journey"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "originalFrench": "J'suis là pour m'avoir à t'façon,",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p2_unit_0",
+          "frenchText": "J'suis",
+          "translations": [
+            "I am",
+            "I'm",
+            "I'm here",
+            "I exist"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_1",
+          "frenchText": "là",
+          "translations": [
+            "here",
+            "there",
+            "present",
+            "right here"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_2",
+          "frenchText": "pour",
+          "translations": [
+            "to",
+            "in order to",
+            "so as to",
+            "for"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_3",
+          "frenchText": "m'avoir",
+          "translations": [
+            "to have me",
+            "to get me",
+            "to possess me",
+            "to keep me"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_4",
+          "frenchText": "à",
+          "translations": [
+            "in",
+            "according to",
+            "by",
+            "at"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_5",
+          "frenchText": "t'façon",
+          "translations": [
+            "your way",
+            "your manner",
+            "your style",
+            "your fashion"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p3",
+      "originalFrench": "J'pense que tu comprends maintenant.",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p3_unit_0",
+          "frenchText": "J'pense",
+          "translations": [
+            "I think",
+            "I believe",
+            "I guess",
+            "I suppose"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_1",
+          "frenchText": "que",
+          "translations": [
+            "that",
+            "which",
+            "what"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_1754260077047_merged",
+          "frenchText": "tu comprends",
+          "translations": [
+            "you understand",
+            "you get it",
+            "you comprehend",
+            "you see"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_4",
+          "frenchText": "maintenant",
+          "translations": [
+            "now",
+            "at this point",
+            "at present",
+            "currently"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "originalFrench": "On l'ai vu se battre comme le grand frère,",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p1_unit_0",
+          "frenchText": "On l'ai vu",
+          "translations": [
+            "we saw him",
+            "we've seen him",
+            "one saw him",
+            "people saw him"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_1",
+          "frenchText": "se battre",
+          "translations": [
+            "fight",
+            "struggle",
+            "battle",
+            "wrestle"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_2",
+          "frenchText": "comme",
+          "translations": [
+            "like",
+            "as",
+            "similar to",
+            "just as"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_3",
+          "frenchText": "le grand frère",
+          "translations": [
+            "the big brother",
+            "the older brother",
+            "the elder brother",
+            "the big bro"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "originalFrench": "Mais c'est pour me protéger sans doute.",
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p2_unit_0",
+          "frenchText": "Mais",
+          "translations": [
+            "But",
+            "However",
+            "Yet",
+            "Still"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_1",
+          "frenchText": "c'est",
+          "translations": [
+            "it's",
+            "it is",
+            "that's",
+            "this is"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_2",
+          "frenchText": "pour",
+          "translations": [
+            "to",
+            "in order to",
+            "for",
+            "for the purpose of"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_3",
+          "frenchText": "me protéger",
+          "translations": [
+            "protect me",
+            "shield me",
+            "keep me safe",
+            "guard me"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_4",
+          "frenchText": "sans doute",
+          "translations": [
+            "probably",
+            "no doubt",
+            "presumably",
+            "likely"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "originalFrench": "Ça, c'est les choses qu'on fait ensemble.",
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p1_unit_0",
+          "frenchText": "Ça",
+          "translations": [
+            "That",
+            "This",
+            "These",
+            "Those"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_1",
+          "frenchText": "c'est",
+          "translations": [
+            "is",
+            "are",
+            "represents",
+            "consists of"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_2",
+          "frenchText": "les choses",
+          "translations": [
+            "the things",
+            "the matters",
+            "the stuff",
+            "the activities"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_3",
+          "frenchText": "qu'on fait",
+          "translations": [
+            "that we do",
+            "we make",
+            "one does",
+            "people do"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_4",
+          "frenchText": "ensemble",
+          "translations": [
+            "together",
+            "jointly",
+            "as a group",
+            "in company"
+          ]
+        }
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "phraseId": "text_1_p1",
+      "primaryTranslation": "I knew you always think of me.",
+      "alternatives": [
+        "I knew you're always thinking about me.",
+        "I knew you never forget about me."
+      ],
+      "distractors": [
+        "I know you always thought of me.",
+        "I knew you were always thinking of me.",
+        "I knew you would always think of me."
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "primaryTranslation": "What did you want to do today?",
+      "alternatives": [
+        "What were you planning to do today?",
+        "What did you have in mind for today?"
+      ],
+      "distractors": [
+        "What do you want to see today?",
+        "What would you like to go today?",
+        "What were you going to do today?"
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "primaryTranslation": "When you speak, I spit the truth.",
+      "alternatives": [
+        "When you talk, I tell it like it is.",
+        "When you speak, I'm brutally honest."
+      ],
+      "distractors": [
+        "When you spoke, I spit the truth.",
+        "While you're speaking, I tell the truth.",
+        "Whenever you speak, I will spit the truth."
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "primaryTranslation": "I was playing yesterday, and I'll do the same tomorrow.",
+      "alternatives": [
+        "I played yesterday, and I'll do it again tomorrow.",
+        "I was playing yesterday, and tomorrow will be no different."
+      ],
+      "distractors": [
+        "I played yesterday, and I will do similar tomorrow",
+        "I was playing yesterday, but I won't do the same tomorrow.",
+        "I played yesterday, and I might do the same tomorrow."
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "primaryTranslation": "My mom was lecturing me about morals that day,",
+      "alternatives": [
+        "My mother was giving me a moral lesson that day,",
+        "That day my mom was preaching to me about ethics,"
+      ],
+      "distractors": [
+        "My mom will lecture me about morals that day,",
+        "My mom has lectured me about morals today,",
+        "My mom would lecture me every day."
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "primaryTranslation": "Money problems as usual.",
+      "alternatives": [
+        "Financial troubles like always.",
+        "The same old money issues."
+      ],
+      "distractors": [
+        "Money problems always.",
+        "Money problems are coming.",
+        "Money problems were usual."
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "primaryTranslation": "My role in all these strange things,",
+      "alternatives": [
+        "My part in all these weird things,",
+        "My involvement in all these odd matters,"
+      ],
+      "distractors": [
+        "My role for all those things,",
+        "My role was in all the strange things,",
+        "My task in all these strange things,"
+      ]
+    },
+    {
+      "phraseId": "text_2_p4",
+      "primaryTranslation": "Is leading me straight to hell now.",
+      "alternatives": [
+        "Takes me directly to hell right now.",
+        "Is sending me straight to the underworld now."
+      ],
+      "distractors": [
+        "Was leading me straight to hell now.",
+        "Will lead me straight to hell now.",
+        "Is leading me back to hell now."
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "primaryTranslation": "I still don't know how",
+      "alternatives": [
+        "I haven't figured out how yet",
+        "I'm still unsure how"
+      ],
+      "distractors": [
+        "I didn't know how yet",
+        "I won't know how still",
+        "I never knew how"
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "primaryTranslation": "nor where you're deliberately going today",
+      "alternatives": [
+        "or where you're intentionally heading today",
+        "neither where you're purposely going today"
+      ],
+      "distractors": [
+        "nor where you deliberately left today",
+        "or where you might deliberately go today",
+        "nor where you're deliberately going tomorrow"
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "primaryTranslation": "Don't brush off or make light of what hurts",
+      "alternatives": [
+        "Don't ignore or minimize pain",
+        "Don't dismiss or taint what's painful"
+      ],
+      "distractors": [
+        "Don't brush off what hurts",
+        "You should brush off or make light of what hurts",
+        "Don't brush off and ignore what hurts"
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "primaryTranslation": "You mess around and joke, but you'll end up falling",
+      "alternatives": [
+        "You're playing games but you'll crash eventually",
+        "You fool around but you'll hit rock bottom"
+      ],
+      "distractors": [
+        "You messed around, but you'll end up falling",
+        "You mess around and joke, so you'll end up falling",
+        "You messed around and joked, and you ended up falling"
+      ]
+    },
+    {
+      "phraseId": "text_4_p3",
+      "primaryTranslation": "I'm keeping my fingers crossed for you.",
+      "alternatives": [
+        "I'm rooting for you",
+        "I'm wishing you luck"
+      ],
+      "distractors": [
+        "I kept my fingers crossed for you",
+        "I'll keep my fingers crossed for you",
+        "I'm keeping my fingers crossed about you too"
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "primaryTranslation": "I see you on your path",
+      "alternatives": [
+        "I can see where you're headed",
+        "I watch your journey"
+      ],
+      "distractors": [
+        "I saw you on your path",
+        "I see you along your road",
+        "I will see you on your path"
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "primaryTranslation": "I'm here to handle things your way",
+      "alternatives": [
+        "I'm here to do it your style",
+        "I'm here to follow your lead"
+      ],
+      "distractors": [
+        "I was here to handle things your way",
+        "I'm here handling things your way",
+        "I'm here to handle things in my way"
+      ]
+    },
+    {
+      "phraseId": "text_5_p3",
+      "primaryTranslation": "I think you understand now.",
+      "alternatives": [
+        "I guess you get it now",
+        "Now you see what I mean"
+      ],
+      "distractors": [
+        "I thought you understood now",
+        "I think you will understand now",
+        "I think you understood then"
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "primaryTranslation": "We saw him fight like a big brother would",
+      "alternatives": [
+        "We watched him fight to protect like a big brother",
+        "We saw him standing up like an older brother"
+      ],
+      "distractors": [
+        "We will see him fight like a big brother",
+        "I saw him fight like a big brother would",
+        "We saw him fighting as the older sister"
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "primaryTranslation": "But it's probably to protect me.",
+      "alternatives": [
+        "But I guess it's to keep me safe",
+        "But no doubt it's to shield me"
+      ],
+      "distractors": [
+        "But it was probably to protect me",
+        "But it's probably to protect them",
+        "But it's definitely not to protect me"
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "primaryTranslation": "These are the things we do together.",
+      "alternatives": [
+        "That's what we do together",
+        "This is what we share"
+      ],
+      "distractors": [
+        "Those were the things we did together",
+        "These are the things they do together",
+        "This is the thing we do together"
+      ]
+    }
+  ],
+  "unitsChallenge": [
+    {
+      "unitId": "text_1_p1_unit_1754259931897_merged",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "Je savais",
+      "primaryTranslation": "I knew",
+      "alternatives": [
+        "I was aware",
+        "I had known",
+        "I realized"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_2",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "que",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "which",
+        "how",
+        "what"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_1754259935746_merged",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "tu penses",
+      "primaryTranslation": "you think",
+      "alternatives": [
+        "you are thinking",
+        "you think about",
+        "you consider"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_5",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "toujours",
+      "primaryTranslation": "always",
+      "alternatives": [
+        "still",
+        "constantly",
+        "ever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_1754259940980_merged",
+      "sourcePhrase": "text_1_p1",
+      "challengeText": "à moi",
+      "primaryTranslation": "about me",
+      "alternatives": [
+        "of me",
+        "towards me",
+        "on me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_0",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "Que",
+      "primaryTranslation": "What",
+      "alternatives": [
+        "Which",
+        "How",
+        "That which"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_1",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "voulais-tu",
+      "primaryTranslation": "did you want",
+      "alternatives": [
+        "were you wanting",
+        "did you wish",
+        "would you like"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_2",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "faire",
+      "primaryTranslation": "to do",
+      "alternatives": [
+        "to make",
+        "to perform",
+        "to undertake"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_3",
+      "sourcePhrase": "text_1_p2",
+      "challengeText": "aujourd'hui",
+      "primaryTranslation": "today",
+      "alternatives": [
+        "this day",
+        "nowadays",
+        "presently"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_0",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "Quand",
+      "primaryTranslation": "When",
+      "alternatives": [
+        "Whenever",
+        "As",
+        "While"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1754259945479_merged",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "tu parles",
+      "primaryTranslation": "you speak",
+      "alternatives": [
+        "you talk",
+        "you are speaking",
+        "you say"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1754259946861_merged",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "je crache",
+      "primaryTranslation": "I spit out",
+      "alternatives": [
+        "I blurt out",
+        "I spew",
+        "I throw out"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_5",
+      "sourcePhrase": "text_1_p3",
+      "challengeText": "la vérité",
+      "primaryTranslation": "the truth",
+      "alternatives": [
+        "the reality",
+        "the facts",
+        "the real story"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1754259949794_merged",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "Je jouais",
+      "primaryTranslation": "I was playing",
+      "alternatives": [
+        "I played",
+        "I used to play",
+        "I would play"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_2",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "hier",
+      "primaryTranslation": "yesterday",
+      "alternatives": [
+        "the day before",
+        "last day",
+        "the previous day"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_3",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "et",
+      "primaryTranslation": "and",
+      "alternatives": [
+        "plus",
+        "also",
+        "as well as"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1754259951478_merged",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "je ferai",
+      "primaryTranslation": "I will do",
+      "alternatives": [
+        "I'll do",
+        "I'm going to do",
+        "I shall do"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_6",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "pareil",
+      "primaryTranslation": "the same",
+      "alternatives": [
+        "likewise",
+        "similar",
+        "the same thing"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_7",
+      "sourcePhrase": "text_1_p4",
+      "challengeText": "demain",
+      "primaryTranslation": "tomorrow",
+      "alternatives": [
+        "the next day",
+        "the following day",
+        "the day after"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_0",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "Ma daronne",
+      "primaryTranslation": "My mom",
+      "alternatives": [
+        "my mother",
+        "my old lady",
+        "my mama"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_1754259955413_merged",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "me parle",
+      "primaryTranslation": "talks to me",
+      "alternatives": [
+        "speaks to me",
+        "tells me",
+        "is talking to me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_3",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "de",
+      "primaryTranslation": "about",
+      "alternatives": [
+        "of",
+        "concerning",
+        "regarding"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_4",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "morale",
+      "primaryTranslation": "morality",
+      "alternatives": [
+        "ethics",
+        "moral values",
+        "moral lessons"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_5",
+      "sourcePhrase": "text_2_p1",
+      "challengeText": "ce jour-là",
+      "primaryTranslation": "that day",
+      "alternatives": [
+        "on that day",
+        "that particular day",
+        "at that time"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_0",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "Des problèmes",
+      "primaryTranslation": "problems",
+      "alternatives": [
+        "some problems",
+        "issues",
+        "troubles"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "avec",
+      "primaryTranslation": "with",
+      "alternatives": [
+        "regarding",
+        "concerning",
+        "about"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_2",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "l'argent",
+      "primaryTranslation": "money",
+      "alternatives": [
+        "finances",
+        "financial matters",
+        "cash"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_3",
+      "sourcePhrase": "text_2_p2",
+      "challengeText": "comme toujours",
+      "primaryTranslation": "as always",
+      "alternatives": [
+        "as usual",
+        "like always",
+        "as ever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_0",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "Mon rôle",
+      "primaryTranslation": "my role",
+      "alternatives": [
+        "my part",
+        "my position",
+        "my function"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_1",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "within",
+        "among",
+        "throughout"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_1754259976663_1",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "toutes",
+      "primaryTranslation": "all",
+      "alternatives": [
+        "all of",
+        "every",
+        "all these"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_1754259976663_2",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "ces choses",
+      "primaryTranslation": "these things",
+      "alternatives": [
+        "these matters",
+        "these affairs",
+        "these situations"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p3_unit_3",
+      "sourcePhrase": "text_2_p3",
+      "challengeText": "étranges",
+      "primaryTranslation": "strange",
+      "alternatives": [
+        "bizarre",
+        "peculiar",
+        "odd"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_0",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "Me mène",
+      "primaryTranslation": "leads me",
+      "alternatives": [
+        "takes me",
+        "brings me",
+        "guides me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_1",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "directement",
+      "primaryTranslation": "directly",
+      "alternatives": [
+        "straight",
+        "right",
+        "immediately"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_2",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "aux enfers",
+      "primaryTranslation": "to hell",
+      "alternatives": [
+        "to the underworld",
+        "to the inferno",
+        "to the nether realm"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p4_unit_3",
+      "sourcePhrase": "text_2_p4",
+      "challengeText": "maintenant",
+      "primaryTranslation": "now",
+      "alternatives": [
+        "at present",
+        "at this moment",
+        "right now"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_0",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "Je",
+      "primaryTranslation": "I",
+      "alternatives": [
+        "I myself",
+        "me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_1",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "ne sais pas",
+      "primaryTranslation": "don't know",
+      "alternatives": [
+        "do not know",
+        "am not aware",
+        "have no idea"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_2",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "encore",
+      "primaryTranslation": "yet",
+      "alternatives": [
+        "still",
+        "as of now",
+        "so far"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_3",
+      "sourcePhrase": "text_3_p1",
+      "challengeText": "comment",
+      "primaryTranslation": "how",
+      "alternatives": [
+        "in what way",
+        "the way",
+        "by what means"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_0",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "ni",
+      "primaryTranslation": "nor",
+      "alternatives": [
+        "neither",
+        "or",
+        "not even"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_1",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "où",
+      "primaryTranslation": "where",
+      "alternatives": [
+        "to where",
+        "in which place",
+        "whither"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_2",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "tu vas",
+      "primaryTranslation": "you are going",
+      "alternatives": [
+        "you go",
+        "you're heading",
+        "you're off to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_3",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "exprès",
+      "primaryTranslation": "on purpose",
+      "alternatives": [
+        "deliberately",
+        "intentionally",
+        "specifically"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p2_unit_4",
+      "sourcePhrase": "text_3_p2",
+      "challengeText": "aujourd'hui",
+      "primaryTranslation": "today",
+      "alternatives": [
+        "nowadays",
+        "this day",
+        "currently"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_0",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "Faut pas",
+      "primaryTranslation": "must not",
+      "alternatives": [
+        "shouldn't",
+        "don't have to",
+        "mustn't"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "tchouffer",
+      "primaryTranslation": "puff",
+      "alternatives": [
+        "blow",
+        "huff",
+        "breathe heavily"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_2",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "ni",
+      "primaryTranslation": "nor",
+      "alternatives": [
+        "or",
+        "neither",
+        "not even"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_3",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "salir",
+      "primaryTranslation": "to soil",
+      "alternatives": [
+        "to dirty",
+        "to make dirty",
+        "to tarnish"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1754260032348_1",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "ce",
+      "primaryTranslation": "that which",
+      "alternatives": [
+        "what",
+        "that",
+        "the thing that"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1754260038112_1",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "qui",
+      "primaryTranslation": "which",
+      "alternatives": [
+        "that",
+        "who",
+        "what"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1754260039662_merged",
+      "sourcePhrase": "text_4_p1",
+      "challengeText": "fait mal",
+      "primaryTranslation": "hurts",
+      "alternatives": [
+        "causes pain",
+        "is painful",
+        "aches"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_1754260042045_merged",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "Tu cherches",
+      "primaryTranslation": "you're looking for trouble",
+      "alternatives": [
+        "you're asking for it",
+        "you seek",
+        "you're searching"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_2",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "et",
+      "primaryTranslation": "and",
+      "alternatives": [
+        "plus",
+        "as well as",
+        "also"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_3",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "déconnes",
+      "primaryTranslation": "mess around",
+      "alternatives": [
+        "act stupid",
+        "fool around",
+        "talk nonsense"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_4",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "mais",
+      "primaryTranslation": "but",
+      "alternatives": [
+        "however",
+        "yet",
+        "though"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_1754260045145_merged",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "tu finiras",
+      "primaryTranslation": "you'll end up",
+      "alternatives": [
+        "you will finish",
+        "you're going to end",
+        "you'll wind up"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_7",
+      "sourcePhrase": "text_4_p2",
+      "challengeText": "couchée",
+      "primaryTranslation": "lying down",
+      "alternatives": [
+        "in bed",
+        "laid out",
+        "horizontal"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_1754260047814_merged",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "Je croise",
+      "primaryTranslation": "I'm crossing",
+      "alternatives": [
+        "I cross",
+        "I am crossing",
+        "I'll cross"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_2",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "les doigts",
+      "primaryTranslation": "fingers",
+      "alternatives": [
+        "the fingers",
+        "my fingers",
+        "digits"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_3",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "pour",
+      "primaryTranslation": "for",
+      "alternatives": [
+        "on behalf of",
+        "in support of",
+        "to help"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p3_unit_4",
+      "sourcePhrase": "text_4_p3",
+      "challengeText": "toi",
+      "primaryTranslation": "you",
+      "alternatives": [
+        "your sake",
+        "your benefit",
+        "yourself"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_1754260068713_merged",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "J'te vois",
+      "primaryTranslation": "I see you",
+      "alternatives": [
+        "I can see you",
+        "I'm watching you",
+        "I notice you"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_2",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "sur",
+      "primaryTranslation": "on",
+      "alternatives": [
+        "along",
+        "upon",
+        "following"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_3",
+      "sourcePhrase": "text_5_p1",
+      "challengeText": "ta route",
+      "primaryTranslation": "your path",
+      "alternatives": [
+        "your way",
+        "your road",
+        "your journey"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_0",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "J'suis",
+      "primaryTranslation": "I am",
+      "alternatives": [
+        "I'm",
+        "I'm here",
+        "I exist"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_1",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "là",
+      "primaryTranslation": "here",
+      "alternatives": [
+        "there",
+        "present",
+        "right here"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_2",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "pour",
+      "primaryTranslation": "to",
+      "alternatives": [
+        "in order to",
+        "so as to",
+        "for"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_3",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "m'avoir",
+      "primaryTranslation": "to have me",
+      "alternatives": [
+        "to get me",
+        "to possess me",
+        "to keep me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_4",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "à",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "according to",
+        "by",
+        "at"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p2_unit_5",
+      "sourcePhrase": "text_5_p2",
+      "challengeText": "t'façon",
+      "primaryTranslation": "your way",
+      "alternatives": [
+        "your manner",
+        "your style",
+        "your fashion"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_0",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "J'pense",
+      "primaryTranslation": "I think",
+      "alternatives": [
+        "I believe",
+        "I guess",
+        "I suppose"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_1",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "que",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "which",
+        "what"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_1754260077047_merged",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "tu comprends",
+      "primaryTranslation": "you understand",
+      "alternatives": [
+        "you get it",
+        "you comprehend",
+        "you see"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p3_unit_4",
+      "sourcePhrase": "text_5_p3",
+      "challengeText": "maintenant",
+      "primaryTranslation": "now",
+      "alternatives": [
+        "at this point",
+        "at present",
+        "currently"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_0",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "On l'ai vu",
+      "primaryTranslation": "we saw him",
+      "alternatives": [
+        "we've seen him",
+        "one saw him",
+        "people saw him"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_1",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "se battre",
+      "primaryTranslation": "fight",
+      "alternatives": [
+        "struggle",
+        "battle",
+        "wrestle"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_2",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "comme",
+      "primaryTranslation": "like",
+      "alternatives": [
+        "as",
+        "similar to",
+        "just as"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p1_unit_3",
+      "sourcePhrase": "text_6_p1",
+      "challengeText": "le grand frère",
+      "primaryTranslation": "the big brother",
+      "alternatives": [
+        "the older brother",
+        "the elder brother",
+        "the big bro"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_0",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "Mais",
+      "primaryTranslation": "But",
+      "alternatives": [
+        "However",
+        "Yet",
+        "Still"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_1",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "c'est",
+      "primaryTranslation": "it's",
+      "alternatives": [
+        "it is",
+        "that's",
+        "this is"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_2",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "pour",
+      "primaryTranslation": "to",
+      "alternatives": [
+        "in order to",
+        "for",
+        "for the purpose of"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_3",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "me protéger",
+      "primaryTranslation": "protect me",
+      "alternatives": [
+        "shield me",
+        "keep me safe",
+        "guard me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_6_p2_unit_4",
+      "sourcePhrase": "text_6_p2",
+      "challengeText": "sans doute",
+      "primaryTranslation": "probably",
+      "alternatives": [
+        "no doubt",
+        "presumably",
+        "likely"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_0",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "Ça",
+      "primaryTranslation": "That",
+      "alternatives": [
+        "This",
+        "These",
+        "Those"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_1",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "c'est",
+      "primaryTranslation": "is",
+      "alternatives": [
+        "are",
+        "represents",
+        "consists of"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_2",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "les choses",
+      "primaryTranslation": "the things",
+      "alternatives": [
+        "the matters",
+        "the stuff",
+        "the activities"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_3",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "qu'on fait",
+      "primaryTranslation": "that we do",
+      "alternatives": [
+        "we make",
+        "one does",
+        "people do"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_7_p1_unit_4",
+      "sourcePhrase": "text_7_p1",
+      "challengeText": "ensemble",
+      "primaryTranslation": "together",
+      "alternatives": [
+        "jointly",
+        "as a group",
+        "in company"
+      ],
+      "difficulty": "beginner"
+    }
+  ]
+}
