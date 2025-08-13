@@ -1,0 +1,1170 @@
+{
+  "projectMetadata": {
+    "title": "en rose",
+    "artist": "Edith Piaf",
+    "difficulty": "beginner"
+  },
+  "originalLyrics": "Il est entré dans mon cœur\nUne part de bonheur\nDont je connais la cause\nC'est lui pour moi\n\nMoi pour lui\nDans la vie\nIl me l'a dit\nL'a juré, pour la vie\n\nEt dès que je l'aperçois\nAlors je sens en moi\nMon cœur qui bat",
+  "originalVocabulary": [
+    "il",
+    "est",
+    "entré",
+    "dans",
+    "mon",
+    "cœur",
+    "part",
+    "bonheur",
+    "dont",
+    "connais",
+    "cause",
+    "c'est",
+    "lui",
+    "pour",
+    "moi",
+    "vie",
+    "me",
+    "l'a",
+    "dit",
+    "juré",
+    "dès",
+    "l'aperçois",
+    "alors",
+    "sens",
+    "qui",
+    "bat"
+  ],
+  "texts": [
+    {
+      "textId": "text_1",
+      "title": "Une Rencontre Inattendue",
+      "text": [
+        "Je l'aperçois qui est entré dans le café.",
+        "Mon cœur bat plus vite - je le connais.",
+        "Il m'a dit bonjour et a juré de revenir.",
+        "Je sens que quelque chose est différent aujourd'hui."
+      ]
+    },
+    {
+      "textId": "text_2",
+      "title": "Les Joies de la Vie",
+      "text": [
+        "Le bonheur fait part de la vie quotidienne,",
+        "Mon cœur trouve sa cause dans les petits moments."
+      ]
+    },
+    {
+      "textId": "text_3",
+      "title": "Moment Présent",
+      "text": [
+        "Alors, on profite du soleil aujourd'hui !"
+      ]
+    },
+    {
+      "textId": "text_4",
+      "title": "Message Personnel",
+      "text": [
+        "Il me l'a dit dans mon message pour moi,",
+        "C'est lui dont je parle dans mes posts."
+      ]
+    },
+    {
+      "textId": "text_5",
+      "title": "Nouvelle Opportunité",
+      "text": [
+        "Dès aujourd'hui, celui qui veut peut participer !"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phraseId": "text_1_p1",
+      "originalFrench": "Je l'aperçois entrer dans le café",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p1_unit_1753805250737_merged",
+          "frenchText": "Je l'aperçois"
+        },
+        {
+          "unitId": "text_1_p1_unit_2",
+          "frenchText": "entrer"
+        },
+        {
+          "unitId": "text_1_p1_unit_3",
+          "frenchText": "dans"
+        },
+        {
+          "unitId": "text_1_p1_unit_4",
+          "frenchText": "le café"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "originalFrench": "Mon cœur bat plus vite -",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p2_unit_0",
+          "frenchText": "Mon cœur"
+        },
+        {
+          "unitId": "text_1_p2_unit_1",
+          "frenchText": "bat"
+        },
+        {
+          "unitId": "text_1_p2_unit_2",
+          "frenchText": "plus vite"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "originalFrench": "je le connais.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p3_unit_0",
+          "frenchText": "je"
+        },
+        {
+          "unitId": "text_1_p3_unit_1",
+          "frenchText": "le connais"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "originalFrench": "Il m'a dit bonjour et a juré de revenir.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p4_unit_0",
+          "frenchText": "Il"
+        },
+        {
+          "unitId": "text_1_p4_unit_1",
+          "frenchText": "m'a dit"
+        },
+        {
+          "unitId": "text_1_p4_unit_2",
+          "frenchText": "bonjour"
+        },
+        {
+          "unitId": "text_1_p4_unit_3",
+          "frenchText": "et"
+        },
+        {
+          "unitId": "text_1_p4_unit_4",
+          "frenchText": "a juré"
+        },
+        {
+          "unitId": "text_1_p4_unit_1753805273218_merged",
+          "frenchText": "de revenir"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p5",
+      "originalFrench": "Je sens que quelque chose est différent aujourd'hui.",
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p5_unit_1753805276915_merged",
+          "frenchText": "Je sens"
+        },
+        {
+          "unitId": "text_1_p5_unit_2",
+          "frenchText": "que"
+        },
+        {
+          "unitId": "text_1_p5_unit_3",
+          "frenchText": "quelque chose"
+        },
+        {
+          "unitId": "text_1_p5_unit_4",
+          "frenchText": "est"
+        },
+        {
+          "unitId": "text_1_p5_unit_5",
+          "frenchText": "différent"
+        },
+        {
+          "unitId": "text_1_p5_unit_6",
+          "frenchText": "aujourd'hui"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "originalFrench": "Le bonheur fait part de la vie quotidienne,",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p1_unit_0",
+          "frenchText": "Le bonheur"
+        },
+        {
+          "unitId": "text_2_p1_unit_1",
+          "frenchText": "fait part"
+        },
+        {
+          "unitId": "text_2_p1_unit_2",
+          "frenchText": "de"
+        },
+        {
+          "unitId": "text_2_p1_unit_3",
+          "frenchText": "la vie quotidienne"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "originalFrench": "Mon cœur trouve sa cause dans les petits moments.",
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p2_unit_0",
+          "frenchText": "Mon cœur"
+        },
+        {
+          "unitId": "text_2_p2_unit_1",
+          "frenchText": "trouve"
+        },
+        {
+          "unitId": "text_2_p2_unit_2",
+          "frenchText": "sa cause"
+        },
+        {
+          "unitId": "text_2_p2_unit_3",
+          "frenchText": "dans"
+        },
+        {
+          "unitId": "text_2_p2_unit_4",
+          "frenchText": "les petits moments"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "originalFrench": "Alors, on profite du soleil aujourd'hui !",
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p1_unit_0",
+          "frenchText": "Alors"
+        },
+        {
+          "unitId": "text_3_p1_unit_1",
+          "frenchText": "on profite"
+        },
+        {
+          "unitId": "text_3_p1_unit_2",
+          "frenchText": "du"
+        },
+        {
+          "unitId": "text_3_p1_unit_3",
+          "frenchText": "soleil"
+        },
+        {
+          "unitId": "text_3_p1_unit_4",
+          "frenchText": "aujourd'hui"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "originalFrench": "Il me l'a dit dans mon message pour moi,",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p1_unit_0",
+          "frenchText": "Il"
+        },
+        {
+          "unitId": "text_4_p1_unit_1",
+          "frenchText": "me l'a dit"
+        },
+        {
+          "unitId": "text_4_p1_unit_2",
+          "frenchText": "dans"
+        },
+        {
+          "unitId": "text_4_p1_unit_3",
+          "frenchText": "mon message"
+        },
+        {
+          "unitId": "text_4_p1_unit_4",
+          "frenchText": "pour"
+        },
+        {
+          "unitId": "text_4_p1_unit_5",
+          "frenchText": "moi"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "originalFrench": "C'est lui dont je parle dans mes posts.",
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p2_unit_0",
+          "frenchText": "C'est"
+        },
+        {
+          "unitId": "text_4_p2_unit_1",
+          "frenchText": "lui"
+        },
+        {
+          "unitId": "text_4_p2_unit_2",
+          "frenchText": "dont"
+        },
+        {
+          "unitId": "text_4_p2_unit_3",
+          "frenchText": "je parle"
+        },
+        {
+          "unitId": "text_4_p2_unit_4",
+          "frenchText": "dans"
+        },
+        {
+          "unitId": "text_4_p2_unit_5",
+          "frenchText": "mes posts"
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "originalFrench": "Dès aujourd'hui, celui qui veut peut participer !",
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p1_unit_0",
+          "frenchText": "Dès aujourd'hui"
+        },
+        {
+          "unitId": "text_5_p1_unit_1",
+          "frenchText": "celui"
+        },
+        {
+          "unitId": "text_5_p1_unit_2",
+          "frenchText": "qui"
+        },
+        {
+          "unitId": "text_5_p1_unit_3",
+          "frenchText": "veut"
+        },
+        {
+          "unitId": "text_5_p1_unit_4",
+          "frenchText": "peut"
+        },
+        {
+          "unitId": "text_5_p1_unit_5",
+          "frenchText": "participer"
+        }
+      ]
+    }
+  ],
+  "solutions": [
+    {
+      "phraseId": "text_1_p1",
+      "primaryTranslation": "I see him enter the café",
+      "alternatives": [
+        "I spot him going into the café",
+        "I notice him walking into the café"
+      ],
+      "distractors": [
+        "I glimpse him going within the coffee shop",
+        "I spot him to enter in the café",
+        "I notice her entering inside the coffeehouse",
+        "I am seeing him to enter the coffee",
+        "I glimpse at him enter in café",
+        "I see him entering to the café"
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "primaryTranslation": "My heart beats faster -",
+      "alternatives": [
+        "My heart races -",
+        "My heart starts pounding -"
+      ],
+      "distractors": [
+        "My heartbeat is more quick -",
+        "My heart is beating more rapidly -",
+        "My pulse pounds more fastly -",
+        "My heart beats more faster -",
+        "The heart of mine beats quick -",
+        "My heart is beating at faster pace -"
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "primaryTranslation": "I know him.",
+      "alternatives": [
+        "I recognize him.",
+        "I'm familiar with him."
+      ],
+      "distractors": [
+        "I am knowing him.",
+        "Me recognize him.",
+        "I know it.",
+        "I am acquainted to him.",
+        "I myself knows him."
+      ]
+    },
+    {
+      "phraseId": "text_1_p4",
+      "primaryTranslation": "He greeted me and swore he'd return.",
+      "alternatives": [
+        "He greeted me and swore he'd return.",
+        "He said hi and vowed to come back."
+      ],
+      "distractors": [
+        "He said me good morning and promised to come again.",
+        "He told to me hello and vowed returning.",
+        "It spoke me good day and pledged to come back.",
+        "He has said me hi and sworn to return here.",
+        "He addressed to me bonjour and promised coming back.",
+        "He gave me hello and sweared to return."
+      ]
+    },
+    {
+      "phraseId": "text_1_p5",
+      "primaryTranslation": "I feel that something is different today.",
+      "alternatives": [
+        "I sense something has changed today.",
+        "Something feels different today."
+      ],
+      "distractors": [
+        "I sense how some thing appears unusual nowadays.",
+        "I can tell which anything stands distinct these days.",
+        "I perceive that a thing exists as changed at present.",
+        "I am feeling what something is being different today.",
+        "I feel like anything becomes unusual today.",
+        "I sense that something different exists nowadays."
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "primaryTranslation": "Happiness is part of daily life,",
+      "alternatives": [
+        "Joy is part of everyday life,",
+        "Happiness belongs in day-to-day life,"
+      ],
+      "distractors": [
+        "The joy takes part of the everyday life,",
+        "Contentment participates in routine existence,",
+        "The happiness forms part from the daily life,",
+        "Joy is participating within day-to-day life,",
+        "Felicity makes part of quotidian life,",
+        "The happiness is taking part from routine life,"
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "primaryTranslation": "My heart finds its purpose in life's little moments.",
+      "alternatives": [
+        "I find joy in the small moments.",
+        "The little moments give my heart meaning."
+      ],
+      "distractors": [
+        "My soul discovers its reason through small instances.",
+        "My heart locates the source in minor occasions.",
+        "My being finds its motivation among brief moments.",
+        "My heart is finding the cause within small moments.",
+        "My spirit identifies its source in the little instances.",
+        "The heart of mine finds reason through minor moments."
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "primaryTranslation": "Well, let's enjoy the sunshine today!",
+      "alternatives": [
+        "Come on, let's make the most of the sun today!",
+        "So, we're enjoying the sun today!"
+      ],
+      "distractors": [
+        "Now, we are making use of the sun these days!",
+        "In that case, we're taking advantage from the sunlight nowadays!",
+        "So, one profits of the sunny weather this day!",
+        "Well then, we profit the sun today!",
+        "Now, let's take profit from sunshine nowadays!",
+        "Then, we are enjoying of the sun this day!"
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "primaryTranslation": "He told me in my message,",
+      "alternatives": [
+        "He said it in the message to me,",
+        "He mentioned it in my message,"
+      ],
+      "distractors": [
+        "It said it to me in my note for me,",
+        "He has told it to me within my communication to myself,",
+        "He did inform me of it through my text for me,",
+        "He told to me in the message intended for me,",
+        "It is telling me inside my note meant for myself,",
+        "He said me it in my message for myself,"
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "primaryTranslation": "He's the one I talk about in my posts.",
+      "alternatives": [
+        "He's who I mention in my posts.",
+        "He's the person I write about in my posts."
+      ],
+      "distractors": [
+        "It's him of whom I speak within my entries.",
+        "This is the person that I'm talking on my updates.",
+        "That's he whom I write through my social media posts.",
+        "It's the one about whom I am speaking in my entries.",
+        "This is him which I talk in my posts.",
+        "It's the person I am speaking of inside my updates."
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "primaryTranslation": "Starting today, anyone who wants to can participate!",
+      "alternatives": [
+        "From today onwards, anyone interested can join in!",
+        "As of today, whoever wants to can take part!",
+        "Beginning today, everyone is welcome to participate!"
+      ],
+      "distractors": [
+        "From today, he who wishes can take part!",
+        "The one that desires to may join in!",
+        "Beginning today, whoever which wants has the ability to get involved!",
+        "As of today, the one whom wishes to is able to participate!",
+        "Today starting, anyone that wants may to join in!",
+        "From today onwards, he who is willing can to participate!",
+        "Starting from today, the person which wants has ability for participating!"
+      ]
+    }
+  ],
+  "unitsChallenge": [
+    {
+      "unitId": "text_1_p1_unit_1753805250737_merged",
+      "sourcePhrase": "text_1_p1",
+      "frenchText": "Je l'aperçois",
+      "primaryTranslation": "I notice him/her",
+      "alternatives": [
+        "I spot him/her",
+        "I glimpse him/her",
+        "I see him/her"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_2",
+      "sourcePhrase": "text_1_p1",
+      "frenchText": "entrer",
+      "primaryTranslation": "entering",
+      "alternatives": [
+        "go in",
+        "walk in",
+        "going into"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_3",
+      "sourcePhrase": "text_1_p1",
+      "frenchText": "dans",
+      "primaryTranslation": "into",
+      "alternatives": [
+        "in",
+        "inside",
+        "within"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p1_unit_4",
+      "sourcePhrase": "text_1_p1",
+      "frenchText": "le café",
+      "primaryTranslation": "the café",
+      "alternatives": [
+        "the coffee shop",
+        "the coffeehouse",
+        "the café"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_0",
+      "sourcePhrase": "text_1_p2",
+      "frenchText": "Mon cœur",
+      "primaryTranslation": "my heart",
+      "alternatives": [
+        "my pulse",
+        "my heartbeat"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_1",
+      "sourcePhrase": "text_1_p2",
+      "frenchText": "bat",
+      "primaryTranslation": "beats",
+      "alternatives": [
+        "is beating",
+        "pounds",
+        "throbs"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p2_unit_2",
+      "sourcePhrase": "text_1_p2",
+      "frenchText": "plus vite",
+      "primaryTranslation": "faster",
+      "alternatives": [
+        "more quickly",
+        "more rapidly",
+        "at a faster pace"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_0",
+      "sourcePhrase": "text_1_p3",
+      "frenchText": "je",
+      "primaryTranslation": "I",
+      "alternatives": [
+        "I do",
+        "I myself",
+        "me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p3_unit_1",
+      "sourcePhrase": "text_1_p3",
+      "frenchText": "le connais",
+      "primaryTranslation": "know him",
+      "alternatives": [
+        "am acquainted with him",
+        "recognize him",
+        "am familiar with him"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_0",
+      "sourcePhrase": "text_1_p4",
+      "frenchText": "Il",
+      "primaryTranslation": "He",
+      "alternatives": [
+        "It"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1",
+      "sourcePhrase": "text_1_p4",
+      "frenchText": "m'a dit",
+      "primaryTranslation": "said to me",
+      "alternatives": [
+        "told me",
+        "spoke to me",
+        "addressed me"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_2",
+      "sourcePhrase": "text_1_p4",
+      "frenchText": "bonjour",
+      "primaryTranslation": "hello",
+      "alternatives": [
+        "good morning",
+        "good day",
+        "hi"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_3",
+      "sourcePhrase": "text_1_p4",
+      "frenchText": "et",
+      "primaryTranslation": "and",
+      "alternatives": [
+        "and then",
+        "and also",
+        "plus"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_4",
+      "sourcePhrase": "text_1_p4",
+      "frenchText": "a juré",
+      "primaryTranslation": "swore",
+      "alternatives": [
+        "promised",
+        "vowed",
+        "pledged"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p4_unit_1753805273218_merged",
+      "sourcePhrase": "text_1_p4",
+      "frenchText": "de revenir",
+      "primaryTranslation": "to return",
+      "alternatives": [
+        "to come back",
+        "to return here",
+        "to come again"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_1753805276915_merged",
+      "sourcePhrase": "text_1_p5",
+      "frenchText": "Je sens",
+      "primaryTranslation": "I feel",
+      "alternatives": [
+        "I sense",
+        "I can tell",
+        "I perceive"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_2",
+      "sourcePhrase": "text_1_p5",
+      "frenchText": "que",
+      "primaryTranslation": "that",
+      "alternatives": [
+        "which",
+        "how",
+        "what"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_3",
+      "sourcePhrase": "text_1_p5",
+      "frenchText": "quelque chose",
+      "primaryTranslation": "something",
+      "alternatives": [
+        "some thing",
+        "anything",
+        "a thing"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_4",
+      "sourcePhrase": "text_1_p5",
+      "frenchText": "est",
+      "primaryTranslation": "is",
+      "alternatives": [
+        "exists as",
+        "appears",
+        "stands"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_5",
+      "sourcePhrase": "text_1_p5",
+      "frenchText": "différent",
+      "primaryTranslation": "different",
+      "alternatives": [
+        "changed",
+        "unusual",
+        "distinct"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_1_p5_unit_6",
+      "sourcePhrase": "text_1_p5",
+      "frenchText": "aujourd'hui",
+      "primaryTranslation": "today",
+      "alternatives": [
+        "nowadays",
+        "these days",
+        "at present"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_0",
+      "sourcePhrase": "text_2_p1",
+      "frenchText": "Le bonheur",
+      "primaryTranslation": "happiness",
+      "alternatives": [
+        "joy",
+        "felicity",
+        "contentment"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_1",
+      "sourcePhrase": "text_2_p1",
+      "frenchText": "fait part",
+      "primaryTranslation": "is part",
+      "alternatives": [
+        "forms part",
+        "takes part",
+        "participates in"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_2",
+      "sourcePhrase": "text_2_p1",
+      "frenchText": "de",
+      "primaryTranslation": "of",
+      "alternatives": [
+        "from",
+        "in",
+        "within"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p1_unit_3",
+      "sourcePhrase": "text_2_p1",
+      "frenchText": "la vie quotidienne",
+      "primaryTranslation": "daily life",
+      "alternatives": [
+        "everyday life",
+        "day-to-day life",
+        "routine existence"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_0",
+      "sourcePhrase": "text_2_p2",
+      "frenchText": "Mon cœur",
+      "primaryTranslation": "my heart",
+      "alternatives": [
+        "my soul",
+        "my spirit",
+        "my being"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_1",
+      "sourcePhrase": "text_2_p2",
+      "frenchText": "trouve",
+      "primaryTranslation": "finds",
+      "alternatives": [
+        "discovers",
+        "locates",
+        "identifies"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_2",
+      "sourcePhrase": "text_2_p2",
+      "frenchText": "sa cause",
+      "primaryTranslation": "its purpose",
+      "alternatives": [
+        "its reason",
+        "its motivation",
+        "its source"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_3",
+      "sourcePhrase": "text_2_p2",
+      "frenchText": "dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "within",
+        "among",
+        "through"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_2_p2_unit_4",
+      "sourcePhrase": "text_2_p2",
+      "frenchText": "les petits moments",
+      "primaryTranslation": "the little moments",
+      "alternatives": [
+        "small instances",
+        "brief moments",
+        "minor occasions"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_0",
+      "sourcePhrase": "text_3_p1",
+      "frenchText": "Alors",
+      "primaryTranslation": "So",
+      "alternatives": [
+        "Well then",
+        "Now",
+        "In that case"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_1",
+      "sourcePhrase": "text_3_p1",
+      "frenchText": "on profite",
+      "primaryTranslation": "we're enjoying",
+      "alternatives": [
+        "let's make the most of",
+        "we're taking advantage of",
+        "we're making use of"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_2",
+      "sourcePhrase": "text_3_p1",
+      "frenchText": "du",
+      "primaryTranslation": "the",
+      "alternatives": [
+        "of the",
+        "from the"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_3",
+      "sourcePhrase": "text_3_p1",
+      "frenchText": "soleil",
+      "primaryTranslation": "sun",
+      "alternatives": [
+        "sunshine",
+        "sunlight",
+        "sunny weather"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_3_p1_unit_4",
+      "sourcePhrase": "text_3_p1",
+      "frenchText": "aujourd'hui",
+      "primaryTranslation": "today",
+      "alternatives": [
+        "nowadays",
+        "these days",
+        "this day"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_0",
+      "sourcePhrase": "text_4_p1",
+      "frenchText": "Il",
+      "primaryTranslation": "He",
+      "alternatives": [
+        "It",
+        "He did"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_1",
+      "sourcePhrase": "text_4_p1",
+      "frenchText": "me l'a dit",
+      "primaryTranslation": "told me it",
+      "alternatives": [
+        "said it to me",
+        "told it to me",
+        "informed me of it"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_2",
+      "sourcePhrase": "text_4_p1",
+      "frenchText": "dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "within",
+        "inside",
+        "through"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_3",
+      "sourcePhrase": "text_4_p1",
+      "frenchText": "mon message",
+      "primaryTranslation": "my message",
+      "alternatives": [
+        "my note",
+        "my text",
+        "my communication"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_4",
+      "sourcePhrase": "text_4_p1",
+      "frenchText": "pour",
+      "primaryTranslation": "for",
+      "alternatives": [
+        "to",
+        "intended for",
+        "meant for"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p1_unit_5",
+      "sourcePhrase": "text_4_p1",
+      "frenchText": "moi",
+      "primaryTranslation": "to me",
+      "alternatives": [
+        "for me",
+        "myself",
+        "me personally"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_0",
+      "sourcePhrase": "text_4_p2",
+      "frenchText": "C'est",
+      "primaryTranslation": "It's",
+      "alternatives": [
+        "This is",
+        "He's",
+        "That's"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_1",
+      "sourcePhrase": "text_4_p2",
+      "frenchText": "lui",
+      "primaryTranslation": "him",
+      "alternatives": [
+        "he",
+        "the one",
+        "the person"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_2",
+      "sourcePhrase": "text_4_p2",
+      "frenchText": "dont",
+      "primaryTranslation": "whom",
+      "alternatives": [
+        "about whom",
+        "of whom",
+        "that"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_3",
+      "sourcePhrase": "text_4_p2",
+      "frenchText": "je parle",
+      "primaryTranslation": "I speak",
+      "alternatives": [
+        "I talk",
+        "I'm talking",
+        "I write"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_4",
+      "sourcePhrase": "text_4_p2",
+      "frenchText": "dans",
+      "primaryTranslation": "in",
+      "alternatives": [
+        "within",
+        "on",
+        "through"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_4_p2_unit_5",
+      "sourcePhrase": "text_4_p2",
+      "frenchText": "mes posts",
+      "primaryTranslation": "my posts",
+      "alternatives": [
+        "my entries",
+        "my updates",
+        "my social media posts"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_0",
+      "sourcePhrase": "text_5_p1",
+      "frenchText": "Dès aujourd'hui",
+      "primaryTranslation": "Starting today",
+      "alternatives": [
+        "From today",
+        "As of today",
+        "Beginning today"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_1",
+      "sourcePhrase": "text_5_p1",
+      "frenchText": "celui",
+      "primaryTranslation": "anyone",
+      "alternatives": [
+        "the one",
+        "he who",
+        "whoever"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_2",
+      "sourcePhrase": "text_5_p1",
+      "frenchText": "qui",
+      "primaryTranslation": "who",
+      "alternatives": [
+        "that",
+        "whom",
+        "which"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_3",
+      "sourcePhrase": "text_5_p1",
+      "frenchText": "veut",
+      "primaryTranslation": "wants to",
+      "alternatives": [
+        "wishes to",
+        "desires to",
+        "is willing to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_4",
+      "sourcePhrase": "text_5_p1",
+      "frenchText": "peut",
+      "primaryTranslation": "can",
+      "alternatives": [
+        "is able to",
+        "may",
+        "has the ability to"
+      ],
+      "difficulty": "beginner"
+    },
+    {
+      "unitId": "text_5_p1_unit_5",
+      "sourcePhrase": "text_5_p1",
+      "frenchText": "participer",
+      "primaryTranslation": "participate",
+      "alternatives": [
+        "take part",
+        "join in",
+        "get involved"
+      ],
+      "difficulty": "beginner"
+    }
+  ]
+}
