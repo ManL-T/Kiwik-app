@@ -1,18 +1,36 @@
 // UI Rendering module - handles all template loading and DOM updates
 class UIRenderer {
-    constructor() {
+    constructor(eventBus) {
         console.log('🎨 UIRenderer: Initializing...');
+        
+        // Store EventBus reference
+        this.eventBus = eventBus;
+        
+        // Setup event listeners
+        this.setupEventListeners();
+        
         console.log('✅ UIRenderer: Initialization complete');
+    }
+    
+    // Setup event listeners
+    setupEventListeners() {
+        this.eventBus.on('ui:loadTemplate', (templatePath) => {
+            this.loadTemplate(templatePath);
+        });
+        
+        this.eventBus.on('ui:updateHighlightedText', (data) => {
+            this.updateHighlightedText(data.fullSentence, data.unitTarget);
+        });
+        
+        this.eventBus.on('ui:updateTranslations', (translations) => {
+            this.updateTranslations(translations);
+        });
     }
     
     // Template loading
     async loadTemplate(templatePath) {
         try {
             const app = document.getElementById('app');
-            if (!app) {
-                console.error('App element not found');
-                return;
-            }
             const response = await fetch(templatePath);
             const html = await response.text();
             app.innerHTML = html;
