@@ -33,19 +33,18 @@ class Navigation {
     
     // Central key handling
     handleKeyPress(event) {
-        const currentScreen = this.getCurrentScreen();
         const key = event.key;
         
-        // Route keys based on context
+        // Route keys based on key type
         if (key === 'Escape') {
             event.preventDefault();
-            this.goBackToLauncher();  // Direct action - get out immediately!
+            this.goBackToLauncher();  // This works regardless of screen
         } else if (key === 'Enter') {
             event.preventDefault();
-            this.eventBus.emit(`navigation:enterPressed:${currentScreen}`);
+            this.eventBus.emit('navigation:enterPressed');
         } else if (key === ' ') {
             event.preventDefault();
-            this.eventBus.emit(`navigation:spacePressed:${currentScreen}`);
+            this.eventBus.emit('navigation:spacePressed');
         }
     }
     
@@ -54,15 +53,4 @@ class Navigation {
         window.location.href = 'launcher.html';
     }
     
-    // Screen detection
-    getCurrentScreen() {
-        const app = document.getElementById('app');
-        if (app.innerHTML.includes('game-load-screen')) {
-            return 'gameLoad';
-        }
-        if (app.innerHTML.includes('game-screen')) {
-            return 'gameScreen';
-        }
-        return 'unknown';
-    }
 }

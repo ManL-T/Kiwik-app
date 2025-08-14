@@ -15,9 +15,6 @@ class P1Challenge {
         // Navigation state
         this.currentState = 0;
         
-        // Event handler reference for cleanup
-        this.spacebarHandler = null;
-        
         // Setup event listeners
         this.setupEventListeners();
         
@@ -29,14 +26,27 @@ class P1Challenge {
         this.eventBus.on('challenge:start', () => {
             this.start();
         });
+        
         this.eventBus.on('gameData:phraseDataReady', (phraseData) => {
-        this.loadChallengeData(phraseData);
+            this.loadChallengeData(phraseData);
         });
+        
         this.eventBus.on('ui:templateLoaded', (templatePath) => {
             if (templatePath.includes('game.html')) {
                 // Now it's safe to update the UI
                 this.updateGameContent();
             }
+        });
+        
+        // Listen to simplified navigation events
+        this.eventBus.on('navigation:enterPressed', () => {
+            // Handle Enter based on current phase
+            this.handleEnterKey();
+        });
+        
+        this.eventBus.on('navigation:spacePressed', () => {
+            // Handle Spacebar based on current phase
+            this.handleSpaceKey();
         });
     }
 
@@ -53,8 +63,7 @@ class P1Challenge {
             translations: unit.translations
         }));
         
-        // Now setup and start the challenge
-        this.setupChallengeEventHandlers();
+        // Now ready to update content when template is loaded
         this.updateGameContent();
     }
         
@@ -64,16 +73,15 @@ class P1Challenge {
         this.requestChallengeData(); // Request data first, then everything else follows
     }
     
-    // Setup challenge-specific event handling
-    setupChallengeEventHandlers() {
-        this.spacebarHandler = (event) => {
-            if (event.key === ' ') {
-                event.preventDefault();
-                this.nextState();
-            }
-        };
-        
-        document.addEventListener('keydown', this.spacebarHandler);
+    // Key handling methods
+    handleEnterKey() {
+        // TODO: Implement based on current phase
+        console.log('🎯 P1Challenge: Enter pressed');
+    }
+    
+    handleSpaceKey() {
+        // For now, keep existing spacebar behavior (cycling through states)
+        this.nextState();
     }
     
     // Challenge logic
@@ -84,9 +92,8 @@ class P1Challenge {
     
     updateGameContent() {
         console.log('🎯 P1Challenge: updateGameContent called');
-        console.log('🎯 P1Challenge: currentState:', this.currentState);
-        console.log('🎯 P1Challenge: states length:', this.states.length);
-        console.log('🎯 P1Challenge: current state data:', this.states[this.currentState]);
+        if (!this.fullSentence || !this.states.length) return;
+        
         this.updateHighlightedText();
         this.updateTranslations();
     }
@@ -104,13 +111,5 @@ class P1Challenge {
         console.log('🎯 P1Challenge: updateTranslations called');
         const translations = this.states[this.currentState].translations;
         this.eventBus.emit('ui:updateTranslations', translations);
-    }
-    
-    // Cleanup method for when challenge ends
-    cleanup() {
-        if (this.spacebarHandler) {
-            document.removeEventListener('keydown', this.spacebarHandler);
-            this.spacebarHandler = null;
-        }
     }
 }
