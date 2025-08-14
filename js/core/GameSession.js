@@ -19,28 +19,11 @@ class GameSession {
     
     // Event handling
     setupEventHandlers() {
-        document.addEventListener('keydown', (event) => {
-            const currentScreen = this.getCurrentScreen();
-            
-            if (currentScreen === 'game-load') {
-                if (event.key === 'Enter') {
-                    this.startGame();
-                } else if (event.key === 'Escape') {
-                    this.goBackToLauncher();
-                }
-            } else if (currentScreen === 'game') {
-                if (event.key === 'Escape') {
-                    this.goBackToLauncher();
-                }
-                // P1Challenge handles spacebar navigation
-            }
+        this.eventBus.on('navigation:enterPressed:gameLoad', () => {
+            this.startGame();
         });
     }
     
-    // Navigation functions
-    goBackToLauncher() {
-        window.location.href = 'launcher.html';
-    }
     
     async loadGameLoadScreen() {
         this.eventBus.emit('ui:loadTemplate', 'templates/screens/load-game.html');
@@ -52,15 +35,4 @@ class GameSession {
         this.eventBus.emit('challenge:start');
     }
     
-    // Helper function to determine current screen
-    getCurrentScreen() {
-        const app = document.getElementById('app');
-        if (app.innerHTML.includes('game-load-screen')) {
-            return 'game-load';
-        }
-        if (app.innerHTML.includes('game-screen')) {
-            return 'game';
-        }
-        return 'unknown';
-    }
 }

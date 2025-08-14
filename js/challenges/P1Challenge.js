@@ -10,7 +10,7 @@ class P1Challenge {
         // Challenge data
         this.fullSentence = "Je l'aperçois entrer dans le café";
         this.states = [
-            { unitTarget: "Je l'aperçois", translations: ["I spot him/her", "I glimpse him/her", "I see him/her"] },
+            { unitTarget: "Je l'aperçois", translations: ["I spot him/her", "I notice him/her", "I see him/her"] },
             { unitTarget: "entrer", translations: ["go in", "walk in", "going into"] },
             { unitTarget: "dans", translations: ["in", "inside", "within"] },
             { unitTarget: "le café", translations: ["the coffee shop", "the coffeehouse", "the café"] }

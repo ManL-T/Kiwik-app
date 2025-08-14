@@ -5,6 +5,7 @@ class App {
         this.eventBus = new EventBus();
         this.uiRenderer = new UIRenderer(this.eventBus);
         this.gameSession = new GameSession(this.eventBus, this.uiRenderer);
+        this.navigation = new Navigation(this.eventBus);
     }
 }
 
@@ -16,8 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // Global wrapper functions for template onclick handlers
 function startGame() {
     window.app.gameSession.startGame();
-}
-
-function goBackToLauncher() {
-    window.app.gameSession.goBackToLauncher();
 }
