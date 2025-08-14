@@ -8,13 +8,9 @@ class P1Challenge {
         this.uiRenderer = uiRenderer;
         
         // Challenge data
-        this.fullSentence = "Je l'aperçois entrer dans le café";
-        this.states = [
-            { unitTarget: "Je l'aperçois", translations: ["I spot him/her", "I notice him/her", "I see him/her"] },
-            { unitTarget: "entrer", translations: ["go in", "walk in", "going into"] },
-            { unitTarget: "dans", translations: ["in", "inside", "within"] },
-            { unitTarget: "le café", translations: ["the coffee shop", "the coffeehouse", "the café"] }
-        ];
+        this.targetPhraseId = 'text_1_p1'; // First phrase, first text
+        this.fullSentence = null;
+        this.states = [];
         
         // Navigation state
         this.currentState = 0;
@@ -33,13 +29,39 @@ class P1Challenge {
         this.eventBus.on('challenge:start', () => {
             this.start();
         });
+        this.eventBus.on('gameData:phraseDataReady', (phraseData) => {
+        this.loadChallengeData(phraseData);
+        });
+        this.eventBus.on('ui:templateLoaded', (templatePath) => {
+            if (templatePath.includes('game.html')) {
+                // Now it's safe to update the UI
+                this.updateGameContent();
+            }
+        });
     }
-    
+
+    requestChallengeData() {
+        this.eventBus.emit('gameData:requestPhraseData', this.targetPhraseId);
+    }
+
+    loadChallengeData(phraseData) {
+        console.log('🎯 P1Challenge: Loading challenge data:', phraseData.phraseTarget);
+        
+        this.fullSentence = phraseData.phraseTarget;
+        this.states = phraseData.semanticUnits.map(unit => ({
+            unitTarget: unit.unitTarget,
+            translations: unit.translations
+        }));
+        
+        // Now setup and start the challenge
+        this.setupChallengeEventHandlers();
+        this.updateGameContent();
+    }
+        
     // Start the challenge
     start() {
         console.log('🎯 P1Challenge: Starting challenge...');
-        this.setupChallengeEventHandlers();
-        this.updateGameContent();
+        this.requestChallengeData(); // Request data first, then everything else follows
     }
     
     // Setup challenge-specific event handling
@@ -61,18 +83,27 @@ class P1Challenge {
     }
     
     updateGameContent() {
+        console.log('🎯 P1Challenge: updateGameContent called');
+        console.log('🎯 P1Challenge: currentState:', this.currentState);
+        console.log('🎯 P1Challenge: states length:', this.states.length);
+        console.log('🎯 P1Challenge: current state data:', this.states[this.currentState]);
         this.updateHighlightedText();
         this.updateTranslations();
     }
     
     updateHighlightedText() {
+        console.log('🎯 P1Challenge: updateHighlightedText called');
         const currentUnitTarget = this.states[this.currentState].unitTarget;
-        this.uiRenderer.updateHighlightedText(this.fullSentence, currentUnitTarget);
+        this.eventBus.emit('ui:updateHighlightedText', {
+            fullSentence: this.fullSentence, 
+            unitTarget: currentUnitTarget
+        });
     }
     
     updateTranslations() {
+        console.log('🎯 P1Challenge: updateTranslations called');
         const translations = this.states[this.currentState].translations;
-        this.uiRenderer.updateTranslations(translations);
+        this.eventBus.emit('ui:updateTranslations', translations);
     }
     
     // Cleanup method for when challenge ends

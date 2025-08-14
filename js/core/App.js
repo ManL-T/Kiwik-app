@@ -6,6 +6,7 @@ class App {
         this.uiRenderer = new UIRenderer(this.eventBus);
         this.gameSession = new GameSession(this.eventBus, this.uiRenderer);
         this.navigation = new Navigation(this.eventBus);
+        this.gameData = new GameData(this.eventBus);
     }
 }
 
