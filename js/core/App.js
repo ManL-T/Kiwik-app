@@ -4,9 +4,10 @@ class App {
         console.log('🚀 App: Initializing...');
         this.eventBus = new EventBus();
         this.uiRenderer = new UIRenderer(this.eventBus);
-        this.gameSession = new GameSession(this.eventBus, this.uiRenderer);
-        this.navigation = new Navigation(this.eventBus);
         this.gameData = new GameData(this.eventBus);
+        this.challengeManager = new ChallengeManager(this.eventBus, this.uiRenderer, this.gameData);
+        this.gameSession = new GameSession(this.eventBus, this.uiRenderer, this.challengeManager);        
+        this.navigation = new Navigation(this.eventBus);
     }
 }
 

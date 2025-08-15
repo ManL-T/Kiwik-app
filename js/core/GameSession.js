@@ -1,11 +1,12 @@
 // Game Session controller - handles all game logic and flow
 class GameSession {
-    constructor(eventBus, uiRenderer) {
+    constructor(eventBus, uiRenderer, challengeManager) {
         console.log('🎮 GameSession: Initializing...');
         
         // Store references
         this.eventBus = eventBus;
         this.uiRenderer = uiRenderer;
+        this.challengeManager = challengeManager;
         
         // Challenge instance
         this.p1Challenge = null;
@@ -61,7 +62,6 @@ class GameSession {
         
         // TODO: Create ChallengeSequencer to decide which challenge to load
         // For now, directly create P1Challenge
-        this.p1Challenge = new P1Challenge(this.eventBus, this.uiRenderer);
-        this.eventBus.emit('challenge:start');
+        this.challengeManager.startSession();
     }
 }
