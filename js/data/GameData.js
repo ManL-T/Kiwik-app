@@ -40,20 +40,41 @@ class GameData {
     }
 
     providePhraseData(phraseId) {
-        console.log('📚 GameData: Providing data for phrase:', phraseId);
+        console.log('📚 GameData: Providing complete challenge data for phrase:', phraseId);
         
         if (!this.data) {
             console.error('❌ GameData: Data not loaded yet, cannot provide phrase data');
             return;
         }
         
+        // Find phrase data
         const phrase = this.data.phrases.find(p => p.phraseId === phraseId);
-        if (phrase) {
-            console.log('✅ GameData: Found phrase data:', phrase.phraseTarget);
-            this.eventBus.emit('gameData:phraseDataReady', phrase);
-        } else {
+        if (!phrase) {
             console.error('❌ GameData: Phrase not found:', phraseId);
+            return;
         }
+
+        // Find solution data
+        const solution = this.data.solutions.find(s => s.phraseId === phraseId);
+        if (!solution) {
+            console.error('❌ GameData: Solution not found for phrase:', phraseId);
+            return;
+        }
+
+        // Combine into flat object
+        const challengeData = {
+            phraseId: phrase.phraseId,
+            phraseTarget: phrase.phraseTarget,
+            semanticUnits: phrase.semanticUnits,
+            primaryTranslation: solution.primaryTranslation,
+            alternatives: solution.alternatives,
+            distractors: solution.distractors
+        };
+
+        console.log('✅ GameData: Found complete challenge data for:', phrase.phraseTarget);
+        console.log('📚 GameData: Solution data included:', solution.primaryTranslation);
+        
+        this.eventBus.emit('gameData:phraseDataReady', challengeData);
     }
     
     // Helper Methods - Navigate the data structure

@@ -12,6 +12,16 @@ class P1Challenge {
         this.fullSentence = null;
         this.states = [];
         
+        // Solution data
+        this.primaryTranslation = null;
+        this.alternatives = [];
+        this.distractors = [];
+        
+        // Solution phase state
+        this.solutionOptions = []; // Randomized array of 4 options
+        this.correctIndex = -1;    // Index of correct answer in solutionOptions
+        this.selectedIndex = 0;    // Currently selected option (0-3)
+        
         // Phase management
         this.currentPhase = 'pre-revision';
         
@@ -31,8 +41,8 @@ class P1Challenge {
             this.start();
         });
         
-        this.eventBus.on('gameData:phraseDataReady', (phraseData) => {
-            this.loadChallengeData(phraseData);
+        this.eventBus.on('gameData:phraseDataReady', (challengeData) => {
+            this.loadChallengeData(challengeData);
         });
         
         this.eventBus.on('ui:templateLoaded', (templatePath) => {
@@ -68,14 +78,24 @@ class P1Challenge {
         this.eventBus.emit('gameData:requestPhraseData', this.targetPhraseId);
     }
 
-    loadChallengeData(phraseData) {
-        console.log('🎯 P1Challenge: Loading challenge data:', phraseData.phraseTarget);
+    loadChallengeData(challengeData) {
+        console.log('🎯 P1Challenge: Loading complete challenge data:', challengeData.phraseTarget);
         
-        this.fullSentence = phraseData.phraseTarget;
-        this.states = phraseData.semanticUnits.map(unit => ({
+        // Extract phrase data for revision phase
+        this.fullSentence = challengeData.phraseTarget;
+        this.states = challengeData.semanticUnits.map(unit => ({
             unitTarget: unit.unitTarget,
             translations: unit.translations
         }));
+        
+        // Extract solution data for solution phase
+        this.primaryTranslation = challengeData.primaryTranslation;
+        this.alternatives = challengeData.alternatives;
+        this.distractors = challengeData.distractors;
+        
+        console.log('🎯 P1Challenge: Phrase data loaded:', this.fullSentence);
+        console.log('🎯 P1Challenge: Solution data loaded:', this.primaryTranslation);
+        console.log('🎯 P1Challenge: Distractors loaded:', this.distractors.length, 'items');
         
         // Inject phrase into template if it's already loaded
         this.injectPhraseIntoTemplate();
@@ -93,7 +113,7 @@ class P1Challenge {
         this.eventBus.emit('ui:loadTemplate', 'templates/screens/pre-revision.html');
         console.log('🎯 P1Challenge: Template load request sent');
         
-        // Request challenge data
+        // Request complete challenge data
         this.requestChallengeData();
     }
 
@@ -127,6 +147,9 @@ class P1Challenge {
             console.log('🎯 P1Challenge: Moving to solution phase...');
             this.currentPhase = 'solution';
             this.eventBus.emit('ui:loadTemplate', 'templates/screens/game.html');
+        } else if (this.currentPhase === 'solution') {
+            // SOLUTION LOGIC: Submit current selection
+            this.handleSolutionEnter();
         }
     }
     
@@ -145,6 +168,9 @@ class P1Challenge {
         } else if (this.currentPhase === 'revision') {
             // NEW REVISION LOGIC: Navigate through semantic units
             this.handleRevisionSpacebar();
+        } else if (this.currentPhase === 'solution') {
+            // SOLUTION LOGIC: Navigate through answer options
+            this.handleSolutionSpacebar();
         }
     }
     
@@ -208,8 +234,6 @@ class P1Challenge {
         this.currentState = -1; // Start at -1, first spacebar press will go to 0
     }
     
-
-    
     // Display area methods
     showCurrentSemanticUnit() {
         console.log('🎯 P1Challenge: Showing semantic unit:', this.currentState);
@@ -236,22 +260,133 @@ class P1Challenge {
     setupSolutionPhase() {
         console.log('🎯 P1Challenge: Setting up solution phase');
         
+        if (!this.primaryTranslation || !this.distractors.length) {
+            console.log('🎯 P1Challenge: No solution data available');
+            return;
+        }
+        
         // Show plain phrase in header
         this.eventBus.emit('ui:updateHighlightedText', {
             fullSentence: this.fullSentence, 
             unitTarget: '' // No highlighting in solution phase
         });
         
-        // Show basic solution content for testing
-        const solutionHTML = `
-            <div class="translation-option">Solution Phase - Testing</div>
-            <div class="translation-option">Full phrase: ${this.fullSentence}</div>
-            <div class="translation-option">TODO: Multiple choice answers will go here</div>
-        `;
+        // Prepare solution options
+        this.prepareSolutionOptions();
         
-        this.eventBus.emit('ui:updateDisplayContainer', solutionHTML);
+        // Render multiple choice interface
+        this.renderSolutionInterface();
         
-        console.log('🎯 P1Challenge: Solution phase ready');
+        console.log('🎯 P1Challenge: Solution phase ready with', this.solutionOptions.length, 'options');
+    }
+    
+    prepareSolutionOptions() {
+        console.log('🎯 P1Challenge: Preparing solution options');
+        
+        // Create array with correct answer + 3 distractors
+        const allOptions = [this.primaryTranslation, ...this.distractors.slice(0, 3)];
+        
+        // Shuffle the options
+        this.solutionOptions = this.shuffleArray([...allOptions]);
+        
+        // Find where the correct answer ended up
+        this.correctIndex = this.solutionOptions.indexOf(this.primaryTranslation);
+        
+        // Reset selection to first option
+        this.selectedIndex = 0;
+        
+        console.log('🎯 P1Challenge: Options prepared, correct answer at index:', this.correctIndex);
+        console.log('🎯 P1Challenge: Solution options:', this.solutionOptions);
+    }
+    
+    shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
+    
+    renderSolutionInterface() {
+        console.log('🎯 P1Challenge: Rendering solution interface');
+        
+        const solutionHTML = this.solutionOptions.map((option, index) => {
+            const isSelected = index === this.selectedIndex;
+            const cssClass = isSelected ? 'solution-option solution-option-selected' : 'solution-option';
+            return `<div class="${cssClass}">${option}</div>`;
+        }).join('');
+        
+        this.eventBus.emit('ui:multipleChoice', solutionHTML);
+    }
+    
+    // SOLUTION NAVIGATION
+    handleSolutionSpacebar() {
+        console.log('🎯 P1Challenge: Solution spacebar - cycling selection');
+        
+        // Move to next option (cycle 0→1→2→3→0)
+        this.selectedIndex = (this.selectedIndex + 1) % this.solutionOptions.length;
+        
+        console.log('🎯 P1Challenge: Selected index now:', this.selectedIndex);
+        
+        // Update visual selection
+        this.renderSolutionInterface();
+    }
+    
+    handleSolutionEnter() {
+        console.log('🎯 P1Challenge: Solution enter - submitting answer');
+        console.log('🎯 P1Challenge: Selected index:', this.selectedIndex, 'Correct index:', this.correctIndex);
+        
+        const isCorrect = this.selectedIndex === this.correctIndex;
+        
+        if (isCorrect) {
+            console.log('🎯 P1Challenge: Correct answer! Showing green feedback');
+            this.showAnswerFeedback('correct');
+        } else {
+            console.log('🎯 P1Challenge: Incorrect answer! Showing red feedback');
+            this.showAnswerFeedback('incorrect');
+        }
+    }
+    
+    showAnswerFeedback(feedbackType) {
+        console.log('🎯 P1Challenge: Showing feedback:', feedbackType);
+        
+        // Render interface with feedback colors
+        const solutionHTML = this.solutionOptions.map((option, index) => {
+            let cssClass = 'solution-option';
+            
+            if (index === this.selectedIndex) {
+                // Color the selected option based on correctness
+                cssClass += feedbackType === 'correct' ? ' solution-option-correct' : ' solution-option-incorrect';
+            }
+            
+            return `<div class="${cssClass}">${option}</div>`;
+        }).join('');
+        
+        this.eventBus.emit('ui:multipleChoice', solutionHTML);
+        
+        // Wait 1 second then handle next action
+        setTimeout(() => {
+            if (feedbackType === 'correct') {
+                this.proceedToNextChallenge();
+            } else {
+                this.resetToSelection();
+            }
+        }, 1000);
+    }
+    
+    proceedToNextChallenge() {
+        console.log('🎯 P1Challenge: Proceeding to next challenge');
+        // TODO: Implement next phrase loading
+        // For now, show success message
+        const successHTML = '<div class="solution-option">Correct! Loading next challenge...</div>';
+        this.eventBus.emit('ui:multipleChoice', successHTML);
+    }
+    
+    resetToSelection() {
+        console.log('🎯 P1Challenge: Resetting to selection mode (same positions)');
+        // Keep same positions, just remove feedback colors
+        this.renderSolutionInterface();
     }
     
     // Challenge logic
@@ -305,6 +440,4 @@ class P1Challenge {
         const translations = this.states[this.currentState].translations;
         this.eventBus.emit('ui:updateTranslations', translations);
     }
-
-    
 }

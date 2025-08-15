@@ -29,6 +29,10 @@ class UIRenderer {
         this.eventBus.on('ui:updateDisplayContainer', (html) => {
             this.updateDisplayContainer(html);
         });
+        
+        this.eventBus.on('ui:multipleChoice', (html) => {
+            this.multipleChoice(html);
+        });
     }
     
     // Template loading
@@ -95,5 +99,16 @@ class UIRenderer {
         if (!displayContainer) return;
         
         displayContainer.innerHTML = html;
+    }
+    
+    // Multiple choice layout - renders directly into display area
+    multipleChoice(html) {
+        console.log('🎨 UIRenderer: multipleChoice called');
+        console.log('🎨 UIRenderer: html:', html);
+        
+        const displayArea = document.querySelector('.display-area');
+        if (!displayArea) return;
+        
+        displayArea.innerHTML = html;
     }
 }
