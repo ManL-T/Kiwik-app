@@ -95,7 +95,7 @@ body {
 .text {
     color: #00E7A4;
     /* font-size: 3rem; */
-    font-size: 6vw;
+    font-size: 5vw;
     font-weight: normal;
     margin-bottom: 0;
 }
@@ -109,6 +109,15 @@ body {
     display: inline-block;
     margin: 0 6px;
     font-weight: bold;
+}
+
+.highlight-box {
+    border: 2px solid #E6BD4B;
+    padding: 2px 4px;
+    border-radius: 4px;
+    background: transparent;
+    display: inline-block;
+    margin: 0 2px;
 }
 
 /* Display area / body section */

@@ -25,6 +25,10 @@ class UIRenderer {
         this.eventBus.on('ui:updateTranslations', (translations) => {
             this.updateTranslations(translations);
         });
+        
+        this.eventBus.on('ui:updateDisplayContainer', (html) => {
+            this.updateDisplayContainer(html);
+        });
     }
     
     // Template loading
@@ -45,19 +49,24 @@ class UIRenderer {
         console.log('🎨 UIRenderer: updateHighlightedText called');
         console.log('🎨 UIRenderer: fullSentence:', fullSentence);
         console.log('🎨 UIRenderer: unitTarget:', unitTarget);
-        const app = document.getElementById('app');
-        console.log('🎨 UIRenderer: app innerHTML preview:', app.innerHTML.substring(0, 100));
-        const textElement = document.querySelector('.text');
-        console.log('🎨 UIRenderer: textElement found:', !!textElement);
         
+        const textElement = document.querySelector('.text');
         if (!textElement) return;
         
+        // If no unitTarget, show plain text (for decision phases)
+        if (!unitTarget) {
+            console.log('🎨 UIRenderer: Showing plain text - no highlighting');
+            textElement.innerHTML = fullSentence;
+            return;
+        }
+        
+        // Apply highlighting (for revision phase)
         const highlightedText = fullSentence.replace(
             unitTarget,
             `<span class="text-highlight">${unitTarget}</span>`
         );
         
-        console.log('🎨 UIRenderer: setting innerHTML:', highlightedText);
+        console.log('🎨 UIRenderer: setting highlighted innerHTML:', highlightedText);
         textElement.innerHTML = highlightedText;
     }
     
@@ -67,14 +76,7 @@ class UIRenderer {
         console.log('🎨 UIRenderer: translations:', translations);
         
         const displayContainer = document.querySelector('.display-container');
-        console.log('🎨 UIRenderer: displayContainer found:', !!displayContainer);
-        
-        if (!displayContainer) {
-            console.log('🎨 UIRenderer: No displayContainer found, checking available elements...');
-            const allElements = document.querySelectorAll('div');
-            console.log('🎨 UIRenderer: Available div elements:', Array.from(allElements).map(el => el.className));
-            return;
-        }
+        if (!displayContainer) return;
         
         const translationsHTML = translations.map(translation => 
             `<div class="translation-option">${translation}</div>`
@@ -82,5 +84,16 @@ class UIRenderer {
         
         console.log('🎨 UIRenderer: setting translations innerHTML:', translationsHTML);
         displayContainer.innerHTML = translationsHTML;
+    }
+    
+    // Update display container with custom HTML
+    updateDisplayContainer(html) {
+        console.log('🎨 UIRenderer: updateDisplayContainer called');
+        console.log('🎨 UIRenderer: html:', html);
+        
+        const displayContainer = document.querySelector('.display-container');
+        if (!displayContainer) return;
+        
+        displayContainer.innerHTML = html;
     }
 }

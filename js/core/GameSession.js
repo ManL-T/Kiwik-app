@@ -10,6 +10,9 @@ class GameSession {
         // Challenge instance
         this.p1Challenge = null;
         
+        // Game state
+        this.gameStarted = false;
+        
         // Load screen key handler reference
         this.loadScreenKeyHandler = null;
         
@@ -43,11 +46,21 @@ class GameSession {
     }
     
     async startGame() {
+        // Prevent multiple starts
+        if (this.gameStarted) {
+            console.log('🎮 GameSession: Game already started, ignoring');
+            return;
+        }
+        this.gameStarted = true;
+        
         // Remove load screen key handler
         this.removeLoadScreenKeyHandler();
         
-        // Load game screen and start challenge
-        this.eventBus.emit('ui:loadTemplate', 'templates/screens/game.html');
+        // Start the game logic - no template loading
+        console.log('🎮 GameSession: Starting game logic...');
+        
+        // TODO: Create ChallengeSequencer to decide which challenge to load
+        // For now, directly create P1Challenge
         this.p1Challenge = new P1Challenge(this.eventBus, this.uiRenderer);
         this.eventBus.emit('challenge:start');
     }
