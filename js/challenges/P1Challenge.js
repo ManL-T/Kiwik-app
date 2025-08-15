@@ -12,9 +12,6 @@ class P1Challenge {
         this.fullSentence = null;
         this.states = [];
         
-        // Phase management - just tracking for now
-        this.currentPhase = 'pre-revision';
-        
         // Phase management
         this.currentPhase = 'pre-revision';
         
@@ -99,6 +96,23 @@ class P1Challenge {
         // Request challenge data
         this.requestChallengeData();
     }
+
+    // Inject phrase into decision templates
+    injectPhraseIntoTemplate() {
+        console.log('🎯 P1Challenge: Injecting phrase into template');
+        if (!this.fullSentence) {
+            console.log('🎯 P1Challenge: No phrase data yet, waiting...');
+            return;
+        }
+        
+        const phraseElement = document.querySelector('.phrase-text');
+        if (phraseElement) {
+            phraseElement.textContent = this.fullSentence;
+            console.log('🎯 P1Challenge: Phrase injected:', this.fullSentence);
+        } else {
+            console.error('🎯 P1Challenge: .phrase-text element not found');
+        }
+    }
     
     // Key handling methods
     handleEnterKey() {
@@ -109,13 +123,7 @@ class P1Challenge {
         
         console.log('🎯 P1Challenge: Enter pressed, current phase:', this.currentPhase);
         
-        if (this.currentPhase === 'pre-revision') {
-            // Enter in pre-revision = skip to solution phase
-            console.log('🎯 P1Challenge: Skipping to solution phase...');
-            this.currentPhase = 'solution';
-            this.eventBus.emit('ui:loadTemplate', 'templates/screens/game.html');
-        } else if (this.currentPhase === 'post-revision') {
-            // Enter in post-revision = go to solution phase
+        if (this.currentPhase === 'pre-revision' || this.currentPhase === 'post-revision') {
             console.log('🎯 P1Challenge: Moving to solution phase...');
             this.currentPhase = 'solution';
             this.eventBus.emit('ui:loadTemplate', 'templates/screens/game.html');
@@ -130,19 +138,13 @@ class P1Challenge {
         
         console.log('🎯 P1Challenge: Space pressed, current phase:', this.currentPhase);
         
-        if (this.currentPhase === 'pre-revision') {
-            // Spacebar in pre-revision = start revision phase
+        if (this.currentPhase === 'pre-revision' || this.currentPhase === 'post-revision') {
             console.log('🎯 P1Challenge: Transitioning to revision phase...');
             this.currentPhase = 'revision';
             this.eventBus.emit('ui:loadTemplate', 'templates/screens/game.html');
         } else if (this.currentPhase === 'revision') {
             // NEW REVISION LOGIC: Navigate through semantic units
             this.handleRevisionSpacebar();
-        } else if (this.currentPhase === 'post-revision') {
-            // Spacebar in post-revision = back to revision phase
-            console.log('🎯 P1Challenge: Going back to revision phase...');
-            this.currentPhase = 'revision';
-            this.eventBus.emit('ui:loadTemplate', 'templates/screens/game.html');
         }
     }
     
@@ -151,22 +153,64 @@ class P1Challenge {
         console.log('🎯 P1Challenge: Handling revision spacebar navigation');
         
         // Move to next semantic unit
-        const previousState = this.currentState;
-        this.currentState = (this.currentState + 1) % this.states.length;
+        this.currentState++;
         console.log('🎯 P1Challenge: Current state:', this.currentState);
         
-        // Check if we completed a FULL cycle (went through all states and back to 0)
-        // Only transition to post-revision if we were at the LAST state and now back to 0
-        if (previousState === this.states.length - 1 && this.currentState === 0) {
-            console.log('🎯 P1Challenge: Completed revision cycle, moving to post-revision');
+        // Check if we've seen all semantic units
+        if (this.currentState >= this.states.length) {
+            console.log('🎯 P1Challenge: Completed all semantic units, moving to post-revision');
             this.currentPhase = 'post-revision';
             this.eventBus.emit('ui:loadTemplate', 'templates/screens/post-revision.html');
         } else {
-            // Continue showing semantic units
+            // Show current semantic unit
+            console.log('🎯 P1Challenge: Showing semantic unit:', this.currentState);
             this.showCurrentSemanticUnit();
         }
     }
+
+    // Set up revision phase
+    setupRevisionPhase() {
+        console.log('🎯 P1Challenge: Setting up revision phase content');
+        if (!this.fullSentence || !this.states.length) {
+            console.log('🎯 P1Challenge: No data available for revision phase');
+            return;
+        }
+        
+        // REVISION CONTENT: Show phrase only, no highlighting, no translations
+        this.showPlainPhrase();
+        this.clearDisplayArea();
+        this.resetRevisionState();
+        
+        console.log('🎯 P1Challenge: Revision phase ready - waiting for first spacebar press');
+    }
+
+    // NEW REVISION METHODS - NO translations displayed
+    showPlainPhrase() {
+        console.log('🎯 P1Challenge: Showing plain phrase');
+        // Show phrase without any highlighting
+        this.eventBus.emit('ui:updateHighlightedText', {
+            fullSentence: this.fullSentence, 
+            unitTarget: '' // No highlighting
+        });
+    }
     
+    clearDisplayArea() {
+        console.log('🎯 P1Challenge: Clearing display area');
+        // Show instruction text instead of empty area
+        const instructionHTML = `
+            <div class="translation-option">Tap the spacebar to circle through the translations</div>
+        `;
+        this.eventBus.emit('ui:updateDisplayContainer', instructionHTML);
+    }
+    
+    resetRevisionState() {
+        console.log('🎯 P1Challenge: Resetting revision state');
+        this.currentState = -1; // Start at -1, first spacebar press will go to 0
+    }
+    
+
+    
+    // Display area methods
     showCurrentSemanticUnit() {
         console.log('🎯 P1Challenge: Showing semantic unit:', this.currentState);
         
@@ -261,61 +305,6 @@ class P1Challenge {
         const translations = this.states[this.currentState].translations;
         this.eventBus.emit('ui:updateTranslations', translations);
     }
+
     
-    // Inject phrase into decision templates
-    injectPhraseIntoTemplate() {
-        console.log('🎯 P1Challenge: Injecting phrase into template');
-        if (!this.fullSentence) {
-            console.log('🎯 P1Challenge: No phrase data yet, waiting...');
-            return;
-        }
-        
-        const phraseElement = document.querySelector('.phrase-text');
-        if (phraseElement) {
-            phraseElement.textContent = this.fullSentence;
-            console.log('🎯 P1Challenge: Phrase injected:', this.fullSentence);
-        } else {
-            console.error('🎯 P1Challenge: .phrase-text element not found');
-        }
-    }
-    
-    // Set up revision phase content 
-    setupRevisionPhase() {
-        console.log('🎯 P1Challenge: Setting up revision phase content');
-        if (!this.fullSentence || !this.states.length) {
-            console.log('🎯 P1Challenge: No data available for revision phase');
-            return;
-        }
-        
-        // NEW REVISION LOGIC: Show phrase only, no highlighting, no translations
-        this.showPlainPhrase();
-        this.clearDisplayArea();
-        this.resetRevisionState();
-        
-        console.log('🎯 P1Challenge: Revision phase ready - waiting for first spacebar press');
-    }
-    
-    // NEW REVISION METHODS - Starting from scratch
-    showPlainPhrase() {
-        console.log('🎯 P1Challenge: Showing plain phrase');
-        // Show phrase without any highlighting
-        this.eventBus.emit('ui:updateHighlightedText', {
-            fullSentence: this.fullSentence, 
-            unitTarget: '' // No highlighting
-        });
-    }
-    
-    clearDisplayArea() {
-        console.log('🎯 P1Challenge: Clearing display area');
-        // Show instruction text instead of empty area
-        const instructionHTML = `
-            <div class="translation-option">Tap the spacebar to circle through the translations</div>
-        `;
-        this.eventBus.emit('ui:updateDisplayContainer', instructionHTML);
-    }
-    
-    resetRevisionState() {
-        console.log('🎯 P1Challenge: Resetting revision state');
-        this.currentState = -1; // Start at -1, first spacebar press will go to 0
-    }
 }
