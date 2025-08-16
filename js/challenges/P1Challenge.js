@@ -61,8 +61,14 @@ class P1Challenge {
                 console.log('🎯 P1Challenge: Game template ready');
                 if (this.currentPhase === 'revision') {
                     this.setupRevisionPhase();
+                    // START TIMER: Game template loaded and entering revision phase
+                    console.log('🎯 P1Challenge: Starting timer for revision phase');
+                    this.eventBus.emit('timer:start');
                 } else if (this.currentPhase === 'solution') {
                     this.setupSolutionPhase();
+                    // START TIMER: Game template loaded and entering solution phase
+                    console.log('🎯 P1Challenge: Starting timer for solution phase');
+                    this.eventBus.emit('timer:start');
                 }
             }
         };
@@ -74,6 +80,10 @@ class P1Challenge {
         this.spaceHandler = () => {
             this.handleSpaceKey();
         };
+
+        this.timerExpiredHandler = () => {
+            this.handleTimerExpired();
+        };
         
         // Register all event listeners
         this.eventBus.on('challenge:start', this.challengeStartHandler);
@@ -81,6 +91,8 @@ class P1Challenge {
         this.eventBus.on('ui:templateLoaded', this.templateLoadedHandler);
         this.eventBus.on('navigation:enterPressed', this.enterHandler);
         this.eventBus.on('navigation:spacePressed', this.spaceHandler);
+        this.eventBus.on('timer:expired', this.timerExpiredHandler);
+
     }
 
     requestChallengeData() {
@@ -117,6 +129,10 @@ class P1Challenge {
         console.log('🎯 P1Challenge: Current phase:', this.currentPhase);
         console.log('🎯 P1Challenge: Loading pre-revision template...');
         
+        // TIMER RESET: Reset timer to 12 when challenge starts
+        console.log('🎯 P1Challenge: Resetting timer for new challenge');
+        this.eventBus.emit('timer:reset');
+
         // P1Challenge controls its own templates
         console.log('🎯 P1Challenge: About to emit ui:loadTemplate...');
         this.eventBus.emit('ui:loadTemplate', 'templates/screens/pre-revision.html');
@@ -162,6 +178,7 @@ class P1Challenge {
         }
     }
     
+    // SPACEBAR LOGIC for phases transitions
     handleSpaceKey() {
         if (!this.isActive) {
             console.log('🎯 P1Challenge: Ignoring Spacebar - challenge not active yet');
@@ -174,16 +191,18 @@ class P1Challenge {
             console.log('🎯 P1Challenge: Transitioning to revision phase...');
             this.currentPhase = 'revision';
             this.eventBus.emit('ui:loadTemplate', 'templates/screens/game.html');
+            this.eventBus.emit('timer:tick', 12);
         } else if (this.currentPhase === 'revision') {
             // NEW REVISION LOGIC: Navigate through semantic units
             this.handleRevisionSpacebar();
         } else if (this.currentPhase === 'solution') {
             // SOLUTION LOGIC: Navigate through answer options
             this.handleSolutionSpacebar();
+            this.eventBus.emit('timer:tick', 12);
         }
     }
     
-    // NEW REVISION SPACEBAR LOGIC
+    // revision phase SPACEBAR LOGIC
     handleRevisionSpacebar() {
         console.log('🎯 P1Challenge: Handling revision spacebar navigation');
         
@@ -195,6 +214,9 @@ class P1Challenge {
         if (this.currentState >= this.states.length) {
             console.log('🎯 P1Challenge: Completed all semantic units, moving to post-revision');
             this.currentPhase = 'post-revision';
+            // TIMER PAUSE: Stop timer during phase transition
+            console.log('🎯 P1Challenge: Pausing timer for post-revision');
+            this.eventBus.emit('timer:pause');
             this.eventBus.emit('ui:loadTemplate', 'templates/screens/post-revision.html');
         } else {
             // Show current semantic unit
@@ -350,9 +372,15 @@ class P1Challenge {
         
         if (isCorrect) {
             console.log('🎯 P1Challenge: Correct answer! Showing green feedback');
+            // TIMER STOP: Correct answer selected
+            console.log('🎯 P1Challenge: Stopping timer - correct answer');
+            this.eventBus.emit('timer:stop');
             this.showAnswerFeedback('correct');
         } else {
             console.log('🎯 P1Challenge: Incorrect answer! Showing red feedback');
+            // TIMER PAUSE: Wrong answer feedback
+            console.log('🎯 P1Challenge: Pausing timer for wrong answer feedback');
+            this.eventBus.emit('timer:pause');
             this.showAnswerFeedback('incorrect');
         }
     }
@@ -395,13 +423,36 @@ class P1Challenge {
         }, 1000);
     }
 
+    // Handle timer expiration
+    handleTimerExpired() {
+        if (!this.isActive) {
+            console.log('🎯 P1Challenge: Timer expired but challenge inactive - ignoring');
+            return;
+        }
+        
+        console.log('🎯 P1Challenge: Timer expired! Handling auto-progression...');
+        
+        // TODO: Load time-expired.html template overlay (implement later)
+        // For now: simple console message and proceed
+        console.log('🎯 P1Challenge: TIME EXPIRED - Auto-progressing to next challenge');
+        
+        // Proceed to next challenge after brief delay (simulate popup display)
+        setTimeout(() => {
+            if (!this.isActive) return; // Check if still active after timeout
+            this.proceedToNextChallenge();
+        }, 1000); // 1-second simulated popup display
+    }
+
     
     proceedToNextChallenge() {
         console.log('🎯 P1Challenge: Proceeding to next challenge');
+        // TIMER STOP: Challenge completing (if not already stopped)
+        console.log('🎯 P1Challenge: Stopping timer - challenge complete');
+        this.eventBus.emit('timer:stop');
+        
         // TODO: Implement next phrase loading
         // changed to challenge: complete
        this.eventBus.emit('challenge:complete');
-
     }
 
     // Cleanup method - remove event listeners
@@ -410,6 +461,11 @@ class P1Challenge {
 
         // Disable this challenge instance
         this.isActive = false;
+
+        // TIMER STOP: Cleanup (game over, etc.)
+        console.log('🎯 P1Challenge: Stopping timer during cleanup');
+        this.eventBus.emit('timer:stop');
+
         
         // Clear timeout
         if (this.feedbackTimeout) {
@@ -428,6 +484,7 @@ class P1Challenge {
         this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         this.eventBus.off('navigation:enterPressed', this.enterHandler);
         this.eventBus.off('navigation:spacePressed', this.spaceHandler);
+        this.eventBus.off('timer:expired', this.timerExpiredHandler);
         
         console.log('✅ P1Challenge: Cleanup complete');
     }

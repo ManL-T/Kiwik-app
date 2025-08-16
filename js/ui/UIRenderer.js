@@ -17,13 +17,13 @@ class UIRenderer {
         this.eventBus.on('ui:loadTemplate', (templatePath) => {
             this.loadTemplate(templatePath);
         });
-
-        this.eventBus.on('ui:multipleChoice', (html) => {
-            this.multipleChoice(html);
-        });
         
         this.eventBus.on('energy:updateDisplay', (energyPercentage) => {
             this.updateEnergyBar(energyPercentage);
+        });
+        
+        this.eventBus.on('timer:tick', (currentTime) => {
+            this.updateTimerDisplay(currentTime);
         });
         
         this.eventBus.on('ui:updateHighlightedText', (data) => {
@@ -121,6 +121,17 @@ class UIRenderer {
         if (!progressBar) return;
         
         progressBar.style.width = `${energyPercentage}%`;
+    }
+    
+    // Update timer display
+    updateTimerDisplay(currentTime) {
+        console.log('🎨 UIRenderer: updateTimerDisplay called');
+        console.log('🎨 UIRenderer: currentTime:', currentTime);
+        
+        const timerElement = document.querySelector('.timer-display');
+        if (!timerElement) return;
+        
+        timerElement.textContent = currentTime;
     }
     
     // Multiple choice layout - renders directly into display area
