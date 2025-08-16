@@ -56,20 +56,21 @@ body {
 }
 
 .progress-container {
-    flex: 1;
-    margin: 0 25px;
-    height: 12px;
-    background-color: transparent;
-    position: relative;
+    /* Flask container - always full width with border */
+    width: clamp(80%, 5vw + 80%, 90%);
+    height: 20px;
+    border: 2px solid #17F882;  /* Green border */
+    border-radius: 10px;
+    background: transparent;     /* See-through empty space */
+    padding: 2px; 
 }
 
 .progress-bar {
+    /* Green liquid - width controlled by JavaScript */
     height: 12px;
     background: #17F882;
-    /* width: 80%; */
-    width: clamp(80%, 5vw + 80%, 90%); /* 80% on desktop, up to 90% on mobile */
-    margin: 0 auto;
-    border-radius: 10px;
+    border-radius: 6px;
+    margin-left: 0;  
 }
 
 .timer-display {
@@ -173,8 +174,8 @@ body {
 }
 
 .solution-option-selected {
-    background-color: #031B1E; /* Same as header background - much darker */
-    color: #00E7A4;
+    background-color: #031B1E !important; /* Force override */
+    color: #00E7A4 !important;     
 }
 
 .solution-option-correct {
@@ -186,3 +187,8 @@ body {
     background-color: #F44336; /* Red for incorrect answer */
     color: #ffffff;
 }
+
+/* .game-over-option-selected {
+    background-color: #24cce2;
+    color: #01110d;
+} */

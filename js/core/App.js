@@ -20,3 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function startGame() {
     window.app.gameSession.startGame();
 }
+
+function startNewGame() {
+    // Reload the page to start fresh
+    window.location.reload();
+}
+
+function backToSite() {
+    // Go back to launcher
+    window.location.href = 'launcher.html';
+}

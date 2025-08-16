@@ -156,4 +156,17 @@ class ChallengeManager {
         
         return currentTextPhrases[this.currentPhraseIndex];
     }
+
+     // Clean up current challenge (called during game over)
+    cleanupCurrentChallenge() {
+        console.log('🎯 ChallengeManager: Cleaning up current challenge for game over');
+        
+        if (this.currentChallenge && this.currentChallenge.cleanup) {
+            console.log('🎯 ChallengeManager: Calling cleanup on active challenge');
+            this.currentChallenge.cleanup();
+            this.currentChallenge = null;
+        } else {
+            console.log('🎯 ChallengeManager: No active challenge to clean up');
+        }
+    }
 }

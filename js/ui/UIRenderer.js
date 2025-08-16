@@ -17,6 +17,14 @@ class UIRenderer {
         this.eventBus.on('ui:loadTemplate', (templatePath) => {
             this.loadTemplate(templatePath);
         });
+
+        this.eventBus.on('ui:multipleChoice', (html) => {
+            this.multipleChoice(html);
+        });
+        
+        this.eventBus.on('energy:updateDisplay', (energyPercentage) => {
+            this.updateEnergyBar(energyPercentage);
+        });
         
         this.eventBus.on('ui:updateHighlightedText', (data) => {
             this.updateHighlightedText(data.fullSentence, data.unitTarget);
@@ -47,6 +55,8 @@ class UIRenderer {
             console.error('Error loading template:', error);
         }
     }
+
+    
     
     // Update highlighted text in game screen
     updateHighlightedText(fullSentence, unitTarget) {
@@ -99,6 +109,18 @@ class UIRenderer {
         if (!displayContainer) return;
         
         displayContainer.innerHTML = html;
+    }
+
+    // Update energy bar display
+    updateEnergyBar(energyPercentage) {
+        console.log('🎨 UIRenderer: updateEnergyBar called');
+        console.log('🎨 UIRenderer: energyPercentage:', energyPercentage);
+        
+        const progressBar = document.querySelector('.progress-bar');
+        console.log('🎨 UIRenderer: progressBar element found:', progressBar); // ← ADD THIS LINE
+        if (!progressBar) return;
+        
+        progressBar.style.width = `${energyPercentage}%`;
     }
     
     // Multiple choice layout - renders directly into display area

@@ -28,6 +28,7 @@ class P1Challenge {
         
         // Navigation state
         this.currentState = 0;
+        this.isActive = true;
         
         // Setup event listeners
         this.setupEventListeners();
@@ -358,6 +359,11 @@ class P1Challenge {
     
     showAnswerFeedback(feedbackType) {
         console.log('🎯 P1Challenge: Showing feedback:', feedbackType);
+
+        if (this.feedbackTimeout) {
+            clearTimeout(this.feedbackTimeout);
+            this.feedbackTimeout = null;
+        }
         
         // Render interface with feedback colors
         const solutionHTML = this.solutionOptions.map((option, index) => {
@@ -373,15 +379,22 @@ class P1Challenge {
         
         this.eventBus.emit('ui:multipleChoice', solutionHTML);
         
-        // Wait 1 second then handle next action
-        setTimeout(() => {
+        // FIXED: Store timeout reference properly and check isActive in callback
+        this.feedbackTimeout = setTimeout(() => {
+            if (!this.isActive) {
+                console.log('🎯 P1Challenge: Timeout fired but challenge is inactive - exiting');
+                return; // Exit if challenge was cleaned up
+            }
+            
             if (feedbackType === 'correct') {
                 this.proceedToNextChallenge();
             } else {
+                this.eventBus.emit('challenge:wrongAnswer');
                 this.resetToSelection();
             }
         }, 1000);
     }
+
     
     proceedToNextChallenge() {
         console.log('🎯 P1Challenge: Proceeding to next challenge');
@@ -394,6 +407,21 @@ class P1Challenge {
     // Cleanup method - remove event listeners
     cleanup() {
         console.log('🎯 P1Challenge: Cleaning up...');
+
+        // Disable this challenge instance
+        this.isActive = false;
+        
+        // Clear timeout
+        if (this.feedbackTimeout) {
+            clearTimeout(this.feedbackTimeout);
+        }
+    
+
+        // Clear any pending timeouts
+        if (this.feedbackTimeout) {
+            clearTimeout(this.feedbackTimeout);
+            this.feedbackTimeout = null;
+        }
         
         this.eventBus.off('challenge:start', this.challengeStartHandler);
         this.eventBus.off('gameData:phraseDataReady', this.phraseDataHandler);
@@ -403,9 +431,17 @@ class P1Challenge {
         
         console.log('✅ P1Challenge: Cleanup complete');
     }
+
     
     resetToSelection() {
         console.log('🎯 P1Challenge: Resetting to selection mode (same positions)');
+        
+        // FIXED: Add isActive check
+        if (!this.isActive) {
+            console.log('🎯 P1Challenge: resetToSelection called after cleanup - ignoring');
+            return;
+        }
+        
         // Keep same positions, just remove feedback colors
         this.renderSolutionInterface();
     }
@@ -461,8 +497,5 @@ class P1Challenge {
         const translations = this.states[this.currentState].translations;
         this.eventBus.emit('ui:updateTranslations', translations);
     }
-
-
-
 
 }
