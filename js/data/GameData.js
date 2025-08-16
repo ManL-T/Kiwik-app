@@ -86,7 +86,11 @@ class GameData {
     
     getPhrasesForText(textId) {
         if (!this.data) return [];
-        return this.data.phrases.filter(phrase => phrase.phraseId.startsWith(textId));
+        return this.data.phrases.filter(phrase => {
+            // Extract the text part from phraseId (e.g., "text_1_p1" -> "text_1")
+            const phraseTextId = phrase.phraseId.substring(0, phrase.phraseId.lastIndexOf('_'));
+            return phraseTextId === textId;
+        });
     }
     
     getUnitsForPhrase(phraseId) {

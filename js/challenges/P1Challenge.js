@@ -1,6 +1,7 @@
 // P1Challenge - handles all logic for phrase navigation challenge
 class P1Challenge {
-    constructor(eventBus, uiRenderer) {
+    constructor(eventBus, uiRenderer, phraseId) {
+        console.log('🎯 P1Challenge: Received phraseId parameter:', phraseId);
         console.log('🎯 P1Challenge: Initializing...');
         
         // Store references
@@ -8,7 +9,7 @@ class P1Challenge {
         this.uiRenderer = uiRenderer;
         
         // Challenge data
-        this.targetPhraseId = 'text_1_p1'; // First phrase, first text
+        this.targetPhraseId = phraseId
         this.fullSentence = null;
         this.states = [];
         
@@ -34,18 +35,19 @@ class P1Challenge {
         console.log('✅ P1Challenge: Initialization complete');
     }
     
-    // Setup event listeners
+   // Setup event listeners with stored handler references
     setupEventListeners() {
-        this.eventBus.on('challenge:start', () => {
+        // Store handler references for cleanup
+        this.challengeStartHandler = () => {
             console.log('🎯 P1Challenge: Received challenge:start event');
             this.start();
-        });
+        };
         
-        this.eventBus.on('gameData:phraseDataReady', (challengeData) => {
+        this.phraseDataHandler = (challengeData) => {
             this.loadChallengeData(challengeData);
-        });
+        };
         
-        this.eventBus.on('ui:templateLoaded', (templatePath) => {
+        this.templateLoadedHandler = (templatePath) => {
             console.log('🎯 P1Challenge: Template loaded:', templatePath);
             if (templatePath.includes('pre-revision.html')) {
                 console.log('🎯 P1Challenge: Pre-revision template ready');
@@ -62,16 +64,22 @@ class P1Challenge {
                     this.setupSolutionPhase();
                 }
             }
-        });
+        };
         
-        // Listen to simplified navigation events
-        this.eventBus.on('navigation:enterPressed', () => {
+        this.enterHandler = () => {
             this.handleEnterKey();
-        });
+        };
         
-        this.eventBus.on('navigation:spacePressed', () => {
+        this.spaceHandler = () => {
             this.handleSpaceKey();
-        });
+        };
+        
+        // Register all event listeners
+        this.eventBus.on('challenge:start', this.challengeStartHandler);
+        this.eventBus.on('gameData:phraseDataReady', this.phraseDataHandler);
+        this.eventBus.on('ui:templateLoaded', this.templateLoadedHandler);
+        this.eventBus.on('navigation:enterPressed', this.enterHandler);
+        this.eventBus.on('navigation:spacePressed', this.spaceHandler);
     }
 
     requestChallengeData() {
@@ -378,9 +386,22 @@ class P1Challenge {
     proceedToNextChallenge() {
         console.log('🎯 P1Challenge: Proceeding to next challenge');
         // TODO: Implement next phrase loading
-        // For now, show success message
-        const successHTML = '<div class="solution-option">Correct! Loading next challenge...</div>';
-        this.eventBus.emit('ui:multipleChoice', successHTML);
+        // changed to challenge: complete
+       this.eventBus.emit('challenge:complete');
+
+    }
+
+    // Cleanup method - remove event listeners
+    cleanup() {
+        console.log('🎯 P1Challenge: Cleaning up...');
+        
+        this.eventBus.off('challenge:start', this.challengeStartHandler);
+        this.eventBus.off('gameData:phraseDataReady', this.phraseDataHandler);
+        this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
+        this.eventBus.off('navigation:enterPressed', this.enterHandler);
+        this.eventBus.off('navigation:spacePressed', this.spaceHandler);
+        
+        console.log('✅ P1Challenge: Cleanup complete');
     }
     
     resetToSelection() {
@@ -440,4 +461,8 @@ class P1Challenge {
         const translations = this.states[this.currentState].translations;
         this.eventBus.emit('ui:updateTranslations', translations);
     }
+
+
+
+
 }
