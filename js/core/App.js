@@ -5,6 +5,7 @@ class App {
         this.eventBus = new EventBus();
         this.uiRenderer = new UIRenderer(this.eventBus);
         this.gameData = new GameData(this.eventBus);
+        this.userProgress = new UserProgress(this.eventBus);
         this.timer = new Timer(this.eventBus);
         this.challengeManager = new ChallengeManager(this.eventBus, this.uiRenderer, this.gameData);
         this.gameSession = new GameSession(this.eventBus, this.uiRenderer, this.challengeManager);        

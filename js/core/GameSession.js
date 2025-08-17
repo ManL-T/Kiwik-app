@@ -39,6 +39,11 @@ class GameSession {
         this.eventBus.on('challenge:wrongAnswer', () => {
             this.handleEnergyLoss('wrongAnswer');
         });
+
+        this.eventBus.on('timer:expired', () => {
+            this.handleTimerExpired();
+        });
+
         this.eventBus.on('ui:templateLoaded', (templatePath) => {
             if (templatePath.includes('game-over.html')) {
                 this.setupGameOverKeyHandler();
@@ -63,6 +68,11 @@ class GameSession {
         } else if (currentLives <= 3) {
             console.log('🎮 GameSession: Low energy warning');
         }
+    }
+
+    handleTimerExpired() {
+        console.log('🎮 GameSession: Timer expired - triggering energy loss');
+        this.handleEnergyLoss('timerExpired');
     }
 
     setupLoadScreenKeyHandler() {
@@ -91,8 +101,10 @@ class GameSession {
             return;
         }
         this.gameStarted = true;
+
+        this.eventBus.emit('userProgress:gameStarted');
         
-        // Remove load screen key handler
+        // Remove load screen key handler to prevent enter key events progagation from load-game screen
         this.removeLoadScreenKeyHandler();
         
         // Start the game logic - no template loading
@@ -104,6 +116,9 @@ class GameSession {
     }
 
     async handleGameOver() {
+        console.log('🎮 GameSession: Game Over - saving progress');
+        this.eventBus.emit('userProgress:saveProgress');
+
         console.log('🎮 GameSession: Loading game over screen');
         await this.uiRenderer.loadTemplate('templates/screens/game-over.html');
         this.setupGameOverKeyHandler(); // Now we know DOM is ready

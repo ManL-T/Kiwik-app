@@ -17,6 +17,10 @@ class UIRenderer {
         this.eventBus.on('ui:loadTemplate', (templatePath) => {
             this.loadTemplate(templatePath);
         });
+
+        this.eventBus.on('ui:showOverlay', (overlayData) => {
+            this.showOverlay(overlayData);
+        });
         
         this.eventBus.on('energy:updateDisplay', (energyPercentage) => {
             this.updateEnergyBar(energyPercentage);
@@ -127,11 +131,57 @@ class UIRenderer {
     updateTimerDisplay(currentTime) {
         console.log('🎨 UIRenderer: updateTimerDisplay called');
         console.log('🎨 UIRenderer: currentTime:', currentTime);
+
+        // DEBUG: Add stack trace when currentTime is 12
+        if (currentTime === 12) {
+        console.log('🐛 DEBUG: Stack trace for currentTime=12:');
+        console.trace();
+    }
         
         const timerElement = document.querySelector('.timer-display');
         if (!timerElement) return;
         
         timerElement.textContent = currentTime;
+    }
+
+    // Show overlay on top of current content
+    async showOverlay(overlayData) {
+        console.log('🎨 UIRenderer: showOverlay called');
+        console.log('🎨 UIRenderer: overlayData:', overlayData);
+        
+        try {
+            // Fetch overlay template
+            const response = await fetch(overlayData.templatePath);
+            const html = await response.text();
+            console.log('🎨 UIRenderer: Fetched HTML:', html.substring(0, 200)); // Add this line
+
+            
+            // Parse HTML and extract overlay content
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const overlayElement = doc.querySelector('.overlay-backdrop');
+            
+            if (!overlayElement) {
+                console.error('🎨 UIRenderer: .overlay-backdrop not found in template');
+                return;
+            }
+            
+            // Append overlay to document body
+            document.body.appendChild(overlayElement);
+            console.log('🎨 UIRenderer: Overlay displayed');
+            
+            // Auto-remove after duration
+            setTimeout(() => {
+                if (overlayElement && overlayElement.parentNode) {
+                    overlayElement.parentNode.removeChild(overlayElement);
+                    console.log('🎨 UIRenderer: Overlay removed after', overlayData.duration, 'ms');
+                    this.eventBus.emit('ui:overlayHidden');
+                }
+            }, overlayData.duration);
+            
+        } catch (error) {
+            console.error('🎨 UIRenderer: Error showing overlay:', error);
+        }
     }
     
     // Multiple choice layout - renders directly into display area
