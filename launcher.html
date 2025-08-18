@@ -13,8 +13,8 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #2a3f3b;
-            color: #ffffff;
+            background-color: #69f8de;
+            color: rgb(0, 106, 70);
             min-height: 100vh;
         }
 
@@ -34,6 +34,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
+            color:rgb(116, 243, 201)
         }
 
         .hamburger {
@@ -97,17 +98,32 @@
             font-size: 1.2rem;
             line-height: 1.6;
             margin-bottom: 3rem;
-            text-align: right;
+            text-align: center;
         }
+        /* .hero-text title {
+            font-size: 5vw;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .hero-text body {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: center;
+        } */
+
 
         .target-language {
             font-size: 1.1rem;
+            background: #f5f6f6;
+            color:#0e4e43;
             margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
+            padding: 0.5rem;
             position: relative;
         }
 
-        .target-language::after {
+        /* .target-language::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -115,7 +131,7 @@
             width: 100vw;
             height: 2px;
             background-color: #ffffff;
-        }
+        } */
 
         /* Song Cards */
         .songs-section {
@@ -138,6 +154,15 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .song-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         .song-info {
@@ -203,6 +228,7 @@
             .song-card {
                 aspect-ratio: 16 / 9;
             }
+
         }
     </style>
 </head>
@@ -227,24 +253,25 @@
 
     <main>
         <div class="hero-text">
-            Play against the vocabulary<br>
-            that will enable you to understand<br>
-            your favourite songs.
-        </div>
+            <!-- <h3>The only really fun and efficient way to learn a language</h3> -->
+        <h3> 
+            Play the <strong>Song Kong</strong> test <br>
+            and learn new vocabulary</div>
+        </h3>
     </main>
 
     <section class="songs-section">
-        <div class="target-language">target: Français</div>
+        <div class="target-language">playing in... Français</div>
         <div class="songs-grid">
             <div class="song-item">
-                <div class="song-card" onclick="launchGame('la_fievre')"></div>
+                <div class="song-card" onclick="launchGame('la_fievre')"><img src="assets/images/la-fievre.png"></div>
                 <div class="song-info">
                     <div class="song-title">La fièvre</div>
                     <div class="song-artist">Julien Doré</div>
                 </div>
             </div>
             <div class="song-item">
-                <div class="song-card" onclick="launchGame('la_symphonie_des_eclairs')"></div>
+                <div class="song-card" onclick="launchGame('la_symphonie_des_eclairs')"><img src="assets/images/la-symphonie-des-eclairs.png"></div>
                 <div class="song-info">
                     <div class="song-title">La symphonie des éclairs</div>
                     <div class="song-artist">Zaho de Sagazan</div>

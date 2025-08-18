@@ -18,6 +18,10 @@ class UIRenderer {
             this.loadTemplate(templatePath);
         });
 
+        this.eventBus.on('ui:loadTextCover', (textId) => {
+            this.loadTextCover(textId);
+        });
+
         this.eventBus.on('ui:showOverlay', (overlayData) => {
             this.showOverlay(overlayData);
         });
@@ -57,6 +61,41 @@ class UIRenderer {
             this.eventBus.emit('ui:templateLoaded', templatePath);
         } catch (error) {
             console.error('Error loading template:', error);
+        }
+    }
+
+    // Load text cover with image or fallback
+    async loadTextCover(textId) {
+        console.log('🎨 UIRenderer: Loading text cover for:', textId);
+        
+        try {
+            // Load template
+            const app = document.getElementById('app');
+            const response = await fetch('templates/screens/text-cover.html');
+            const html = await response.text();
+            app.innerHTML = html;
+            
+            // Try to load cover image
+            const coverScreen = document.getElementById('textCoverScreen');
+            const fallbackText = document.getElementById('fallbackText');
+            const imagePath = `assets/text-covers/${textId}.png`;
+            
+            // Test if image exists
+            const img = new Image();
+            img.onload = () => {
+                console.log('🎨 UIRenderer: Cover image loaded successfully');
+                coverScreen.style.backgroundImage = `url('${imagePath}')`;
+            };
+            img.onerror = () => {
+                console.log('🎨 UIRenderer: Cover image not found, showing fallback text');
+                fallbackText.style.display = 'block';
+            };
+            img.src = imagePath;
+            
+            this.eventBus.emit('ui:templateLoaded', 'templates/screens/text-cover.html');
+            
+        } catch (error) {
+            console.error('🎨 UIRenderer: Error loading text cover:', error);
         }
     }
 

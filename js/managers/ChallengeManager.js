@@ -13,11 +13,30 @@ class ChallengeManager {
         this.currentPhraseIndex = 0;
         this.currentChallenge = null;
         this.sequenceData = []; // Will be populated by buildSequenceFromData()
+        this.isShowingTextCover = false;
         
         // Setup event listeners
         this.setupEventListeners();
         
         console.log('✅ ChallengeManager: Initialization complete');
+    }
+
+    // Setup event listeners
+    setupEventListeners() {
+        this.eventBus.on('challenge:complete', () => {
+            this.handleChallengeComplete();
+        });
+        
+        this.eventBus.on('gameData:loaded', () => {
+            this.buildSequenceFromData();
+        });
+        
+        // Add spacebar handling for text-cover phase
+        this.eventBus.on('navigation:spacePressed', () => {
+            if (this.isShowingTextCover) {
+                this.handleTextCoverSpacebar();
+            }
+        });
     }
     
     // Build the challenge sequence from available data
@@ -56,31 +75,6 @@ class ChallengeManager {
         console.log('🎯 ChallengeManager: Sequence data built:', this.sequenceData.length, 'texts');
     }
     
-    // Setup event listeners
-    setupEventListeners() {
-        this.eventBus.on('challenge:complete', () => {
-            this.handleChallengeComplete();
-        });
-        
-        this.eventBus.on('gameData:loaded', () => {
-            this.buildSequenceFromData();
-        });
-    }
-    
-    // Start the challenge session
-    startSession() {
-        console.log('🎯 ChallengeManager: Starting challenge session...');
-        
-        // Get the first phrase ID
-        const phraseId = this.getCurrentPhraseId();
-        console.log('🎯 ChallengeManager: Starting with phrase:', phraseId);
-        
-        // Create first challenge with phraseId
-        this.currentChallenge = new P1Challenge(this.eventBus, this.uiRenderer, phraseId);
-        this.eventBus.emit('challenge:start');
-        
-        console.log('🎯 ChallengeManager: First challenge created and started');
-    }
     
     // Handle challenge completion
     handleChallengeComplete() {
@@ -105,32 +99,53 @@ class ChallengeManager {
         
         if (nextPhraseId) {
             console.log('🎯 ChallengeManager: Next phrase available:', nextPhraseId);
-            this.createNextChallenge();
+            this.createChallenge();
         } else {
             console.log('🎯 ChallengeManager: No more phrases available - session complete');
         }
     }
-    
-    // Create the next challenge
-    createNextChallenge() {
-        console.log('🎯 ChallengeManager: Creating next challenge...');
-        
+
+
+    createChallenge() {
         // Clean up previous challenge if it exists
         if (this.currentChallenge && this.currentChallenge.cleanup) {
-            console.log('🎯 ChallengeManager: Cleaning up previous challenge...');
             this.currentChallenge.cleanup();
         }
         
         // Get current phrase ID
         const phraseId = this.getCurrentPhraseId();
-        console.log('🎯 ChallengeManager: Creating challenge for phrase:', phraseId);
         
-        // Create new P1Challenge instance with phraseId
+        // show text cover if first phrase of a (new) text
+        if (this.currentPhraseIndex === 0) {
+            this.showTextCover(phraseId);
+        } else {
+            // Create new challenge
+            this.currentChallenge = new P1Challenge(this.eventBus, this.uiRenderer, phraseId);
+            this.eventBus.emit('challenge:start');
+        }
+    }
+
+    showTextCover(phraseId) {
+        console.log('🎯 ChallengeManager: Showing text cover for phrase:', phraseId);
+        
+        this.isShowingTextCover = true;
+        
+        // Extract textId from phraseId (e.g., "text_1_p1" → "text_1")
+        const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
+        this.eventBus.emit('ui:loadTextCover', textId);
+    }
+
+    handleTextCoverSpacebar() {
+        console.log('🎯 ChallengeManager: Text cover spacebar pressed, proceeding to challenge');
+        
+        this.isShowingTextCover = false;
+        
+        // Get current phrase ID and create challenge
+        const phraseId = this.getCurrentPhraseId();
         this.currentChallenge = new P1Challenge(this.eventBus, this.uiRenderer, phraseId);
         this.eventBus.emit('challenge:start');
-        
-        console.log('🎯 ChallengeManager: Next challenge created and started');
     }
+
     
     // Get current phrase ID based on sequence position
     getCurrentPhraseId() {

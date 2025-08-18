@@ -19,7 +19,7 @@ class GameSession {
         
         // Load key handler references
         this.loadScreenKeyHandler = null;
-        this.gameOverKeyHandler = null;
+        this.gameOverKeyHandler = null; 
 
         // Setup event listeners
         this.setupEventListeners();
@@ -77,7 +77,7 @@ class GameSession {
 
     setupLoadScreenKeyHandler() {
         this.loadScreenKeyHandler = (event) => {
-            if (event.key === 'Enter') {
+            if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
                 event.stopImmediatePropagation();
                 this.startGame();
@@ -112,7 +112,7 @@ class GameSession {
         
         // TODO: Create ChallengeSequencer to decide which challenge to load
         // For now, directly create P1Challenge
-        this.challengeManager.startSession();
+        this.challengeManager.createChallenge();
     }
 
     async handleGameOver() {
