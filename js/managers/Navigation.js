@@ -33,6 +33,7 @@ class Navigation {
     
     // Central key handling
     handleKeyPress(event) {
+        console.log('🧭 Navigation: Key pressed:', event.key); // ADD THIS LINE
         const key = event.key;
         
         // Route keys based on key type

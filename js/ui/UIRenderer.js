@@ -46,8 +46,8 @@ class UIRenderer {
             this.updateDisplayContainer(html);
         });
         
-        this.eventBus.on('ui:multipleChoice', (html) => {
-            this.multipleChoice(html);
+        this.eventBus.on('ui:updateDisplayChoice', (html) => {
+            this.updateDisplayChoice(html);
         });
     }
     
@@ -154,6 +154,17 @@ class UIRenderer {
         displayContainer.innerHTML = html;
     }
 
+    // Update display container with choice options (for solution phase)
+    updateDisplayChoice(html) {
+        console.log('🎨 UIRenderer: updateDisplayChoice called');
+        console.log('🎨 UIRenderer: html:', html);
+        
+        const displayContainer = document.querySelector('.display-container');
+        if (!displayContainer) return;
+        
+        displayContainer.innerHTML = html;
+    }
+
     // Update energy bar display
     updateEnergyBar(energyPercentage) {
         console.log('🎨 UIRenderer: updateEnergyBar called');
@@ -221,16 +232,5 @@ class UIRenderer {
         } catch (error) {
             console.error('🎨 UIRenderer: Error showing overlay:', error);
         }
-    }
-    
-    // Multiple choice layout - renders directly into display area
-    multipleChoice(html) {
-        console.log('🎨 UIRenderer: multipleChoice called');
-        console.log('🎨 UIRenderer: html:', html);
-        
-        const displayArea = document.querySelector('.display-area');
-        if (!displayArea) return;
-        
-        displayArea.innerHTML = html;
     }
 }
