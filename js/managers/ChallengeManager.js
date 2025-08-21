@@ -119,7 +119,8 @@ class ChallengeManager {
         if (this.currentPhraseIndex === 0) {
             this.showTextCover(phraseId);
         } else {
-            // Create new challenge
+            // Create new challenge LET'S CREATE THE LOGIC TO ASSEMBLE DIFFERENT CHALLENGES ALREADY
+            // SO THAT WE ARE BUILDING THE CORRECT SUSTAINABLE SEQUENCE
             this.currentChallenge = new P1Challenge(this.eventBus, this.uiRenderer, phraseId);
             this.eventBus.emit('challenge:start');
         }
