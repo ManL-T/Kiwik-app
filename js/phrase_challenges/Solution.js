@@ -1,4 +1,4 @@
-// js/phrase_challenges/Solution.js
+// js/phrase_challenges/Solution.js - Remove Direct Timer Control
 class Solution {
     constructor(eventBus) {
         console.log('🎯 Solution: Initializing...');
@@ -36,7 +36,6 @@ class Solution {
             this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         }
         
-        // Now set up fresh listeners
         this.spaceHandler = () => {
             if (!this.isActive) return;
             this.handleSpace();
@@ -78,9 +77,7 @@ class Solution {
         // Re-establish event listeners to ensure they work
         this.setupEventListeners();
         
-        // Start timer for solution phase
-        console.log('🎯 Solution: Starting timer');
-        this.eventBus.emit('timer:start');
+        // REMOVED: Timer start - now handled by ChallengeManager
         
         // Set up display and activate after short delay
         setTimeout(() => {
@@ -209,19 +206,7 @@ class Solution {
             }
         }, 1000);
     }
-
-    resetToSelection() {
-        console.log('🎯 Solution: Resetting to selection mode (same positions)');
-        
-        if (!this.isActive) {
-            console.log('🎯 Solution: resetToSelection called after cleanup - ignoring');
-            return;
-        }
-        
-        // Keep same positions, just remove feedback colors
-        this.renderSolutionInterface();
-    }
-        
+    
     // Handle timer expiration
     handleTimerExpired() {
         console.log('🎯 Solution: Timer expired during solution phase');
@@ -239,14 +224,25 @@ class Solution {
         }, 2000);
     }
     
+    // Reset to selection mode (after incorrect answer)
+    resetToSelection() {
+        console.log('🎯 Solution: Resetting to selection mode (same positions)');
+        
+        if (!this.isActive) {
+            console.log('🎯 Solution: resetToSelection called after cleanup - ignoring');
+            return;
+        }
+        
+        // Keep same positions, just remove feedback colors
+        this.renderSolutionInterface();
+    }
+    
     // Complete this phase
     complete(result) {
         console.log('🎯 Solution: Completing with result:', result);
         this.isActive = false;
         
-        // Stop timer
-        console.log('🎯 Solution: Stopping timer');
-        this.eventBus.emit('timer:stop');
+        // REMOVED: Timer stop - now handled by ChallengeManager
         
         // Clear any pending timeout
         if (this.feedbackTimeout) {
@@ -266,8 +262,7 @@ class Solution {
         console.log('🎯 Solution: Cleaning up...');
         this.isActive = false;
         
-        // Stop timer if still running
-        this.eventBus.emit('timer:stop');
+        // REMOVED: Timer stop - now handled by ChallengeManager
         
         // Clear any pending timeout
         if (this.feedbackTimeout) {

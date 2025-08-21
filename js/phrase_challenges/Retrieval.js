@@ -1,4 +1,4 @@
-// js/phrase_challenges/Retrieval.js
+// js/phrase_challenges/Retrieval.js - Remove Direct Timer Control
 class Retrieval {
     constructor(eventBus) {
         console.log('🎯 Retrieval: Initializing...');
@@ -48,9 +48,7 @@ class Retrieval {
         this.semanticUnits = data.semanticUnits || [];
         this.translationsVisible = false;
         
-        // Start timer for retrieval phase
-        console.log('🎯 Retrieval: Starting timer');
-        this.eventBus.emit('timer:start');
+        // REMOVED: Timer start - now handled by ChallengeManager
         
         // TODO: Load template and display first semantic unit (translations hidden)
         console.log('🎯 Retrieval: Phase activated with', this.semanticUnits.length, 'units');
@@ -90,9 +88,7 @@ class Retrieval {
         console.log('🎯 Retrieval: Completing retrieval phase');
         this.isActive = false;
         
-        // Stop timer
-        console.log('🎯 Retrieval: Stopping timer');
-        this.eventBus.emit('timer:stop');
+        // REMOVED: Timer stop - now handled by ChallengeManager
         
         this.eventBus.emit('retrieval:completed');
     }
@@ -102,8 +98,7 @@ class Retrieval {
         console.log('🎯 Retrieval: Cleaning up...');
         this.isActive = false;
         
-        // Stop timer if still running
-        this.eventBus.emit('timer:stop');
+        // REMOVED: Timer stop - now handled by ChallengeManager
         
         this.eventBus.off('navigation:spacePressed', this.spaceHandler);
         this.eventBus.off('navigation:enterPressed', this.enterHandler);
