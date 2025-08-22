@@ -7,7 +7,7 @@ class Timer {
         this.eventBus = eventBus;
         
         // Timer state
-        this.currentTime = 40;
+        this.currentTime = 12;
         this.timeoutId = null;
         
         // Setup event listeners
@@ -63,10 +63,10 @@ class Timer {
     reset() {
         console.log('⏰ Timer: Resetting to 12 seconds');
         this.clearCurrentTimeout();
-        this.currentTime = 40;
+        this.currentTime = 12;
         
         // Emit initial display value
-        // this.eventBus.emit('timer:tick', this.currentTime);
+        this.eventBus.emit('timer:tick', this.currentTime);
     }
     
     // Stop countdown (clears timeout, doesn't reset value)

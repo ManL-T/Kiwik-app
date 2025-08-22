@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling during game */
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Text cover screen appearance */
+.text-cover-screen {
+    background-color: rgb(2, 34, 24);
+    font-family: Arial, sans-serif;
+}
+
+.fallback-text {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* Load game screen appearance */
+.game-load-screen {
+    background: radial-gradient(circle at center, #4a6b5a 0%, #2a4a3a 70%, #1a3a2a 100%);
+    font-family: Arial, sans-serif;
+}
+
+.loading-text {
+    background: #f0c040;
+    color: #2a4a3a;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.start-btn {
+    background: #40a8c4;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.start-btn:hover {
+    background: #368a9f;
+}
+
+.start-btn:active {
+    background: #2a6b7a;
+}
+
+
+
+/* Game screen appearance */
+.game-screen {
+    background: #0d2818;
+    font-family: Arial, sans-serif;
+}
+
+/* Header section appearance */
+.header-section {
+    background-color: #031B1E;
+}
+
+/* Top bar appearance */
+.top-bar {
+    padding: 15px 20px;
+}
+
+/* Display area appearance */
+.display-area {
+    background-color: #0A4443;
+}
+
+/* Progress container appearance */
+.progress-container {
+    border: 2px solid #17F882;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.progress-bar {
+    background: #17F882;
+    border-radius: 6px;
+}
+
+/* Timer appearance */
+.timer-display {
+    background-color: #00ff41;
+    color: #000000;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Close button appearance */
+.close-btn {
+    background: none;
+    border: none;
+    color: #ffdd00;
+    font-size: 28px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Presentation phrase text appearance */
+.phrase-text {
+    font-weight: bold;
+}
+
+/* Presentation decision elements appearance */
+.decision-text, .decision-option {
+    font-weight: normal;
+}
+
+/* Presentation hr appearance */
+hr {
+    border: 1px solid #000000;
+}
+
+
+
+/* Text appearance */
+.text {
+    color: #00E7A4;
+    font-weight: normal;
+}
+
+.text-highlight {
+    background-color: #073635;
+    color: #00E7A4;
+    border-radius: 6px;
+    border: 2px solid #E6BD4B;
+    font-weight: bold;
+}
+
+.highlight-box {
+    border: 2px solid #E6BD4B;
+    border-radius: 4px;
+    background: transparent;
+}
+
+/* Display container appearance */
+.display-container {
+    background-color: #E6BD4B;
+    color: #000000;
+    border-radius: 10px;
+}
+
+.translation-option {
+    font-weight: normal;
+    text-align: left;
+}
+
+
+
+/* Ready-or-not decision option appearance */
+.ready-or-not .decision-option {
+    font-weight: normal;
+}
+
+
+
+/* Solution option appearance */
+.solution-option {
+    background-color: #E6BD4B;
+    color: #000000;
+    border-radius: 8px;
+    font-weight: normal;
+    cursor: default;
+    transition: background-color 0.2s ease;
+}
+
+.solution-option-selected {
+    background-color: #031B1E !important;
+    color: #00E7A4 !important;     
+}
+
+.solution-option-correct {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.solution-option-incorrect {
+    background-color: #F44336;
+    color: #ffffff;
+}
+
+/* Overlay appearance */
+.overlay-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay-message {
+    background-color: #E6BD4B;
+    color: #000000;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Game over appearance */
+.game-over-title {
+    font-size: 6vw;
+    font-weight: bold;
+}
+
+.game-over-option {
+    background-color: #031B1E;
+    color: #4CAF50;
+    font-size: 4vw;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+.game-over-option:hover {
+    background-color: #052a2e;
+}
+
+.game-over-option-selected {
+    background-color: #4CAF50;
+    color: #01110d;
+}
