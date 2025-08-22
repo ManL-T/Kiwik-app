@@ -107,7 +107,18 @@ class ChallengeManager {
         this.eventBus.on('challenge:start', () => {
             this.createChallenge();
         });
-        
+
+        // handle timer expiration
+        this.eventBus.on('solution:timerExpired', () => {
+            console.log('🎯 ChallengeManager: Timer expired - energy loss and progression');
+            this.eventBus.emit('challenge:timerExpired'); 
+        });
+
+        this.eventBus.on('session:progressToNextChallenge', () => {
+            console.log('🎯 ChallengeManager: Session requesting next challenge progression');
+            this.handleChallengeComplete();
+        });
+                
         // Debug logging for template loads
         this.eventBus.on('ui:templateLoaded', (templatePath) => {
             console.log('🎯 ChallengeManager: Received ui:templateLoaded event for:', templatePath);

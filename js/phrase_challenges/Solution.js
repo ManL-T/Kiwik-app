@@ -211,16 +211,16 @@ class Solution {
     handleTimerExpired() {
         console.log('🎯 Solution: Timer expired during solution phase');
         
-        // Show time expired overlay
+        // 1. Show overlay first
         this.eventBus.emit('ui:showOverlay', {
             templatePath: 'templates/overlays/time-expired.html',
             duration: 2000
         });
         
-        // Complete phase after overlay duration
+        // 2. After overlay completes, trigger energy loss
         setTimeout(() => {
             if (!this.isActive) return;
-            this.complete('timeout');
+            this.eventBus.emit('solution:timerExpired');
         }, 2000);
     }
     

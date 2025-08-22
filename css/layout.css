@@ -10,10 +10,41 @@
     height: 100vh;
 }
 
+/* Header section layout */
+.header-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top bar layout */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+
+/* Progress container layout */
+.progress-container {
+    /* width: clamp(80%, 5vw + 80%, 90%); */
+    width: 80%;
+    margin: 0 auto;
+    height: 20px;
+    padding: 2px; 
+}
+
+.progress-bar {
+    height: 12px;
+    margin-left: 0;  
+}
+
+
+
 /* Load game screen layout */
 .game-load-screen {
     width: 100%;
     height: 100vh;
+    /* background-color: rgb(17, 112, 112); */
     position: relative;
     display: flex;
     align-items: center;
@@ -23,7 +54,7 @@
 /* Load game button positioning */
 .close-btn {
     position: absolute;
-    top: 20px;
+    top: 1px;
     left: 20px;
     padding: 10px;
 }
@@ -39,7 +70,9 @@
 .start-btn {
     padding: 20px 60px;
     font-size: 24px;
-}
+} 
+
+
 
 /* Text cover screen layout */
 .text-cover-screen {
@@ -73,7 +106,18 @@
 }
 
 /* Presentation decision elements layout */
-.decision-text, .decision-option {
+
+.decision-text {
+    font-size: 4vw;
+    padding: 0.4rem;
+    margin: 0 auto;
+    line-height: 1.2;
+    display: block;
+    width: fit-content;
+    text-align: left;
+}
+
+.decision-option {
     font-size: 4vw;
     padding: 0.4rem;
     margin: 0 auto;
@@ -89,7 +133,6 @@ hr {
 }
 
 
-
 /* Game screen layout structure */
 .game-screen {
     width: 100%;
@@ -98,42 +141,6 @@ hr {
     flex-direction: column;
 }
 
-/* Header section layout */
-.header-section {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Top bar layout */
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-
-/* Display area layout */
-.display-area {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 2em;
-}
-
-/* Progress container layout */
-.progress-container {
-    width: clamp(80%, 5vw + 80%, 90%);
-    height: 20px;
-    padding: 2px; 
-}
-
-.progress-bar {
-    height: 12px;
-    margin-left: 0;  
-}
 
 /* Timer layout */
 .timer-display {
@@ -144,9 +151,19 @@ hr {
 }
 
 /* Close button layout */
-.close-btn {
+/* .close-btn {
     padding: 0;
     line-height: 1;
+} */
+
+/* Display area layout */
+.display-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2em;
 }
 
 /* Content area layout */
@@ -243,6 +260,7 @@ hr {
 .game-over-title {
     margin-bottom: 2rem;
     line-height: 1.2;
+    text-align: center;
 }
 
 .game-over-option {
