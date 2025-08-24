@@ -84,7 +84,8 @@ class UIRenderer {
             const img = new Image();
             img.onload = () => {
                 console.log('🎨 UIRenderer: Cover image loaded successfully');
-                coverScreen.style.backgroundImage = `url('${imagePath}')`;
+                coverScreen.style.background = `url('${imagePath}') no-repeat center/cover`;  
+                coverScreen.style.backgroundSize = 'contain';
             };
             img.onerror = () => {
                 console.log('🎨 UIRenderer: Cover image not found, showing fallback text');

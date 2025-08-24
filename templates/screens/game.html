@@ -19,3 +19,11 @@
         </div>
     </div>
 </div>
+
+<script>
+function handleEnterKey() {
+    // Trigger the same event as enter press
+    const event = new KeyboardEvent('keydown', { key: 'Enter' });
+    document.dispatchEvent(event);
+}
+</script>

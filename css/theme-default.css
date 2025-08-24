@@ -9,7 +9,7 @@ body {
 
 /* Text cover screen appearance */
 .text-cover-screen {
-    background-color: rgb(2, 34, 24);
+    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
     font-family: Arial, sans-serif;
 }
 
@@ -22,7 +22,7 @@ body {
 
 /* Load game screen appearance */
 .game-load-screen {
-    background: radial-gradient(circle at center, #4a6b5a 0%, #2a4a3a 70%, #1a3a2a 100%);
+    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
     font-family: Arial, sans-serif;
 }
 
@@ -33,7 +33,7 @@ body {
     font-weight: bold;
 }
 
-.start-btn {
+/* .start-btn {
     background: #40a8c4;
     color: #ffffff;
     border: none;
@@ -41,21 +41,64 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s;
-}
+} */
 
-.start-btn:hover {
+/* .start-btn:hover {
     background: #368a9f;
 }
 
 .start-btn:active {
     background: #2a6b7a;
+} */
+
+
+.start-btn{
+   /* background: #3D94F6; */
+    background: #E6BD4B;
+   background-image: -webkit-linear-gradient(top, #E6BD4B, #DFAA1C);
+   background-image: -moz-linear-gradient(top, #E6BD4B, #DFAA1C);
+   background-image: -ms-linear-gradient(top, #E6BD4B, #DFAA1C);
+   background-image: -o-linear-gradient(top, #E6BD4B, #DFAA1C);
+   background-image: -webkit-gradient(to bottom, #E6BD4B, #DFAA1C);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-size: 40px;
+   font-weight: 100;
+   padding: 40px;
+   -webkit-box-shadow: 1px 1px 20px 0 #FFAE00;
+   -moz-box-shadow: 1px 1px 20px 0 #FFAE00;
+   box-shadow: 1px 1px 20px 0 #FFAE00;
+   text-shadow: 1px 1px 20px #000000;
+   border: solid #FFFFFF 1px;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.start-btn:hover {
+   border: groove #FFAE00 0;
+   background: #00E7A4;
+   background-image: -webkit-linear-gradient(top, #00E7A4, #12946F);
+   background-image: -moz-linear-gradient(top, #00E7A4, #12946F);
+   background-image: -ms-linear-gradient(top, #00E7A4, #12946F);
+   background-image: -o-linear-gradient(top, #00E7A4, #12946F);
+   background-image: -webkit-gradient(to bottom, #00E7A4, #12946F);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
 }
 
 
 
 /* Game screen appearance */
 .game-screen {
-    background: #0d2818;
+    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
+    /* background: #0d2818; */
     font-family: Arial, sans-serif;
 }
 
@@ -71,7 +114,8 @@ body {
 
 /* Display area appearance */
 .display-area {
-    background-color: #0A4443;
+    /* background-color: #0A4443; */
+    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
 }
 
 /* Progress container appearance */

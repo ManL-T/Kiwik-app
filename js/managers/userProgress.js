@@ -177,7 +177,7 @@ class UserProgress {
         console.log('📊 UserProgress: Incorrect count for', phraseId, 'in session', this.currentSession.sessionId + ':', this.currentSession.challenges[phraseId].incorrectCount);
     }
     
-    // Get list of skipped challenges from latest session (for P2Challenge filtering)
+    // Get list of skipped challenges from latest session (for LEVEL_2 filtering)
     getSkippedChallenges() {
         if (this.data.sessions.length === 0) {
             console.log('📊 UserProgress: No sessions found, returning empty skipped list');

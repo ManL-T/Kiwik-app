@@ -3,18 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post-Revision</title>
+    <title>Ready or Not</title>
 </head>
 <body>
     <div class="game-screen">
         <div class="display-area">
-            <div class="display-container">
-                <!-- <div class="phrase-text"></div> -->
-                <hr>
-                <div class="decision-option">test : press Enter</div>
-                <div class="decision-option">revise : press Space bar</div>
-            </div>
+
+                <div class="decision-cards">
+                    <div class="decision-card" onclick="handleSpaceKey()" data-key="space">
+                        <div class="card-content">
+                            <div class="card-title">not-ready</div>
+                            <div class="card-icon">⎵</div>
+                        </div>
+                    </div>
+                    <div class="decision-card" onclick="handleEnterKey()" data-key="enter">
+                        <div class="card-content">
+                            <div class="card-title">ready to test</div>
+                            <div class="card-icon">↵</div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
+
+    <script>
+        function handleSpaceKey() {
+            // Trigger the same event as spacebar press
+            const event = new KeyboardEvent('keydown', { key: ' ' });
+            document.dispatchEvent(event);
+        }
+
+        function handleEnterKey() {
+            // Trigger the same event as enter press
+            const event = new KeyboardEvent('keydown', { key: 'Enter' });
+            document.dispatchEvent(event);
+        }
+    </script>
 </body>
 </html>

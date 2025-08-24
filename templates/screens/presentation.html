@@ -11,14 +11,37 @@
             <div class="display-container">
                 <div class="phrase-text"></div>
                 <br>
-                <hr>
-                <br>
-                <div class="decision-text">Can you understand this phrase?</div>
-                <br><br>
-                <div class="decision-option">Yes > skip to solution : press Enter</div>
-                <div class="decision-option">No > get translations : press Space bar</div>
+                
+                <div class="decision-cards">
+                    <div class="decision-card" onclick="handleSpaceKey()" data-key="space">
+                        <div class="card-content">
+                            <div class="card-title">Revise</div>
+                            <div class="card-icon">⎵</div>
+                        </div>
+                    </div>
+                    <div class="decision-card" onclick="handleEnterKey()" data-key="enter">
+                        <div class="card-content">
+                            <div class="card-title">Skip to test</div>
+                            <div class="card-icon">↵</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function handleSpaceKey() {
+            // Trigger the same event as spacebar press
+            const event = new KeyboardEvent('keydown', { key: ' ' });
+            document.dispatchEvent(event);
+        }
+
+        function handleEnterKey() {
+            // Trigger the same event as enter press
+            const event = new KeyboardEvent('keydown', { key: 'Enter' });
+            document.dispatchEvent(event);
+        }
+    </script>
 </body>
 </html>

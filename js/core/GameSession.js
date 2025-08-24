@@ -12,7 +12,7 @@ class GameSession {
         this.energyBar = new EnergyBar(this.eventBus);
         
         // Challenge instance
-        this.p1Challenge = null;
+        this.LEVEL_1Challenge = null;
         
         // Game state
         this.gameStarted = false;
@@ -138,7 +138,7 @@ class GameSession {
         console.log('🎮 GameSession: Starting game logic...');
         
         // TODO: Create ChallengeSequencer to decide which challenge to load
-        // For now, directly create P1Challenge
+        // For now, directly create LEVEL_1Challenge
         this.challengeManager.createChallenge();
     }
 

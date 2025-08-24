@@ -105,31 +105,108 @@
     text-align: left;
 }
 
-/* Presentation decision elements layout */
-
-.decision-text {
-    font-size: 4vw;
-    padding: 0.4rem;
-    margin: 0 auto;
-    line-height: 1.2;
-    display: block;
-    width: fit-content;
-    text-align: left;
-}
-
-.decision-option {
-    font-size: 4vw;
-    padding: 0.4rem;
-    margin: 0 auto;
-    line-height: 1.2;
-    display: block;
-    width: fit-content;
-    text-align: left;
-}
-
 /* Presentation hr layout */
 hr {
     margin: 1em 0;
+}
+
+/* Presentation and Ready-or-Not Decision Cards Layout */
+.decision-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.decision-card {
+    background-color: #E6BD4B;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.decision-card:hover {
+    background-color: #DFAA1C;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border-color: #FFAE00;
+}
+
+.decision-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    text-align: center;
+    width: 100%;
+}
+
+.card-title {
+    font-size: clamp(3.5vw, 5vw, 2.5rem);
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.card-icon {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #031B1E;
+    background-color: rgba(3, 27, 30, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid #031B1E;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .decision-cards {
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .decision-card {
+        padding: 2rem 1.5rem;
+        min-height: 160px;
+    }
+    
+    .card-title {
+        margin-bottom: 1rem;
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .decision-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .decision-card {
+        min-height: 120px;
+        padding: 1.5rem 1rem;
+    }
 }
 
 
@@ -221,6 +298,102 @@ hr {
 }
 
 
+/* Retrieval Card INstructions Layout - Single Card with Inline Icon */
+
+.display-container:has(.retrieval-card) {
+    padding: 0;
+    width: 100%;
+    background: none;
+}
+
+.retrieval-card {
+    background-color: #E6BD4B;
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.retrieval-card:hover {
+    background-color: #DFAA1C;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border-color: #FFAE00;
+}
+
+.retrieval-card:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.retrieval-card-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+.retrieval-card-icon {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: #031B1E;
+    background-color: rgba(3, 27, 30, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #031B1E;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.retrieval-card-text {
+    font-size: clamp(3vw, 4vw, 1.8rem);
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.3;
+    flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .retrieval-card {
+        padding: 1.5rem 2rem;
+        margin: 1.5rem auto;
+    }
+    
+    .retrieval-card-content {
+        gap: 0.75rem;
+    }
+    
+    .retrieval-card-icon {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .retrieval-card {
+        padding: 1.2rem 1.5rem;
+    }
+    
+    .retrieval-card-content {
+        gap: 0.5rem;
+    }
+    
+    .retrieval-card-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
 
 
 
