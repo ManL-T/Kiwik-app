@@ -33,25 +33,6 @@ body {
     font-weight: bold;
 }
 
-/* .start-btn {
-    background: #40a8c4;
-    color: #ffffff;
-    border: none;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-} */
-
-/* .start-btn:hover {
-    background: #368a9f;
-}
-
-.start-btn:active {
-    background: #2a6b7a;
-} */
-
-
 .start-btn{
    /* background: #3D94F6; */
     background: #E6BD4B;
@@ -91,6 +72,40 @@ body {
    -moz-border-radius: 20px;
    border-radius: 20px;
    text-decoration: none;
+}
+
+/* Debug button appearance */
+.debug-btn {
+    background: #dc3545;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.debug-btn:hover {
+    background: #c82333;
+}
+
+.debug-btn:active {
+    background: #bd2130;
+}
+
+/* Progress info appearance */
+.progress-info {
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.batch-indicator {
+    font-weight: bold;
+}
+
+.level-indicator {
+    opacity: 0.9;
 }
 
 

@@ -2,4 +2,73 @@
     <button class="close-btn" onclick="goBackToLauncher()">&times;</button>
     <div class="loading-text">Loading Game...</div>
     <button class="start-btn" onclick="startGame()">START</button>
+
+     <!-- Debug button for clearing progress -->
+    <button class="debug-btn" onclick="clearUserProgress()">Clear Progress</button>
+    
+    <!-- Progress display (will be populated by JavaScript) -->
+    <div class="progress-info" id="progressInfo">
+        <div class="batch-indicator" id="batchIndicator">Batch 1: Texts 1-2</div>
+        <div class="level-indicator" id="levelIndicator">LEVEL_1 Challenge</div>
+    </div>
+
 </div>
+
+
+
+
+<script>
+// Debug function to clear user progress
+function clearUserProgress() {
+    console.log('🧹 Debug: Clearing user progress...');
+    
+    if (confirm('Clear all progress data? This cannot be undone.')) {
+        // Clear localStorage
+        localStorage.removeItem('kiwik_userProgress');
+        console.log('✅ Debug: localStorage cleared');
+        
+        // If UserProgress exists, call its clear method
+        if (window.app && window.app.userProgress) {
+            window.app.userProgress.clearProgress();
+            console.log('✅ Debug: UserProgress.clearProgress() called');
+        }
+        
+        // Refresh the page to see clean state
+        window.location.reload();
+    }
+}
+
+// Function to display current progress (called after UserProgress loads)
+// function displayCurrentProgress() {
+//     console.log('📊 Debug: Displaying current progress...');
+    
+//     if (window.app && window.app.userProgress) {
+//         const data = window.app.userProgress.getCurrentData();
+//         console.log('📊 Debug: Current progress data:', data);
+        
+//         if (data && data.currentPosition) {
+//             const progressInfo = document.getElementById('progressInfo');
+//             const batchIndicator = document.getElementById('batchIndicator');
+//             const levelIndicator = document.getElementById('levelIndicator');
+            
+//             if (progressInfo && batchIndicator && levelIndicator) {
+//                 const batch = data.currentPosition.batch;
+//                 const level = data.currentPosition.level;
+                
+//                 batchIndicator.textContent = `Batch ${Math.ceil(batch[0] / 2)}: Texts ${batch[0]}-${batch[1]}`;
+//                 levelIndicator.textContent = `${level} Challenge`;
+                
+//                 // Show progress info
+//                 progressInfo.style.display = 'block';
+                
+//                 console.log('✅ Debug: Progress display updated');
+//             }
+//         }
+//     }
+// }
+
+// // Call display function when page loads (with delay to ensure UserProgress is ready)
+// document.addEventListener('DOMContentLoaded', () => {
+//     setTimeout(displayCurrentProgress, 500);
+// });
+// </script>

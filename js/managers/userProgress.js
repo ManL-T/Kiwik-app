@@ -1,208 +1,248 @@
-// js/managers/UserProgress.js
+// js/managers/UserProgress.js - Clean Implementation
 class UserProgress {
-    constructor(eventBus) {
-        console.log('📊 UserProgress: Initializing...');
+    constructor(eventBus, gameData) {
+        console.log('📊 UserProgress: Initializing clean implementation...');
         
-        // Store EventBus reference
+        // Store references
         this.eventBus = eventBus;
+        this.gameData = gameData;
         
         // localStorage key
         this.storageKey = 'kiwik_userProgress';
         
-        // Persistent user progress data
+        // Data structure
         this.data = null;
-        
-        // Current session (in memory only until game over)
-        this.currentSession = null;
         
         // Setup event listeners
         this.setupEventListeners();
         
-        // Load existing progress or create default
+        // Load or initialize progress
         this.loadUserProgress();
         
-        console.log('✅ UserProgress: Initialization complete');
+        console.log('✅ UserProgress: Clean implementation complete');
     }
     
     // Setup event listeners
     setupEventListeners() {
-        this.eventBus.on('userProgress:challengeSkipped', (phraseId) => {
-            this.recordSkippedChallenge(phraseId);
+        console.log('📊 UserProgress: Setting up event listeners...');
+        
+        // Wait for GameData to load before initializing phrases
+        this.eventBus.on('gameData:loaded', () => {
+            console.log('📊 UserProgress: GameData loaded, initializing phrase progress...');
+            this.initializePhraseProgress();
         });
         
-        this.eventBus.on('userProgress:incorrectAnswer', (phraseId) => {
-            this.recordIncorrectAnswer(phraseId);
-        });
-        
+        // Handle game start
         this.eventBus.on('userProgress:gameStarted', () => {
-            this.startNewSession();
+            console.log('📊 UserProgress: Game started');
+            // Could create new session here if needed
         });
         
+        // Handle progress updates
+        this.eventBus.on('userProgress:updatePhrase', (data) => {
+            this.updatePhraseProgress(data);
+        });
+        
+        // Handle saving
         this.eventBus.on('userProgress:saveProgress', () => {
             this.saveUserProgress();
         });
     }
     
-    // Load progress from localStorage
+    // Load progress from localStorage or create default
     loadUserProgress() {
-        console.log('📊 UserProgress: Loading from localStorage...');
+        console.log('📊 UserProgress: Loading user progress from localStorage...');
         
         try {
             const stored = localStorage.getItem(this.storageKey);
+            console.log('📊 UserProgress: Raw localStorage data:', stored);
             
             if (stored) {
                 const parsedData = JSON.parse(stored);
+                console.log('📊 UserProgress: Parsed localStorage data:', parsedData);
                 
-                // Check if it's the new format (has sessions array)
-                if (parsedData.sessions && Array.isArray(parsedData.sessions)) {
+                // Validate structure
+                if (this.isValidProgressData(parsedData)) {
                     this.data = parsedData;
-                    console.log('📊 UserProgress: Loaded existing session-based data:', this.data);
+                    console.log('✅ UserProgress: Loaded existing valid progress data');
                 } else {
-                    // Old format detected - clear and start fresh
-                    console.log('📊 UserProgress: Old format detected, clearing and starting fresh');
-                    localStorage.removeItem(this.storageKey);
-                    this.data = {
-                        gamesPlayed: 0,
-                        sessions: []
-                    };
+                    console.log('⚠️ UserProgress: Invalid data structure, creating fresh data');
+                    this.createFreshProgressData();
                 }
             } else {
-                // Create default structure for new user
-                this.data = {
-                    gamesPlayed: 0,
-                    sessions: []
-                };
-                console.log('📊 UserProgress: Created default data structure');
+                console.log('📊 UserProgress: No existing data, creating fresh data');
+                this.createFreshProgressData();
             }
             
-            // Notify other modules that progress is loaded
-            this.eventBus.emit('userProgress:loaded', this.data);
+            console.log('📊 UserProgress: Final data structure:', this.data);
             
         } catch (error) {
-            console.error('📊 UserProgress: Error loading from localStorage:', error);
-            // Fallback to default structure
-            this.data = {
-                gamesPlayed: 0,
-                sessions: []
-            };
+            console.error('❌ UserProgress: Error loading progress:', error);
+            this.createFreshProgressData();
         }
     }
     
-    // Start a new session (in memory)
-    startNewSession() {
-        console.log('📊 UserProgress: Starting new session...');
+    // Validate progress data structure
+    isValidProgressData(data) {
+        console.log('📊 UserProgress: Validating data structure...');
         
-        this.currentSession = {
-            sessionId: this.getNextSessionId(),
-            timestamp: new Date().toISOString(),
-            challenges: {}
+        const isValid = data && 
+                       typeof data.gamesPlayed === 'number' &&
+                       data.currentPosition &&
+                       data.currentPosition.batch &&
+                       data.currentPosition.level &&
+                       data.phraseProgress &&
+                       typeof data.phraseProgress === 'object';
+                       
+        console.log('📊 UserProgress: Data validation result:', isValid);
+        return isValid;
+    }
+    
+    // Create fresh progress data structure
+    createFreshProgressData() {
+        console.log('📊 UserProgress: Creating fresh progress data structure...');
+        
+        this.data = {
+            gamesPlayed: 0,
+            currentPosition: {
+                batch: [1, 2],
+                level: "LEVEL_1",
+                lastUpdated: new Date().toISOString()
+            },
+            phraseProgress: {}, // Will be populated when GameData loads
+            sessions: [] // Keep for historical tracking
         };
         
-        console.log('📊 UserProgress: Created session', this.currentSession.sessionId, 'at', this.currentSession.timestamp);
+        console.log('📊 UserProgress: Fresh data created:', this.data);
     }
     
-    // Get next session ID
-    getNextSessionId() {
-        if (this.data.sessions.length === 0) {
-            return 1;
+    // Initialize phrase progress from GameData (upfront approach)
+    initializePhraseProgress() {
+        console.log('📊 UserProgress: Initializing phrase progress upfront...');
+        
+        if (!this.gameData || !this.gameData.data) {
+            console.error('❌ UserProgress: GameData not available for phrase initialization');
+            return;
         }
         
-        // Find highest sessionId and add 1
-        const maxId = Math.max(...this.data.sessions.map(session => session.sessionId));
-        return maxId + 1;
+        const phrases = this.gameData.data.phrases;
+        console.log('📊 UserProgress: Found', phrases.length, 'phrases to initialize');
+        
+        let newPhrasesCount = 0;
+        phrases.forEach(phrase => {
+            if (!this.data.phraseProgress[phrase.phraseId]) {
+                this.data.phraseProgress[phrase.phraseId] = {
+                    level: 1, // All phrases start at LEVEL_1
+                    attempts: []
+                };
+                newPhrasesCount++;
+            }
+        });
+        
+        console.log('📊 UserProgress: Initialized', newPhrasesCount, 'new phrases');
+        console.log('📊 UserProgress: Total phrases in progress:', Object.keys(this.data.phraseProgress).length);
+        console.log('📊 UserProgress: Complete phraseProgress structure:', this.data.phraseProgress);
+        
+        // Save after initialization
+        this.saveUserProgress();
     }
     
-    // Save progress to localStorage (finalizes current session)
+    // Get resume position for ChallengeManager
+    getResumePosition() {
+        console.log('📊 UserProgress: Getting resume position...');
+        
+        if (!this.data || !this.data.currentPosition) {
+            console.log('📊 UserProgress: No position data, returning default');
+            return { batch: [1, 2], level: "LEVEL_1" };
+        }
+        
+        const position = {
+            batch: this.data.currentPosition.batch,
+            level: this.data.currentPosition.level
+        };
+        
+        console.log('📊 UserProgress: Returning resume position:', position);
+        return position;
+    }
+    
+    // Update phrase progress
+    updatePhraseProgress(data) {
+        console.log('📊 UserProgress: Updating phrase progress for:', data.phraseId);
+        console.log('📊 UserProgress: Update data:', data);
+        
+        if (!this.data.phraseProgress[data.phraseId]) {
+            console.log('📊 UserProgress: Phrase not found, creating new entry');
+            this.data.phraseProgress[data.phraseId] = {
+                level: 1,
+                attempts: []
+            };
+        }
+        
+        const phrase = this.data.phraseProgress[data.phraseId];
+        
+        // Add new attempt
+        const attempt = {
+            timestamp: new Date().toISOString(),
+            skipped: data.skipped || false,
+            incorrectCount: data.incorrectCount || 0,
+            peeked: data.peeked || false,
+            peekedUnits: data.peekedUnits || [],
+            correctAnswer: data.correctAnswer || false
+        };
+        
+        phrase.attempts.push(attempt);
+        console.log('📊 UserProgress: Added attempt:', attempt);
+        console.log('📊 UserProgress: Updated phrase data:', phrase);
+        
+        // TODO: Add skip detection logic here
+        // TODO: Add level advancement logic here
+    }
+    
+    // Update current position (called after batch completion)
+    updateCurrentPosition(batch, level) {
+        console.log('📊 UserProgress: Updating current position to batch:', batch, 'level:', level);
+        
+        this.data.currentPosition = {
+            batch: batch,
+            level: level,
+            lastUpdated: new Date().toISOString()
+        };
+        
+        console.log('📊 UserProgress: Updated position:', this.data.currentPosition);
+        this.saveUserProgress();
+    }
+    
+    // Save progress to localStorage
     saveUserProgress() {
-        console.log('📊 UserProgress: Saving to localStorage...');
-        
-        // Finalize current session if it exists
-        if (this.currentSession) {
-            console.log('📊 UserProgress: Finalizing session', this.currentSession.sessionId);
-            this.data.sessions.push(this.currentSession);
-            this.data.gamesPlayed++;
-            
-            // Clear current session
-            this.currentSession = null;
-            console.log('📊 UserProgress: Session finalized and added to history');
-        }
+        console.log('📊 UserProgress: Saving progress to localStorage...');
+        console.log('📊 UserProgress: Data to save:', this.data);
         
         try {
-            localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-            console.log('✅ UserProgress: Saved successfully. Total sessions:', this.data.sessions.length);
+            const jsonString = JSON.stringify(this.data, null, 2);
+            localStorage.setItem(this.storageKey, jsonString);
+            console.log('✅ UserProgress: Successfully saved to localStorage');
+            console.log('📊 UserProgress: Saved JSON:', jsonString);
         } catch (error) {
-            console.error('📊 UserProgress: Error saving to localStorage:', error);
+            console.error('❌ UserProgress: Error saving progress:', error);
         }
     }
     
-    // Record that a challenge was skipped
-    recordSkippedChallenge(phraseId) {
-        console.log('📊 UserProgress: Recording skipped challenge:', phraseId);
+    // Debug method - clear all progress
+    clearProgress() {
+        console.log('🧹 UserProgress: Clearing all progress data...');
+        localStorage.removeItem(this.storageKey);
+        this.createFreshProgressData();
+        console.log('✅ UserProgress: Progress cleared, fresh data created');
         
-        if (!this.currentSession) {
-            console.warn('📊 UserProgress: No active session to record skip');
-            return;
+        // Re-initialize phrase progress if GameData is available
+        if (this.gameData && this.gameData.data) {
+            console.log('🧹 UserProgress: Re-initializing phrase progress after clear...');
+            this.initializePhraseProgress();
         }
-        
-        // Initialize challenge entry if it doesn't exist
-        if (!this.currentSession.challenges[phraseId]) {
-            this.currentSession.challenges[phraseId] = {
-                skipped: false,
-                incorrectCount: 0
-            };
-        }
-        
-        this.currentSession.challenges[phraseId].skipped = true;
-        console.log('📊 UserProgress: Marked challenge as skipped in session', this.currentSession.sessionId);
     }
     
-    // Record an incorrect answer
-    recordIncorrectAnswer(phraseId) {
-        console.log('📊 UserProgress: Recording incorrect answer for:', phraseId);
-        
-        if (!this.currentSession) {
-            console.warn('📊 UserProgress: No active session to record incorrect answer');
-            return;
-        }
-        
-        // Initialize challenge entry if it doesn't exist
-        if (!this.currentSession.challenges[phraseId]) {
-            this.currentSession.challenges[phraseId] = {
-                skipped: false,
-                incorrectCount: 0
-            };
-        }
-        
-        this.currentSession.challenges[phraseId].incorrectCount++;
-        console.log('📊 UserProgress: Incorrect count for', phraseId, 'in session', this.currentSession.sessionId + ':', this.currentSession.challenges[phraseId].incorrectCount);
-    }
-    
-    // Get list of skipped challenges from latest session (for LEVEL_2 filtering)
-    getSkippedChallenges() {
-        if (this.data.sessions.length === 0) {
-            console.log('📊 UserProgress: No sessions found, returning empty skipped list');
-            return [];
-        }
-        
-        // Get latest session
-        const latestSession = this.data.sessions[this.data.sessions.length - 1];
-        const skippedChallenges = [];
-        
-        for (const [phraseId, challengeData] of Object.entries(latestSession.challenges)) {
-            if (challengeData.skipped) {
-                skippedChallenges.push(phraseId);
-            }
-        }
-        
-        console.log('📊 UserProgress: Returning skipped challenges from latest session:', skippedChallenges);
-        return skippedChallenges;
-    }
-    
-    // Get current progress data (for debugging)
+    // Get current data (for debugging)
     getCurrentData() {
-        return {
-            persistentData: this.data,
-            currentSession: this.currentSession
-        };
+        return this.data;
     }
 }

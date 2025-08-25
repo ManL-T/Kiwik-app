@@ -18,6 +18,7 @@ class EnergyBar {
     
     // Setup event listeners
     setupEventListeners() {
+        console.log('⚡ EnergyBar: DEBUG - setupEventListeners called with template filtering');
         this.eventBus.on('energy:initialize', () => {
             this.initialize();
         });
@@ -26,8 +27,11 @@ class EnergyBar {
             this.loseLife();
         });
         
-        this.eventBus.on('ui:templateLoaded', () => {
-            this.restoreDisplay();
+        this.eventBus.on('ui:templateLoaded', (templatePath) => {
+            // Only restore display for game screens that have energy bars
+            if (templatePath && templatePath.includes('game.html')) {
+                this.restoreDisplay();
+            }
         });
     }
     
