@@ -163,6 +163,7 @@ class Solution {
         } else {
             console.log('🎯 Solution: Incorrect answer! Showing red feedback');
             this.showAnswerFeedback('incorrect');
+            this.eventBus.emit('solution:incorrect');
         }
     }
     
@@ -201,7 +202,7 @@ class Solution {
                 this.complete('correct');
             } else {
                 // For incorrect answers, don't complete - just emit wrongAnswer and reset
-                this.eventBus.emit('challenge:wrongAnswer');
+                this.eventBus.emit('solution:incorrect');
                 this.resetToSelection();
             }
         }, 1000);
