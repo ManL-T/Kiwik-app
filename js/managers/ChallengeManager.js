@@ -37,6 +37,7 @@ class ChallengeManager {
         this.currentBatch = null;
         this.currentLevel = null;
         this.batchCompletionState = null;
+        this.masteredTexts = new Set(); 
         
         // Text cover state
         this.isShowingTextCover = false;
@@ -161,6 +162,12 @@ class ChallengeManager {
             if (this.isShowingTextCover) {
                 this.handleTextCoverSpacebar();
             }
+        });
+
+        // Listen for text mastery updates
+        this.eventBus.on('userProgress:textMastered', (textId) => {
+            console.log('🎯 ChallengeManager: Text mastered:', textId);
+            this.masteredTexts.add(textId);
         });
                 
         // Debug logging for template loads
@@ -466,40 +473,28 @@ class ChallengeManager {
     
     // Create a new challenge (entry point) - now with text cover integration
     createChallenge() {
-        const currentTextId = this.getCurrentTextId();
-        console.log('🎯 ChallengeManager: Creating new challenge...');
-        
-        // Get current phrase ID
         const phraseId = this.getCurrentPhraseId();
+        
         if (!phraseId) {
-            console.log('🎯 ChallengeManager: No more phrases available');
+            console.log('🎯 ChallengeManager: All phrases in current text have been completed');
+            const currentTextId = this.getCurrentTextId();
+            this.markTextComplete(currentTextId);
             return;
         }
         
-        console.log('🎯 ChallengeManager: Creating challenge for phrase:', phraseId);
-        
-        // Check if this is effectively the first phrase of a text
-        if (this.isFirstNonMasteredPhraseOfText(phraseId)) {
-            this.showTextCover(phraseId);
-            return;
+        // Show text cover for first phrase of any text (unless text is mastered)
+        if (this.currentPhraseIndex === 0) {
+            const textId = this.getCurrentTextId();
+            if (!this.masteredTexts.has(textId)) {
+                this.showTextCover(phraseId);
+                return;
+            }
         }
         
-        // Otherwise proceed with normal challenge creation
+        // Otherwise proceed with normal challenge
         this.startChallengeAssembly(phraseId);
     }
 
-    isFirstNonMasteredPhraseOfText(phraseId) {
-        const currentTextPhrases = this.sequenceData[this.currentTextIndex];
-        
-        // Find all non-mastered phrases in current text
-        const nonMasteredPhrases = currentTextPhrases.filter(id => 
-            !this.userProgress.isPhraseMatered(id)
-        );
-        
-        // This is the first non-mastered phrase if it's the first in the filtered list
-        return nonMasteredPhrases.length > 0 && nonMasteredPhrases[0] === phraseId;
-    }
-    
     // Show text cover for first phrase of text
     showTextCover(phraseId) {
         console.log('🎯 ChallengeManager: Showing text cover for phrase:', phraseId);
@@ -895,7 +890,7 @@ class ChallengeManager {
         while (this.currentPhraseIndex < currentTextPhrases.length) {
             const phraseId = currentTextPhrases[this.currentPhraseIndex];
             
-            if (this.userProgress.isPhraseMatered(phraseId)) {
+            if (this.userProgress.isPhraseMastered(phraseId)) {
                 console.log(`🎯 ChallengeManager: Skipping mastered phrase: ${phraseId}`);
                 this.currentPhraseIndex++;
                 continue;

@@ -457,11 +457,41 @@ class UserProgress {
             
             // Save again with mastery status
             this.saveUserProgress();
+
+            // Check if this completed the entire text
+            this.checkTextMastery(phraseId);
+        }
+    }
+
+    // Check if all phrases in a text are mastered
+    checkTextMastery(phraseId) {
+        console.log(`📊 UserProgress: Checking text mastery for phrase: ${phraseId}`);
+        
+        // Extract textId from phraseId (e.g., "text_1_p3" → "text_1")
+        const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
+        console.log(`📊 UserProgress: Extracted textId: ${textId}`);
+        
+        // Get all phrases for this text from GameData
+        const allPhrasesInText = this.gameData.getPhrasesForText(textId);
+        console.log(`📊 UserProgress: Found ${allPhrasesInText.length} phrases in ${textId}`);
+        
+        // Check if all phrases in this text are mastered
+        const allMastered = allPhrasesInText.every(phrase => {
+            const isMastered = this.isPhraseMastered(phrase.phraseId);
+            console.log(`📊 UserProgress: Phrase ${phrase.phraseId} mastered: ${isMastered}`);
+            return isMastered;
+        });
+        
+        if (allMastered) {
+            console.log(`🎉 UserProgress: Text ${textId} is now MASTERED! All phrases completed.`);
+            this.eventBus.emit('userProgress:textMastered', textId);
+        } else {
+            console.log(`📊 UserProgress: Text ${textId} not yet mastered`);
         }
     }
 
     // Check if phrase is mastered (for ChallengeManager)
-    isPhraseMatered(phraseId) {
+    isPhraseMastered(phraseId) {
         if (!this.data.phraseProgress[phraseId]) return false;
         return this.data.phraseProgress[phraseId].level === "mastered";
     }
