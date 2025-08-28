@@ -36,11 +36,10 @@ class ChallengeManager {
         // Batch Management System - will be set from UserProgress
         this.currentBatch = null;
         this.currentLevel = null;
-        this.batchCompletionState = null;
-        this.masteredTexts = new Set(); 
         
         // Text cover state
         this.isShowingTextCover = false;
+        this.lastTextId = null; // Track which text we were showing last
         
         // OPTION B: Initialization coordination flags (following project pattern)
         this.gameDataReady = false;
@@ -164,11 +163,28 @@ class ChallengeManager {
             }
         });
 
-        // Listen for text mastery updates
-        this.eventBus.on('userProgress:textMastered', (textId) => {
-            console.log('🎯 ChallengeManager: Text mastered:', textId);
-            this.masteredTexts.add(textId);
+        // Handle text level up events
+        this.eventBus.on('userProgress:textLeveledUp', (data) => {
+            const { textId, oldLevel, newLevel } = data;
+            console.log(`🎉 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel}!`);
+            
+            // TODO: Show congratulations overlay/animation
+            // For now, just log the achievement
+            console.log(`🎉 ChallengeManager: TODO - Show level up congratulations for ${textId}`);
         });
+
+        // Handle text mastery events  
+        this.eventBus.on('userProgress:textMastered', (textId) => {
+            console.log(`🎉 ChallengeManager: ${textId} is now fully MASTERED!`);
+            
+            // Text is now fully mastered - it will be automatically skipped by getCurrentPhraseId()
+            // No immediate action needed, just log the achievement
+            console.log(`🎉 ChallengeManager: ${textId} will no longer appear in challenges`);
+            
+            // TODO: Show mastery celebration
+            console.log(`🎉 ChallengeManager: TODO - Show text mastery celebration for ${textId}`);
+        });
+
                 
         // Debug logging for template loads
         this.eventBus.on('ui:templateLoaded', (templatePath) => {
@@ -476,24 +492,40 @@ class ChallengeManager {
         const phraseId = this.getCurrentPhraseId();
         
         if (!phraseId) {
-            console.log('🎯 ChallengeManager: All phrases in current text have been completed');
-            const currentTextId = this.getCurrentTextId();
-            this.markTextComplete(currentTextId);
+            console.log('🎯 ChallengeManager: No more phrases available - game complete?');
+            // TODO: Handle game completion
             return;
         }
         
-        // Show text cover for first phrase of any text (unless text is mastered)
-        if (this.currentPhraseIndex === 0) {
-            const textId = this.getCurrentTextId();
-            if (!this.masteredTexts.has(textId)) {
-                this.showTextCover(phraseId);
-                return;
-            }
+        // Extract textId from phraseId
+        const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
+        
+        // Check if we should show text cover (switching to different text)
+        if (this.shouldShowTextCover(textId)) {
+            this.showTextCover(phraseId);
+            return;
         }
         
         // Otherwise proceed with normal challenge
         this.startChallengeAssembly(phraseId);
     }
+
+    shouldShowTextCover(textId) {
+        console.log(`🎯 ChallengeManager: Checking text cover - lastTextId: ${this.lastTextId}, currentTextId: ${textId}`);
+        
+        // Don't show for fully mastered texts
+        if (this.userProgress.isTextMastered(textId)) {
+            console.log(`🎯 ChallengeManager: ${textId} is fully mastered - no text cover`);
+            return false;
+        }
+        
+        // Show cover when switching to a different text
+        const switchingText = (this.lastTextId !== textId);
+        console.log(`🎯 ChallengeManager: Switching texts? ${switchingText}`);
+        
+        return switchingText;
+    }
+
 
     // Show text cover for first phrase of text
     showTextCover(phraseId) {
@@ -504,6 +536,10 @@ class ChallengeManager {
         // Extract textId from phraseId (e.g., "text_1_p3" → "text_1")  
         const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
         console.log('🎯 ChallengeManager: Extracted textId:', textId);
+        
+        // Update lastTextId to track current text
+        this.lastTextId = textId;
+        console.log(`🎯 ChallengeManager: Updated lastTextId to: ${this.lastTextId}`);
         
         this.eventBus.emit('ui:loadTextCover', textId);
     }
@@ -717,35 +753,13 @@ class ChallengeManager {
     handleChallengeComplete() {
         console.log('🎯 ChallengeManager: Challenge completed successfully!');
         
-        // Check if this was the last phrase of current text
-        const currentTextId = this.getCurrentTextId();
-        const currentTextPhrases = this.sequenceData[this.currentTextIndex];
-
-        if (this.currentPhraseIndex + 1 >= currentTextPhrases.length) {
-            // Last phrase of current text - mark text complete
-            this.markTextComplete(currentTextId);
-            return; // Let batch completion logic handle what's next
-        }
-
-        // Move to next phrase
+        // Simply move to next phrase - UserProgress handles all level progression
         this.currentPhraseIndex++;
         
-        // Check if there's a next phrase
-        let nextPhraseId = this.getCurrentPhraseId();
+        console.log(`🎯 ChallengeManager: Advanced to next phrase - textIndex: ${this.currentTextIndex}, phraseIndex: ${this.currentPhraseIndex}`);
         
-        if (!nextPhraseId) {
-            // Try next text
-            this.currentTextIndex++;
-            this.currentPhraseIndex = 0;
-            nextPhraseId = this.getCurrentPhraseId();
-        }
-        
-        if (nextPhraseId) {
-            console.log('🎯 ChallengeManager: Next phrase available:', nextPhraseId);
-            this.createChallenge();
-        } else {
-            console.log('🎯 ChallengeManager: No more phrases - session complete');
-        }
+        // Create next challenge (getCurrentPhraseId will handle all the logic)
+        this.createChallenge();
     }
     
     // Handle incorrect answer
@@ -757,149 +771,91 @@ class ChallengeManager {
         this.eventBus.emit('challenge:wrongAnswer', this.currentPhrase);
     }
 
-    // Check if current batch is complete at current level
-    isCurrentBatchComplete() {
-        const levelKey = this.currentLevel === 'LEVEL_1' ? 'level1' : 'level2';
-        const batch = this.currentBatch;
-        
-        // Check if all texts in current batch are complete at current level
-        const result = batch.every(textNum => {
-            const textId = `text_${textNum}`;
-            return this.batchCompletionState[levelKey][textId] === true;
-        });
-        
-        return result;
-    }
-
-    // Get current text from current position (helper method)
-    getCurrentTextId() {
-        return `text_${this.currentTextIndex + 1}`; // Convert 0-based index to 1-based textId
-    }
-
-    // Mark a text as complete at current level
-    markTextComplete(textId) {
-        const levelKey = this.currentLevel === 'LEVEL_1' ? 'level1' : 'level2';
-        console.log('🎯 ChallengeManager: Marking', textId, 'complete at', levelKey)
-
-        this.batchCompletionState[levelKey][textId] = true;
-        
-        // Check if this completes the current batch at current level
-        if (this.isCurrentBatchComplete()) {
-            console.log('🎯 ChallengeManager: Batch', this.currentBatch, 'complete at', this.currentLevel);
-            this.handleBatchComplete();
-        } else {
-            console.log('🎯 ChallengeManager: Batch not complete - moving to next text in batch');
-            this.moveToNextTextInBatch();
-        }
-    }
-
-    // Move to next text in current batch
-    moveToNextTextInBatch() {
-        // Move to next text
-        this.currentTextIndex++;
-        this.currentPhraseIndex = 0;
-        
-        console.log('🎯 ChallengeManager: Moved to next text - textIndex:', this.currentTextIndex, 'phraseIndex:', this.currentPhraseIndex);
-        
-        // Create challenge for first phrase of next text
-        this.createChallenge();
-    }
-
-    // Handle batch completion - decide next level or next batch
-    handleBatchComplete() {
-        if (this.currentLevel === 'LEVEL_1') {
-            console.log('🎯 ChallengeManager: Moving from Level 1 to Level 2 for same batch');
-            this.currentLevel = 'LEVEL_2';
-            // Reset to first text of current batch
-            this.currentTextIndex = this.currentBatch[0] - 1; // Convert to 0-based index
-            this.currentPhraseIndex = 0;
-
-            // Update current position in UserProgress
-            this.userProgress.updateCurrentPosition(this.currentBatch, this.currentLevel);
-
-            // CREATE THE NEXT CHALLENGE
-            this.createChallenge();
-
-        } else {
-            // LEVEL_2 complete - move to next batch at LEVEL_1
-            console.log('🎯 ChallengeManager: LEVEL_2 complete - moving to next batch at LEVEL_1');
-            
-            // Get next batch from batch structure with error handling
-            let batchStructure = this.userProgress.getBatchStructure();
-            
-            if (!batchStructure) {
-                console.error('🎯 ChallengeManager: CRITICAL ERROR - No batch structure found!');
-                console.log('🎯 ChallengeManager: Regenerating batch structure from current sequenceData...');
-                
-                // Regenerate batch structure using current sequenceData
-                const textPhraseCounts = this.sequenceData.map(phraseIds => phraseIds.length);
-                console.log('🎯 ChallengeManager: Regenerating from phrase counts:', textPhraseCounts);
-                
-                batchStructure = this.generateBatchStructure(textPhraseCounts);
-                this.userProgress.setBatchStructure(batchStructure);
-                
-                console.log('✅ ChallengeManager: Batch structure regenerated:', batchStructure);
-            } 
-            
-            // Now proceed with normal batch structure logic
-            const currentBatchIndex = batchStructure.findIndex(batch => 
-                batch.length === this.currentBatch.length && 
-                batch.every((val, i) => val === this.currentBatch[i])
-            );
-            
-            if (currentBatchIndex === -1) {
-                console.error('🎯 ChallengeManager: Current batch not found in batch structure!');
-                console.error('🎯 ChallengeManager: Current batch:', this.currentBatch);
-                console.error('🎯 ChallengeManager: Batch structure:', batchStructure);
-                return;
-            }
-            
-            if (currentBatchIndex < batchStructure.length - 1) {
-                // Move to next batch
-                this.currentBatch = batchStructure[currentBatchIndex + 1];
-                console.log('🎯 ChallengeManager: Next batch from structure:', this.currentBatch);
-            } else {
-                console.log('🎯 ChallengeManager: All batches complete - game finished!');
-                // TODO: Handle game completion
-                return;
-            }
-            
-            // Set up for next batch
-            this.currentLevel = 'LEVEL_1';
-            this.currentTextIndex = this.currentBatch[0] - 1;  // Convert to 0-based
-            this.currentPhraseIndex = 0;
-            
-            console.log('🎯 ChallengeManager: Moving to batch:', this.currentBatch, 'at LEVEL_1');
-            
-            // Update current position in UserProgress
-            this.userProgress.updateCurrentPosition(this.currentBatch, this.currentLevel);
-            
-            // Create the first challenge of new batch
-            this.createChallenge();
-        }
-    }
     
     // Get current phrase ID (using batch structure)
     getCurrentPhraseId() {
-        if (!this.sequenceData.length) return null;
-        if (this.currentTextIndex >= this.sequenceData.length) return null;
+        console.log('🎯 ChallengeManager: Finding next available phrase using UserProgress...');
         
-        const currentTextPhrases = this.sequenceData[this.currentTextIndex];
+        // Get current batch from UserProgress batch cycling
+        const currentBatch = this.userProgress.getCurrentBatchFromCycling();
+        console.log('🎯 ChallengeManager: Current batch from cycling:', currentBatch);
         
-        // Skip mastered phrases within current text
-        while (this.currentPhraseIndex < currentTextPhrases.length) {
-            const phraseId = currentTextPhrases[this.currentPhraseIndex];
+        // Start from current position or beginning of batch
+        let textIndex = this.currentTextIndex;
+        let phraseIndex = this.currentPhraseIndex;
+        
+        // Try to find an available phrase starting from current position
+        for (let i = 0; i < currentBatch.length; i++) {
+            const actualTextIndex = (textIndex + i) % currentBatch.length;
+            const textNum = currentBatch[actualTextIndex];
+            const textId = `text_${textNum}`;
             
-            if (this.userProgress.isPhraseMastered(phraseId)) {
-                console.log(`🎯 ChallengeManager: Skipping mastered phrase: ${phraseId}`);
-                this.currentPhraseIndex++;
+            console.log(`🎯 ChallengeManager: Checking text ${textId} (textNum: ${textNum})`);
+            
+            // Skip fully mastered texts
+            if (this.userProgress.isTextMastered(textId)) {
+                console.log(`🎯 ChallengeManager: Skipping ${textId} - fully mastered`);
                 continue;
             }
             
-            return phraseId;
+            // Get all phrases for this text
+            const textPhrases = this.gameData.getPhrasesForText(textId);
+            console.log(`🎯 ChallengeManager: ${textId} has ${textPhrases.length} phrases`);
+            
+            // Start from current phrase index if this is the current text, otherwise start from 0
+            const startPhraseIndex = (i === 0) ? phraseIndex : 0;
+            
+            // Look for available phrases in this text
+            for (let j = startPhraseIndex; j < textPhrases.length; j++) {
+                const phrase = textPhrases[j];
+                const phraseId = phrase.phraseId;
+                
+                console.log(`🎯 ChallengeManager: Checking phrase ${phraseId}`);
+                
+                // Skip mastered phrases
+                if (this.userProgress.isPhraseMastered(phraseId)) {
+                    console.log(`🎯 ChallengeManager: Skipping ${phraseId} - mastered`);
+                    continue;
+                }
+                
+                // Found an available phrase!
+                console.log(`✅ ChallengeManager: Found available phrase: ${phraseId}`);
+                
+                // Update current position
+                this.currentTextIndex = actualTextIndex;
+                this.currentPhraseIndex = j;
+                this.currentBatch = currentBatch; // Update cached batch
+                
+                // Get text level and set current level for challenge creation
+                const textLevel = this.userProgress.getTextLevel(textId);
+                this.currentLevel = textLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
+                
+                console.log(`🎯 ChallengeManager: Text ${textId} is at level ${textLevel}, using ${this.currentLevel} challenges`);
+                
+                return phraseId;
+            }
+            
+            console.log(`🎯 ChallengeManager: No available phrases in ${textId}`);
         }
         
-        // All phrases in current text are mastered
+        // No available phrases in current batch
+        console.log('🎯 ChallengeManager: No available phrases in current batch - advancing to next batch');
+        
+        // Try to advance to next batch
+        const nextBatch = this.userProgress.advanceToNextBatch();
+        if (nextBatch) {
+            console.log('🎯 ChallengeManager: Advanced to next batch:', nextBatch);
+            
+            // Reset position and try again
+            this.currentTextIndex = 0;
+            this.currentPhraseIndex = 0;
+            
+            // Recursive call to try the new batch
+            return this.getCurrentPhraseId();
+        }
+        
+        // No more batches available
+        console.log('🎯 ChallengeManager: No more available phrases in any batch - game complete?');
         return null;
     }
 

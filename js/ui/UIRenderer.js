@@ -49,6 +49,10 @@ class UIRenderer {
         this.eventBus.on('ui:updateDisplayChoice', (html) => {
             this.updateDisplayChoice(html);
         });
+
+        this.eventBus.on('ui:updateProgressDisplay', (displayData) => {
+            this.updateProgressDisplay(displayData);
+        });
     }
     
     // Template loading
@@ -234,4 +238,7 @@ class UIRenderer {
             console.error('🎨 UIRenderer: Error showing overlay:', error);
         }
     }
+    
+
+
 }
