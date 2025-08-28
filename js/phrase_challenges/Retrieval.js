@@ -57,9 +57,7 @@ class Retrieval {
         if (this.templateLoadedHandler) {
             this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         }
-        if (this.timerExpiredHandler) {
-            this.eventBus.off('timer:expired', this.timerExpiredHandler);
-        }
+    // No longer handle timer:expired directly to avoid duplicate life loss
         
         this.spaceHandler = () => {
             if (!this.isActive) return;
@@ -78,15 +76,12 @@ class Retrieval {
             }
         };
         
-        this.timerExpiredHandler = () => {
-            if (!this.isActive) return;
-            this.handleTimerExpired();
-        };
+
         
         this.eventBus.on('navigation:spacePressed', this.spaceHandler);
         this.eventBus.on('navigation:enterPressed', this.enterHandler);
         this.eventBus.on('ui:templateLoaded', this.templateLoadedHandler);
-        this.eventBus.on('timer:expired', this.timerExpiredHandler);
+    // No longer listen for timer:expired directly
     }
     
     // Start this phase
@@ -192,7 +187,19 @@ class Retrieval {
     // Handle timer expiration
     handleTimerExpired() {
         console.log('🎯 Retrieval: Timer expired during retrieval phase');
-        this.complete();
+        
+        // 1. Show overlay first (same as Solution phase)
+        console.log('🟡 Retrieval: Emitting ui:showOverlay for time-expired');
+        this.eventBus.emit('ui:showOverlay', {
+            templatePath: 'templates/overlays/time-expired.html',
+            duration: 2000
+        });
+        
+        // 2. After overlay completes, trigger energy loss
+        setTimeout(() => {
+            if (!this.isActive) return;
+            this.eventBus.emit('retrieval:timerExpired');
+        }, 2000);
     }
     
     // Complete this phase

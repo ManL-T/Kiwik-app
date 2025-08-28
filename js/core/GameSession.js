@@ -63,7 +63,7 @@ class GameSession {
         const currentLives = this.energyBar.getCurrentLives();
         console.log(`🎮 GameSession: Current lives after loss: ${currentLives}`);
         
-        if (currentLives <= 0 && reason !== 'timerExpired')  {
+        if (currentLives <= 0)  {
             console.log('🎮 GameSession: Game Over - no lives remaining');
             
             // Clean up immediately when we detect game over
@@ -76,14 +76,15 @@ class GameSession {
     }
 
     handleTimerExpired() {
-        console.log('🎮 GameSession: Timer expired - waiting for overlay to complete');
-        
-        // DON'T call handleEnergyLoss immediately
+        console.log('🎮 GameSession: Timer expired - showing overlay');
+        this.eventBus.emit('ui:showOverlay', {
+            templatePath: 'templates/overlays/time-expired.html',
+            duration: 2000
+        });
         // Wait for overlay to complete, THEN trigger energy loss
         setTimeout(() => {
             console.log('🎮 GameSession: Overlay complete - now handling energy loss');
             this.handleEnergyLoss('timerExpired');
-            
             // After energy loss, check game state with additional delay for feedback
             setTimeout(() => {
                 const currentLives = this.energyBar.getCurrentLives();
@@ -93,7 +94,6 @@ class GameSession {
                 }
                 // Game over handled by handleEnergyLoss if lives <= 0
             }, 1500); // 1.5s to see energy bar reduction
-            
         }, 2000); // 2s overlay duration
     }
 

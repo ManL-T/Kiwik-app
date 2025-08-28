@@ -151,6 +151,12 @@ class ChallengeManager {
             this.eventBus.emit('challenge:timerExpired'); 
         });
 
+        // Handle retrieval timer expiration (same pattern as solution)
+        this.eventBus.on('retrieval:timerExpired', () => {
+            console.log('🎯 ChallengeManager: Retrieval timer expired - energy loss and progression');
+            this.eventBus.emit('challenge:timerExpired'); 
+        });
+
         this.eventBus.on('session:progressToNextChallenge', () => {
             console.log('🎯 ChallengeManager: Session requesting next challenge progression');
             this.handleChallengeComplete();
@@ -300,19 +306,6 @@ class ChallengeManager {
         console.log(`🎯 ChallengeManager: [${timestamp}] Set currentTextIndex: ${this.currentTextIndex} (for text_${this.currentTextIndex + 1})`);
         console.log(`🎯 ChallengeManager: [${timestamp}] Set currentPhraseIndex:`, this.currentPhraseIndex);
         
-        // Initialize batch completion state from UserProgress
-        console.log(`🎯 ChallengeManager: [${timestamp}] Getting batch completion state from UserProgress...`);
-        const userData = this.userProgress.getCurrentData();
-        if (userData && userData.batchCompletionState) {
-            this.batchCompletionState = userData.batchCompletionState;
-            console.log(`🎯 ChallengeManager: [${timestamp}] Loaded batch completion state:`, this.batchCompletionState);
-        } else {
-            console.warn(`⚠️ ChallengeManager: [${timestamp}] No batch completion state found in UserProgress data`);
-            console.log(`🎯 ChallengeManager: [${timestamp}] UserProgress data:`, userData);
-        }
-        
-        console.log(`✅ ChallengeManager: [${timestamp}] Batch structure initialization complete`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Ready to start challenges at batch ${this.currentBatch} level ${this.currentLevel}`);
     }
     
     // Generate batch structure using phrase-count algorithm - OPTION A: Comprehensive logging
@@ -600,12 +593,11 @@ class ChallengeManager {
         if (this.currentPhase) {
             this.currentPhase.cleanup();
         }
-        
+        // Set currentPhase before loading template
+        this.currentPhase = this.phases[phaseName];
         // Load template for this phase
         this.loadPhaseTemplate(phaseName);
-        
         // Activate new phase
-        this.currentPhase = this.phases[phaseName];
         const phaseData = this.getPhaseData(phaseName);
         this.currentPhase.start(phaseData);
         

@@ -29,9 +29,7 @@ class Solution {
         if (this.enterHandler) {
             this.eventBus.off('navigation:enterPressed', this.enterHandler);
         }
-        if (this.timerExpiredHandler) {
-            this.eventBus.off('timer:expired', this.timerExpiredHandler);
-        }
+    // No longer handle timer:expired directly to avoid duplicate life loss
         if (this.templateLoadedHandler) {
             this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         }
@@ -46,10 +44,7 @@ class Solution {
             this.handleEnter();
         };
         
-        this.timerExpiredHandler = () => {
-            if (!this.isActive) return;
-            this.handleTimerExpired();
-        };
+
         
         this.templateLoadedHandler = (templatePath) => {
             if (!this.isActive) return;
@@ -60,7 +55,7 @@ class Solution {
         
         this.eventBus.on('navigation:spacePressed', this.spaceHandler);
         this.eventBus.on('navigation:enterPressed', this.enterHandler);
-        this.eventBus.on('timer:expired', this.timerExpiredHandler);
+    // No longer listen for timer:expired directly
         this.eventBus.on('ui:templateLoaded', this.templateLoadedHandler);
     }
     
@@ -163,7 +158,7 @@ class Solution {
         } else {
             console.log('🎯 Solution: Incorrect answer! Showing red feedback');
             this.showAnswerFeedback('incorrect');
-            this.eventBus.emit('solution:incorrect');
+            // Do NOT emit solution:incorrect here; only after feedback timeout
         }
     }
     
@@ -201,7 +196,7 @@ class Solution {
             if (feedbackType === 'correct') {
                 this.complete('correct');
             } else {
-                // For incorrect answers, don't complete - just emit wrongAnswer and reset
+                // For incorrect answers, emit only once after feedback
                 this.eventBus.emit('solution:incorrect');
                 this.resetToSelection();
             }
@@ -213,6 +208,7 @@ class Solution {
         console.log('🎯 Solution: Timer expired during solution phase');
         
         // 1. Show overlay first
+        console.log('🟡 Solution: Emitting ui:showOverlay for time-expired');
         this.eventBus.emit('ui:showOverlay', {
             templatePath: 'templates/overlays/time-expired.html',
             duration: 2000
@@ -253,8 +249,6 @@ class Solution {
         
         if (result === 'correct') {
             this.eventBus.emit('solution:correct');
-        } else {
-            this.eventBus.emit('solution:incorrect');
         }
     }
     
@@ -273,7 +267,7 @@ class Solution {
         
         this.eventBus.off('navigation:spacePressed', this.spaceHandler);
         this.eventBus.off('navigation:enterPressed', this.enterHandler);
-        this.eventBus.off('timer:expired', this.timerExpiredHandler);
+    // No longer listen for timer:expired directly
         this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         
         console.log('✅ Solution: Cleanup complete');

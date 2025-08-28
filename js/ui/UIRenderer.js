@@ -1,16 +1,16 @@
 // UI Rendering module - handles all template loading and DOM updates
 class UIRenderer {
     constructor(eventBus) {
+        console.log('🟢 UIRenderer: CONSTRUCTOR called');
         console.log('🎨 UIRenderer: Initializing...');
-        
         // Store EventBus reference
         this.eventBus = eventBus;
-        
         // Setup event listeners
         this.setupEventListeners();
-        
         console.log('✅ UIRenderer: Initialization complete');
     }
+        // Overlay state flag
+        overlayActive = false;
     
     // Setup event listeners
     setupEventListeners() {
@@ -150,23 +150,29 @@ class UIRenderer {
     
     // Update display container with custom HTML
     updateDisplayContainer(html) {
+        // Only block if NOT an overlay (i.e., not called from showOverlay)
+        if (this.overlayActive && !(typeof html === 'string' && html.includes('overlay-backdrop'))) {
+            console.log('🎨 UIRenderer: Overlay active, blocking display container update');
+            return;
+        }
         console.log('🎨 UIRenderer: updateDisplayContainer called');
         console.log('🎨 UIRenderer: html:', html);
-        
         const displayContainer = document.querySelector('.display-container');
         if (!displayContainer) return;
-        
         displayContainer.innerHTML = html;
     }
 
     // Update display container with choice options (for solution phase)
     updateDisplayChoice(html) {
+        // Only block if NOT an overlay (i.e., not called from showOverlay)
+        if (this.overlayActive && !(typeof html === 'string' && html.includes('overlay-backdrop'))) {
+            console.log('🎨 UIRenderer: Overlay active, blocking display choice update');
+            return;
+        }
         console.log('🎨 UIRenderer: updateDisplayChoice called');
         console.log('🎨 UIRenderer: html:', html);
-        
         const displayContainer = document.querySelector('.display-container');
         if (!displayContainer) return;
-        
         displayContainer.innerHTML = html;
     }
 
