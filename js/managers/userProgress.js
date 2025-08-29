@@ -397,7 +397,7 @@ class UserProgress {
         
         console.log(`📊 UserProgress: Session data - skipped: ${sessionData.skipped}, correct: ${sessionData.correct}, incorrectCount: ${sessionData.incorrectCount}`);
         
-        // Check for mastery first (skip + correct + no incorrect)
+        // Check for mastery: skip + correct + no incorrect (from any level)
         if (sessionData.skipped && sessionData.correct && sessionData.incorrectCount === 0) {
             console.log(`🎉 UserProgress: Phrase ${phraseId} MASTERED! (skipped + correct + no incorrect)`);
             this.setPhraseLevel(phraseId, "mastered");
@@ -405,11 +405,17 @@ class UserProgress {
             this.checkTextLevelProgression(phraseId);
             return;
         }
-        
-        // Check for normal completion (correct + no incorrect)
+
+        // Check for normal completion: correct + no incorrect (advance one level, unless already at level 3, then master)
         if (sessionData.correct && sessionData.incorrectCount === 0) {
-            console.log(`✅ UserProgress: Phrase ${phraseId} COMPLETED at current level`);
-            this.advancePhraseLevel(phraseId);
+            const currentLevel = this.data.phraseProgress[phraseId]?.level || 1;
+            if (currentLevel === 3) {
+                console.log(`🎉 UserProgress: Phrase ${phraseId} MASTERED! (completed level 3)`);
+                this.setPhraseLevel(phraseId, "mastered");
+            } else {
+                console.log(`✅ UserProgress: Phrase ${phraseId} COMPLETED at level ${currentLevel}, advancing to ${currentLevel + 1}`);
+                this.setPhraseLevel(phraseId, currentLevel + 1);
+            }
             this.saveSessionAttempt(phraseId);
             this.checkTextLevelProgression(phraseId);
             return;
