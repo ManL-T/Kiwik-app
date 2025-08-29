@@ -113,6 +113,11 @@
     {
       "phraseId": "text_1_p1",
       "phraseTarget": "- C'est ton premier cours de danse ?",
+      "targetDistractors": [
+        "- C'est ton dernier cours de danse ?",
+        "- C'est ton premier niveau de danse ?",
+        "- C'est ta dernier course de danse ?"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_1_p1_unit_0",
@@ -148,6 +153,11 @@
     {
       "phraseId": "text_1_p2",
       "phraseTarget": "- Oui, je suis un peu lassé d'être seul.",
+      "targetDistractors":[
+        "- Oui, je suis un fatigué d'être malhereux.",
+        "- Oui, je viens d'être un peu pressé d'être chassé.",
+        "- Oui, je suis un peu fatigué de te voir seul."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_1_p2_unit_0",
@@ -214,6 +224,11 @@
     {
       "phraseId": "text_1_p3",
       "phraseTarget": "- Viens dans notre danse ronde !",
+      "targetDistractors":[
+        "- Sort de notre danse de groupe !",
+        "- Reviens à notre danse ronde !",
+        "- Reste dans notre danse de groupe !"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_1_p3_unit_0",
@@ -260,6 +275,11 @@
     {
       "phraseId": "text_1_p4",
       "phraseTarget": "- J'aimerais faire quelques pas avec vous.",
+      "targetDistractors":[
+        "- Je voudrais faire quelques courses avec toi.",
+        "- J'aimerais prendre quelques verres avec toi.",
+        "- Je voudrais faire quelques pas avec toi."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_1_p4_unit_0",
@@ -306,6 +326,11 @@
     {
       "phraseId": "text_2_p1",
       "phraseTarget": "Aujourd'hui, je veux écrire ce qui a changé.",
+      "targetDistractors":[ 
+        "Aujourd'hui, je vais écrire ce qui a changé.",
+        "Aujourd'hui, je peux lire ce qui a changé.",
+        "Aujourd'hui, je dis ce qui a été changé."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_2_p1_unit_0",
@@ -362,6 +387,11 @@
     {
       "phraseId": "text_2_p2",
       "phraseTarget": "On m'a déplacé de bureau aujourd'hui.",
+      "targetDistractors":[
+        "On m'a transféré à son bâtiment aujourd'hui.",
+        "On m'a changé de bâtiment aujourd'hui.",
+        "On m'a envoyé au bâtiment aujourd'hui."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_2_p2_unit_1754953799160_1",
@@ -408,6 +438,11 @@
     {
       "phraseId": "text_2_p3",
       "phraseTarget": "Dites-moi si vous voulez venir voir.",
+      "targetDistractors":[
+        "Dites-moi quand vous pouvez partir.",
+        "Dites-moi où vous voulez rester.",
+        "Dites-moi si tu veux venir."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_2_p3_unit_0",
@@ -454,6 +489,11 @@
     {
       "phraseId": "text_2_p4",
       "phraseTarget": "Je vais essayer de comprendre ces changements.",
+      "targetDistractors":[
+        "Je vais tenter de lire ces documents.",
+        "Je vais chercher à voir ces endroits.",
+        "Je vais essayer de trouver ces réponses."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_2_p4_unit_1754953835494_merged",
@@ -490,6 +530,11 @@
     {
       "phraseId": "text_3_p1",
       "phraseTarget": "Le monde tourne autour du soleil,",
+      "targetDistractors":[
+        "Le monde change autour du soleil,",
+        "Le monde vit autour de la Terre,",
+        "Le monde change autour de la Terre,"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_3_p1_unit_0",
@@ -536,6 +581,11 @@
     {
       "phraseId": "text_3_p2",
       "phraseTarget": "Mes vertèbres portent le poids de mes peines,",
+      "targetDistractors":[
+        "Mes os portent le bruit de mes douleurs,",
+        "Mes jambes supportent le fardeau de mes souffrances,",
+        "Mes articulations portent le bruit de mes souffrances,"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_3_p2_unit_0",
@@ -592,6 +642,11 @@
     {
       "phraseId": "text_3_p3",
       "phraseTarget": "Dans l'ombre du genre féminin se cachent",
+      "targetDistractors":[
+        "Dans la joie du genre féminin se montrent",
+        "Dans la tristese du genre féminin se perdent",
+        "Dans la lumière du genre féminin se trouvent"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_3_p3_unit_0",
@@ -648,6 +703,11 @@
     {
       "phraseId": "text_3_p4",
       "phraseTarget": "Toutes mes envies d'existence pure.",
+      "targetDistractors":[
+        "Toutes mes envies de vie simple.",
+        "Toutes mes envies d'amour vrai.",
+        "Toutes mes envies de pure liberté."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_3_p4_unit_0",
@@ -720,6 +780,11 @@
     {
       "phraseId": "text_4_p2",
       "phraseTarget": "En fait, c'est déjà un peu juste.",
+      "targetDistractors":[
+        "En fait, c'est encore un peu loin.",
+        "En réalité, c'est déjà un peu tard.",
+        "En fait, c'est toujours un peu dur."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_4_p2_unit_0",
@@ -766,6 +831,11 @@
     {
       "phraseId": "text_4_p3",
       "phraseTarget": "Pas aujourd'hui, mais peut-être demain matin.",
+      "targetDistractors":[
+        "Pas demain, mais peut-être aujourd'hui soir.",
+        "Pas maintenant, mais peut-être demain après-midi.",
+        "Pas aujourd'hui, mais peut-être demain soir."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_4_p3_unit_0",
@@ -822,6 +892,11 @@
     {
       "phraseId": "text_5_p1",
       "phraseTarget": "Salut ! Tout va bien avec ton projet ?",
+      "targetDistractors":[
+        "Bonjour ! Tout est prêt pour ton avenir ?",
+        "Coucou ! Va tout mal avec ton plan ?",
+        "Salut ! Tout est bonheur pour ton devoir ?"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_5_p1_unit_0",
@@ -868,6 +943,11 @@
     {
       "phraseId": "text_5_p2",
       "phraseTarget": "C'est bon de te revoir enfin.",
+      "targetDistractors":[
+        "C'est triste de te quitter encore.",
+        "C'est dur de te perdre toujours.",
+        "C'est fou de te voir souvent."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_5_p2_unit_0",
@@ -924,6 +1004,11 @@
     {
       "phraseId": "text_6_p1",
       "phraseTarget": "Je crois qu'on peut faire changer les choses.",
+      "targetDistractors":[
+        "Je sais qu'on doit faire avancer les idées.",
+        "Je pense qu'on veut faire bouger les gens.",
+        "Je crois qu'on sait faire évoluer les vies."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_6_p1_unit_0",
@@ -970,6 +1055,11 @@
     {
       "phraseId": "text_6_p2",
       "phraseTarget": "Mais est-ce qu'il faut douter quand tout tombe ?",
+      "targetDistractors":[
+        "Mais est-ce qu'on doit savoir quand rien change ?",
+        "Mais est-ce qu'il peut pleuvoir quand rien bouge ?",
+        "Mais est-ce qu'on veut partir quand tout reste ?"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_6_p2_unit_0",
@@ -1026,6 +1116,11 @@
     {
       "phraseId": "text_6_p3",
       "phraseTarget": "Je préfère éclairer que comploter dans l'ombre.",
+      "targetDistractors":[
+        "Je préfère briller que conspirer dans la lumière.",
+        "Je préfère illuminer que manigancer dans le jour.",
+        "Je préfère révéler que tramer dans la clarté."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_6_p3_unit_0",
@@ -1092,6 +1187,11 @@
     {
       "phraseId": "text_7_p1",
       "phraseTarget": "Je vois comme tout s'use et se réchauffe.",
+      "targetDistractors":[
+        "Je sais comment rien ne dure et se refroidit.",
+        "Je remarque que tout se casse et se fige.",
+        "Je comprends pourquoi rien ne reste et se gèle."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_7_p1_unit_1754953891095_merged",
@@ -1279,6 +1379,11 @@
     {
       "phraseId": "text_8_p1",
       "phraseTarget": "Sur les plages de l'époque, les uns cherchaient",
+      "targetDistractors":[
+        "Sur les rives de l'époque, certains trouvaient",
+        "Sur les côtes de l'époque, quelques-uns voyaient",
+        "Sur les bords de l'époque, plusieurs prenaient"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_8_p1_unit_0",
@@ -1345,6 +1450,11 @@
     {
       "phraseId": "text_8_p2",
       "phraseTarget": "La beauté dans un simple collier,",
+      "targetDistractors":[
+        "La magie dans un vieux bracelet,",
+        "Le charme dans une belle bague,",
+        "L'élégance dans un grand pendentif,"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_8_p2_unit_0",
@@ -1381,6 +1491,11 @@
     {
       "phraseId": "text_8_p3",
       "phraseTarget": "Pendant que les puces dansaient au soleil.",
+      "targetDistractors":[
+        "Alors que les oiseaux chantaient sous le soleil.",
+        "Tandis que les papillons volaient près le soleil.",
+        "Lorsque les abeilles butinaient autour le soleil."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_8_p3_unit_0",
@@ -1437,6 +1552,11 @@
     {
       "phraseId": "text_9_p1",
       "phraseTarget": "Il m'a dit que je suis comme une sœur pour lui",
+      "targetDistractors":[
+        "Il m'a dit que je suis comme une voisine pour moi",
+        "Il m'a dit que je suis comme un gris-gris pour soi",
+        "Il m'a dit que je suis comme une gris-gris pour lui"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_9_p1_unit_0",
@@ -1513,6 +1633,11 @@
     {
       "phraseId": "text_9_p2",
       "phraseTarget": "mais on sait que ce n'est pas vrai.",
+      "targetDistractors":[
+        "mais on croit que ça est toujours faux.",
+        "mais on pense que cela n'est jamais juste.",
+        "mais on espère que ça n'est pas correct."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_9_p2_unit_0",
@@ -1589,6 +1714,11 @@
     {
       "phraseId": "text_9_p4",
       "phraseTarget": "Il m'a proposé de nous voir demain",
+      "targetDistractors":[
+        "Elle m'a demandé de vous rencontrer aujourd'hui",
+        "Il m'a suggéré de te retrouver ce soir",
+        "Elle m'a offert de me joindre à eux après-demain"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_9_p4_unit_0",
@@ -1653,6 +1783,11 @@
     {
       "phraseId": "text_9_p5",
       "phraseTarget": "je vais y réfléchir et lui répondre.",
+      "targetDistractors":[
+        "je dois y penser et lui écrire.",
+        "je veux y réfléchir et lui téléphoner.",
+        "je peux y songer et lui parler."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_9_p5_unit_1754953946159_merged",
@@ -1698,6 +1833,11 @@
     {
       "phraseId": "text_10_p1",
       "phraseTarget": "Dans la vie, nous cherchons toujours",
+      "targetDistractors":[
+        "Pendant la vie, on trouve souvent",
+        "Au cours de la vie, ils perdent parfois",
+        "Tout au long de la vie, tu découvres rarement"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_10_p1_unit_0",
@@ -1744,6 +1884,11 @@
     {
       "phraseId": "text_10_p2",
       "phraseTarget": "Un chemin qui nous guide si bien,",
+      "targetDistractors":[
+        "Une route que tu montres très mal,",
+        "Un sentier que je perds trop vite,",
+        "Une voie qui les mène assez loin,"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_10_p2_unit_0",
@@ -1790,6 +1935,11 @@
     {
       "phraseId": "text_10_p3",
       "phraseTarget": "Et la vie continue son chemin",
+      "targetDistractors":[
+        "Mais la vie arrête son voyage",
+        "Ou la vie change son destin",
+        "Donc la vie suit son parcours"
+      ],
       "semanticUnits": [
         {
           "unitId": "text_10_p3_unit_0",
@@ -1836,6 +1986,11 @@
     {
       "phraseId": "text_11_p1",
       "phraseTarget": "Ça arrive comme ça parfois, c'est la vie.",
+      "targetDistractors":[
+        "Ça part ainsi souvent, voilà la mort.",
+        "Ça change tout le temps, c'est le destin.",
+        "Ça finit toujours mal, voici l'histoire."
+      ],
       "semanticUnits": [
         {
           "unitId": "text_11_p1_unit_0",

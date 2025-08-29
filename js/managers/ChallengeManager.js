@@ -291,12 +291,10 @@ class ChallengeManager {
         console.log(`🎯 ChallengeManager: [${timestamp}] Resume position:`, resumePosition);
         
         this.currentBatch = resumePosition.batch;
-        this.currentLevel = resumePosition.level;
         this.currentTextIndex = resumePosition.batch[0] - 1; // Convert to 0-based index
         this.currentPhraseIndex = 0; // Always start at beginning of text
         
         console.log(`🎯 ChallengeManager: [${timestamp}] Set currentBatch:`, this.currentBatch);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Set currentLevel:`, this.currentLevel);
         console.log(`🎯 ChallengeManager: [${timestamp}] Set currentTextIndex: ${this.currentTextIndex} (for text_${this.currentTextIndex + 1})`);
         console.log(`🎯 ChallengeManager: [${timestamp}] Set currentPhraseIndex:`, this.currentPhraseIndex);
         
@@ -312,7 +310,6 @@ class ChallengeManager {
         }
         
         console.log(`✅ ChallengeManager: [${timestamp}] Batch structure initialization complete`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Ready to start challenges at batch ${this.currentBatch} level ${this.currentLevel}`);
     }
     
     // Generate batch structure using phrase-count algorithm - OPTION A: Comprehensive logging
@@ -563,9 +560,7 @@ class ChallengeManager {
         console.log('🎯 ChallengeManager: Resetting timer for new challenge');
         this.eventBus.emit('timer:reset');
         this.timerWasStarted = false;
-        
-        this.currentRecipe = [...this.recipes[this.currentLevel]];
-        this.currentPhaseIndex = 0;
+                this.currentPhaseIndex = 0;
         this.currentPhrase = phraseId;
 
         console.log('🎯 ChallengeManager: DEBUG - Set this.currentPhrase to:', this.currentPhrase);
@@ -753,12 +748,10 @@ class ChallengeManager {
     handleChallengeComplete() {
         console.log('🎯 ChallengeManager: Challenge completed successfully!');
         
-        // Simply move to next phrase - UserProgress handles all level progression
+        // Move to next phrase - UserProgress will handle level progression
         this.currentPhraseIndex++;
         
-        console.log(`🎯 ChallengeManager: Advanced to next phrase - textIndex: ${this.currentTextIndex}, phraseIndex: ${this.currentPhraseIndex}`);
-        
-        // Create next challenge (getCurrentPhraseId will handle all the logic)
+        // Check if there's a next phrase and continue
         this.createChallenge();
     }
     
@@ -829,6 +822,7 @@ class ChallengeManager {
                 // Get text level and set current level for challenge creation
                 const textLevel = this.userProgress.getTextLevel(textId);
                 this.currentLevel = textLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
+                this.currentRecipe = this.recipes[this.currentLevel];
                 
                 console.log(`🎯 ChallengeManager: Text ${textId} is at level ${textLevel}, using ${this.currentLevel} challenges`);
                 
