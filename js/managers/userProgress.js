@@ -377,6 +377,14 @@ class UserProgress {
         
         return this.getCurrentBatchFromCycling();
     }
+
+    //get phrase level
+    getPhraseLevel(phraseId) {
+        if (!this.data.phraseProgress[phraseId]) {
+            return 1; // Default level
+        }
+        return this.data.phraseProgress[phraseId].level;
+    }
     
     // NEW: Get current level for a specific text
     getTextLevel(textId) {
@@ -695,26 +703,43 @@ class UserProgress {
         const nonMasteredLevels = phraseLevels.filter(level => level !== "mastered");
         console.log(`📊 UserProgress: Non-mastered phrase levels: [${nonMasteredLevels.join(', ')}]`);
         
-        // Check if all non-mastered phrases are at the same level
-        if (nonMasteredLevels.length === 0) {
-            console.log(`🎉 UserProgress: Text ${textId} is fully MASTERED! All phrases mastered.`);
-            this.eventBus.emit('userProgress:textMastered', textId);
-            return;
+
+        // Get current text level
+        // const currentTextLevel = this.getTextLevel(textId);
+
+        // Check if ALL phrases are now at the next level
+        const targetLevel = currentTextLevel + 1;
+        const allPhrasesAtTargetLevel = allPhrasesInText.every(phrase => {
+            const phraseLevel = this.data.phraseProgress[phrase.phraseId]?.level || 1;
+            return phraseLevel === "mastered" || phraseLevel >= targetLevel;
+        });
+
+        if (allPhrasesAtTargetLevel) {
+            console.log(`🎉 UserProgress: Text ${textId} leveled up from ${currentTextLevel} to ${targetLevel}!`);
+            this.setTextLevel(textId, targetLevel);
         }
+
+
+        // Check if all non-mastered phrases are at the same level
+        // if (nonMasteredLevels.length === 0) {
+        //     console.log(`🎉 UserProgress: Text ${textId} is fully MASTERED! All phrases mastered.`);
+        //     this.eventBus.emit('userProgress:textMastered', textId);
+        //     return;
+        // }
         
         // Check if all non-mastered phrases are at the same level
-        const firstLevel = nonMasteredLevels[0];
-        const allSameLevel = nonMasteredLevels.every(level => level === firstLevel);
+        // const firstLevel = nonMasteredLevels[0];
+        // const allSameLevel = nonMasteredLevels.every(level => level === firstLevel);
         
-        if (allSameLevel && firstLevel > currentTextLevel) {
-            console.log(`🎉 UserProgress: Text ${textId} leveled up from ${currentTextLevel} to ${firstLevel}!`);
-            this.setTextLevel(textId, firstLevel);
-            this.eventBus.emit('userProgress:textLeveledUp', { textId, oldLevel: currentTextLevel, newLevel: firstLevel });
-        } else if (allSameLevel) {
-            console.log(`📊 UserProgress: Text ${textId} all phrases at level ${firstLevel}, text already at level ${currentTextLevel}`);
-        } else {
-            console.log(`📊 UserProgress: Text ${textId} phrases at mixed levels: [${nonMasteredLevels.join(', ')}]`);
-        }
+        // if (allSameLevel && firstLevel > currentTextLevel) {
+        //     console.log(`🎉 UserProgress: Text ${textId} leveled up from ${currentTextLevel} to ${firstLevel}!`);
+        //     this.setTextLevel(textId, firstLevel);
+        //     this.eventBus.emit('userProgress:textLeveledUp', { textId, oldLevel: currentTextLevel, newLevel: firstLevel });
+        // } else if (allSameLevel) {
+        //     console.log(`📊 UserProgress: Text ${textId} all phrases at level ${firstLevel}, text already at level ${currentTextLevel}`);
+        // } else {
+        //     console.log(`📊 UserProgress: Text ${textId} phrases at mixed levels: [${nonMasteredLevels.join(', ')}]`);
+        // }
     }
     
 // OLD checkAndProcessMastery method removed - functionality moved to checkPhraseCompletionAndMastery

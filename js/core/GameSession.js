@@ -49,11 +49,6 @@ class GameSession {
                 this.setupGameOverKeyHandler();
             }
         });
-
-        // handle timer expiration 
-        this.eventBus.on('challenge:timerExpired', () => {
-            this.handleTimerExpired();
-        });
     }
     
     handleEnergyLoss(reason) {
@@ -77,7 +72,14 @@ class GameSession {
 
     handleTimerExpired() {
         console.log('🎮 GameSession: Timer expired - waiting for overlay to complete');
+
+        // 1. Show overlay first
+        this.eventBus.emit('ui:showOverlay', {
+            templatePath: 'templates/overlays/time-expired.html',
+            duration: 2000
+        });
         
+        // 2. After overlay completes, trigger energy loss        
         // DON'T call handleEnergyLoss immediately
         // Wait for overlay to complete, THEN trigger energy loss
         setTimeout(() => {

@@ -57,9 +57,9 @@ class Retrieval {
         if (this.templateLoadedHandler) {
             this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         }
-        if (this.timerExpiredHandler) {
-            this.eventBus.off('timer:expired', this.timerExpiredHandler);
-        }
+        // if (this.timerExpiredHandler) {
+        //     this.eventBus.off('timer:expired', this.timerExpiredHandler);
+        // }
         
         this.spaceHandler = () => {
             if (!this.isActive) return;
@@ -78,15 +78,10 @@ class Retrieval {
             }
         };
         
-        this.timerExpiredHandler = () => {
-            if (!this.isActive) return;
-            this.handleTimerExpired();
-        };
-        
         this.eventBus.on('navigation:spacePressed', this.spaceHandler);
         this.eventBus.on('navigation:enterPressed', this.enterHandler);
         this.eventBus.on('ui:templateLoaded', this.templateLoadedHandler);
-        this.eventBus.on('timer:expired', this.timerExpiredHandler);
+        // this.eventBus.on('timer:expired', this.timerExpiredHandler);
     }
     
     // Start this phase
@@ -189,12 +184,6 @@ class Retrieval {
         }
     }
     
-    // Handle timer expiration
-    handleTimerExpired() {
-        console.log('🎯 Retrieval: Timer expired during retrieval phase');
-        this.complete();
-    }
-    
     // Complete this phase
     complete() {
         console.log('🎯 Retrieval: Completing retrieval phase');
@@ -210,7 +199,6 @@ class Retrieval {
         this.eventBus.off('navigation:spacePressed', this.spaceHandler);
         this.eventBus.off('navigation:enterPressed', this.enterHandler);
         this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
-        this.eventBus.off('timer:expired', this.timerExpiredHandler);
         
         console.log('✅ Retrieval: Cleanup complete');
     }

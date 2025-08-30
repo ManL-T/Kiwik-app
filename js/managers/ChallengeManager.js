@@ -145,12 +145,6 @@ class ChallengeManager {
             this.createChallenge();
         });
 
-        // Handle timer expiration
-        this.eventBus.on('solution:timerExpired', () => {
-            console.log('🎯 ChallengeManager: Timer expired - energy loss and progression');
-            this.eventBus.emit('challenge:timerExpired'); 
-        });
-
         this.eventBus.on('session:progressToNextChallenge', () => {
             console.log('🎯 ChallengeManager: Session requesting next challenge progression');
             this.handleChallengeComplete();
@@ -810,6 +804,13 @@ class ChallengeManager {
                     console.log(`🎯 ChallengeManager: Skipping ${phraseId} - mastered`);
                     continue;
                 }
+
+                // Skip phrases that are ahead of the text's current level
+                const textLevel = this.userProgress.getTextLevel(textId);
+                const phraseLevel = this.userProgress.getPhraseLevel(phraseId);
+                if (phraseLevel > textLevel) {
+                    continue;
+                }
                 
                 // Found an available phrase!
                 console.log(`✅ ChallengeManager: Found available phrase: ${phraseId}`);
@@ -820,7 +821,7 @@ class ChallengeManager {
                 this.currentBatch = currentBatch; // Update cached batch
                 
                 // Get text level and set current level for challenge creation
-                const textLevel = this.userProgress.getTextLevel(textId);
+                // const textLevel = this.userProgress.getTextLevel(textId);
                 this.currentLevel = textLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
                 this.currentRecipe = this.recipes[this.currentLevel];
                 

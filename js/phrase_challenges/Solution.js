@@ -29,9 +29,6 @@ class Solution {
         if (this.enterHandler) {
             this.eventBus.off('navigation:enterPressed', this.enterHandler);
         }
-        if (this.timerExpiredHandler) {
-            this.eventBus.off('timer:expired', this.timerExpiredHandler);
-        }
         if (this.templateLoadedHandler) {
             this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         }
@@ -46,11 +43,6 @@ class Solution {
             this.handleEnter();
         };
         
-        this.timerExpiredHandler = () => {
-            if (!this.isActive) return;
-            this.handleTimerExpired();
-        };
-        
         this.templateLoadedHandler = (templatePath) => {
             if (!this.isActive) return;
             if (templatePath.includes('game.html')) {
@@ -60,7 +52,6 @@ class Solution {
         
         this.eventBus.on('navigation:spacePressed', this.spaceHandler);
         this.eventBus.on('navigation:enterPressed', this.enterHandler);
-        this.eventBus.on('timer:expired', this.timerExpiredHandler);
         this.eventBus.on('ui:templateLoaded', this.templateLoadedHandler);
     }
     
@@ -208,23 +199,6 @@ class Solution {
         }, 1000);
     }
     
-    // Handle timer expiration
-    handleTimerExpired() {
-        console.log('🎯 Solution: Timer expired during solution phase');
-        
-        // 1. Show overlay first
-        this.eventBus.emit('ui:showOverlay', {
-            templatePath: 'templates/overlays/time-expired.html',
-            duration: 2000
-        });
-        
-        // 2. After overlay completes, trigger energy loss
-        setTimeout(() => {
-            if (!this.isActive) return;
-            this.eventBus.emit('solution:timerExpired');
-        }, 2000);
-    }
-    
     // Reset to selection mode (after incorrect answer)
     resetToSelection() {
         console.log('🎯 Solution: Resetting to selection mode (same positions)');
@@ -273,7 +247,6 @@ class Solution {
         
         this.eventBus.off('navigation:spacePressed', this.spaceHandler);
         this.eventBus.off('navigation:enterPressed', this.enterHandler);
-        this.eventBus.off('timer:expired', this.timerExpiredHandler);
         this.eventBus.off('ui:templateLoaded', this.templateLoadedHandler);
         
         console.log('✅ Solution: Cleanup complete');
