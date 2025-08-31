@@ -14,6 +14,10 @@ class ChallengeManager {
             LEVEL_1: ['Presentation', 'Revision', 'ReadyOrNot', 'Solution'],
             LEVEL_2: ['Presentation', 'Retrieval', 'ReadyOrNot', 'Solution']
         };
+
+        // Round management
+        this.textCurrentLevels = {}; // Locked levels for current round per text
+        this.currentRoundTexts = new Set(); // Tracks which texts are in current round
         
         // Current challenge state
         this.currentRecipe = null;
@@ -33,8 +37,7 @@ class ChallengeManager {
         this.currentPhraseIndex = 0;
         this.sequenceData = [];
 
-        // Batch Management System - will be set from UserProgress
-        this.currentBatch = null;
+        // Batch Management System - will be set from UserProgress ?????
         this.currentLevel = null;
         
         // Text cover state
@@ -118,11 +121,13 @@ class ChallengeManager {
             this.checkInitializationReadiness(timestamp);
         });
         
+        // After GameData is ready, set starting position
         this.eventBus.on('userProgress:ready', () => {
-            const timestamp = new Date().toISOString();
-            console.log(`🎯 ChallengeManager: [${timestamp}] userProgress:ready event received`);
-            this.userProgressReady = true;
-            this.checkInitializationReadiness(timestamp);
+            const resumePosition = this.userProgress.getResumePosition();
+            const allTexts = this.gameData.getAllTexts();
+            const startIndex = allTexts.findIndex(t => t.textId === resumePosition.startTextId);
+            this.currentTextIndex = startIndex >= 0 ? startIndex : 0;
+            console.log(`🎯 ChallengeManager: Starting from ${resumePosition.startTextId} at index ${this.currentTextIndex}`);
         });
         
         // OPTION B: Check current state immediately (established pattern)
@@ -239,244 +244,60 @@ class ChallengeManager {
         console.log(`🎯 ChallengeManager: [${timestamp}] Text phrase counts: [${textPhraseCounts.join(', ')}]`);
         console.log(`🎯 ChallengeManager: [${timestamp}] Total phrases across all texts: ${textPhraseCounts.reduce((a, b) => a + b, 0)}`);
         
-        // Generate or load batch structure
-        console.log(`🎯 ChallengeManager: [${timestamp}] Proceeding to batch structure initialization...`);
-        this.initializeBatchStructure(textPhraseCounts, timestamp);
     }
-    
-    // Initialize batch structure (generate if first time, load if exists) - OPTION A: Comprehensive logging
-    initializeBatchStructure(textPhraseCounts, timestamp = new Date().toISOString()) {
-        console.log(`🎯 ChallengeManager: [${timestamp}] initializeBatchStructure called`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Input textPhraseCounts:`, textPhraseCounts);
-        console.log(`🎯 ChallengeManager: [${timestamp}] UserProgress ready status:`, this.userProgress.isReady);
+
+        getCurrentPhraseId() {
+        console.log('🎯 ChallengeManager: Finding next available phrase...');
         
-        // Check if batch structure already exists
-        console.log(`🎯 ChallengeManager: [${timestamp}] Checking for existing batch structure...`);
-        let batchStructure = this.userProgress.getBatchStructure();
-        console.log(`🎯 ChallengeManager: [${timestamp}] Existing batch structure:`, batchStructure);
+        // Get all texts
+        const allTexts = this.gameData.getAllTexts();
         
-        if (!batchStructure) {
-            console.log(`🎯 ChallengeManager: [${timestamp}] No existing batch structure found - generating new one`);
-            console.log(`🎯 ChallengeManager: [${timestamp}] Calling generateBatchStructure with phrase counts:`, textPhraseCounts);
+        // Start from current text index
+        for (let i = 0; i < allTexts.length; i++) {
+            const textIndex = (this.currentTextIndex + i) % allTexts.length;
+            const text = allTexts[textIndex];
+            const textId = text.textId;
             
-            batchStructure = this.generateBatchStructure(textPhraseCounts, timestamp);
+            console.log(`🎯 ChallengeManager: Checking ${textId}`);
             
-            console.log(`🎯 ChallengeManager: [${timestamp}] Generated batch structure:`, batchStructure);
-            console.log(`🎯 ChallengeManager: [${timestamp}] Calling UserProgress.setBatchStructure...`);
-            
-            const saveSuccess = this.userProgress.setBatchStructure(batchStructure);
-            console.log(`🎯 ChallengeManager: [${timestamp}] setBatchStructure returned:`, saveSuccess);
-            
-            if (!saveSuccess) {
-                console.error(`❌ ChallengeManager: [${timestamp}] CRITICAL ERROR: Failed to save batch structure!`);
-                return;
+            // Skip fully mastered texts
+            if (this.userProgress.isTextMastered(textId)) {
+                console.log(`🎯 ChallengeManager: Skipping ${textId} - fully mastered`);
+                continue;
             }
-        } else {
-            console.log(`🎯 ChallengeManager: [${timestamp}] Using existing batch structure with ${batchStructure.length} batches`);
-            batchStructure.forEach((batch, index) => {
-                const phraseCount = batch.reduce((sum, textNum) => sum + textPhraseCounts[textNum - 1], 0);
-                console.log(`🎯 ChallengeManager: [${timestamp}] Existing batch ${index + 1}: texts [${batch.join(', ')}] = ${phraseCount} phrases`);
-            });
-        }
-        
-        // Set up current position from UserProgress
-        console.log(`🎯 ChallengeManager: [${timestamp}] Getting resume position from UserProgress...`);
-        const resumePosition = this.userProgress.getResumePosition();
-        console.log(`🎯 ChallengeManager: [${timestamp}] Resume position:`, resumePosition);
-        
-        this.currentBatch = resumePosition.batch;
-        this.currentTextIndex = resumePosition.batch[0] - 1; // Convert to 0-based index
-        this.currentPhraseIndex = 0; // Always start at beginning of text
-        
-        console.log(`🎯 ChallengeManager: [${timestamp}] Set currentBatch:`, this.currentBatch);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Set currentTextIndex: ${this.currentTextIndex} (for text_${this.currentTextIndex + 1})`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Set currentPhraseIndex:`, this.currentPhraseIndex);
-        
-        // Initialize batch completion state from UserProgress
-        console.log(`🎯 ChallengeManager: [${timestamp}] Getting batch completion state from UserProgress...`);
-        const userData = this.userProgress.getCurrentData();
-        if (userData && userData.batchCompletionState) {
-            this.batchCompletionState = userData.batchCompletionState;
-            console.log(`🎯 ChallengeManager: [${timestamp}] Loaded batch completion state:`, this.batchCompletionState);
-        } else {
-            console.warn(`⚠️ ChallengeManager: [${timestamp}] No batch completion state found in UserProgress data`);
-            console.log(`🎯 ChallengeManager: [${timestamp}] UserProgress data:`, userData);
-        }
-        
-        console.log(`✅ ChallengeManager: [${timestamp}] Batch structure initialization complete`);
-    }
-    
-    // Generate batch structure using phrase-count algorithm - OPTION A: Comprehensive logging
-    generateBatchStructure(textPhraseCounts, timestamp = new Date().toISOString()) {
-        console.log(`🎯 ChallengeManager: [${timestamp}] generateBatchStructure called`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Input phrase counts: [${textPhraseCounts.join(', ')}]`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Total texts to process: ${textPhraseCounts.length}`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Algorithm: 6-10 phrases per batch with exception handling`);
-        
-        const batchStructure = [];
-        let currentBatch = [];
-        let currentPhraseCount = 0;
-        
-        console.log(`🎯 ChallengeManager: [${timestamp}] Starting batch generation algorithm...`);
-        
-        for (let i = 0; i < textPhraseCounts.length; i++) {
-            const textNum = i + 1; // Convert to 1-based text number
-            const phraseCount = textPhraseCounts[i];
             
-            console.log(`🎯 ChallengeManager: [${timestamp}] --- Processing text_${textNum} (index ${i}) with ${phraseCount} phrases ---`);
-            console.log(`🎯 ChallengeManager: [${timestamp}] Current batch before decision: [${currentBatch.join(', ')}] (${currentPhraseCount} phrases)`);
+            // Get available phrases for this text
+            const textPhrases = this.gameData.getPhrasesForText(textId);
             
-            // Check if adding this text would exceed maximum (10 phrases)
-            const wouldExceedMax = currentPhraseCount + phraseCount > 10;
-            const currentBatchHasTexts = currentBatch.length > 0;
-            
-            console.log(`🎯 ChallengeManager: [${timestamp}] Adding ${phraseCount} to ${currentPhraseCount} = ${currentPhraseCount + phraseCount} phrases`);
-            console.log(`🎯 ChallengeManager: [${timestamp}] Would exceed max (10)? ${wouldExceedMax}`);
-            console.log(`🎯 ChallengeManager: [${timestamp}] Current batch has texts? ${currentBatchHasTexts}`);
-            
-            if (wouldExceedMax && currentBatchHasTexts) {
-                // Current batch would exceed limit, decide whether to close it
-                console.log(`🎯 ChallengeManager: [${timestamp}] Would exceed limit - evaluating current batch for closure...`);
+            for (const phrase of textPhrases) {
+                const phraseId = phrase.phraseId;
                 
-                if (currentPhraseCount >= 6) {
-                    console.log(`🎯 ChallengeManager: [${timestamp}] ✅ RULE SATISFIED: Closing batch [${currentBatch.join(', ')}] with ${currentPhraseCount} phrases (meets 6-10 rule)`);
-                    batchStructure.push([...currentBatch]);
-                } else {
-                    // Current batch is under minimum, check for stranded text scenario
-                    console.log(`🎯 ChallengeManager: [${timestamp}] ⚠️  UNDER MINIMUM: Current batch [${currentBatch.join(', ')}] has only ${currentPhraseCount} phrases`);
-                    
-                    // If the next text is too large to combine, we have a stranded situation
-                    const remainingSpace = 10 - currentPhraseCount;
-                    const canCombine = phraseCount <= remainingSpace;
-                    
-                    console.log(`🎯 ChallengeManager: [${timestamp}] Remaining space in batch: ${remainingSpace} phrases`);
-                    console.log(`🎯 ChallengeManager: [${timestamp}] Can combine with text_${textNum}? ${canCombine}`);
-                    
-                    if (!canCombine) {
-                        console.warn(`🎯 ChallengeManager: [${timestamp}] 🚨 EXCEPTION: Creating under-minimum batch due to constraints`);
-                        console.warn(`🎯 ChallengeManager: [${timestamp}] 🚨 EXCEPTION: Batch [${currentBatch.join(', ')}] with ${currentPhraseCount} phrases cannot be combined with text_${textNum} (${phraseCount} phrases) without exceeding 10-phrase limit`);
-                        batchStructure.push([...currentBatch]);
-                    } else {
-                        console.log(`🎯 ChallengeManager: [${timestamp}] Can still combine - continuing with current batch`);
-                        // Don't close the batch yet, continue processing
-                        currentBatch.push(textNum);
-                        currentPhraseCount += phraseCount;
-                        console.log(`🎯 ChallengeManager: [${timestamp}] Added text_${textNum} to current batch: [${currentBatch.join(', ')}] (${currentPhraseCount} phrases)`);
-                        continue;
-                    }
+                // Skip mastered phrases
+                if (this.userProgress.isPhraseMastered(phraseId)) {
+                    console.log(`🎯 ChallengeManager: Skipping ${phraseId} - mastered`);
+                    continue;
                 }
                 
-                // Start new batch with current text
-                console.log(`🎯 ChallengeManager: [${timestamp}] Starting new batch with text_${textNum}`);
-                currentBatch = [textNum];
-                currentPhraseCount = phraseCount;
-            } else {
-                // Add text to current batch
-                console.log(`🎯 ChallengeManager: [${timestamp}] ✅ ADDING: text_${textNum} to current batch (within limits)`);
-                currentBatch.push(textNum);
-                currentPhraseCount += phraseCount;
+                // Found available phrase!
+                console.log(`✅ ChallengeManager: Found available phrase: ${phraseId}`);
+                
+                // Update position
+                this.currentTextIndex = textIndex;
+                
+                // Get and set level for this text
+                const textLevel = this.userProgress.getTextLevel(textId);
+                this.currentLevel = textLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
+                this.currentRecipe = this.recipes[this.currentLevel];
+                
+                return phraseId;
             }
-            
-            console.log(`🎯 ChallengeManager: [${timestamp}] Current batch after processing: [${currentBatch.join(', ')}] (${currentPhraseCount} phrases)`);
-            console.log(`🎯 ChallengeManager: [${timestamp}] Completed batches so far: ${batchStructure.length}`);
         }
         
-        // Close final batch
-        console.log(`🎯 ChallengeManager: [${timestamp}] --- Processing final batch ---`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Final batch to close: [${currentBatch.join(', ')}] (${currentPhraseCount} phrases)`);
-        
-        if (currentBatch.length > 0) {
-            if (currentPhraseCount >= 6) {
-                console.log(`🎯 ChallengeManager: [${timestamp}] ✅ RULE SATISFIED: Closing final batch [${currentBatch.join(', ')}] with ${currentPhraseCount} phrases (meets 6-10 rule)`);
-                batchStructure.push([...currentBatch]);
-            } else {
-                console.warn(`🎯 ChallengeManager: [${timestamp}] 🚨 EXCEPTION: Final batch under minimum`);
-                console.warn(`🎯 ChallengeManager: [${timestamp}] 🚨 EXCEPTION: Final batch [${currentBatch.join(', ')}] has only ${currentPhraseCount} phrases (under 6-phrase minimum)`);
-                batchStructure.push([...currentBatch]);
-            }
-        } else {
-            console.log(`🎯 ChallengeManager: [${timestamp}] No final batch to close (empty)`);
-        }
-        
-        console.log(`✅ ChallengeManager: [${timestamp}] Batch generation complete!`);
-        console.log(`🎯 ChallengeManager: [${timestamp}] Generated ${batchStructure.length} batches:`, batchStructure);
-        
-        // Validate batch structure
-        console.log(`🎯 ChallengeManager: [${timestamp}] Starting validation...`);
-        this.validateBatchStructure(batchStructure, textPhraseCounts, timestamp);
-        
-        return batchStructure;
+        // No available phrases
+        console.log('🎯 ChallengeManager: No available phrases - game complete?');
+        return null;
     }
     
-    // Validate generated batch structure (debug helper) - OPTION A: Comprehensive logging
-    validateBatchStructure(batchStructure, textPhraseCounts, timestamp = new Date().toISOString()) {
-        console.log(`🔍 ChallengeManager: [${timestamp}] validateBatchStructure called`);
-        console.log(`🔍 ChallengeManager: [${timestamp}] Validating ${batchStructure.length} batches...`);
-        
-        let totalTextsInBatches = 0;
-        let totalPhrasesInBatches = 0;
-        let exceptionsFound = 0;
-        let errorsFound = 0;
-        
-        batchStructure.forEach((batch, batchIndex) => {
-            console.log(`🔍 ChallengeManager: [${timestamp}] --- Validating Batch ${batchIndex + 1} ---`);
-            console.log(`🔍 ChallengeManager: [${timestamp}] Batch ${batchIndex + 1} texts: [${batch.join(', ')}]`);
-            
-            const batchPhraseCounts = batch.map(textNum => textPhraseCounts[textNum - 1]);
-            const totalPhrases = batch.reduce((sum, textNum) => {
-                return sum + textPhraseCounts[textNum - 1]; // Convert to 0-based index
-            }, 0);
-            
-            console.log(`🔍 ChallengeManager: [${timestamp}] Batch ${batchIndex + 1} phrase counts per text: [${batchPhraseCounts.join(', ')}]`);
-            console.log(`🔍 ChallengeManager: [${timestamp}] Batch ${batchIndex + 1} total phrases: ${totalPhrases}`);
-            
-            totalTextsInBatches += batch.length;
-            totalPhrasesInBatches += totalPhrases;
-            
-            // Validation checks
-            if (totalPhrases < 6) {
-                console.warn(`⚠️ ChallengeManager: [${timestamp}] Batch ${batchIndex + 1} UNDER MINIMUM: ${totalPhrases} < 6 phrases - EXCEPTION CASE`);
-                exceptionsFound++;
-            } else if (totalPhrases > 10) {
-                console.error(`❌ ChallengeManager: [${timestamp}] Batch ${batchIndex + 1} OVER MAXIMUM: ${totalPhrases} > 10 phrases - ERROR!`);
-                errorsFound++;
-            } else {
-                console.log(`✅ ChallengeManager: [${timestamp}] Batch ${batchIndex + 1} VALID: ${totalPhrases} phrases (within 6-10 range)`);
-            }
-        });
-        
-        // Overall validation summary
-        console.log(`🔍 ChallengeManager: [${timestamp}] --- Validation Summary ---`);
-        console.log(`🔍 ChallengeManager: [${timestamp}] Total batches generated: ${batchStructure.length}`);
-        console.log(`🔍 ChallengeManager: [${timestamp}] Total texts in batches: ${totalTextsInBatches} (expected: ${textPhraseCounts.length})`);
-        console.log(`🔍 ChallengeManager: [${timestamp}] Total phrases in batches: ${totalPhrasesInBatches} (expected: ${textPhraseCounts.reduce((a, b) => a + b, 0)})`);
-        console.log(`🔍 ChallengeManager: [${timestamp}] Exceptions found (under 6 phrases): ${exceptionsFound}`);
-        console.log(`🔍 ChallengeManager: [${timestamp}] Errors found (over 10 phrases): ${errorsFound}`);
-        
-        // Check if all texts are accounted for
-        const allTextsInBatches = batchStructure.flat();
-        const expectedTexts = Array.from({ length: textPhraseCounts.length }, (_, i) => i + 1);
-        const missingTexts = expectedTexts.filter(textNum => !allTextsInBatches.includes(textNum));
-        const duplicateTexts = allTextsInBatches.filter((textNum, index) => allTextsInBatches.indexOf(textNum) !== index);
-        
-        if (missingTexts.length > 0) {
-            console.error(`❌ ChallengeManager: [${timestamp}] Missing texts: [${missingTexts.join(', ')}]`);
-            errorsFound++;
-        }
-        
-        if (duplicateTexts.length > 0) {
-            console.error(`❌ ChallengeManager: [${timestamp}] Duplicate texts: [${duplicateTexts.join(', ')}]`);
-            errorsFound++;
-        }
-        
-        if (errorsFound === 0) {
-            console.log(`✅ ChallengeManager: [${timestamp}] Batch structure validation PASSED (${exceptionsFound} exceptions within acceptable range)`);
-        } else {
-            console.error(`❌ ChallengeManager: [${timestamp}] Batch structure validation FAILED with ${errorsFound} errors`);
-        }
-        
-        console.log(`✅ ChallengeManager: [${timestamp}] Validation complete`);
-    }
     
     // Create a new challenge (entry point) - now with text cover integration
     createChallenge() {
@@ -554,10 +375,13 @@ class ChallengeManager {
         console.log('🎯 ChallengeManager: Resetting timer for new challenge');
         this.eventBus.emit('timer:reset');
         this.timerWasStarted = false;
-                this.currentPhaseIndex = 0;
+        this.currentPhaseIndex = 0;
         this.currentPhrase = phraseId;
-
         console.log('🎯 ChallengeManager: DEBUG - Set this.currentPhrase to:', this.currentPhrase);
+
+        // CREATE FRESH ATTEMPT FOR THIS PHRASE
+        this.userProgress.createFreshAttempt(phraseId);
+        console.log('🎯 ChallengeManager: Fresh attempt created for:', phraseId);
         
         // Request challenge data
         this.eventBus.emit('gameData:requestPhraseData', phraseId);
@@ -737,13 +561,14 @@ class ChallengeManager {
         const revisionPhase = this.currentLevel === 'LEVEL_1' ? 'Revision' : 'Retrieval';
         this.jumpToPhase(revisionPhase);
     }
-    
-    // Handle challenge completion
+
+        // Handle challenge completion
     handleChallengeComplete() {
         console.log('🎯 ChallengeManager: Challenge completed successfully!');
         
         // Move to next phrase - UserProgress will handle level progression
         this.currentPhraseIndex++;
+        console.log('🎯 ChallengeManager: Changed phraseIndex to:' , this.currentPhraseIndex );
         
         // Check if there's a next phrase and continue
         this.createChallenge();
@@ -758,111 +583,26 @@ class ChallengeManager {
         this.eventBus.emit('challenge:wrongAnswer', this.currentPhrase);
     }
 
-    
-    // Get current phrase ID (using batch structure)
-    getCurrentPhraseId() {
-        console.log('🎯 ChallengeManager: Finding next available phrase using UserProgress...');
-        
-        // Get current batch from UserProgress batch cycling
-        const currentBatch = this.userProgress.getCurrentBatchFromCycling();
-        console.log('🎯 ChallengeManager: Current batch from cycling:', currentBatch);
-        
-        // Start from current position or beginning of batch
-        let textIndex = this.currentTextIndex;
-        let phraseIndex = this.currentPhraseIndex;
-        
-        // Try to find an available phrase starting from current position
-        for (let i = 0; i < currentBatch.length; i++) {
-            const actualTextIndex = (textIndex + i) % currentBatch.length;
-            const textNum = currentBatch[actualTextIndex];
-            const textId = `text_${textNum}`;
-            
-            console.log(`🎯 ChallengeManager: Checking text ${textId} (textNum: ${textNum})`);
-            
-            // Skip fully mastered texts
-            if (this.userProgress.isTextMastered(textId)) {
-                console.log(`🎯 ChallengeManager: Skipping ${textId} - fully mastered`);
-                continue;
-            }
-            
-            // Get all phrases for this text
-            const textPhrases = this.gameData.getPhrasesForText(textId);
-            console.log(`🎯 ChallengeManager: ${textId} has ${textPhrases.length} phrases`);
-            
-            // Start from current phrase index if this is the current text, otherwise start from 0
-            const startPhraseIndex = (i === 0) ? phraseIndex : 0;
-            
-            // Look for available phrases in this text
-            for (let j = startPhraseIndex; j < textPhrases.length; j++) {
-                const phrase = textPhrases[j];
-                const phraseId = phrase.phraseId;
-                
-                console.log(`🎯 ChallengeManager: Checking phrase ${phraseId}`);
-                
-                // Skip mastered phrases
-                if (this.userProgress.isPhraseMastered(phraseId)) {
-                    console.log(`🎯 ChallengeManager: Skipping ${phraseId} - mastered`);
-                    continue;
-                }
 
-                // Skip phrases that are ahead of the text's current level
-                const textLevel = this.userProgress.getTextLevel(textId);
-                const phraseLevel = this.userProgress.getPhraseLevel(phraseId);
-                if (phraseLevel > textLevel) {
-                    continue;
-                }
-                
-                // Found an available phrase!
-                console.log(`✅ ChallengeManager: Found available phrase: ${phraseId}`);
-                
-                // Update current position
-                this.currentTextIndex = actualTextIndex;
-                this.currentPhraseIndex = j;
-                this.currentBatch = currentBatch; // Update cached batch
-                
-                // Get text level and set current level for challenge creation
-                // const textLevel = this.userProgress.getTextLevel(textId);
-                this.currentLevel = textLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
-                this.currentRecipe = this.recipes[this.currentLevel];
-                
-                console.log(`🎯 ChallengeManager: Text ${textId} is at level ${textLevel}, using ${this.currentLevel} challenges`);
-                
-                return phraseId;
-            }
-            
-            console.log(`🎯 ChallengeManager: No available phrases in ${textId}`);
+
+    // Get locked text level (or lock it if first encounter)
+    getLockedTextLevel(textId) {
+        if (!this.textCurrentLevels[textId]) {
+            // First encounter - lock the current level
+            this.textCurrentLevels[textId] = this.userProgress.getTextLevel(textId);
+            this.currentRoundTexts.add(textId);
+            console.log(`🔒 ChallengeManager: Locked ${textId} at level ${this.textCurrentLevels[textId]} for this round`);
         }
-        
-        // No available phrases in current batch
-        console.log('🎯 ChallengeManager: No available phrases in current batch - advancing to next batch');
-        
-        // Try to advance to next batch
-        const nextBatch = this.userProgress.advanceToNextBatch();
-        if (nextBatch) {
-            console.log('🎯 ChallengeManager: Advanced to next batch:', nextBatch);
-            
-            // Reset position and try again
-            this.currentTextIndex = 0;
-            this.currentPhraseIndex = 0;
-            
-            // Recursive call to try the new batch
-            return this.getCurrentPhraseId();
-        }
-        
-        // No more batches available
-        console.log('🎯 ChallengeManager: No more available phrases in any batch - game complete?');
-        return null;
+        return this.textCurrentLevels[textId];
     }
 
-    setBatchStructure(batchStructure) {
-        console.log(`📊 UserProgress: setBatchStructure called with:`, batchStructure);
-        if (!this.data) {
-            console.error(`❌ UserProgress: CRITICAL - No data structure when setting batch structure!`);
-            return false;
+    // End round for a specific text
+    endRoundForText(textId) {
+        if (this.textCurrentLevels[textId]) {
+            console.log(`🏁 ChallengeManager: Ending round for ${textId} - releasing level lock`);
+            delete this.textCurrentLevels[textId];
+            this.currentRoundTexts.delete(textId);
         }
-        this.data.batchStructure = batchStructure;
-        console.log(`📊 UserProgress: batchStructure set to:`, this.data.batchStructure);
-        return this.saveUserProgress();
     }
         
     // Cleanup all phases (called during game over)

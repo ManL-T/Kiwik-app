@@ -100,9 +100,6 @@ body {
     border-radius: 10px;
 }
 
-.batch-indicator {
-    font-weight: bold;
-}
 
 .level-indicator {
     opacity: 0.9;

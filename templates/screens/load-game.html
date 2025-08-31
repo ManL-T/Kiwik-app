@@ -1,41 +1,180 @@
 <div class="game-load-screen">
-
     <button class="close-btn" onclick="goBackToLauncher()">&times;</button>
     <div class="loading-text">Loading Game...</div>
     <button class="start-btn" onclick="startGame()">START</button>
 
-     <!-- Debug button for clearing progress -->
-    <button class="debug-btn" onclick="clearUserProgress()">Clear Progress</button>
+    <!-- Debug button for clearing progress -->
+    <button class="debug-btn" onclick="toggleDebugInfo()">Debug Info</button>
     
-    <!-- Progress display (will be populated by JavaScript) -->
-     
-    <div class="progress-info" id="progressInfo">
-        <!-- <div class="batch-indicator" id="batchIndicator">Batch 1: Texts 1-2</div>
-        <div class="level-indicator" id="levelIndicator">LEVEL_1 Challenge</div> -->
+    <!-- Debug info display -->
+    <div id="debugInfo" style="position: absolute; bottom: 80px; left: 20px; right: 20px; 
+                background: rgba(0,0,0,0.9); color: #00ff00; padding: 15px; 
+                font-family: monospace; font-size: 11px; display: none; 
+                max-height: 50vh; overflow-y: auto; border: 1px solid #00ff00;
+                border-radius: 5px;">
     </div>
-
+    
+    <!-- Clear button (separate from debug display) -->
+    <button class="clear-btn" onclick="clearAllProgress()" 
+            style="position: absolute; bottom: 20px; right: 20px; 
+                   padding: 10px 20px; font-size: 14px; background: #dc3545; 
+                   color: #ffffff; border: none; font-weight: bold; 
+                   border-radius: 5px; cursor: pointer; display: none;">
+        Clear All Data
+    </button>
 </div>
 
-
 <script>
-// Debug function to clear user progress
-function clearUserProgress() {
-    console.log('🧹 Debug: Clearing user progress...');
+let debugVisible = false;
+
+function toggleDebugInfo() {
+    const debugDiv = document.getElementById('debugInfo');
+    const clearBtn = document.querySelector('.clear-btn');
     
-    if (confirm('Clear all progress data? This cannot be undone.')) {
-        // Clear localStorage
-        localStorage.removeItem('kiwik_userProgress');
-        console.log('✅ Debug: localStorage cleared');
-        
-        // If UserProgress exists, call its clear method
-        if (window.app && window.app.userProgress) {
-            window.app.userProgress.clearProgress();
-            console.log('✅ Debug: UserProgress.clearProgress() called');
-        }
-        
-        // Refresh the page to see clean state
-        window.location.reload();
+    if (!debugVisible) {
+        showDebugInfo();
+        clearBtn.style.display = 'block';
+        debugVisible = true;
+    } else {
+        debugDiv.style.display = 'none';
+        clearBtn.style.display = 'none';
+        debugVisible = false;
     }
 }
+
+function showDebugInfo() {
+    const debugDiv = document.getElementById('debugInfo');
+    
+    if (!window.app || !window.app.userProgress) {
+        debugDiv.innerHTML = '<span style="color: #ff0000;">⚠ App not initialized yet</span>';
+        debugDiv.style.display = 'block';
+        return;
+    }
+    
+    const userProgress = window.app.userProgress;
+    const debugInfo = userProgress.getDebugInfo();
+    const progressData = userProgress.getCurrentData();
+    const sessionData = userProgress.sessionData;
+    const sessions = userProgress.loadSessionHistory();
+    
+    let html = '<strong style="color: #ffff00;">===== KIWIK DEBUG INFO =====</strong><br><br>';
+    
+    // Current session info
+    html += '<strong style="color: #00ffff;">📍 CURRENT SESSION:</strong><br>';
+    html += `<span style="color: #ffffff;">Started:</span> ${formatTime(sessionData.startTime)}<br>`;
+    html += `<span style="color: #ffffff;">Attempts:</span> ${debugInfo.attemptsThisSession}<br>`;
+    html += `<span style="color: #ffffff;">Last Active Text:</span> ${sessionData.lastActiveText || 'none'}<br>`;
+    
+    if (debugInfo.currentAttempt) {
+        html += `<span style="color: #ffff00;">⚡ Active Attempt:</span> ${debugInfo.currentAttempt.phraseId}`;
+        html += ` (Skip:${debugInfo.currentAttempt.skipped}, Correct:${debugInfo.currentAttempt.correct}, Errors:${debugInfo.currentAttempt.incorrectCount})<br>`;
+    }
+    html += '<br>';
+    
+    // Progress overview
+    html += '<strong style="color: #00ffff;">📊 PROGRESS OVERVIEW:</strong><br>';
+    const totalPhrases = Object.keys(progressData.phraseProgress).length;
+    const masteredPhrases = Object.values(progressData.phraseProgress).filter(p => p.level === 'mastered').length;
+    const level2Phrases = Object.values(progressData.phraseProgress).filter(p => p.level === 2).length;
+    const level3Phrases = Object.values(progressData.phraseProgress).filter(p => p.level === 3).length;
+    
+    html += `<span style="color: #ffffff;">Total Phrases:</span> ${totalPhrases}<br>`;
+    html += `<span style="color: #ffff00;">Mastered:</span> ${masteredPhrases} `;
+    html += `<span style="color: #00ff00;">L3:</span> ${level3Phrases} `;
+    html += `<span style="color: #00ffff;">L2:</span> ${level2Phrases} `;
+    html += `<span style="color: #ffffff;">L1:</span> ${totalPhrases - masteredPhrases - level2Phrases - level3Phrases}<br>`;
+    html += `<span style="color: #ffffff;">Session History:</span> ${sessions.length} sessions<br><br>`;
+    
+    // Text levels with phrase breakdown
+    html += '<strong style="color: #00ffff;">📚 TEXT STATUS:</strong><br>';
+    const allTexts = progressData.textLevels ? Object.keys(progressData.textLevels).sort() : [];
+    
+    allTexts.forEach(textId => {
+        const textLevel = progressData.textLevels[textId];
+        const mastered = userProgress.isTextMastered(textId);
+        const textPhrases = Object.keys(progressData.phraseProgress).filter(pid => pid.startsWith(textId + '_'));
+        const phraseLevels = textPhrases.map(pid => progressData.phraseProgress[pid].level);
+        
+        html += `<span style="color: ${mastered ? '#ffff00' : '#ffffff'};">${textId}:</span> `;
+        html += `Text L${textLevel}${mastered ? ' [MASTERED]' : ''} | `;
+        html += `Phrases: ${phraseLevels.map(l => l === 'mastered' ? 'M' : 'L' + l).join(',')}<br>`;
+    });
+    html += '<br>';
+    
+    // Current session attempts
+    if (Object.keys(sessionData.attemptsByText).length > 0) {
+        html += '<strong style="color: #00ffff;">🎮 SESSION ATTEMPTS:</strong><br>';
+        Object.entries(sessionData.attemptsByText).forEach(([textId, attempts]) => {
+            html += `<span style="color: #ffffff;">${textId}:</span> ${attempts.length} attempts<br>`;
+            attempts.forEach((att, idx) => {
+                const result = att.skipped && att.correct && att.incorrectCount === 0 ? 
+                    '<span style="color: #ffff00;">MASTERY</span>' :
+                    att.correct && att.incorrectCount === 0 ? 
+                    '<span style="color: #00ff00;">COMPLETE</span>' :
+                    att.correct ? 
+                    '<span style="color: #ff9900;">PARTIAL</span>' : 
+                    '<span style="color: #ff0000;">FAILED</span>';
+                
+                const phraseNum = att.phraseId.split('_')[2];
+                html += `  ${idx+1}. ${phraseNum}: ${result}`;
+                html += ` (${att.incorrectCount} err)`;
+                if (att.skipped) html += ' [SKIP]';
+                html += ` → L${att.resultingLevel}<br>`;
+            });
+        });
+    } else {
+        html += '<strong style="color: #00ffff;">🎮 SESSION ATTEMPTS:</strong> <span style="color: #999999;">None yet</span><br>';
+    }
+    
+    html += '<br><span style="color: #999999;">Press Debug Info to hide | Clear All Data to reset</span>';
+    
+    debugDiv.innerHTML = html;
+    debugDiv.style.display = 'block';
+}
+
+function formatTime(isoString) {
+    if (!isoString) return 'N/A';
+    const date = new Date(isoString);
+    return date.toLocaleTimeString();
+}
+
+function clearAllProgress() {
+    if (!confirm('⚠️ DELETE ALL PROGRESS?\n\nThis will:\n• Clear all phrase/text progress\n• Delete all session history\n• Reset to beginning\n\nThis cannot be undone!')) {
+        return;
+    }
+    
+    console.log('🧹 Clearing all progress...');
+    
+    // Clear localStorage
+    localStorage.removeItem('kiwik_userProgress');
+    localStorage.removeItem('kiwik_sessions');
+    
+    // Clear in-memory data
+    if (window.app && window.app.userProgress) {
+        window.app.userProgress.clearProgress();
+    }
+    
+    console.log('✅ All progress cleared');
+    
+    // Reload to see clean state
+    window.location.reload();
+}
+
+// Auto-refresh debug display if visible
+setInterval(() => {
+    if (debugVisible && window.app && window.app.userProgress) {
+        showDebugInfo();
+    }
+}, 2000); // Refresh every 2 seconds
+
+
+// Add at the end of the script section
+document.addEventListener('keydown', (e) => {
+    // Press 'D' to toggle debug
+    if (e.key === 'd' || e.key === 'D') {
+        toggleDebugInfo();
+    }
+});
+
 
 </script>

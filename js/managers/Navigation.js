@@ -49,9 +49,14 @@ class Navigation {
         }
     }
     
-    // Navigation actions
     goBackToLauncher() {
-        window.location.href = 'launcher.html';
+        console.log('🧭 Navigation: Returning to launcher, saving session...');
+        this.eventBus.emit('userProgress:saveProgress');
+        
+        // Small delay to ensure save completes
+        setTimeout(() => {
+            window.location.href = 'launcher.html';
+        }, 100);
     }
-    
+        
 }
