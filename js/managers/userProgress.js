@@ -110,26 +110,10 @@ class UserProgress {
         
         const lastSession = sessions[sessions.length - 1];
         
-        // Apply levels from last session to current progress
-        if (lastSession.currentLevels) {
-            Object.entries(lastSession.currentLevels).forEach(([textId, textData]) => {
-                // Update text level
-                if (textData.textLevel) {
-                    this.setTextLevel(textId, textData.textLevel);
-                }
-                
-                // Update phrase levels
-                if (textData.phrases) {
-                    Object.entries(textData.phrases).forEach(([phraseId, level]) => {
-                        this.setPhraseLevel(phraseId, level);
-                    });
-                }
-            });
-        }
-        
+        // ONLY load the resume position, NOT the phrase/text levels
         return {
-            lastActiveText: lastSession.lastActiveText,
-            currentLevels: lastSession.currentLevels
+            lastActiveText: lastSession.lastActiveText
+            // Remove all the level loading logic - let phrases stay at their initialized levels
         };
     }
     
@@ -194,7 +178,17 @@ class UserProgress {
             this.data.textLevels = {};
             needsSave = true;
         }
-        
+
+        if (!this.data.challengeFlow) {
+            console.log('📊 UserProgress: Adding challengeFlow system to existing data');
+            this.data.challengeFlow = {
+                activeTexts: [],
+                currentRound: 1,
+                currentTextIndex: 0,
+                lastCompletedTextId: null
+            };
+            needsSave = true;
+        }
         
         if (needsSave) {
             console.log('📊 UserProgress: Saving updated data with new systems');
@@ -229,7 +223,7 @@ class UserProgress {
                 newPhrasesCount++;
             }
             
-            // NEW: Initialize text levels if missing
+            // Initialize text levels if missing
             const textId = phrase.phraseId.substring(0, phrase.phraseId.lastIndexOf('_'));
             if (!this.data.textLevels[textId]) {
                 this.data.textLevels[textId] = 1; // All texts start at level 1
@@ -241,9 +235,37 @@ class UserProgress {
         console.log('📊 UserProgress: Initialized', newTextsCount, 'new text levels');
         console.log('📊 UserProgress: Total phrases in progress:', Object.keys(this.data.phraseProgress).length);
         
+        // NEW: Initialize challenge flow if empty
+        this.initializeChallengeFlow();
+        
         // Save after initialization
         this.saveUserProgress();
     }
+
+
+    initializeChallengeFlow() {
+        console.log('📊 UserProgress: Initializing challenge flow...');
+        
+        // Only initialize if activeTexts is empty
+        if (!this.data.challengeFlow.activeTexts || this.data.challengeFlow.activeTexts.length === 0) {
+            console.log('📊 UserProgress: Setting up initial text pool for round 1');
+            
+            const allTexts = this.gameData.getAllTexts();
+            const initialTexts = allTexts.slice(0, 3).map(text => text.textId); // First 3 texts
+            
+            this.data.challengeFlow = {
+                activeTexts: initialTexts,
+                currentRound: 1,
+                currentTextIndex: 0,
+                lastCompletedTextId: null
+            };
+            
+            console.log('📊 UserProgress: Initial challenge flow setup:', this.data.challengeFlow);
+        } else {
+            console.log('📊 UserProgress: Challenge flow already initialized:', this.data.challengeFlow);
+        }
+    }
+
     
     //get phrase level
     getPhraseLevel(phraseId) {
@@ -742,6 +764,12 @@ class UserProgress {
             gamesPlayed: 0,
             phraseProgress: {},     // Phrase levels and attempts
             textLevels: {},        // Text levels
+            challengeFlow: {
+                activeTexts: [],
+                currentRound: 1,
+                currentTextIndex: 0,
+                lastCompletedTextId: null
+            }
         };
         
         console.log('📊 UserProgress: Fresh data created:', this.data);
