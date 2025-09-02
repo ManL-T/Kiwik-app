@@ -16,6 +16,13 @@ class ChallengeManager {
             LEVEL_3: ['Solution']
         };
 
+        this.roundSystem = {
+            currentTexts: ['text_1', 'text_2', 'text_3'],  // Texts in current round
+            roundNumber: 1,
+            newTextsAddedThisRound: 0,
+            maxNewTextsPerRound: 1
+        };
+
         // Round management
         this.textCurrentLevels = {}; // Locked levels for current round per text
         this.currentRoundTexts = new Set(); // Tracks which texts are in current round
@@ -288,17 +295,21 @@ class ChallengeManager {
     }
 
     lockTextLevelsForRound() {
-        console.log('🎯 ChallengeManager: Locking text levels for current round...');
+        console.log(`🎯 ChallengeManager: Locking text levels for round ${this.roundSystem.roundNumber}...`);
         
         const roundState = this.userProgress.data.roundState;
         roundState.lockedTextLevels = {};
         
-        // Lock current level for each active text
-        roundState.activeTexts.forEach(textId => {
+        // Lock current level for each text in the round
+        this.roundSystem.currentTexts.forEach(textId => {
             const currentLevel = this.userProgress.getTextLevel(textId);
             roundState.lockedTextLevels[textId] = currentLevel;
-            console.log(`🎯 ChallengeManager: Locked ${textId} at level ${currentLevel} for this round`);
+            console.log(`🎯 ChallengeManager: Locked ${textId} at level ${currentLevel} for round ${this.roundSystem.roundNumber}`);
         });
+        
+        // Sync UserProgress roundState with ChallengeManager roundSystem
+        roundState.activeTexts = [...this.roundSystem.currentTexts];
+        roundState.currentRound = this.roundSystem.roundNumber;
         
         this.userProgress.saveUserProgress();
     }
@@ -391,33 +402,40 @@ class ChallengeManager {
 
     handleTextLevelUp(data) {
         const { textId, oldLevel, newLevel } = data;
-        console.log(`🎯 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel} - adding new text to round`);
+        console.log(`🎯 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel} - checking round limits`);
         
         // Check if we've already added the maximum number of texts this round
-        if (this.newTextsAddedThisRound >= 1) {
-            console.log(`🎯 ChallengeManager: Already added ${this.newTextsAddedThisRound} text(s) this round - skipping addition`);
+        if (this.roundSystem.newTextsAddedThisRound >= this.roundSystem.maxNewTextsPerRound) {
+            console.log(`🎯 ChallengeManager: Already added ${this.roundSystem.newTextsAddedThisRound} text(s) in round ${this.roundSystem.roundNumber} - skipping addition`);
             return;
         }
-
+        
         // Get next available text to add
         const nextTextId = this.getNextAvailableText();
         
         if (nextTextId) {
-            const roundState = this.userProgress.data.roundState;
+            // Add to current round
+            this.roundSystem.currentTexts.push(nextTextId);
+            console.log(`🎯 ChallengeManager: Added ${nextTextId} to round ${this.roundSystem.roundNumber}`);
             
-            // Add to active texts
-            roundState.activeTexts.push(nextTextId);
-            console.log(`🎯 ChallengeManager: Added ${nextTextId} to round. Active texts now:`, roundState.activeTexts);
+            // Update UserProgress roundState to match
+            const roundState = this.userProgress.data.roundState;
+            roundState.activeTexts = [...this.roundSystem.currentTexts];
             
             // Lock the new text's level for this round
             const newTextLevel = this.userProgress.getTextLevel(nextTextId);
             roundState.lockedTextLevels[nextTextId] = newTextLevel;
-            console.log(`🎯 ChallengeManager: Locked ${nextTextId} at level ${newTextLevel} for this round`);
+            console.log(`🎯 ChallengeManager: Locked ${nextTextId} at level ${newTextLevel} for round ${this.roundSystem.roundNumber}`);
+            
+            // Increment the counter
+            this.roundSystem.newTextsAddedThisRound++;
+            console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} now has texts:`, this.roundSystem.currentTexts);
+            console.log(`🎯 ChallengeManager: New texts added this round: ${this.roundSystem.newTextsAddedThisRound}`);
             
             // Save changes
             this.userProgress.saveUserProgress();
         } else {
-            console.log(`🎯 ChallengeManager: No more texts available to add`);
+            console.log(`🎯 ChallengeManager: No more texts available to add to round ${this.roundSystem.roundNumber}`);
         }
     }
 
@@ -768,19 +786,25 @@ class ChallengeManager {
     }
 
     startNewRound() {
-        console.log('🎯 ChallengeManager: Starting new round - resetting completion tracking');
+        console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} completed! Starting round ${this.roundSystem.roundNumber + 1}`);
+        
+        // Create new round inheriting all texts from previous round
+        this.roundSystem = {
+            currentTexts: [...this.roundSystem.currentTexts], // Keep all texts
+            roundNumber: this.roundSystem.roundNumber + 1,
+            newTextsAddedThisRound: 0, // Reset counter
+            maxNewTextsPerRound: 1
+        };
+        
+        console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} starting with texts:`, this.roundSystem.currentTexts);
         
         // Clear the session attempts to reset "completed" status for new round
         this.userProgress.sessionData.attemptsByText = {};
         
         // Lock text levels for the new round
         this.lockTextLevelsForRound();
-
-        // Reset new texts counter for the new round
-        // this.newTextsAddedThisRound = 0;
-        // console.log('🎯 ChallengeManager: Reset new texts counter for new round');
         
-        console.log('🎯 ChallengeManager: Round completion tracking reset and levels locked');
+        console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} initialization complete`);
     }
 
     // End round for a specific text

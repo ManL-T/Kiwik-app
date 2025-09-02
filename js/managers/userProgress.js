@@ -547,13 +547,6 @@ class UserProgress {
             return phraseLevel;
         });
         
-        // Filter out mastered phrases
-        const nonMasteredLevels = phraseLevels.filter(level => level !== "mastered");
-        console.log(`📊 UserProgress: Non-mastered phrase levels: [${nonMasteredLevels.join(', ')}]`);
-        
-
-        // Get current text level
-        // const currentTextLevel = this.getTextLevel(textId);
 
         // Check if ALL phrases are now at the next level
         const targetLevel = currentTextLevel + 1;
@@ -567,23 +560,23 @@ class UserProgress {
             this.setTextLevel(textId, targetLevel);
         }
 
-        // Check if all non-mastered phrases are at the same level
+        // Filter out mastered phrases
+        const nonMasteredLevels = phraseLevels.filter(level => level !== "mastered");
+
         if (nonMasteredLevels.length > 0) {
-            const commonLevel = nonMasteredLevels[0];
-            const allSameLevel = nonMasteredLevels.every(level => level === commonLevel);
+            // Check if ALL non-mastered phrases are above current text level
+            const allAboveTextLevel = nonMasteredLevels.every(level => level > currentTextLevel);
             
-            if (allSameLevel && commonLevel > currentTextLevel) {
-                console.log(`🎉 UserProgress: Text ${textId} leveled up from ${currentTextLevel} to ${commonLevel}!`);
-                this.setTextLevel(textId, commonLevel);
-                this.eventBus.emit('userProgress:textLeveledUp', { textId, oldLevel: currentTextLevel, newLevel: commonLevel });
-            } else if (allSameLevel) {
-                console.log(`📊 UserProgress: Text ${textId} all phrases at level ${commonLevel}, text already at level ${currentTextLevel}`);
-            } else {
-                console.log(`📊 UserProgress: Text ${textId} phrases at mixed levels: [${nonMasteredLevels.join(', ')}]`);
+            if (allAboveTextLevel) {
+                // Text levels up to currentTextLevel + 1
+                const newLevel = currentTextLevel + 1;
+                this.setTextLevel(textId, newLevel);
+                this.eventBus.emit('userProgress:textLeveledUp', { textId, oldLevel: currentTextLevel, newLevel });
             }
         } else {
-            console.log(`🎉 UserProgress: Text ${textId} is fully MASTERED! All phrases mastered.`);
+            // All phrases mastered - text becomes mastered
             this.eventBus.emit('userProgress:textMastered', textId);
+            this.eventBus.emit('userProgress:textLeveledUp', { textId, oldLevel: currentTextLevel, newLevel: 'mastered' });
         }
     }
 
