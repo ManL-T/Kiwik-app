@@ -12,7 +12,8 @@ class ChallengeManager {
         // Assembly recipes for different challenge levels
         this.recipes = {
             LEVEL_1: ['Presentation', 'Revision', 'ReadyOrNot', 'Solution'],
-            LEVEL_2: ['Presentation', 'Retrieval', 'ReadyOrNot', 'Solution']
+            LEVEL_2: ['Presentation', 'Retrieval', 'ReadyOrNot', 'Solution'],
+            LEVEL_3: ['Solution']
         };
 
         // Round management
@@ -24,6 +25,7 @@ class ChallengeManager {
         this.currentPhaseIndex = 0;
         this.currentPhrase = null;
         this.challengeData = null;
+        this.newTextsAddedThisRound = 0;
         
         // Timer state tracking
         this.timerWasStarted = false;
@@ -391,6 +393,12 @@ class ChallengeManager {
         const { textId, oldLevel, newLevel } = data;
         console.log(`🎯 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel} - adding new text to round`);
         
+        // Check if we've already added the maximum number of texts this round
+        if (this.newTextsAddedThisRound >= 1) {
+            console.log(`🎯 ChallengeManager: Already added ${this.newTextsAddedThisRound} text(s) this round - skipping addition`);
+            return;
+        }
+
         // Get next available text to add
         const nextTextId = this.getNextAvailableText();
         
@@ -527,7 +535,13 @@ class ChallengeManager {
         console.log(`🎯 ChallengeManager: Text ${textId} locked level: ${lockedTextLevel}`);
         
         // Determine challenge level based on LOCKED level
-        this.currentLevel = lockedTextLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
+        if (lockedTextLevel === 1) {
+            this.currentLevel = 'LEVEL_1';
+        } else if (lockedTextLevel === 2) {
+            this.currentLevel = 'LEVEL_2';
+        } else if (lockedTextLevel === 3) {
+            this.currentLevel = 'LEVEL_3';
+        }
         console.log('🎯 ChallengeManager: Current level:', this.currentLevel);
         console.log('🎯 ChallengeManager: Available recipes:', Object.keys(this.recipes));
         console.log('🎯 ChallengeManager: Recipe for level:', this.recipes[this.currentLevel]);
@@ -624,9 +638,17 @@ class ChallengeManager {
                 // No data needed
             },
             'Solution': {
-                phraseTarget: this.challengeData.phraseTarget,
-                primaryTranslation: this.challengeData.primaryTranslation,
-                distractors: this.challengeData.distractors
+                // If Level 3, send reversed data
+                // If Levels 1 & 2, send normal data
+                phraseTarget: this.currentLevel === 'LEVEL_3' ? 
+                    this.challengeData.primaryTranslation : 
+                    this.challengeData.phraseTarget,
+                primaryTranslation: this.currentLevel === 'LEVEL_3' ? 
+                    this.challengeData.phraseTarget : 
+                    this.challengeData.primaryTranslation,
+                distractors: this.currentLevel === 'LEVEL_3' ? 
+                    this.challengeData.targetDistractors : 
+                    this.challengeData.distractors
             }
         };
         
@@ -753,6 +775,10 @@ class ChallengeManager {
         
         // Lock text levels for the new round
         this.lockTextLevelsForRound();
+
+        // Reset new texts counter for the new round
+        // this.newTextsAddedThisRound = 0;
+        // console.log('🎯 ChallengeManager: Reset new texts counter for new round');
         
         console.log('🎯 ChallengeManager: Round completion tracking reset and levels locked');
     }

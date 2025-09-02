@@ -1,4 +1,7 @@
 body {
+    position: relative;
+    height: 100%;
+    width: 100%;
     font-family: VCR OSD Neue, sans-serif;
     overflow: hidden; /* Prevent scrolling during game */
     user-select: none; /* Prevent text selection */
@@ -9,58 +12,53 @@ body {
 
 @font-face {
 font-family: 'VCR OSD Neue';  /* Name you want to use for the font */
-src: url('/VCRosdNEUE.ttf') format('truetype'); /* Path to your .ttf file */
+src: url('VCRosdNEUE.ttf') format('truetype'); /* Path to your .ttf file */
 font-weight: normal;
 font-style: normal;
 }
 
-/* Text cover screen appearance */
-.text-cover-screen {
-    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
-    font-family: Arial, sans-serif;
-}
 
-.fallback-text {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    border-radius: 10px;
-    font-weight: bold;
-}
+
+/* LOAD-GAME SCREEN */
 
 /* Load game screen appearance */
+
+.game-load-screen .close-btn {
+    color: #000; /* Makes text/icon black */
+    fill: #000;  /* If it's an SVG icon */
+}
+
 .game-load-screen {
-    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
-    font-family: Arial, sans-serif;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #09F8A8;
+    z-index: 9999; /* if you want it above other content */
 }
 
 .loading-text {
-    background: #f0c040;
-    color: #2a4a3a;
-    border-radius: 15px;
-    font-weight: bold;
-}
+    font-size: 3rem;
+    font-family: 'VCR OSD Neue', sans-serif;
+    color: #000000;
+    }
 
 .start-btn{
    /* background: #3D94F6; */
-    background: #E6BD4B;
-   background-image: -webkit-linear-gradient(top, #E6BD4B, #DFAA1C);
-   background-image: -moz-linear-gradient(top, #E6BD4B, #DFAA1C);
-   background-image: -ms-linear-gradient(top, #E6BD4B, #DFAA1C);
-   background-image: -o-linear-gradient(top, #E6BD4B, #DFAA1C);
-   background-image: -webkit-gradient(to bottom, #E6BD4B, #DFAA1C);
+    background: #09F8A8;
    -webkit-border-radius: 20px;
    -moz-border-radius: 20px;
-   border-radius: 20px;
-   color: #FFFFFF;
-   font-family: Arial;
+   border-radius: 2px;
+   color: 000000;
+   font-family: 'VCR OSD Neue', sans-serif;
    font-size: 40px;
    font-weight: 100;
-   padding: 40px;
-   -webkit-box-shadow: 1px 1px 20px 0 #FFAE00;
-   -moz-box-shadow: 1px 1px 20px 0 #FFAE00;
-   box-shadow: 1px 1px 20px 0 #FFAE00;
-   text-shadow: 1px 1px 20px #000000;
-   border: solid #FFFFFF 1px;
+   padding: 20px 80px;
+   border: solid #000000 1px;
    text-decoration: none;
    display: inline-block;
    cursor: pointer;
@@ -75,9 +73,9 @@ font-style: normal;
    background-image: -ms-linear-gradient(top, #00E7A4, #12946F);
    background-image: -o-linear-gradient(top, #00E7A4, #12946F);
    background-image: -webkit-gradient(to bottom, #00E7A4, #12946F);
-   -webkit-border-radius: 20px;
+   /* -webkit-border-radius: 20px;
    -moz-border-radius: 20px;
-   border-radius: 20px;
+   border-radius: 20px; */
    text-decoration: none;
 }
 
@@ -113,6 +111,22 @@ font-style: normal;
 }
 
 
+/* TEXT-COVER SCREEN */
+
+/* Text cover screen appearance */
+.text-cover-screen {
+    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
+    font-family: Arial, sans-serif;
+}
+
+.fallback-text {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* GAME SCREEN */
 
 /* Game screen appearance */
 .game-screen {

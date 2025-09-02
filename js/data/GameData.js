@@ -68,7 +68,8 @@ class GameData {
             semanticUnits: phrase.semanticUnits,
             primaryTranslation: solution.primaryTranslation,
             alternatives: solution.alternatives,
-            distractors: solution.distractors
+            distractors: solution.distractors,
+            targetDistractors: phrase.targetDistractors
         };
 
         console.log('✅ GameData: Found complete challenge data for:', phrase.phraseTarget);
