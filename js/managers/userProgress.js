@@ -179,14 +179,23 @@ class UserProgress {
             needsSave = true;
         }
 
-        if (!this.data.challengeFlow) {
-            console.log('📊 UserProgress: Adding challengeFlow system to existing data');
-            this.data.challengeFlow = {
+        // RENAMED: challengeFlow -> roundState
+        if (!this.data.roundState) {
+            console.log('📊 UserProgress: Adding roundState system to existing data');
+            this.data.roundState = {
                 activeTexts: [],
                 currentRound: 1,
                 currentTextIndex: 0,
                 lastCompletedTextId: null
             };
+            needsSave = true;
+        }
+        
+        // MIGRATION: If old challengeFlow exists, migrate it
+        if (this.data.challengeFlow && !this.data.roundState) {
+            console.log('📊 UserProgress: Migrating challengeFlow to roundState');
+            this.data.roundState = this.data.challengeFlow;
+            delete this.data.challengeFlow;
             needsSave = true;
         }
         
@@ -236,33 +245,33 @@ class UserProgress {
         console.log('📊 UserProgress: Total phrases in progress:', Object.keys(this.data.phraseProgress).length);
         
         // NEW: Initialize challenge flow if empty
-        this.initializeChallengeFlow();
+        this.initializeRoundState();
         
         // Save after initialization
         this.saveUserProgress();
     }
 
 
-    initializeChallengeFlow() {
-        console.log('📊 UserProgress: Initializing challenge flow...');
+    initializeRoundState() {  // RENAMED from initializeChallengeFlow
+        console.log('📊 UserProgress: Initializing round state...');
         
         // Only initialize if activeTexts is empty
-        if (!this.data.challengeFlow.activeTexts || this.data.challengeFlow.activeTexts.length === 0) {
+        if (!this.data.roundState.activeTexts || this.data.roundState.activeTexts.length === 0) {
             console.log('📊 UserProgress: Setting up initial text pool for round 1');
             
             const allTexts = this.gameData.getAllTexts();
             const initialTexts = allTexts.slice(0, 3).map(text => text.textId); // First 3 texts
             
-            this.data.challengeFlow = {
+            this.data.roundState = {
                 activeTexts: initialTexts,
                 currentRound: 1,
                 currentTextIndex: 0,
                 lastCompletedTextId: null
             };
             
-            console.log('📊 UserProgress: Initial challenge flow setup:', this.data.challengeFlow);
+            console.log('📊 UserProgress: Initial round state setup:', this.data.roundState);
         } else {
-            console.log('📊 UserProgress: Challenge flow already initialized:', this.data.challengeFlow);
+            console.log('📊 UserProgress: Round state already initialized:', this.data.roundState);
         }
     }
 
@@ -277,12 +286,22 @@ class UserProgress {
     
     // NEW: Get current level for a specific text
     getTextLevel(textId) {
-        if (!this.data.textLevels) {
-            console.warn('📊 UserProgress: textLevels not initialized, returning default level 1');
-            return 1;
+        // Get all phrases for this text
+        const allPhrasesInText = this.gameData.getPhrasesForText(textId);
+        
+        // Find the minimum level among non-mastered phrases
+        let minLevel = Infinity;
+        
+        for (const phrase of allPhrasesInText) {
+            const phraseLevel = this.data.phraseProgress[phrase.phraseId]?.level || 1;
+            
+            if (phraseLevel !== 'mastered' && typeof phraseLevel === 'number') {
+                minLevel = Math.min(minLevel, phraseLevel);
+            }
         }
         
-        return this.data.textLevels[textId] || 1;
+        // If all phrases are mastered, text level doesn't matter
+        return minLevel === Infinity ? 3 : minLevel;
     }
     
     // NEW: Set level for a specific text
@@ -764,11 +783,16 @@ class UserProgress {
             gamesPlayed: 0,
             phraseProgress: {},     // Phrase levels and attempts
             textLevels: {},        // Text levels
-            challengeFlow: {
+            roundState: {          // RENAMED from challengeFlow
                 activeTexts: [],
                 currentRound: 1,
                 currentTextIndex: 0,
-                lastCompletedTextId: null
+                lastCompletedTextId: null,
+                lockedTextLevels: { // locked at round start
+                    'text_1': 1,
+                    'text_2': 1, 
+                    'text_3': 1
+                }
             }
         };
         

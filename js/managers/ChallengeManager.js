@@ -188,7 +188,7 @@ class ChallengeManager {
         this.eventBus.on('userProgress:textLeveledUp', (data) => {
             const { textId, oldLevel, newLevel } = data;
             console.log(`🎯 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel} - expanding pool`);
-            this.expandChallengePool('levelUp', textId);
+            this.handleTextLevelUp(data);
         });         
                
         // Debug logging for template loads
@@ -252,163 +252,172 @@ class ChallengeManager {
         
     }
 
+    // Replace getCurrentPhraseId() completely
     getCurrentPhraseId() {
-        console.log('🎯 ChallengeManager: Finding next available phrase using challenge flow...');
+        console.log('🎯 ChallengeManager: Finding next phrase with simple logic...');
         
-        // Get challenge flow data from UserProgress
-        const challengeFlow = this.userProgress.data.challengeFlow;
-        const { activeTexts, currentTextIndex } = challengeFlow;
+        const roundState = this.userProgress.data.roundState;
+        const { activeTexts, currentTextIndex } = roundState;
         
-        console.log('🎯 ChallengeManager: Current flow state:', challengeFlow);
-        console.log('🎯 ChallengeManager: Active texts:', activeTexts);
-        console.log('🎯 ChallengeManager: Current text index:', currentTextIndex);
-        console.log('🎯 ChallengeManager: Last completed phrase:', this.currentPhrase);
+        console.log('🎯 ChallengeManager: Current round state:', roundState);
         
-        // Cycle through active texts starting from current position
-        for (let i = 0; i < activeTexts.length; i++) {
-            const textIndex = (currentTextIndex + i) % activeTexts.length;
-            const textId = activeTexts[textIndex];
-            
-            console.log(`🎯 ChallengeManager: Checking ${textId} for available phrases`);
-            
-            const isTextMasteredResult = this.userProgress.isTextMastered(textId);
-            console.log(`🎯 ChallengeManager: ${textId} isTextMastered result: ${isTextMasteredResult}`);
-            
-            // Skip fully mastered texts
-            if (isTextMasteredResult) {
-                console.log(`🎯 ChallengeManager: Skipping ${textId} - fully mastered`);
-                continue;
-            }
-            
-            // Get available phrases for this text (filtered by text level)
-            const availablePhrases = this.getAvailablePhrasesForText(textId);
-            
-            if (availablePhrases.length > 0) {
-                let nextPhrase;
-                
-                // FIX: Find next phrase in sequence after the last completed phrase
-                if (this.currentPhrase && this.currentPhrase.startsWith(textId + '_')) {
-                    // We're continuing in the same text - find next phrase after current one
-                    const currentPhraseIndex = availablePhrases.indexOf(this.currentPhrase);
-                    
-                    if (currentPhraseIndex >= 0 && currentPhraseIndex < availablePhrases.length - 1) {
-                        // Move to next phrase in the same text
-                        nextPhrase = availablePhrases[currentPhraseIndex + 1];
-                        console.log(`🎯 ChallengeManager: Moving to next phrase in ${textId}: ${nextPhrase}`);
-                    } else {
-                        // Current phrase was last in this text, or not found - start from beginning
-                        nextPhrase = availablePhrases[0];
-                        console.log(`🎯 ChallengeManager: Starting from first phrase in ${textId}: ${nextPhrase}`);
-                    }
-                } else {
-                    // Different text or no previous phrase - start from first available
-                    nextPhrase = availablePhrases[0];
-                    console.log(`🎯 ChallengeManager: Starting with first available phrase in ${textId}: ${nextPhrase}`);
-                }
-                
-                console.log(`🎯 ChallengeManager: Found next phrase: ${nextPhrase}`);
-                
-                // Update current text index in UserProgress data
-                this.updateChallengeFlowPosition(textIndex);
-                
-                return nextPhrase;
-            } else {
-                console.log(`🎯 ChallengeManager: ${textId} has no available phrases`);
+        // Get current text
+        const currentTextId = activeTexts[currentTextIndex];
+        console.log('🎯 ChallengeManager: Current text:', currentTextId);
+        
+        // Get all phrases for current text in sequential order
+        const allPhrasesInText = this.gameData.getPhrasesForText(currentTextId);
+        console.log('🎯 ChallengeManager: All phrases in', currentTextId + ':', allPhrasesInText.map(p => p.phraseId));
+        
+        // Find first incomplete phrase
+        for (const phrase of allPhrasesInText) {
+            if (!this.isPhraseCompleted(phrase.phraseId)) {
+                console.log('🎯 ChallengeManager: Found incomplete phrase:', phrase.phraseId);
+                return phrase.phraseId;
             }
         }
         
-        console.log('🎯 ChallengeManager: No available phrases in active texts - game complete?');
-        return null;
+        // Current text is complete, move to next text
+        console.log('🎯 ChallengeManager: Current text complete, advancing to next text...');
+        this.advanceToNextText();
+        
+        // Try again with new current text (recursive call)
+        return this.getCurrentPhraseId();
     }
 
-    getAvailablePhrasesForText(textId) {
-        console.log(`🎯 ChallengeManager: Getting available phrases for ${textId}`);
+    lockTextLevelsForRound() {
+        console.log('🎯 ChallengeManager: Locking text levels for current round...');
         
-        // Get all phrases for this text
-        const textPhrases = this.gameData.getPhrasesForText(textId);
-        const textLevel = this.userProgress.getTextLevel(textId);
+        const roundState = this.userProgress.data.roundState;
+        roundState.lockedTextLevels = {};
         
-        console.log(`🎯 ChallengeManager: ${textId} is at level ${textLevel}, has ${textPhrases.length} total phrases`);
+        // Lock current level for each active text
+        roundState.activeTexts.forEach(textId => {
+            const currentLevel = this.userProgress.getTextLevel(textId);
+            roundState.lockedTextLevels[textId] = currentLevel;
+            console.log(`🎯 ChallengeManager: Locked ${textId} at level ${currentLevel} for this round`);
+        });
         
-        // FIX: Add detailed logging for each phrase filtering decision
-        const availablePhrases = textPhrases
-            .filter(phrase => {
-                const phraseLevel = this.userProgress.getPhraseLevel(phrase.phraseId);
-                
-                console.log(`🎯 ChallengeManager: Checking phrase ${phrase.phraseId} - level: ${phraseLevel}, text level: ${textLevel}`);
-                
-                // Skip mastered phrases
-                if (phraseLevel === 'mastered') {
-                    console.log(`🎯 ChallengeManager: Skipping ${phrase.phraseId} - mastered`);
-                    return false;
-                }
-                
-                // Skip phrases that are above the text's current level
-                if (typeof phraseLevel === 'number' && phraseLevel > textLevel) {
-                    console.log(`🎯 ChallengeManager: Skipping ${phrase.phraseId} - phrase level ${phraseLevel} > text level ${textLevel}`);
-                    return false;
-                }
-                
-                console.log(`🎯 ChallengeManager: Including ${phrase.phraseId} - available for play`);
-                return true;
-            })
-            .map(phrase => phrase.phraseId);
-        
-        console.log(`🎯 ChallengeManager: ${textId} has ${availablePhrases.length} available phrases:`, availablePhrases);
-        return availablePhrases;
-    }
-
-    updateChallengeFlowPosition(newTextIndex) {
-        console.log(`🎯 ChallengeManager: Updating challenge flow position to text index ${newTextIndex}`);
-        
-        this.userProgress.data.challengeFlow.currentTextIndex = newTextIndex;
         this.userProgress.saveUserProgress();
-        
-        console.log('🎯 ChallengeManager: Challenge flow position updated and saved');
     }
 
-    expandChallengePool(reason, triggerTextId = null) {
-        console.log(`🎯 ChallengeManager: Expanding challenge pool - reason: ${reason}, trigger: ${triggerTextId}`);
+
+
+    // New method: advance to next text in sequence
+    advanceToNextText() {
+        console.log('🎯 ChallengeManager: Advancing to next text...');
         
-        const challengeFlow = this.userProgress.data.challengeFlow;
-        const currentRound = challengeFlow.currentRound;
+        const roundState = this.userProgress.data.roundState;
+        const oldTextIndex = roundState.currentTextIndex;
+        const oldTextId = roundState.activeTexts[oldTextIndex];
         
-        console.log(`🎯 ChallengeManager: Current round: ${currentRound}`);
-        console.log(`🎯 ChallengeManager: Current pool:`, challengeFlow.activeTexts);
+        // Move to next text
+        roundState.currentTextIndex = (roundState.currentTextIndex + 1) % roundState.activeTexts.length;
         
-        let newTextsToAdd = [];
+        const newTextIndex = roundState.currentTextIndex;
+        const newTextId = roundState.activeTexts[newTextIndex];
         
-        if (reason === 'levelUp') {
-            // Always add one text for level up
-            const nextTextId = this.getNextAvailableTextId();
-            if (nextTextId) {
-                newTextsToAdd.push(nextTextId);
-                console.log(`🎯 ChallengeManager: Adding ${nextTextId} for text level up`);
-            }
-        } else if (reason === 'roundTwo') {
-            // Round 2 gets guaranteed expansion
-            const nextTextId = this.getNextAvailableTextId();
-            if (nextTextId) {
-                newTextsToAdd.push(nextTextId);
-                console.log(`🎯 ChallengeManager: Adding ${nextTextId} for round 2 expansion`);
+        console.log(`🎯 ChallengeManager: Advanced from ${oldTextId} (index ${oldTextIndex}) to ${newTextId} (index ${newTextIndex})`);
+        
+        // If we're back to index 0, we completed a round
+        if (newTextIndex === 0) {
+            roundState.currentRound++;
+            console.log(`🎯 ChallengeManager: Round completed! Starting round ${roundState.currentRound}`);
+            
+            // CRITICAL FIX: Reset completion tracking for new round
+            this.startNewRound();
+        }
+        
+        // Save the updated state
+        this.userProgress.saveUserProgress();
+    }
+
+    // New method: check if phrase is completed (for this round)
+    isPhraseCompleted(phraseId) {
+        console.log(`🎯 ChallengeManager: Checking if ${phraseId} is completed for current round...`);
+        
+        const textId = this.extractTextId(phraseId);
+        
+        // Use LOCKED text level, not current level
+        const roundState = this.userProgress.data.roundState;
+        const lockedTextLevel = roundState.lockedTextLevels[textId];
+        const phraseLevel = this.userProgress.getPhraseLevel(phraseId);
+        
+        console.log(`🎯 ChallengeManager: ${phraseId} - phrase level: ${phraseLevel}, locked text level: ${lockedTextLevel}`);
+        
+        // Condition 1: Mastered phrases are always completed
+        if (phraseLevel === 'mastered') {
+            console.log(`🎯 ChallengeManager: ${phraseId} is mastered - completed`);
+            return true;
+        }
+        
+        // Condition 2: Phrases above text level are completed for this round
+        if (typeof phraseLevel === 'number' && phraseLevel > lockedTextLevel) {
+            console.log(`🎯 ChallengeManager: ${phraseId} level ${phraseLevel} > text level ${lockedTextLevel} - completed`);
+            return true;
+        }
+        
+        // Condition 3: Already played in current session
+        const sessionData = this.userProgress.sessionData;
+        if (sessionData.attemptsByText[textId]) {
+            const hasCompletedAttempt = sessionData.attemptsByText[textId].some(attempt => 
+                attempt.phraseId === phraseId && attempt.correct === true
+            );
+            
+            if (hasCompletedAttempt) {
+                console.log(`🎯 ChallengeManager: ${phraseId} already completed in session - completed`);
+                return true;
             }
         }
         
-        // Add new texts to active pool
-        if (newTextsToAdd.length > 0) {
-            challengeFlow.activeTexts.push(...newTextsToAdd);
-            console.log(`🎯 ChallengeManager: Pool expanded to:`, challengeFlow.activeTexts);
+        console.log(`🎯 ChallengeManager: ${phraseId} is available for play - not completed`);
+        return false;
+    }
+
+    // Helper method: extract textId from phraseId
+    extractTextId(phraseId) {
+        return phraseId.substring(0, phraseId.lastIndexOf('_'));
+    }
+
+    // Replace handleChallengeComplete() - simplified version
+    handleChallengeComplete() {
+        console.log('🎯 ChallengeManager: Challenge completed - moving to next phrase');
+        
+        // Simply create next challenge - getCurrentPhraseId() will handle the sequencing
+        this.createChallenge();
+    }
+
+    handleTextLevelUp(data) {
+        const { textId, oldLevel, newLevel } = data;
+        console.log(`🎯 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel} - adding new text to round`);
+        
+        // Get next available text to add
+        const nextTextId = this.getNextAvailableText();
+        
+        if (nextTextId) {
+            const roundState = this.userProgress.data.roundState;
+            
+            // Add to active texts
+            roundState.activeTexts.push(nextTextId);
+            console.log(`🎯 ChallengeManager: Added ${nextTextId} to round. Active texts now:`, roundState.activeTexts);
+            
+            // Lock the new text's level for this round
+            const newTextLevel = this.userProgress.getTextLevel(nextTextId);
+            roundState.lockedTextLevels[nextTextId] = newTextLevel;
+            console.log(`🎯 ChallengeManager: Locked ${nextTextId} at level ${newTextLevel} for this round`);
+            
+            // Save changes
             this.userProgress.saveUserProgress();
         } else {
-            console.log(`🎯 ChallengeManager: No new texts to add`);
+            console.log(`🎯 ChallengeManager: No more texts available to add`);
         }
     }
 
-    getNextAvailableTextId() {
+    getNextAvailableText() {
         const allTexts = this.gameData.getAllTexts();
-        const activeTexts = this.userProgress.data.challengeFlow.activeTexts;
+        const activeTexts = this.userProgress.data.roundState.activeTexts;
         
-        // Find first text not in active pool
+        // Find first text not in active texts
         for (const text of allTexts) {
             if (!activeTexts.includes(text.textId)) {
                 console.log(`🎯 ChallengeManager: Next available text: ${text.textId}`);
@@ -416,14 +425,17 @@ class ChallengeManager {
             }
         }
         
-        console.log(`🎯 ChallengeManager: No more texts available for expansion`);
         return null; // No more texts available
     }
-
-
     
     // Create a new challenge (entry point) - now with text cover integration
     createChallenge() {
+        // Check if this is the first challenge and levels need to be locked
+        const roundState = this.userProgress.data.roundState;
+        if (!roundState.lockedTextLevels || Object.keys(roundState.lockedTextLevels).length === 0) {
+            console.log('🎯 ChallengeManager: First challenge - locking text levels for round');
+            this.lockTextLevelsForRound();
+        }
         const phraseId = this.getCurrentPhraseId();
         
         if (!phraseId) {
@@ -506,16 +518,21 @@ class ChallengeManager {
         this.userProgress.createFreshAttempt(phraseId);
         console.log('🎯 ChallengeManager: Fresh attempt created for:', phraseId);
         
-        // FIX: Add level detection logic that was missing
         const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
-        const textLevel = this.userProgress.getTextLevel(textId);
-        console.log(`🎯 ChallengeManager: Text ${textId} is at level ${textLevel}`);
         
-        // Determine challenge level and recipe
-        this.currentLevel = textLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
+        // Use LOCKED text level, not current level
+        const roundState = this.userProgress.data.roundState;
+        const lockedTextLevel = roundState.lockedTextLevels[textId];
+        
+        console.log(`🎯 ChallengeManager: Text ${textId} locked level: ${lockedTextLevel}`);
+        
+        // Determine challenge level based on LOCKED level
+        this.currentLevel = lockedTextLevel === 1 ? 'LEVEL_1' : 'LEVEL_2';
+        console.log('🎯 ChallengeManager: Current level:', this.currentLevel);
+        console.log('🎯 ChallengeManager: Available recipes:', Object.keys(this.recipes));
+        console.log('🎯 ChallengeManager: Recipe for level:', this.recipes[this.currentLevel]);
+
         this.currentRecipe = this.recipes[this.currentLevel];
-        
-        console.log(`🎯 ChallengeManager: Challenge level set to: ${this.currentLevel}`);
         console.log(`🎯 ChallengeManager: Recipe set to:`, this.currentRecipe);
         
         // Request challenge data
@@ -701,73 +718,10 @@ class ChallengeManager {
     handleChallengeComplete() {
         console.log('🎯 ChallengeManager: Challenge completed successfully!');
         
-        // Check if current text has more available phrases
-        this.checkTextCompletionAndAdvance();
-        
         // Continue with next challenge
         this.createChallenge();
     }
 
-    checkTextCompletionAndAdvance() {
-        console.log('🎯 ChallengeManager: Checking text completion and advance logic');
-        
-        const challengeFlow = this.userProgress.data.challengeFlow;
-        const { activeTexts, currentTextIndex } = challengeFlow;
-        const currentTextId = activeTexts[currentTextIndex];
-        
-        console.log(`🎯 ChallengeManager: Current text: ${currentTextId}`);
-        console.log(`🎯 ChallengeManager: Just completed phrase: ${this.currentPhrase}`);
-        
-        // Check if current text has more available phrases
-        const availablePhrases = this.getAvailablePhrasesForText(currentTextId);
-        console.log(`🎯 ChallengeManager: Available phrases in ${currentTextId}:`, availablePhrases);
-        
-        // Check if we just completed the last phrase in this text
-        if (this.currentPhrase && this.currentPhrase.startsWith(currentTextId + '_')) {
-            const currentPhraseIndex = availablePhrases.indexOf(this.currentPhrase);
-            const isLastPhrase = currentPhraseIndex >= 0 && currentPhraseIndex === availablePhrases.length - 1;
-            
-            console.log(`🎯 ChallengeManager: Current phrase index: ${currentPhraseIndex}, is last phrase: ${isLastPhrase}`);
-            
-            if (availablePhrases.length === 0 || isLastPhrase) {
-                console.log(`🎯 ChallengeManager: ${currentTextId} exhausted - advancing to next text`);
-                
-                // Move to next text in cycle
-                const nextTextIndex = (currentTextIndex + 1) % activeTexts.length;
-                challengeFlow.currentTextIndex = nextTextIndex;
-                
-                // Check if we completed a full cycle (back to index 0)
-                if (nextTextIndex === 0) {
-                    this.completeRound();
-                }
-                
-                challengeFlow.lastCompletedTextId = currentTextId;
-                this.userProgress.saveUserProgress();
-                
-                console.log(`🎯 ChallengeManager: Advanced to text index ${nextTextIndex} (${activeTexts[nextTextIndex]})`);
-            } else {
-                console.log(`🎯 ChallengeManager: ${currentTextId} has more phrases - staying on same text`);
-            }
-        } else {
-            console.log(`🎯 ChallengeManager: Phrase from different text or no current phrase - no advancement needed`);
-        }
-    }
-
-    completeRound() {
-        console.log('🎯 ChallengeManager: Completing round', this.userProgress.data.challengeFlow.currentRound);
-        
-        this.userProgress.data.challengeFlow.currentRound++;
-        const newRound = this.userProgress.data.challengeFlow.currentRound;
-        
-        // Special logic for round 2
-        if (newRound === 2) {
-            console.log('🎯 ChallengeManager: Starting round 2 - guaranteed expansion');
-            this.expandChallengePool('roundTwo');
-        }
-        
-        console.log(`🎯 ChallengeManager: Now starting round ${newRound}`);
-        this.userProgress.saveUserProgress();
-    }
     
     // Handle incorrect answer
     handleIncorrectAnswer() {
@@ -789,6 +743,18 @@ class ChallengeManager {
             console.log(`🔒 ChallengeManager: Locked ${textId} at level ${this.textCurrentLevels[textId]} for this round`);
         }
         return this.textCurrentLevels[textId];
+    }
+
+    startNewRound() {
+        console.log('🎯 ChallengeManager: Starting new round - resetting completion tracking');
+        
+        // Clear the session attempts to reset "completed" status for new round
+        this.userProgress.sessionData.attemptsByText = {};
+        
+        // Lock text levels for the new round
+        this.lockTextLevelsForRound();
+        
+        console.log('🎯 ChallengeManager: Round completion tracking reset and levels locked');
     }
 
     // End round for a specific text
