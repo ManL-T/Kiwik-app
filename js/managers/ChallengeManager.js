@@ -16,23 +16,23 @@ class ChallengeManager {
             LEVEL_3: ['Solution']
         };
 
-        this.roundSystem = {
-            currentTexts: ['text_1', 'text_2', 'text_3'],  // Texts in current round
-            roundNumber: 1,
-            newTextsAddedThisRound: 0,
-            maxNewTextsPerRound: 1
+        this.stageSystem = {
+            currentTexts: ['text_1', 'text_2', 'text_3'],  // Texts in current stage
+            stageNumber: 1,
+            newTextsAddedThisStage: 0,
+            maxNewTextsPerStage: 1
         };
 
-        // Round management
-        this.textCurrentLevels = {}; // Locked levels for current round per text
-        this.currentRoundTexts = new Set(); // Tracks which texts are in current round
+        // Stage management
+        this.textCurrentLevels = {}; // Locked levels for current stage per text
+        this.currentStageTexts = new Set(); // Tracks which texts are in current stage
         
         // Current challenge state
         this.currentRecipe = null;
         this.currentPhaseIndex = 0;
         this.currentPhrase = null;
         this.challengeData = null;
-        this.newTextsAddedThisRound = 0;
+        this.newTextsAddedThisStage = 0;
         
         // Timer state tracking
         this.timerWasStarted = false;
@@ -265,10 +265,10 @@ class ChallengeManager {
     getCurrentPhraseId() {
         console.log('🎯 ChallengeManager: Finding next phrase with simple logic...');
         
-        const roundState = this.userProgress.data.roundState;
-        const { activeTexts, currentTextIndex } = roundState;
+        const stageState = this.userProgress.data.stageState;
+        const { activeTexts, currentTextIndex } = stageState;
         
-        console.log('🎯 ChallengeManager: Current round state:', roundState);
+        console.log('🎯 ChallengeManager: Current stage state:', stageState);
         
         // Get current text
         const currentTextId = activeTexts[currentTextIndex];
@@ -294,22 +294,22 @@ class ChallengeManager {
         return this.getCurrentPhraseId();
     }
 
-    lockTextLevelsForRound() {
-        console.log(`🎯 ChallengeManager: Locking text levels for round ${this.roundSystem.roundNumber}...`);
+    lockTextLevelsForStage() {
+        console.log(`🎯 ChallengeManager: Locking text levels for stage ${this.stageSystem.stageNumber}...`);
         
-        const roundState = this.userProgress.data.roundState;
-        roundState.lockedTextLevels = {};
+        const stageState = this.userProgress.data.stageState;
+        stageState.lockedTextLevels = {};
         
-        // Lock current level for each text in the round
-        this.roundSystem.currentTexts.forEach(textId => {
+        // Lock current level for each text in the stage
+        this.stageSystem.currentTexts.forEach(textId => {
             const currentLevel = this.userProgress.getTextLevel(textId);
-            roundState.lockedTextLevels[textId] = currentLevel;
-            console.log(`🎯 ChallengeManager: Locked ${textId} at level ${currentLevel} for round ${this.roundSystem.roundNumber}`);
+            stageState.lockedTextLevels[textId] = currentLevel;
+            console.log(`🎯 ChallengeManager: Locked ${textId} at level ${currentLevel} for stage ${this.stageSystem.stageNumber}`);
         });
         
-        // Sync UserProgress roundState with ChallengeManager roundSystem
-        roundState.activeTexts = [...this.roundSystem.currentTexts];
-        roundState.currentRound = this.roundSystem.roundNumber;
+        // Sync UserProgress stageState with ChallengeManager stageSystem
+        stageState.activeTexts = [...this.stageSystem.currentTexts];
+        stageState.currentStage = this.stageSystem.stageNumber;
         
         this.userProgress.saveUserProgress();
     }
@@ -320,40 +320,43 @@ class ChallengeManager {
     advanceToNextText() {
         console.log('🎯 ChallengeManager: Advancing to next text...');
         
-        const roundState = this.userProgress.data.roundState;
-        const oldTextIndex = roundState.currentTextIndex;
-        const oldTextId = roundState.activeTexts[oldTextIndex];
+        const stageState = this.userProgress.data.stageState;
+        const oldTextIndex = stageState.currentTextIndex;
+        const oldTextId = stageState.activeTexts[oldTextIndex];
+
+        // Increment round count for completed text
+        this.userProgress.incrementRoundForText(oldTextId);
         
         // Move to next text
-        roundState.currentTextIndex = (roundState.currentTextIndex + 1) % roundState.activeTexts.length;
+        stageState.currentTextIndex = (stageState.currentTextIndex + 1) % stageState.activeTexts.length;
         
-        const newTextIndex = roundState.currentTextIndex;
-        const newTextId = roundState.activeTexts[newTextIndex];
+        const newTextIndex = stageState.currentTextIndex;
+        const newTextId = stageState.activeTexts[newTextIndex];
         
         console.log(`🎯 ChallengeManager: Advanced from ${oldTextId} (index ${oldTextIndex}) to ${newTextId} (index ${newTextIndex})`);
         
-        // If we're back to index 0, we completed a round
+        // If we're back to index 0, we completed a stage
         if (newTextIndex === 0) {
-            roundState.currentRound++;
-            console.log(`🎯 ChallengeManager: Round completed! Starting round ${roundState.currentRound}`);
+            stageState.currentStage++;
+            console.log(`🎯 ChallengeManager: Stage completed! Starting stage ${stageState.currentStage}`);
             
-            // CRITICAL FIX: Reset completion tracking for new round
-            this.startNewRound();
+            // CRITICAL FIX: Reset completion tracking for new stage
+            this.startNewStage();
         }
         
         // Save the updated state
         this.userProgress.saveUserProgress();
     }
 
-    // New method: check if phrase is completed (for this round)
+    // New method: check if phrase is completed (for this stage)
     isPhraseCompleted(phraseId) {
-        console.log(`🎯 ChallengeManager: Checking if ${phraseId} is completed for current round...`);
+        console.log(`🎯 ChallengeManager: Checking if ${phraseId} is completed for current stage...`);
         
         const textId = this.extractTextId(phraseId);
         
         // Use LOCKED text level, not current level
-        const roundState = this.userProgress.data.roundState;
-        const lockedTextLevel = roundState.lockedTextLevels[textId];
+        const stageState = this.userProgress.data.stageState;
+        const lockedTextLevel = stageState.lockedTextLevels[textId];
         const phraseLevel = this.userProgress.getPhraseLevel(phraseId);
         
         console.log(`🎯 ChallengeManager: ${phraseId} - phrase level: ${phraseLevel}, locked text level: ${lockedTextLevel}`);
@@ -364,7 +367,7 @@ class ChallengeManager {
             return true;
         }
         
-        // Condition 2: Phrases above text level are completed for this round
+        // Condition 2: Phrases above text level are completed for this stage
         if (typeof phraseLevel === 'number' && phraseLevel > lockedTextLevel) {
             console.log(`🎯 ChallengeManager: ${phraseId} level ${phraseLevel} > text level ${lockedTextLevel} - completed`);
             return true;
@@ -402,11 +405,11 @@ class ChallengeManager {
 
     handleTextLevelUp(data) {
         const { textId, oldLevel, newLevel } = data;
-        console.log(`🎯 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel} - checking round limits`);
+        console.log(`🎯 ChallengeManager: ${textId} leveled up from ${oldLevel} to ${newLevel} - checking stage limits`);
         
-        // Check if we've already added the maximum number of texts this round
-        if (this.roundSystem.newTextsAddedThisRound >= this.roundSystem.maxNewTextsPerRound) {
-            console.log(`🎯 ChallengeManager: Already added ${this.roundSystem.newTextsAddedThisRound} text(s) in round ${this.roundSystem.roundNumber} - skipping addition`);
+        // Check if we've already added the maximum number of texts this stage
+        if (this.stageSystem.newTextsAddedThisStage >= this.stageSystem.maxNewTextsPerStage) {
+            console.log(`🎯 ChallengeManager: Already added ${this.stageSystem.newTextsAddedThisStage} text(s) in stage ${this.stageSystem.stageNumber} - skipping addition`);
             return;
         }
         
@@ -414,34 +417,34 @@ class ChallengeManager {
         const nextTextId = this.getNextAvailableText();
         
         if (nextTextId) {
-            // Add to current round
-            this.roundSystem.currentTexts.push(nextTextId);
-            console.log(`🎯 ChallengeManager: Added ${nextTextId} to round ${this.roundSystem.roundNumber}`);
+            // Add to current stage
+            this.stageSystem.currentTexts.push(nextTextId);
+            console.log(`🎯 ChallengeManager: Added ${nextTextId} to stage ${this.stageSystem.stageNumber}`);
             
-            // Update UserProgress roundState to match
-            const roundState = this.userProgress.data.roundState;
-            roundState.activeTexts = [...this.roundSystem.currentTexts];
+            // Update UserProgress stageState to match
+            const stageState = this.userProgress.data.stageState;
+            stageState.activeTexts = [...this.stageSystem.currentTexts];
             
-            // Lock the new text's level for this round
+            // Lock the new text's level for this stage
             const newTextLevel = this.userProgress.getTextLevel(nextTextId);
-            roundState.lockedTextLevels[nextTextId] = newTextLevel;
-            console.log(`🎯 ChallengeManager: Locked ${nextTextId} at level ${newTextLevel} for round ${this.roundSystem.roundNumber}`);
+            stageState.lockedTextLevels[nextTextId] = newTextLevel;
+            console.log(`🎯 ChallengeManager: Locked ${nextTextId} at level ${newTextLevel} for stage ${this.stageSystem.stageNumber}`);
             
             // Increment the counter
-            this.roundSystem.newTextsAddedThisRound++;
-            console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} now has texts:`, this.roundSystem.currentTexts);
-            console.log(`🎯 ChallengeManager: New texts added this round: ${this.roundSystem.newTextsAddedThisRound}`);
+            this.stageSystem.newTextsAddedThisStage++;
+            console.log(`🎯 ChallengeManager: Stage ${this.stageSystem.stageNumber} now has texts:`, this.stageSystem.currentTexts);
+            console.log(`🎯 ChallengeManager: New texts added this stage: ${this.stageSystem.newTextsAddedThisStage}`);
             
             // Save changes
             this.userProgress.saveUserProgress();
         } else {
-            console.log(`🎯 ChallengeManager: No more texts available to add to round ${this.roundSystem.roundNumber}`);
+            console.log(`🎯 ChallengeManager: No more texts available to add to stage ${this.stageSystem.stageNumber}`);
         }
     }
 
     getNextAvailableText() {
         const allTexts = this.gameData.getAllTexts();
-        const activeTexts = this.userProgress.data.roundState.activeTexts;
+        const activeTexts = this.userProgress.data.stageState.activeTexts;
         
         // Find first text not in active texts
         for (const text of allTexts) {
@@ -457,10 +460,10 @@ class ChallengeManager {
     // Create a new challenge (entry point) - now with text cover integration
     createChallenge() {
         // Check if this is the first challenge and levels need to be locked
-        const roundState = this.userProgress.data.roundState;
-        if (!roundState.lockedTextLevels || Object.keys(roundState.lockedTextLevels).length === 0) {
-            console.log('🎯 ChallengeManager: First challenge - locking text levels for round');
-            this.lockTextLevelsForRound();
+        const stageState = this.userProgress.data.stageState;
+        if (!stageState.lockedTextLevels || Object.keys(stageState.lockedTextLevels).length === 0) {
+            console.log('🎯 ChallengeManager: First challenge - locking text levels for stage');
+            this.lockTextLevelsForStage();
         }
         const phraseId = this.getCurrentPhraseId();
         
@@ -514,7 +517,85 @@ class ChallengeManager {
         this.lastTextId = textId;
         console.log(`🎯 ChallengeManager: Updated lastTextId to: ${this.lastTextId}`);
         
-        this.eventBus.emit('ui:loadTextCover', textId);
+        // Collect data for dynamic text cover
+        const textCoverData = this.collectTextCoverData(textId);
+        
+        this.eventBus.emit('ui:loadTextCover', { textId, data: textCoverData });
+    }
+
+    collectTextCoverData(textId) {
+        console.log('🎯 ChallengeManager: Collecting text cover data for:', textId);
+        
+        // const stageState = this.userProgress.data.stageState;
+        
+        // Get basic info
+        // const level = stageState.lockedTextLevels[textId];
+        // const stage = stageState.currentStage;
+
+        // Get round display data
+        const roundDisplayData = this.userProgress.getTextRoundDisplay(textId);
+        const level = roundDisplayData.level;
+        const round = roundDisplayData.round;
+                
+        // Get text info
+        const textData = this.gameData.getTextById(textId);
+        const title = textData ? textData.title : textId.replace('_', ' ').toUpperCase();
+        
+        // Get all phrases for this text
+        const allPhrasesInText = this.gameData.getPhrasesForText(textId);
+        
+        // Generate phrases with status
+        const phrasesData = allPhrasesInText.map(phrase => {
+            const phraseLevel = this.userProgress.getPhraseLevel(phrase.phraseId);
+            const status = this.determinePhraseStatus(phraseLevel, level, round);
+            const icon = this.getStatusIcon(status);
+            
+            return {
+                text: phrase.phraseTarget,
+                status: status,
+                icon: icon
+            };
+        });
+        
+        const data = {
+            level: level,
+            round: round,
+            title: title,
+            phrases: phrasesData
+        };
+        
+        console.log('🎯 ChallengeManager: Text cover data collected:', data);
+        return data;
+    }
+
+    // New method to determine phrase status
+    determinePhraseStatus(phraseLevel, lockedTextLevel, currentRound) {
+         // On round 1, show no icons - clean display
+        if (currentRound === 1) {
+            return 'untested';
+        }
+
+        if (phraseLevel === 'mastered') {
+            return 'mastered';
+        }
+        
+        if (typeof phraseLevel === 'number' && phraseLevel > lockedTextLevel) {
+            return 'completed';
+        }
+        
+        return 'pending';
+    }
+
+    // New method to get status icon
+    getStatusIcon(status) {
+        const iconMap = {
+            'untested': '',      // No icon for round 1
+            'pending': '❌',
+            'completed': '✅', 
+            'mastered': 'M'
+        };
+        
+        return iconMap[status] || '';
     }
     
     // Handle spacebar press during text cover display
@@ -547,8 +628,8 @@ class ChallengeManager {
         const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
         
         // Use LOCKED text level, not current level
-        const roundState = this.userProgress.data.roundState;
-        const lockedTextLevel = roundState.lockedTextLevels[textId];
+        const stageState = this.userProgress.data.stageState;
+        const lockedTextLevel = stageState.lockedTextLevels[textId];
         
         console.log(`🎯 ChallengeManager: Text ${textId} locked level: ${lockedTextLevel}`);
         
@@ -779,40 +860,40 @@ class ChallengeManager {
         if (!this.textCurrentLevels[textId]) {
             // First encounter - lock the current level
             this.textCurrentLevels[textId] = this.userProgress.getTextLevel(textId);
-            this.currentRoundTexts.add(textId);
-            console.log(`🔒 ChallengeManager: Locked ${textId} at level ${this.textCurrentLevels[textId]} for this round`);
+            this.currentStageTexts.add(textId);
+            console.log(`🔒 ChallengeManager: Locked ${textId} at level ${this.textCurrentLevels[textId]} for this stage`);
         }
         return this.textCurrentLevels[textId];
     }
 
-    startNewRound() {
-        console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} completed! Starting round ${this.roundSystem.roundNumber + 1}`);
+    startNewStage() {
+        console.log(`🎯 ChallengeManager: Stage ${this.stageSystem.stageNumber} completed! Starting stage ${this.stageSystem.stageNumber + 1}`);
         
-        // Create new round inheriting all texts from previous round
-        this.roundSystem = {
-            currentTexts: [...this.roundSystem.currentTexts], // Keep all texts
-            roundNumber: this.roundSystem.roundNumber + 1,
-            newTextsAddedThisRound: 0, // Reset counter
-            maxNewTextsPerRound: 1
+        // Create new stage inheriting all texts from previous stage
+        this.stageSystem = {
+            currentTexts: [...this.stageSystem.currentTexts], // Keep all texts
+            stageNumber: this.stageSystem.stageNumber + 1,
+            newTextsAddedThisStage: 0, // Reset counter
+            maxNewTextsPerStage: 1
         };
         
-        console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} starting with texts:`, this.roundSystem.currentTexts);
+        console.log(`🎯 ChallengeManager: Stage ${this.stageSystem.stageNumber} starting with texts:`, this.stageSystem.currentTexts);
         
-        // Clear the session attempts to reset "completed" status for new round
+        // Clear the session attempts to reset "completed" status for new stage
         this.userProgress.sessionData.attemptsByText = {};
         
-        // Lock text levels for the new round
-        this.lockTextLevelsForRound();
+        // Lock text levels for the new stage
+        this.lockTextLevelsForStage();
         
-        console.log(`🎯 ChallengeManager: Round ${this.roundSystem.roundNumber} initialization complete`);
+        console.log(`🎯 ChallengeManager: Stage ${this.stageSystem.stageNumber} initialization complete`);
     }
 
-    // End round for a specific text
-    endRoundForText(textId) {
+    // End stage for a specific text
+    endStageForText(textId) {
         if (this.textCurrentLevels[textId]) {
-            console.log(`🏁 ChallengeManager: Ending round for ${textId} - releasing level lock`);
+            console.log(`🏁 ChallengeManager: Ending stage for ${textId} - releasing level lock`);
             delete this.textCurrentLevels[textId];
-            this.currentRoundTexts.delete(textId);
+            this.currentStageTexts.delete(textId);
         }
     }
         

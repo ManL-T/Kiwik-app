@@ -65,25 +65,105 @@
     /* display: flex; */
 }
 
+
 /* TEXT COVER */
 
-/* Text cover screen layout */
+/* Main text cover screen layout */
 .text-cover-screen {
-    width: 100%;
-    height: 100vh;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 40px;
+    gap: 40px;
+    height: 100vh;
+    overflow-y: auto;
 }
 
-.fallback-text {
-    padding: 40px 60px;
-    font-size: 5vw;
+/* Left sidebar layout */
+.text-cover-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.level-display,
+.round-display {
+    padding: 15px 25px;
     text-align: center;
-    display: none; /* Hidden by default, shown only when image fails */
+    border-radius: 8px;
+    min-width: 120px;
+}
+
+/* Right content area layout */
+.text-cover-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 60%;
+}
+
+.text-cover-title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Phrases list layout */
+.text-cover-phrases {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.phrase-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.phrase-icon {
+    font-size: 1rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    width: 25px;
+    text-align: center;
+}
+
+.phrase-text {
+    flex: 1;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .text-cover-screen {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px;
+        height: 100vh;
+    }
+    
+    .text-cover-sidebar {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .level-display,
+    .round-display {
+        min-width: 100px;
+        font-size: 2rem;
+    }
+    
+    .text-cover-content {
+        max-width: 100%;
+    }
+    
+    .phrase-item {
+        gap: 10px;
+    }
 }
 
 /* GAME SCREEN */
@@ -117,17 +197,15 @@
 }
 
 
-
-.level-indicator {
+/* no idea what this is */
+/* .level-indicator {
     font-size: 14px;
-}
-
+} */ 
 
 
 
 /* Presentation phrase text layout */
 .phrase-text {
-    font-size: 4vw;
     padding: 0.4rem;
     margin: 0 auto;
     line-height: 1.8;
@@ -137,9 +215,9 @@
 }
 
 /* Presentation hr layout */
-hr {
+/* hr {
     margin: 1em 0;
-}
+} */
 
 /* Presentation and Ready-or-Not Decision Cards Layout */
 .decision-cards {
@@ -430,10 +508,10 @@ hr {
 
 /* Solution option layout */
 .solution-option {
-    font-size: clamp(3vw, 4vw, 4.5vw);
-    padding: clamp(8px, 2vw, 15px) clamp(12px, 3vw, 20px);
-    margin: clamp(6px, 1.5vw, 10px) 0;
-    line-height: 1.2;
+    font-size: 6vh;          /* scales text with screen */
+    line-height: 1;    
+    padding: 3vh;
+    margin: 1vh;
     display: block;
     width: 100%;
     text-align: left;

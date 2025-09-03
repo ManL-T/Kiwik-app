@@ -18,8 +18,8 @@ class UIRenderer {
             this.loadTemplate(templatePath);
         });
 
-        this.eventBus.on('ui:loadTextCover', (textId) => {
-            this.loadTextCover(textId);
+        this.eventBus.on('ui:loadTextCover', ({ textId, data }) => {
+            this.loadTextCover(textId, data);
         });
 
         this.eventBus.on('ui:showOverlay', (overlayData) => {
@@ -69,42 +69,68 @@ class UIRenderer {
     }
 
     // Load text cover with image or fallback
-    async loadTextCover(textId) {
-        console.log('🎨 UIRenderer: Loading text cover for:', textId);
-        
-        try {
-            // Load template
-            const app = document.getElementById('app');
-            const response = await fetch('templates/screens/text-cover.html');
-            const html = await response.text();
-            app.innerHTML = html;
+    async loadTextCover(textId, data) {
+        console.log('🖼️ UIRenderer: Loading dynamic text cover for:', textId);
+            console.log('🖼️ UIRenderer: Text cover data:', data);
             
-            // Try to load cover image
-            const coverScreen = document.getElementById('textCoverScreen');
-            const fallbackText = document.getElementById('fallbackText');
-            const imagePath = `assets/text-covers/${textId}.png`;
-            
-            // Test if image exists
-            const img = new Image();
-            img.onload = () => {
-                console.log('🎨 UIRenderer: Cover image loaded successfully');
-                coverScreen.style.background = `url('${imagePath}') no-repeat center/cover`;  
-                coverScreen.style.backgroundSize = 'contain';
-            };
-            img.onerror = () => {
-                console.log('🎨 UIRenderer: Cover image not found, showing fallback text');
-                fallbackText.style.display = 'block';
-            };
-            img.src = imagePath;
-            
-            this.eventBus.emit('ui:templateLoaded', 'templates/screens/text-cover.html');
-            
-        } catch (error) {
-            console.error('🎨 UIRenderer: Error loading text cover:', error);
-        }
+            try {
+                const templatePath = 'templates/screens/text-cover.html';
+                console.log('🖼️ UIRenderer: Loading template:', templatePath);
+                
+                const response = await fetch(templatePath);
+                if (!response.ok) {
+                    throw new Error(`Failed to load template: ${response.status}`);
+                }
+                
+                let html = await response.text();
+                console.log('🖼️ UIRenderer: Template loaded, injecting data...');
+                
+                // Replace placeholders with actual data
+                html = html.replace('{{level}}', data.level);
+                html = html.replace('{{round}}', data.round);
+                html = html.replace('{{title}}', data.title);
+                
+                // Generate phrases HTML
+                const phrasesHtml = this.generatePhrasesHtml(data.phrases);
+                html = html.replace('{{phrases}}', phrasesHtml);
+                
+                // Load into DOM
+                const app = document.getElementById('app');
+                app.innerHTML = html;
+                
+                console.log('✅ UIRenderer: Dynamic text cover loaded successfully');
+                this.eventBus.emit('ui:templateLoaded', templatePath);
+                
+            } catch (error) {
+                console.error('❌ UIRenderer: Error loading text cover:', error);
+                this.showFallbackTextCover(textId);
+            }
     }
 
-    
+    generatePhrasesHtml(phrases) {
+        console.log('🖼️ UIRenderer: Generating phrases HTML for', phrases.length, 'phrases');
+        
+        return phrases.map(phrase => {
+            return `<div class="phrase-item phrase-status-${phrase.status}">
+                <span class="phrase-icon">${phrase.icon}</span>
+                <span class="phrase-text">${phrase.text}</span>
+            </div>`;
+        }).join('');
+    }
+
+    // Fallback method for when template loading fails
+    showFallbackTextCover(textId) {
+        console.log('🖼️ UIRenderer: Showing fallback text cover for:', textId);
+        
+        const fallbackHtml = `
+            <div class="text-cover-screen" id="textCoverScreen">
+                <div class="fallback-text">Starting ${textId.replace('_', ' ')}</div>
+            </div>
+        `;
+        
+        this.appContainer.innerHTML = fallbackHtml;
+        this.eventBus.emit('ui:templateLoaded', 'templates/screens/text-cover.html');
+    }
     
     // Update highlighted text in game screen
     updateHighlightedText(fullSentence, unitTarget) {

@@ -179,22 +179,30 @@ class UserProgress {
             needsSave = true;
         }
 
-        // RENAMED: challengeFlow -> roundState
-        if (!this.data.roundState) {
-            console.log('📊 UserProgress: Adding roundState system to existing data');
-            this.data.roundState = {
+        // Add textStats tracking if missing
+        if (!this.data.textStats) {
+            console.log('📊 UserProgress: Adding textStats tracking to existing data');
+            this.data.textStats = {};
+            needsSave = true;
+        }
+
+        // RENAMED: challengeFlow -> stageState
+        if (!this.data.stageState) {
+            console.log('📊 UserProgress: Adding stageState system to existing data');
+            this.data.stageState = {
                 activeTexts: [],
-                currentRound: 1,
+                currentStage: 1,
                 currentTextIndex: 0,
-                lastCompletedTextId: null
+                lastCompletedTextId: null,
+                textStats: {} 
             };
             needsSave = true;
         }
         
         // MIGRATION: If old challengeFlow exists, migrate it
-        if (this.data.challengeFlow && !this.data.roundState) {
-            console.log('📊 UserProgress: Migrating challengeFlow to roundState');
-            this.data.roundState = this.data.challengeFlow;
+        if (this.data.challengeFlow && !this.data.stageState) {
+            console.log('📊 UserProgress: Migrating challengeFlow to stageState');
+            this.data.stageState = this.data.challengeFlow;
             delete this.data.challengeFlow;
             needsSave = true;
         }
@@ -245,33 +253,36 @@ class UserProgress {
         console.log('📊 UserProgress: Total phrases in progress:', Object.keys(this.data.phraseProgress).length);
         
         // NEW: Initialize challenge flow if empty
-        this.initializeRoundState();
+        this.initializeStageState();
+
+        // Initialize textStats for all texts
+        this.initializeAllTextStats();
         
         // Save after initialization
         this.saveUserProgress();
     }
 
 
-    initializeRoundState() {  // RENAMED from initializeChallengeFlow
-        console.log('📊 UserProgress: Initializing round state...');
+    initializeStageState() {  // RENAMED from initializeChallengeFlow
+        console.log('📊 UserProgress: Initializing stage  state...');
         
         // Only initialize if activeTexts is empty
-        if (!this.data.roundState.activeTexts || this.data.roundState.activeTexts.length === 0) {
-            console.log('📊 UserProgress: Setting up initial text pool for round 1');
+        if (!this.data.stageState.activeTexts || this.data.stageState.activeTexts.length === 0) {
+            console.log('📊 UserProgress: Setting up initial text pool for stage  1');
             
             const allTexts = this.gameData.getAllTexts();
             const initialTexts = allTexts.slice(0, 3).map(text => text.textId); // First 3 texts
             
-            this.data.roundState = {
+            this.data.stageState = {
                 activeTexts: initialTexts,
-                currentRound: 1,
+                currentStage: 1,
                 currentTextIndex: 0,
                 lastCompletedTextId: null
             };
             
-            console.log('📊 UserProgress: Initial round state setup:', this.data.roundState);
+            console.log('📊 UserProgress: Initial stage  state setup:', this.data.stageState);
         } else {
-            console.log('📊 UserProgress: Round state already initialized:', this.data.roundState);
+            console.log('📊 UserProgress: Stage state already initialized:', this.data.stageState);
         }
     }
 
@@ -469,6 +480,8 @@ class UserProgress {
         
         console.log(`📊 UserProgress: Phrase ${phraseId} incomplete - no progression`);
         const currentLevel = this.getPhraseLevel(phraseId);
+        // Record the attempt result in textStats
+        this.recordAttemptResult(phraseId, resultingLevel);
         return currentLevel;
     }
 
@@ -754,6 +767,125 @@ class UserProgress {
             return { error: e.message };
         }
     }
+
+    // Initialize textStats for all texts upfront
+initializeAllTextStats() {
+    console.log('📊 UserProgress: Initializing textStats for all texts...');
+    
+    const phrases = this.gameData.data.phrases;
+    const textsProcessed = new Set();
+    
+    phrases.forEach(phrase => {
+        const textId = this.extractTextId(phrase.phraseId);
+        
+        if (!textsProcessed.has(textId)) {
+            textsProcessed.add(textId);
+            
+            // Initialize for levels 1, 2, 3
+            for (let level = 1; level <= 3; level++) {
+                this.initializeTextStats(textId, level);
+            }
+        }
+    });
+    
+    console.log('📊 UserProgress: TextStats initialized for', textsProcessed.size, 'texts');
+    this.saveUserProgress();
+}
+
+// Initialize tracking for a specific text/level
+initializeTextStats(textId, level) {
+    if (!this.data.textStats[textId]) {
+        this.data.textStats[textId] = {};
+    }
+    
+    if (!this.data.textStats[textId][`level${level}`]) {
+        this.data.textStats[textId][`level${level}`] = {
+            rounds: 0,
+            attempts: {}
+        };
+        console.log(`📊 UserProgress: Initialized textStats for ${textId} level${level}`);
+    }
+}
+
+// Record attempt result for a phrase
+recordAttemptResult(phraseId, resultingLevel) {
+    const textId = this.extractTextId(phraseId);
+    
+    // Determine which level this attempt was made at
+    const textLevel = this.getTextLevel(textId);
+    const levelKey = `level${textLevel}`;
+    
+    // Ensure textStats exists for this text/level
+    this.initializeTextStats(textId, textLevel);
+    
+    // Initialize attempts array for this phrase if needed
+    if (!this.data.textStats[textId][levelKey].attempts[phraseId]) {
+        this.data.textStats[textId][levelKey].attempts[phraseId] = [];
+    }
+    
+    // Record the resulting level
+    this.data.textStats[textId][levelKey].attempts[phraseId].push(resultingLevel);
+    
+    console.log(`📊 UserProgress: Recorded attempt for ${phraseId} at ${levelKey}: result ${resultingLevel}`);
+    this.saveUserProgress();
+}
+
+// Increment round count for a text at its current level
+incrementRoundForText(textId) {
+    const textLevel = this.getTextLevel(textId);
+    const levelKey = `level${textLevel}`;
+    
+    // Ensure textStats exists
+    this.initializeTextStats(textId, textLevel);
+    
+    this.data.textStats[textId][levelKey].rounds++;
+    
+    console.log(`📊 UserProgress: Incremented round for ${textId} ${levelKey} to ${this.data.textStats[textId][levelKey].rounds}`);
+    this.saveUserProgress();
+}
+
+// Get round display data for text cover
+getTextRoundDisplay(textId) {
+    const textLevel = this.getTextLevel(textId);
+    const levelKey = `level${textLevel}`;
+    
+    // Ensure textStats exists
+    this.initializeTextStats(textId, textLevel);
+    
+    const completedRounds = this.data.textStats[textId][levelKey].rounds;
+    const upcomingRound = completedRounds + 1;
+    
+    return {
+        level: textLevel,
+        round: upcomingRound
+    };
+}
+
+// Get formatted debug data
+getTextStatsDebug() {
+    if (!this.data.textStats) {
+        return '<strong style="color: #ff0000;">📈 TEXT STATS: Not initialized yet</strong><br>';
+    }
+    
+    let debugText = '<strong style="color: #00ffff;">📈 TEXT STATS:</strong><br>';
+    
+    Object.entries(this.data.textStats).forEach(([textId, textData]) => {
+        Object.entries(textData).forEach(([levelKey, levelData]) => {
+            const level = levelKey.replace('level', '');
+            const rounds = levelData.rounds;
+            
+            // Format attempts
+            const attemptStrs = Object.entries(levelData.attempts).map(([phraseId, attempts]) => {
+                const phraseNum = phraseId.split('_')[2];
+                return `${phraseNum}(${attempts.join(',')})`;
+            });
+            
+            debugText += `${textId} (L${level}): R${rounds} | ${attemptStrs.join(', ')}<br>`;
+        });
+    });
+    
+    return debugText;
+}
     
     // Debug method - clear all progress
     clearProgress() {
@@ -776,17 +908,18 @@ class UserProgress {
             gamesPlayed: 0,
             phraseProgress: {},     // Phrase levels and attempts
             textLevels: {},        // Text levels
-            roundState: {          // RENAMED from challengeFlow
+            stageState: {          // RENAMED from challengeFlow
                 activeTexts: [],
-                currentRound: 1,
+                currentStage: 1,
                 currentTextIndex: 0,
                 lastCompletedTextId: null,
-                lockedTextLevels: { // locked at round start
+                lockedTextLevels: { // locked levels at stage  start
                     'text_1': 1,
                     'text_2': 1, 
                     'text_3': 1
                 }
-            }
+            },
+            textStats: {}  // Will store the tracking data
         };
         
         console.log('📊 UserProgress: Fresh data created:', this.data);

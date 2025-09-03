@@ -64,19 +64,25 @@ function clearUserProgress() {
 }
 
 function showDebugInfo() {
-    console.log('🐛 showDebugInfo called');
-    const debugDiv = document.getElementById('debugInfo');
-    console.log('🐛 Found existing debugDiv:', !!debugDiv);
+    // console.log('🐛 showDebugInfo called');
+    let debugDiv = document.getElementById('debugInfo');
+    // console.log('🐛 Found existing debugDiv:', !!debugDiv);
     if (!debugDiv) {
         // Create debug div if it doesn't exist
-        const div = document.createElement('div');
-        div.id = 'debugInfo';
-        div.style.cssText = `position: absolute; bottom: 80px; left: 20px; right: 20px; 
+        debugDiv = document.createElement('div');
+        debugDiv.id = 'debugInfo';
+        debugDiv.style.cssText = `position: absolute; bottom: 80px; left: 20px; right: 20px; 
                 background: rgba(0,0,0,0.9); color: #00ff00; padding: 15px; 
                 font-family: monospace; font-size: 11px; 
                 max-height: 50vh; overflow-y: auto; border: 1px solid #00ff00;
                 border-radius: 5px;`;
-        document.querySelector('.game-load-screen').appendChild(div);
+        const container = document.querySelector('.game-load-screen');
+        if (container) {
+            container.appendChild(debugDiv);
+        } else {
+            // If container doesn't exist, don't proceed
+            return;
+        }
     }
     
     const userProgress = window.app.userProgress;
@@ -111,6 +117,10 @@ function showDebugInfo() {
         }).join(', ');
         html += '<br>';
     });
+
+    html += '<br>';
+    html += userProgress.getTextStatsDebug();
+    html += '<br>';
     
     html += '<br><strong>Press Debug Button to Clear All Data</strong>';
     

@@ -1,15 +1,7 @@
-body {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    font-family: VCR OSD Neue, sans-serif;
-    overflow: hidden; /* Prevent scrolling during game */
-    user-select: none; /* Prevent text selection */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
 
+/* IMPORTED FONTS */
+
+/* VCR OSD Neue */
 @font-face {
 font-family: 'VCR OSD Neue';  /* Name you want to use for the font */
 src: url('VCRosdNEUE.ttf') format('truetype'); /* Path to your .ttf file */
@@ -17,7 +9,26 @@ font-weight: normal;
 font-style: normal;
 }
 
+/* SpaceGrotesk */
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url('./SpaceGrotesk-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: Light 300;
+}
 
+
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* font-family: VCR OSD Neue, sans-serif; */
+    overflow: hidden; /* Prevent scrolling during game */
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 
 /* LOAD-GAME SCREEN */
 
@@ -112,18 +123,76 @@ font-style: normal;
 
 
 /* TEXT-COVER SCREEN */
-
-/* Text cover screen appearance */
+/* Main screen styling */
 .text-cover-screen {
-    background: linear-gradient(to right, #0A4443 0%, #268851 100%);
-    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #16F1FD;
 }
 
-.fallback-text {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    border-radius: 10px;
+/* Sidebar styling */
+.level-display,
+.round-display {
+    background-color: #16F1FD;
+    color: #000000;
+    font-size: 1rem;
     font-weight: bold;
+    border: 2px solid #16F1FD;
+    font-family: 'VCR OSD Neue', sans-serif;
+}
+
+/* Content area styling */
+.text-cover-title {
+    color: #16F1FD;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(22, 241, 253, 0.3);
+    font-family: 'SpaceGrotesk', sans-serif;
+}
+
+/* Phrases list styling */
+.text-cover-phrases {
+  font-size: 0.8rem;         /* Adjust as needed */
+  white-space: nowrap;       /* Prevent line breaks */
+  text-overflow: ellipsis;   /* Add ... if text is too long */
+}
+
+/* Icon colors - positioned outside rectangles */
+.phrase-status-pending .phrase-icon {
+    color: #FF4444; /* Red X */
+}
+
+.phrase-status-completed .phrase-icon {
+    color: #44FF44; /* Green check */
+}
+
+.phrase-status-mastered .phrase-icon {
+    color: #FF44FF; /* Purple M */
+}
+
+.phrase-status-untested {
+    /* Clean styling for round 1 */
+    background-color: transparent;
+}
+
+/* Phrase text styling with proper rectangles */
+.phrase-status-pending .phrase-text {
+    background-color: rgba(22, 241, 253, 0.2);
+    border: 2px solid #16F1FD;
+    color: #16F1FD;
+}
+
+.phrase-status-completed .phrase-text,
+.phrase-status-mastered .phrase-text {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(22, 241, 253, 0.3);
+    color: rgba(12, 48, 50, 0.3); /*changed to darker*/
+}
+
+/* Responsive theme adjustments */
+@media (max-width: 768px) {
+    .text-cover-title {
+        text-shadow: 0 0 8px rgba(22, 241, 253, 0.3);
+    }
 }
 
 /* GAME SCREEN */
@@ -183,6 +252,7 @@ font-style: normal;
 
 /* Presentation phrase text appearance */
 .phrase-text {
+    font-size: 4vh;
     font-weight: bold;
 }
 
@@ -201,6 +271,7 @@ hr {
 /* Text appearance */
 .text {
     color: #00E7A4;
+    font-size: 6vh;
     font-weight: normal;
 }
 
