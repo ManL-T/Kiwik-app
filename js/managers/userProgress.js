@@ -76,6 +76,14 @@ class UserProgress {
             this.completeCurrentAttempt();
         });
 
+        // Track text level ups for current game
+        this.eventBus.on('userProgress:textLeveledUp', (data) => {
+            if (this.data.currentGame) {
+                this.data.currentGame.levelUps++;
+                console.log(`📊 UserProgress: Level up tracked for game ${this.data.currentGame.gameNumber}. Total: ${this.data.currentGame.levelUps}`);
+            }
+        });
+
         // Save session on game over
         this.eventBus.on('userProgress:saveProgress', () => {
             this.saveCompletedSession();
@@ -86,6 +94,17 @@ class UserProgress {
     initializeNewSession() {
         console.log('📊 UserProgress: Initializing new session');
         
+        // Increment games played
+        this.data.gamesPlayed++;
+        
+        // Start new game tracking
+        this.data.currentGame = {
+            gameNumber: this.data.gamesPlayed,
+            stages: 0,
+            textsPlayed: 0,  // This will be set when game ends based on cumulative total
+            levelUps: 0
+        };
+        
         // Load levels from previous session if exists
         const resumeData = this.loadLevelsFromLastSession();
         
@@ -95,11 +114,75 @@ class UserProgress {
             endTime: null,
             lastActiveText: resumeData.lastActiveText || null,
             attemptsByText: {},
-            currentLevels: resumeData.currentLevels || {}
+            currentLevels: {}
+            // REMOVED: textsPlayedThisGame tracking
         };
         
-        console.log('📊 UserProgress: New session initialized with resume data:', resumeData);
+        console.log('📊 UserProgress: New game started:', this.data.currentGame);
     }
+
+
+// 1. Update createFreshProgressData() in UserProgress.js to include new tracking
+createFreshProgressData() {
+    console.log('📊 UserProgress: Creating fresh progress data structure...');
+    
+    this.data = {
+        gamesPlayed: 0,
+        phraseProgress: {},
+        textLevels: {},
+        stageState: {
+            activeTexts: [],
+            currentStage: 1,
+            currentTextIndex: 0,
+            lastCompletedTextId: null,
+            lockedTextLevels: {
+                'text_1': 1,
+                'text_2': 1, 
+                'text_3': 1
+            }
+        },
+        textStats: {},
+        // NEW: Game tracking data
+        gamesHistory: [],
+        currentGame: null,
+        lastStage: null
+    };
+    
+    console.log('📊 UserProgress: Fresh data created:', this.data);
+}
+
+// 2. Update initializeNewSession() to start game tracking
+initializeNewSession() {
+    console.log('📊 UserProgress: Initializing new session');
+    
+    // Increment games played
+    this.data.gamesPlayed++;
+    
+    // Start new game tracking
+    this.data.currentGame = {
+        gameNumber: this.data.gamesPlayed,
+        stages: 0,
+        textsPlayed: 0,
+        levelUps: 0
+    };
+    
+    // Load levels from previous session if exists
+    const resumeData = this.loadLevelsFromLastSession();
+    
+    // Reset session data for new session
+    this.sessionData = {
+        startTime: new Date().toISOString(),
+        endTime: null,
+        lastActiveText: resumeData.lastActiveText || null,
+        attemptsByText: {},
+        currentLevels: {},
+        textsPlayedThisGame: new Set() // Track which texts we've played this game
+    };
+    
+    console.log('📊 UserProgress: New game started:', this.data.currentGame);
+}
+
+
 
     loadLevelsFromLastSession() {
         const sessions = this.loadSessionHistory();
@@ -171,6 +254,27 @@ class UserProgress {
         console.log('📊 UserProgress: Checking for new systems in existing data...');
         
         let needsSave = false;
+
+        // add Game History data
+        if (!this.data.gamesHistory) {
+            console.log('📊 UserProgress: Adding gamesHistory system to existing data');
+            this.data.gamesHistory = [];
+            needsSave = true;
+        }
+
+        // add current Game data
+        if (!this.data.currentGame) {
+            console.log('📊 UserProgress: Adding currentGame system to existing data');  
+            this.data.currentGame = null;
+            needsSave = true;
+        }
+
+        // add last stage data
+        if (!this.data.lastStage) {
+            console.log('📊 UserProgress: Adding lastStage system to existing data');
+            this.data.lastStage = null;
+            needsSave = true;
+        }
         
         // Add text level tracking if missing
         if (!this.data.textLevels) {
@@ -458,31 +562,33 @@ class UserProgress {
         return phraseId.substring(0, phraseId.lastIndexOf('_'));
     }
 
-
     processAttemptOutcome(phraseId, outcome) {
         console.log(`📊 UserProgress: Processing outcome '${outcome}' for ${phraseId}`);
+        
+        let resultingLevel; // Declare variable to track the resulting level
         
         if (outcome === 'mastered') {
             console.log(`🎉 UserProgress: Phrase ${phraseId} MASTERED!`);
             this.setPhraseLevel(phraseId, "mastered");
             this.updateSessionCurrentLevels(phraseId, "mastered");
             this.checkTextLevelProgression(phraseId);
-            return "mastered";
-        }
-        
-        if (outcome === 'advance') {
+            resultingLevel = "mastered";
+        } else if (outcome === 'advance') {
             console.log(`✅ UserProgress: Phrase ${phraseId} advancing level`);
             const newLevel = this.advancePhraseLevel(phraseId);
             this.updateSessionCurrentLevels(phraseId, newLevel);
             this.checkTextLevelProgression(phraseId);
-            return newLevel;
+            resultingLevel = newLevel;
+        } else {
+            console.log(`📊 UserProgress: Phrase ${phraseId} incomplete - no progression`);
+            const currentLevel = this.getPhraseLevel(phraseId);
+            resultingLevel = currentLevel;
         }
         
-        console.log(`📊 UserProgress: Phrase ${phraseId} incomplete - no progression`);
-        const currentLevel = this.getPhraseLevel(phraseId);
         // Record the attempt result in textStats
         this.recordAttemptResult(phraseId, resultingLevel);
-        return currentLevel;
+        
+        return resultingLevel;
     }
 
     // Update current levels in session data
@@ -807,36 +913,36 @@ initializeTextStats(textId, level) {
     }
 }
 
-// Record attempt result for a phrase
-recordAttemptResult(phraseId, resultingLevel) {
-    const textId = this.extractTextId(phraseId);
-    
-    // Determine which level this attempt was made at
-    const textLevel = this.getTextLevel(textId);
-    const levelKey = `level${textLevel}`;
-    
-    // Ensure textStats exists for this text/level
-    this.initializeTextStats(textId, textLevel);
-    
-    // Initialize attempts array for this phrase if needed
-    if (!this.data.textStats[textId][levelKey].attempts[phraseId]) {
-        this.data.textStats[textId][levelKey].attempts[phraseId] = [];
+    // Record attempt result for a phrase
+    recordAttemptResult(phraseId, resultingLevel) {
+        const textId = this.extractTextId(phraseId);
+        
+        // Use the LOCKED level (level where attempt was actually made)
+        const stageState = this.data.stageState;
+        const playedLevel = stageState.lockedTextLevels[textId];
+        const levelKey = `level${playedLevel}`;
+        
+        // Ensure textStats exists for this text/level
+        this.initializeTextStats(textId, playedLevel);
+        
+        // Initialize attempts array for this phrase if needed
+        if (!this.data.textStats[textId][levelKey].attempts[phraseId]) {
+            this.data.textStats[textId][levelKey].attempts[phraseId] = [];
+        }
+        
+        // Record the resulting level
+        this.data.textStats[textId][levelKey].attempts[phraseId].push(resultingLevel);
+        
+        console.log(`📊 UserProgress: Recorded attempt for ${phraseId} at ${levelKey}: result ${resultingLevel}`);
+        this.saveUserProgress();
     }
-    
-    // Record the resulting level
-    this.data.textStats[textId][levelKey].attempts[phraseId].push(resultingLevel);
-    
-    console.log(`📊 UserProgress: Recorded attempt for ${phraseId} at ${levelKey}: result ${resultingLevel}`);
-    this.saveUserProgress();
-}
 
 // Increment round count for a text at its current level
-incrementRoundForText(textId) {
-    const textLevel = this.getTextLevel(textId);
-    const levelKey = `level${textLevel}`;
+incrementRoundForText(textId, completedLevel) {
+    const levelKey = `level${completedLevel}`;
     
     // Ensure textStats exists
-    this.initializeTextStats(textId, textLevel);
+    this.initializeTextStats(textId, completedLevel);
     
     this.data.textStats[textId][levelKey].rounds++;
     
@@ -863,26 +969,54 @@ getTextRoundDisplay(textId) {
 
 // Get formatted debug data
 getTextStatsDebug() {
-    if (!this.data.textStats) {
-        return '<strong style="color: #ff0000;">📈 TEXT STATS: Not initialized yet</strong><br>';
-    }
-    
     let debugText = '<strong style="color: #00ffff;">📈 TEXT STATS:</strong><br>';
     
-    Object.entries(this.data.textStats).forEach(([textId, textData]) => {
-        Object.entries(textData).forEach(([levelKey, levelData]) => {
-            const level = levelKey.replace('level', '');
-            const rounds = levelData.rounds;
+    // Group by text first
+    const textIds = Object.keys(this.data.textStats).sort();
+    const textDisplays = [];
+    
+    textIds.forEach(textId => {
+        const textData = this.data.textStats[textId];
+        const levelDisplays = [];
+        
+        // Check levels 1, 2, 3 in order
+        for (let level = 1; level <= 3; level++) {
+            const levelKey = `level${level}`;
+            const levelData = textData[levelKey];
             
-            // Format attempts
-            const attemptStrs = Object.entries(levelData.attempts).map(([phraseId, attempts]) => {
-                const phraseNum = phraseId.split('_')[2];
-                return `${phraseNum}(${attempts.join(',')})`;
+            // Skip levels with no rounds (not yet played)
+            if (!levelData || levelData.rounds === 0) {
+                continue;
+            }
+            
+            // Build level display: L1 R2 p1(1,2) p2(M)
+            let levelDisplay = `L${level} R${levelData.rounds}`;
+            
+            // Sort phrase attempts by phrase number for consistent display
+            const sortedAttempts = Object.entries(levelData.attempts).sort((a, b) => {
+                const numA = parseInt(a[0].split('_')[2].substring(1)); // Extract number from p1, p2, etc
+                const numB = parseInt(b[0].split('_')[2].substring(1));
+                return numA - numB;
             });
             
-            debugText += `${textId} (L${level}): R${rounds} | ${attemptStrs.join(', ')}<br>`;
-        });
+            // Add attempt details for each phrase in sorted order
+            sortedAttempts.forEach(([phraseId, attempts]) => {
+                const phraseNum = phraseId.split('_')[2]; // Extract p1, p2, etc
+                const attemptStr = attempts.join(',');
+                levelDisplay += ` ${phraseNum}(${attemptStr})`;
+            });
+            
+            levelDisplays.push(levelDisplay);
+        }
+        
+        // Only add text if it has any level data
+        if (levelDisplays.length > 0) {
+            textDisplays.push(`${textId} ${levelDisplays.join(', ')}`);
+        }
     });
+    
+    // Join all texts with semicolons AND line breaks for readability
+    debugText += textDisplays.join(';<br>');
     
     return debugText;
 }
@@ -906,23 +1040,46 @@ getTextStatsDebug() {
         
         this.data = {
             gamesPlayed: 0,
-            phraseProgress: {},     // Phrase levels and attempts
-            textLevels: {},        // Text levels
-            stageState: {          // RENAMED from challengeFlow
+            phraseProgress: {},
+            textLevels: {},
+            stageState: {
                 activeTexts: [],
                 currentStage: 1,
                 currentTextIndex: 0,
                 lastCompletedTextId: null,
-                lockedTextLevels: { // locked levels at stage  start
+                lockedTextLevels: {
                     'text_1': 1,
                     'text_2': 1, 
                     'text_3': 1
                 }
             },
-            textStats: {}  // Will store the tracking data
+            textStats: {},
+            // NEW: Game tracking data
+            gamesHistory: [],
+            currentGame: null,
+            lastStage: null
         };
         
         console.log('📊 UserProgress: Fresh data created:', this.data);
+    }
+
+    // Helper method to get next text
+    getNextTextForChallenge() {
+        const stageState = this.data.stageState;
+        if (stageState.activeTexts && stageState.activeTexts.length > 0) {
+            return stageState.activeTexts[stageState.currentTextIndex] || 'Unknown';
+        }
+        return 'Not set';
+    }
+
+    // helper method to count total unique texts
+    getTotalUniqueTexts() {
+        const uniqueTexts = new Set();
+        Object.keys(this.data.phraseProgress).forEach(phraseId => {
+            const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
+            uniqueTexts.add(textId);
+        });
+        return uniqueTexts.size;
     }
 
     saveCompletedSession() {
@@ -930,6 +1087,26 @@ getTextStatsDebug() {
         
         // Mark session as ended
         this.sessionData.endTime = new Date().toISOString();
+        
+        // Store last stage info
+        const stageState = this.data.stageState;
+        this.data.lastStage = {
+            stageNumber: stageState.currentStage,
+            texts: [...stageState.activeTexts]
+        };
+        
+        // Finalize current game and move to history
+        if (this.data.currentGame) {
+            // FIXED: Set cumulative text count based on stage state active texts
+            // This represents texts that were active when this game ended
+            this.data.currentGame.textsPlayed = stageState.activeTexts.length;
+            
+            this.data.gamesHistory.push({...this.data.currentGame});
+            this.data.currentGame = null; // Clear for next game
+        }
+        
+        // Save user progress first
+        this.saveUserProgress();
         
         // Load existing sessions array or create new
         const existingSessions = this.loadSessionHistory();
@@ -944,8 +1121,6 @@ getTextStatsDebug() {
         } catch (error) {
             console.error('❌ UserProgress: Error saving session:', error);
         }
-        
-        // Note: Do NOT clear sessionData here - game is ending
     }
 
     loadSessionHistory() {
@@ -965,21 +1140,52 @@ getTextStatsDebug() {
 
     // Debug info for load-game screen
     getDebugInfo() {
-        const attemptCount = Object.keys(this.sessionData.attemptsByText).reduce((total, textId) => {
-            return total + this.sessionData.attemptsByText[textId].length;
-        }, 0);
+        // Calculate stats
+        const totalPhrases = Object.keys(this.data.phraseProgress).length;
+        const masteredPhrases = Object.values(this.data.phraseProgress).filter(p => p.level === 'mastered').length;
+        const masteredPercentage = totalPhrases > 0 ? Math.round((masteredPhrases / totalPhrases) * 100) : 0;
         
-        const info = {
-            currentAttempt: this.currentAttempt,
-            sessionStartTime: this.sessionData.startTime,
-            attemptsThisSession: attemptCount,
-            lastActiveText: this.sessionData.lastActiveText,
-            sessionHistory: this.loadSessionHistory().length,
-            totalPhrases: Object.keys(this.data.phraseProgress).length,
-            masteredPhrases: Object.values(this.data.phraseProgress).filter(p => p.level === 'mastered').length
-        };
+        // Get unique texts count
+        const totalTexts = this.getTotalUniqueTexts();
         
-        return info;
+        // Get project metadata (game content info)
+        const projectMetadata = this.gameData.getProjectMetadata();
+        const gameTitle = projectMetadata ? projectMetadata.title : 'La fièvre';
+        
+        // Build debug display with new structure
+        let debugText = '';
+        
+        // CONTENT SECTION (Fixed game data - moved to top)
+        debugText += `<strong style="color: #ffffff;">${gameTitle}: ${totalTexts} texts, ${totalPhrases} phrases</strong><br><br>`;
+        
+        // PROGRESS SECTION (Player progress data only)
+        debugText += '<strong style="color: #00ffff;">📊 PROGRESS:</strong><br>';
+        debugText += `Total Games: ${this.data.gamesPlayed}<br>`;
+        debugText += `Total Mastered Phrases: ${masteredPhrases} (${masteredPercentage}%)<br>`;
+        
+        // Last stage info
+        if (this.data.lastStage) {
+            debugText += `Last Stage: Stage ${this.data.lastStage.stageNumber} [${this.data.lastStage.texts.join(', ')}]<br>`;
+        } else {
+            debugText += `Last Stage: None<br>`;
+        }
+        
+        // Next text
+        debugText += `Next Text: ${this.getNextTextForChallenge()}<br><br>`;
+        
+        // GAMES SECTION (Per-game tracking)
+        debugText += '<strong style="color: #ffff00;">🎮 GAMES:</strong><br>';
+        this.data.gamesHistory.forEach(game => {
+            debugText += `Game ${game.gameNumber}: ${game.stages} stages, ${game.textsPlayed} texts, ${game.levelUps} level ups<br>`;
+        });
+        
+        // Current game if active
+        if (this.data.currentGame) {
+            const currentTexts = this.getTotalUniqueTexts();
+            debugText += `Game ${this.data.currentGame.gameNumber} (active): ${this.data.currentGame.stages} stages, ${currentTexts} texts, ${this.data.currentGame.levelUps} level ups<br>`;
+        }
+        
+        return debugText;
     }
 
 

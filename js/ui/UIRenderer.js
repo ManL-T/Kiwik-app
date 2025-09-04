@@ -87,6 +87,7 @@ class UIRenderer {
                 
                 // Replace placeholders with actual data
                 html = html.replace('{{level}}', data.level);
+                html = html.replace('{{text_number}}', data.text_number);
                 html = html.replace('{{round}}', data.round);
                 html = html.replace('{{title}}', data.title);
                 

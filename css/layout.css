@@ -88,7 +88,8 @@
 }
 
 .level-display,
-.round-display {
+.round-display,
+.text-display {
     padding: 15px 25px;
     text-align: center;
     border-radius: 8px;
@@ -360,7 +361,6 @@
 
 /* Text layout */
 .text {
-    font-size: 5vw;
     margin-bottom: 0;
 }
 

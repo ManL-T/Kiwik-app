@@ -64,9 +64,7 @@ function clearUserProgress() {
 }
 
 function showDebugInfo() {
-    // console.log('🐛 showDebugInfo called');
     let debugDiv = document.getElementById('debugInfo');
-    // console.log('🐛 Found existing debugDiv:', !!debugDiv);
     if (!debugDiv) {
         // Create debug div if it doesn't exist
         debugDiv = document.createElement('div');
@@ -80,51 +78,23 @@ function showDebugInfo() {
         if (container) {
             container.appendChild(debugDiv);
         } else {
-            // If container doesn't exist, don't proceed
             return;
         }
     }
     
     const userProgress = window.app.userProgress;
-    const debugInfo = userProgress.getDebugInfo();
-    const progressData = userProgress.getCurrentData();
-    const sessionData = userProgress.sessionData;
     
+    // Get the complete debug info from UserProgress
+    const progressInfo = userProgress.getDebugInfo();
+    const textStatsInfo = userProgress.getTextStatsDebug();
+    
+    // Combine both sections
     let html = '<strong style="color: #ffff00;">===== DEBUG INFO =====</strong><br><br>';
+    html += progressInfo + '<br>';
+    html += textStatsInfo + '<br><br>';
+    html += '<strong>Press Debug Button to Clear All Data</strong>';
     
-    // Progress overview
-    html += '<strong style="color: #00ffff;">📊 PROGRESS:</strong><br>';
-    const totalPhrases = Object.keys(progressData.phraseProgress).length;
-    const masteredPhrases = Object.values(progressData.phraseProgress).filter(p => p.level === 'mastered').length;
-    
-    html += `Total Phrases: ${totalPhrases} | Mastered: ${masteredPhrases}<br><br>`;
-    
-    // Text and phrase levels
-    html += '<strong style="color: #00ffff;">📚 LEVELS:</strong><br>';
-    const textGroups = {};
-    Object.entries(progressData.phraseProgress).forEach(([phraseId, data]) => {
-        const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
-        if (!textGroups[textId]) textGroups[textId] = [];
-        textGroups[textId].push({ phraseId, level: data.level });
-    });
-    
-    Object.entries(textGroups).forEach(([textId, phrases]) => {
-        const textLevel = progressData.textLevels?.[textId] || 1;
-        html += `${textId} (L${textLevel}): `;
-        html += phrases.map(p => {
-            const pNum = p.phraseId.split('_')[2];
-            return `${pNum}:${p.level === 'mastered' ? 'M' : p.level}`;
-        }).join(', ');
-        html += '<br>';
-    });
-
-    html += '<br>';
-    html += userProgress.getTextStatsDebug();
-    html += '<br>';
-    
-    html += '<br><strong>Press Debug Button to Clear All Data</strong>';
-    
-    document.getElementById('debugInfo').innerHTML = html;
+    debugDiv.innerHTML = html;
 }
 
 // Auto-refresh every 2 seconds

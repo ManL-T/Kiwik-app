@@ -52,8 +52,11 @@ class ChallengeManager {
         // Text cover state
         this.isShowingTextCover = false;
         this.lastTextId = null; // Track which text we were showing last
+
+        // Round state tracking (prevents consecutive phrase repetition)
+        this.currentRoundPlayedPhrases = new Set();
         
-        // OPTION B: Initialization coordination flags (following project pattern)
+        // Initialization coordination flags (following project pattern)
         this.gameDataReady = false;
         this.userProgressReady = false;
         this.initializationComplete = false;
@@ -261,7 +264,7 @@ class ChallengeManager {
         
     }
 
-    // Replace getCurrentPhraseId() completely
+    // gets the id of the phrase that's about to be used?
     getCurrentPhraseId() {
         console.log('🎯 ChallengeManager: Finding next phrase with simple logic...');
         
@@ -278,8 +281,16 @@ class ChallengeManager {
         const allPhrasesInText = this.gameData.getPhrasesForText(currentTextId);
         console.log('🎯 ChallengeManager: All phrases in', currentTextId + ':', allPhrasesInText.map(p => p.phraseId));
         
-        // Find first incomplete phrase
-        for (const phrase of allPhrasesInText) {
+        // Filter out phrases already played in current round
+        const unplayedInCurrentRound = allPhrasesInText.filter(phrase => 
+            !this.currentRoundPlayedPhrases.has(phrase.phraseId)
+        );
+
+        console.log('🎯 ChallengeManager: Phrases played this round:', Array.from(this.currentRoundPlayedPhrases));
+        console.log('🎯 ChallengeManager: Unplayed phrases in current round:', unplayedInCurrentRound.map(p => p.phraseId));
+
+        // Find first incomplete phrase from unplayed phrases
+        for (const phrase of unplayedInCurrentRound) {
             if (!this.isPhraseCompleted(phrase.phraseId)) {
                 console.log('🎯 ChallengeManager: Found incomplete phrase:', phrase.phraseId);
                 return phrase.phraseId;
@@ -318,14 +329,22 @@ class ChallengeManager {
 
     // New method: advance to next text in sequence
     advanceToNextText() {
+        // Clear round state for new text/round
+        this.currentRoundPlayedPhrases.clear();
+        console.log('🎯 ChallengeManager: Cleared round state for new text/round');
+
         console.log('🎯 ChallengeManager: Advancing to next text...');
         
         const stageState = this.userProgress.data.stageState;
         const oldTextIndex = stageState.currentTextIndex;
         const oldTextId = stageState.activeTexts[oldTextIndex];
 
+        // Get the level that was just completed (locked level for this stage)
+        const completedLevel = stageState.lockedTextLevels[oldTextId];
+
+
         // Increment round count for completed text
-        this.userProgress.incrementRoundForText(oldTextId);
+        this.userProgress.incrementRoundForText(oldTextId, completedLevel);
         
         // Move to next text
         stageState.currentTextIndex = (stageState.currentTextIndex + 1) % stageState.activeTexts.length;
@@ -348,7 +367,7 @@ class ChallengeManager {
         this.userProgress.saveUserProgress();
     }
 
-    // New method: check if phrase is completed (for this stage)
+    // check if phrase is completed (for this stage)
     isPhraseCompleted(phraseId) {
         console.log(`🎯 ChallengeManager: Checking if ${phraseId} is completed for current stage...`);
         
@@ -526,16 +545,13 @@ class ChallengeManager {
     collectTextCoverData(textId) {
         console.log('🎯 ChallengeManager: Collecting text cover data for:', textId);
         
-        // const stageState = this.userProgress.data.stageState;
-        
-        // Get basic info
-        // const level = stageState.lockedTextLevels[textId];
-        // const stage = stageState.currentStage;
-
         // Get round display data
         const roundDisplayData = this.userProgress.getTextRoundDisplay(textId);
         const level = roundDisplayData.level;
         const round = roundDisplayData.round;
+        
+        // Extract text number from textId (e.g., "text_5" → "5")
+        const textNumber = textId.split('_')[1];
                 
         // Get text info
         const textData = this.gameData.getTextById(textId);
@@ -558,6 +574,7 @@ class ChallengeManager {
         });
         
         const data = {
+            text_number: textNumber,  // NEW: Add text number
             level: level,
             round: round,
             title: title,
@@ -624,7 +641,11 @@ class ChallengeManager {
         // CREATE FRESH ATTEMPT FOR THIS PHRASE
         this.userProgress.createFreshAttempt(phraseId);
         console.log('🎯 ChallengeManager: Fresh attempt created for:', phraseId);
-        
+
+        // Track that this phrase is now played in current round
+        this.currentRoundPlayedPhrases.add(phraseId);
+        console.log('🎯 ChallengeManager: Added', phraseId, 'to current round. Round phrases:', Array.from(this.currentRoundPlayedPhrases));
+                
         const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
         
         // Use LOCKED text level, not current level
@@ -650,6 +671,7 @@ class ChallengeManager {
         
         // Request challenge data
         this.eventBus.emit('gameData:requestPhraseData', phraseId);
+
     }
     
     // Handle phrase data response
@@ -868,6 +890,12 @@ class ChallengeManager {
 
     startNewStage() {
         console.log(`🎯 ChallengeManager: Stage ${this.stageSystem.stageNumber} completed! Starting stage ${this.stageSystem.stageNumber + 1}`);
+        
+        // Increment stage count in UserProgress BEFORE updating internal counter
+        if (this.userProgress.data.currentGame) {
+            this.userProgress.data.currentGame.stages++;
+            console.log(`🎯 ChallengeManager: Incremented stage count to ${this.userProgress.data.currentGame.stages} for game ${this.userProgress.data.currentGame.gameNumber}`);
+        }
         
         // Create new stage inheriting all texts from previous stage
         this.stageSystem = {

@@ -131,7 +131,8 @@ body {
 
 /* Sidebar styling */
 .level-display,
-.round-display {
+.round-display,
+.text-display {
     background-color: #16F1FD;
     color: #000000;
     font-size: 1rem;

@@ -193,7 +193,7 @@ class Solution {
                 this.complete('correct');
             } else {
                 // For incorrect answers, don't complete - just emit wrongAnswer and reset
-                this.eventBus.emit('solution:incorrect');
+                // this.eventBus.emit('solution:incorrect');
                 this.resetToSelection();
             }
         }, 1000);
