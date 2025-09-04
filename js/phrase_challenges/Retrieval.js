@@ -147,9 +147,10 @@ class Retrieval {
             console.log('🎯 Retrieval: Showing translations for current unit');
             this.translationsVisible = true;
             this.updateSemanticUnitDisplay(true); // Show with translations
+
+            // Apply 3-second timer penalty for peeking
+            this.eventBus.emit('timer:penalty', 3);
             
-            // TODO: Implement timer penalty (reduce by 3 seconds)
-            console.log('🎯 Retrieval: TODO - Apply 3 second timer penalty');
         }
     }
     

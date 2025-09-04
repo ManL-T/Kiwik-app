@@ -7,7 +7,7 @@ class Timer {
         this.eventBus = eventBus;
         
         // Timer state
-        this.currentTime = 12;
+        this.currentTime = 25;
         this.timeoutId = null;
         
         // Setup event listeners
@@ -37,6 +37,11 @@ class Timer {
         this.eventBus.on('timer:stop', () => {
             this.stop();
         });
+
+        this.eventBus.on('timer:penalty', (seconds) => {
+            this.applyPenalty(seconds);
+        });
+
     }
     
     // Start countdown (schedules first tick)
@@ -63,7 +68,7 @@ class Timer {
     reset() {
         console.log('⏰ Timer: Resetting to 12 seconds');
         this.clearCurrentTimeout();
-        this.currentTime = 12;
+        this.currentTime = 25;
         
         // Emit initial display value
         this.eventBus.emit('timer:tick', this.currentTime);
@@ -101,6 +106,16 @@ class Timer {
         } else {
             // Schedule next tick
             this.scheduleNextTick();
+        }
+    }
+
+    applyPenalty(seconds) {
+        this.currentTime = Math.max(0, this.currentTime - seconds);
+        this.eventBus.emit('timer:tick', this.currentTime);
+        
+        if (this.currentTime <= 0) {
+            this.clearCurrentTimeout();
+            this.eventBus.emit('timer:expired');
         }
     }
     
