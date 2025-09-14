@@ -10,10 +10,20 @@ class GameData {
         this.data = null;
 
         // Setup event listeners
-        this.setupEventListeners();
+        this.setupEventListeners('selectedSong');
         
-        // Load game data immediately
-        this.loadSongData('la_fievre_beginner');
+
+        // Load selected song data
+        const selectedSong = localStorage.getItem('selectedSong');
+        if (!selectedSong) {
+            console.error('❌ GameData: No song selected - system flaw detected');
+            return;
+        }
+        console.log('📚 GameData: Loading selected song:', selectedSong);
+        this.loadSongData(selectedSong);
+
+        // Clear the selection after use
+        localStorage.removeItem('selectedSong');
         
         console.log('✅ GameData: Initialization complete');
     }

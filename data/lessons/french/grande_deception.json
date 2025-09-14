@@ -1,0 +1,2958 @@
+{
+  "projectMetadata": {
+    "title": "La Grande Déception",
+    "artist": "Zaho De Sagazan",
+    "difficulty": "improver"
+  },
+  "originalLyrics": "Il fait toujours beau au-dessus des nuages\nMais moi, si j'étais un oiseau, j'irais danser sous l'orage\nJe traverserais les nuages comme le fait la lumière\nJ'écouterais sous la pluie la symphonie des éclairs\nDès sa plus tendre enfance\nElle ne savait pas parler autrement\nQu'en criant tout bas, pas faute d'essayer\nDe les retenir, ces cris et ces larmes\nQui les faisaient tant-\nIl fait toujours beau au-dessus des nuages\nMais moi, si j'étais un oiseau, j'irais danser sous l'orage\nJe traverserais les nuages comme le fait la lumière\nJ'écouterais sous la pluie la symphonie des éclairs\nEn grandissant, rien ne s'est calmé\nPetite tempête s'est trouvé\nDes raisons de pleuvoir autant\nQui pourrait l'aimer, franchement?\nPersonne n'aimerait se retrouver\nAu cœur d'une tempête, avouez\nIl y a des raisons de pleurer\nElle a ses raisons, mais\nIl fait toujours beau au-dessus des nuages\nMais moi, si j'étais un oiseau, j'irais danser sous l'orage\nJe traverserais les nuages comme le fait la lumière\nJ'écouterais sous la pluie la symphonie des éclairs, hmm\nQuand la tempête a su\nQue des mélodies pouvaient s'échapper du vent\nEt se retrouver dans le cœur des gens\nCelle-ci s'est dit\n\"Nulle raison d'envier le soleil\nJe ferai danser les gens au rythme de mes pleurs\nLa tourmente de mes chants viendra réchauffer les cœurs\nRéchauffer mon cœur\"\nIl fait toujours beau au-dessus des nuages\nMais moi, je suis de ces oiseaux qui nous font danser sous l'orage\nJe traverserais tous les nuages pour trouver la lumière\nEn chantant sous la pluie la symphonie des éclairs",
+  "originalVocabulary": ["il", "fait", "toujours", "beau", "au-dessus", "des", "nuages", "mais", "moi", "si", "j'étais", "un", "oiseau", "j'irais", "danser", "sous", "l'orage", "je", "traverserais", "les", "comme", "le", "la", "lumière", "j'écouterais", "pluie", "symphonie", "éclairs", "dès", "sa", "plus", "tendre", "enfance", "elle", "ne", "savait", "pas", "parler", "autrement", "qu'en", "criant", "tout", "bas", "faute", "d'essayer", "de", "retenir", "ces", "cris", "et", "larmes", "qui", "faisaient", "tant", "en", "grandissant", "rien", "s'est", "calmé", "petite", "tempête", "trouvé", "raisons", "pleuvoir", "autant", "pourrait", "l'aimer", "franchement", "personne", "n'aimerait", "se", "retrouver", "au", "cœur", "d'une", "avouez", "y", "a", "pleurer", "ses", "quand", "su", "que", "mélodies", "pouvaient", "s'échapper", "du", "vent", "dans", "gens", "celle-ci", "dit", "nulle", "raison", "d'envier", "soleil", "ferai", "rythme", "mes", "pleurs", "tourmente", "chants", "viendra", "réchauffer", "cœurs", "mon", "suis", "oiseaux", "nous", "font", "tous", "pour", "trouver", "chantant", "hmm" ],
+  "texts": [
+    {
+      "textId": "text_1",
+      "title": "Le Journal du Matin (1)",
+      "text": [
+        "Une vidéo amateur montre des gens qui courent",
+        "alors qu'un lion traverse les rues de la ville,",
+        "et finit par prendre un bain dans une fontaine."
+      ]
+    },
+    {
+      "textId": "text_2", 
+      "title": "Le Journal du Matin (2)",
+      "text": [
+        "Michel: L'animal s'est échappé du zoo local - mais franchement,",
+        "que nous réserve encore ce réchauffement climatique?",
+        "Notre météorologue Claire nous parle aujourd'hui depuis le festival de Carhaix..."
+      ]
+    },
+    {
+      "textId": "text_3",
+      "title": "La Météo (1)",
+      "text": [
+        "Salut Michel, ici l'ambiance est fantastique,",
+        "les gens dansent au rythme des beats!",
+        "Mais regardez ces nuages qui grandissent au-dessus de nous -",
+        "l'orage arrive cette nuit sur la Bretagne."
+      ]
+    },
+    {
+      "textId": "text_4",
+      "title": "La Météo (2)",
+      "text": [
+        "Il fait encore beau maintenant, le soleil brille,",
+        "mais des éclairs et la pluie sont prévus vers minuit.",
+        "La question n'est pas s'il va pleuvoir,",
+        "c'est quand ça commencera.",
+        "Le vent va souffler très fort sous cette tempête."
+      ]
+    },
+    {
+      "textId": "text_5",
+      "title": "Entretien au Festival (1)",
+      "text": [
+        "Claire: Excusez-moi, comment trouvez-vous cette symphonie électronique?",
+        "Fille 1: Moi, je suis Sophie, et j'adore la fête!",
+        "Autant que ces mélodies merveilleuses!"
+      ]
+    },
+    {
+      "textId": "text_6",
+      "title": "Entretien au Festival (2)",
+      "text": [
+        "Claire: Craignez-vous que les concerts pourraient être annulés?",
+        "Fille 2: Si on s'inquiète, on s'ennuie.",
+        "Il y a toujours des raisons d'être optimiste -",
+        "nous essayerons de profiter quand même!"
+      ]
+    },
+    {
+      "textId": "text_7",
+      "title": "Entretien au Festival (3)",
+      "text": [
+        "Fille 1: J'ai envie de danser même sous la pluie!",
+        "Aucune tourmente, ou rien d'autre, ne pourrait nous arrêter.",
+        "Claire: Avouez que vous êtes courageuses! Passez une excellente soirée."
+      ]
+    },
+    {
+      "textId": "text_8",
+      "title": "Le Salon Familial (1)",
+      "text": [
+        "Une excellente soirée! crie le petit frère en souriant.",
+        "Un oiseau chante tout bas dans sa cage au fond du salon,",
+        "pendant que Marie avec des larmes aux yeux parle: C'est nul!"
+      ]
+    },
+    {
+      "textId": "text_9",
+      "title": "Le Salon Familial (2)",
+      "text": [
+        "Tous mes amis sont là, mon cœur est brisé!",
+        "Son père avec tendresse:",
+        "Calme-toi chérie, l'année prochaine...",
+        "Elle ne pouvait plus retenir son désespoir."
+      ]
+    },
+    {
+      "textId": "text_10",
+      "title": "Le Salon Familial (3)",
+      "text": [
+        "Ses pleurs devenaient de plus en plus forts,",
+        "et dehors, les premières gouttes commençaient à tomber.",
+        "Maintenant, il va pleuvoir, c'est sûr.",
+        "Soudain, la maison se remplit de lumière",
+        "quand un éclair illumine la salle."
+      ]
+    }
+  ],
+"phrases": [
+    {
+        "phraseId": "text_1_p1",
+        "phraseTarget": "Une vidéo amateur montre des gens qui courent",
+        "targetDistractors": [
+            "Une vidéo amateur signe la dame qui court",
+            "Une vidéo amateur montre personne qui court",
+            "Une vidéo amateur peint des enfants qui courent"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_1_p1_unit_1",
+            "unitTarget": "Une vidéo amateur",
+            "translations": [
+            "An amateur video",
+            "A home video",
+            "An amateur recording",
+            "A user-generated video"
+            ]
+        },
+        {
+            "unitId": "text_1_p1_unit_2", 
+            "unitTarget": "montre",
+            "translations": [
+            "shows",
+            "displays",
+            "reveals",
+            "captures"
+            ]
+        },
+        {
+            "unitId": "text_1_p1_unit_3",
+            "unitTarget": "des gens",
+            "translations": [
+            "people",
+            "some people",
+            "individuals",
+            "folks"
+            ]
+        },
+        {
+            "unitId": "text_1_p1_unit_4",
+            "unitTarget": "qui",
+            "translations": [
+            "who",
+            "that",
+            "which",
+            "who are"
+            ]
+        },
+        {
+            "unitId": "text_1_p1_unit_5",
+            "unitTarget": "courent",
+            "translations": [
+            "running",
+            "are running",
+            "run",
+            "rushing"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_1_p2",
+        "phraseTarget": "alors qu'un lion traverse les rues de la ville,",
+        "targetDistractors": [
+            "alors qu'un lion bondit les rues de la ville,",
+            "alors qu'un lion bondit les rues d'une village,",
+            "alors qu'un lion s'amuse par les rues de la ville,"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_1_p2_unit_1",
+            "unitTarget": "alors",
+            "translations": [
+            "while",
+            "as",
+            "when",
+            "at the same time as"
+            ]
+        },
+        {
+            "unitId": "text_1_p2_unit_2", 
+            "unitTarget": "qu'un lion",
+            "translations": [
+            "a lion",
+            "the lion",
+            "one lion",
+            "a big cat"
+            ]
+        },
+        {
+            "unitId": "text_1_p2_unit_3",
+            "unitTarget": "traverse",
+            "translations": [
+            "crosses",
+            "goes through",
+            "walks through",
+            "moves across"
+            ]
+        },
+        {
+            "unitId": "text_1_p2_unit_4",
+            "unitTarget": "les rues",
+            "translations": [
+            "the streets",
+            "the roads",
+            "the city streets",
+            "the avenues"
+            ]
+        },
+        {
+            "unitId": "text_1_p2_unit_5",
+            "unitTarget": "de",
+            "translations": [
+            "of",
+            "from",
+            "in",
+            "belonging to"
+            ]
+        },
+        {
+            "unitId": "text_1_p2_unit_6",
+            "unitTarget": "la ville",
+            "translations": [
+            "the city",
+            "the town",
+            "the urban area",
+            "downtown"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_1_p3",
+        "phraseTarget": "et finit par prendre un bain dans une fontaine.",
+        "targetDistractors": [
+            "et finit par ecouter les bruits d'une fontaine",
+            "et finit par attendre les peatons",
+            "et finit par pecher des poissons"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_1_p3_unit_1",
+            "unitTarget": "et",
+            "translations": [
+            "and",
+            "then",
+            "and then",
+            "before"
+            ]
+        },
+        {
+            "unitId": "text_1_p3_unit_2", 
+            "unitTarget": "finit par",
+            "translations": [
+            "ends up",
+            "finally",
+            "eventually",
+            "ultimately"
+            ]
+        },
+        {
+            "unitId": "text_1_p3_unit_3",
+            "unitTarget": "prendre",
+            "translations": [
+            "taking",
+            "having",
+            "getting",
+            "enjoying"
+            ]
+        },
+        {
+            "unitId": "text_1_p3_unit_4",
+            "unitTarget": "un bain",
+            "translations": [
+            "a bath",
+            "a dip",
+            "a swim",
+            "a soak"
+            ]
+        },
+        {
+            "unitId": "text_1_p3_unit_5",
+            "unitTarget": "dans",
+            "translations": [
+            "in",
+            "inside",
+            "within",
+            "at"
+            ]
+        },
+        {
+            "unitId": "text_1_p3_unit_6",
+            "unitTarget": "une fontaine",
+            "translations": [
+            "a fountain",
+            "the fountain",
+            "a water feature",
+            "a public fountain"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_2_p1",
+        "phraseTarget": "Michel: L'animal s'est échappé du zoo local - mais franchement,",
+        "targetDistractors":[
+            "Michel: L'animal s'est caché du zoo local - mais franchement,",
+            "Michel: L'animal s'est gonflé dans le zoo local - mais franchement,",
+            "Michel: L'animal s'est perdu dans le zoo local - mais franchement,"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_2_p1_unit_1",
+            "unitTarget": "Michel:",
+            "translations": [
+            "Michel:"
+            ]
+        },
+        {
+            "unitId": "text_2_p1_unit_2", 
+            "unitTarget": "L'animal",
+            "translations": [
+            "The animal",
+            "The beast",
+            "The creature",
+            "This animal"
+            ]
+        },
+        {
+            "unitId": "text_2_p1_unit_3",
+            "unitTarget": "s'est échappé",
+            "translations": [
+            "escaped",
+            "broke free",
+            "got away",
+            "fled"
+            ]
+        },
+        {
+            "unitId": "text_2_p1_unit_4",
+            "unitTarget": "du",
+            "translations": [
+            "from the",
+            "from",
+            "out of the",
+            "away from the"
+            ]
+        },
+        {
+            "unitId": "text_2_p1_unit_5",
+            "unitTarget": "zoo local",
+            "translations": [
+            "local zoo",
+            "city zoo",
+            "nearby zoo",
+            "municipal zoo"
+            ]
+        },
+        {
+            "unitId": "text_2_p1_unit_6",
+            "unitTarget": "mais",
+            "translations": [
+            "but",
+            "however",
+            "though",
+            "yet"
+            ]
+        },
+        {
+            "unitId": "text_2_p1_unit_7",
+            "unitTarget": "franchement",
+            "translations": [
+            "honestly",
+            "frankly",
+            "really",
+            "seriously"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_2_p2",
+        "phraseTarget": "que nous réserve encore ce réchauffement climatique ?",
+        "targetDistractors":[
+            "que nous dit encore ce réchauffement climatique ?",
+            "que vous chuchote ce réchauffement climatique ?",
+            "que vous demande ce réchauffement climaique ?"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_2_p2_unit_1",
+            "unitTarget": "que",
+            "translations": [
+            "what",
+            "what else",
+            "what more",
+            "what next"
+            ]
+        },
+        {
+            "unitId": "text_2_p2_unit_2", 
+            "unitTarget": "nous réserve",
+            "translations": [
+            "has in store for us",
+            "awaits us",
+            "will bring us",
+            "is preparing for us"
+            ]
+        },
+        {
+            "unitId": "text_2_p2_unit_3",
+            "unitTarget": "encore",
+            "translations": [
+            "still",
+            "now",
+            "next",
+            "this time"
+            ]
+        },
+        {
+            "unitId": "text_2_p2_unit_4",
+            "unitTarget": "ce réchauffement climatique",
+            "translations": [
+            "this climate change",
+            "global warming",
+            "climate change",
+            "this global warming"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_2_p3",
+        "phraseTarget": "Notre météorologue Claire nous parle aujourd'hui depuis le festival de Carhaix...",
+        "targetDistractors":[
+            "Notre météorologue Claire va se époser aujourd'hui depuis le festival de Carhaix...",
+            "Notre météorologue Claire va lutter aujourd'hui depuis le festival de Carhaix...",
+            "Notre météorologue Claire nous chante aujourd'hui depuis le festival de Carhaix..."
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_2_p3_unit_1",
+            "unitTarget": "Notre météorologue Claire",
+            "translations": [
+            "Our meteorologist Claire",
+            "Weather presenter Claire",
+            "Our weather reporter Claire",
+            "Meteorologist Claire"
+            ]
+        },
+        {
+            "unitId": "text_2_p3_unit_2", 
+            "unitTarget": "nous parle",
+            "translations": [
+            "is speaking to us",
+            "is reporting",
+            "joins us",
+            "is with us"
+            ]
+        },
+        {
+            "unitId": "text_2_p3_unit_3",
+            "unitTarget": "aujourd'hui",
+            "translations": [
+            "today",
+            "this morning",
+            "right now",
+            "currently"
+            ]
+        },
+        {
+            "unitId": "text_2_p3_unit_4",
+            "unitTarget": "depuis",
+            "translations": [
+            "from",
+            "live from",
+            "reporting from",
+            "at"
+            ]
+        },
+        {
+            "unitId": "text_2_p3_unit_5",
+            "unitTarget": "le festival",
+            "translations": [
+            "the festival",
+            "the music festival",
+            "the event",
+            "the celebration"
+            ]
+        },
+        {
+            "unitId": "text_2_p3_unit_6",
+            "unitTarget": "de",
+            "translations": [
+            "in",
+            "of",
+            "at",
+            "from"
+            ]
+        },
+        {
+            "unitId": "text_2_p3_unit_7",
+            "unitTarget": "Carhaix",
+            "translations": [
+            "Carhaix",
+            "Carhaix-Plouguer",
+            "the Carhaix area",
+            "Carhaix town"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_3_p1",
+        "phraseTarget": "Salut Michel, ici l'ambiance est fantastique,",
+        "targetDistractors":[
+            "Salut Michel, ici l'odeur est fantastique,",
+            "Salut Michel, ici la chaleur est fantastique,",
+            "Salut Michel, ici les bruits sont fantastique,"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_3_p1_unit_1",
+            "unitTarget": "Salut Michel",
+            "translations": [
+            "Hi Michel",
+            "Hello Michel",
+            "Hey Michel",
+            "Good morning Michel"
+            ]
+        },
+        {
+            "unitId": "text_3_p1_unit_2", 
+            "unitTarget": "ici",
+            "translations": [
+            "here",
+            "over here",
+            "at this location",
+            "on site"
+            ]
+        },
+        {
+            "unitId": "text_3_p1_unit_3",
+            "unitTarget": "l'ambiance",
+            "translations": [
+            "the atmosphere",
+            "the vibe",
+            "the mood",
+            "the energy"
+            ]
+        },
+        {
+            "unitId": "text_3_p1_unit_4",
+            "unitTarget": "est",
+            "translations": [
+            "is",
+            "feels",
+            "seems",
+            "has been"
+            ]
+        },
+        {
+            "unitId": "text_3_p1_unit_5",
+            "unitTarget": "fantastique",
+            "translations": [
+            "fantastic",
+            "amazing",
+            "incredible",
+            "wonderful"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_3_p2",
+        "phraseTarget": "les gens dansent au rythme des beats!",
+        "targetDistractors":[
+            "les gens tombent au rythme des beats!",
+            "les gens dorment au rythme des beats!",
+            "les gens chantent au rythme des beats!"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_3_p2_unit_1",
+            "unitTarget": "les gens",
+            "translations": [
+            "people",
+            "the crowd",
+            "everyone",
+            "folks"
+            ]
+        },
+        {
+            "unitId": "text_3_p2_unit_2", 
+            "unitTarget": "dansent",
+            "translations": [
+            "are dancing",
+            "dance",
+            "are moving",
+            "are grooving"
+            ]
+        },
+        {
+            "unitId": "text_3_p2_unit_3",
+            "unitTarget": "au",
+            "translations": [
+            "to the",
+            "with the",
+            "following the",
+            "in time with"
+            ]
+        },
+        {
+            "unitId": "text_3_p2_unit_4",
+            "unitTarget": "rythme",
+            "translations": [
+            "rhythm",
+            "beat",
+            "tempo",
+            "pulse"
+            ]
+        },
+        {
+            "unitId": "text_3_p2_unit_5",
+            "unitTarget": "des beats",
+            "translations": [
+            "of the beats",
+            "of the music",
+            "of the electronic beats",
+            "of the sound"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_3_p3",
+        "phraseTarget": "Mais regardez ces nuages qui grandissent au-dessus de nous -",
+        "targetDistractors":[
+            "Mais ecoutez ces nuages qui grandissent devant de nous -",
+            "Mais gardez ces nuages qui grandissent en dessous de nous -",
+            "Mais enlevez ces nuages qui grandissent à côté de nous -"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_3_p3_unit_1",
+            "unitTarget": "Mais",
+            "translations": [
+            "But",
+            "However",
+            "Though",
+            "Yet"
+            ]
+        },
+        {
+            "unitId": "text_3_p3_unit_2", 
+            "unitTarget": "regardez",
+            "translations": [
+            "look at",
+            "see",
+            "check out",
+            "observe"
+            ]
+        },
+        {
+            "unitId": "text_3_p3_unit_3",
+            "unitTarget": "ces nuages",
+            "translations": [
+            "these clouds",
+            "those clouds",
+            "the clouds",
+            "these storm clouds"
+            ]
+        },
+        {
+            "unitId": "text_3_p3_unit_4",
+            "unitTarget": "qui",
+            "translations": [
+            "that",
+            "which",
+            "that are",
+            "which are"
+            ]
+        },
+        {
+            "unitId": "text_3_p3_unit_5",
+            "unitTarget": "grandissent",
+            "translations": [
+            "are growing",
+            "are building up",
+            "are getting bigger",
+            "are forming"
+            ]
+        },
+        {
+            "unitId": "text_3_p3_unit_6",
+            "unitTarget": "au-dessus de",
+            "translations": [
+            "above",
+            "over",
+            "overhead",
+            "up above"
+            ]
+        },
+        {
+            "unitId": "text_3_p3_unit_7",
+            "unitTarget": "nous",
+            "translations": [
+            "us",
+            "our heads",
+            "the festival",
+            "this area"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_3_p4",
+        "phraseTarget": "l'orage arrive cette nuit sur la Bretagne.",
+        "targetDistractors":[
+            "l'orage passe cette nuit au-delà de la Bretagne.",
+            "l'orage va passer cette nuit loin de la Bretagne.",
+            "l'orage n'arrive pas cette nuit sur la Bretagne."
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_3_p4_unit_1",
+            "unitTarget": "l'orage",
+            "translations": [
+            "the storm",
+            "the thunderstorm",
+            "bad weather",
+            "the tempest"
+            ]
+        },
+        {
+            "unitId": "text_3_p4_unit_2", 
+            "unitTarget": "arrive",
+            "translations": [
+            "is coming",
+            "will arrive",
+            "is approaching",
+            "hits"
+            ]
+        },
+        {
+            "unitId": "text_3_p4_unit_3",
+            "unitTarget": "cette nuit",
+            "translations": [
+            "tonight",
+            "this evening",
+            "during the night",
+            "overnight"
+            ]
+        },
+        {
+            "unitId": "text_3_p4_unit_4",
+            "unitTarget": "sur",
+            "translations": [
+            "over",
+            "across",
+            "in",
+            "throughout"
+            ]
+        },
+        {
+            "unitId": "text_3_p4_unit_5",
+            "unitTarget": "la Bretagne",
+            "translations": [
+            "Brittany",
+            "the Brittany region",
+            "western France",
+            "this region"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_4_p1",
+        "phraseTarget": "Il fait encore beau maintenant, le soleil brille,",
+        "targetDistractors":[
+            "Il fait beau, mais le soleil cache,",
+            "Il fait pas beau maintenant, autant que le soleil brille,",
+            "Il fait pas beau maintenant, mais le soleil encore brille,"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_4_p1_unit_1",
+            "unitTarget": "Il fait",
+            "translations": [
+            "It's",
+            "The weather is",
+            "It is",
+            "We have"
+            ]
+        },
+        {
+            "unitId": "text_4_p1_unit_2", 
+            "unitTarget": "encore",
+            "translations": [
+            "still",
+            "right now",
+            "for now",
+            "currently"
+            ]
+        },
+        {
+            "unitId": "text_4_p1_unit_3",
+            "unitTarget": "beau",
+            "translations": [
+            "nice",
+            "beautiful",
+            "fine",
+            "pleasant"
+            ]
+        },
+        {
+            "unitId": "text_4_p1_unit_4",
+            "unitTarget": "maintenant",
+            "translations": [
+            "now",
+            "right now",
+            "at the moment",
+            "currently"
+            ]
+        },
+        {
+            "unitId": "text_4_p1_unit_5",
+            "unitTarget": "le soleil",
+            "translations": [
+            "the sun",
+            "sunshine",
+            "sunlight",
+            "the sun's rays"
+            ]
+        },
+        {
+            "unitId": "text_4_p1_unit_6",
+            "unitTarget": "brille",
+            "translations": [
+            "is shining",
+            "shines",
+            "is bright",
+            "is out"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_4_p2",
+        "phraseTarget": "mais des éclairs et la pluie sont prévus vers minuit.",
+        "targetDistractors":[
+            "et des éclairs et la pluie sont desiré vers minuit.",
+            "en fait des éclairs sont prévus vers minuit.",
+            "mais des éclairs et la pluie sont prévus après minuit."
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_4_p2_unit_1",
+            "unitTarget": "mais",
+            "translations": [
+            "but",
+            "however",
+            "though",
+            "yet"
+            ]
+        },
+        {
+            "unitId": "text_4_p2_unit_2", 
+            "unitTarget": "des éclairs",
+            "translations": [
+            "lightning",
+            "lightning strikes",
+            "thunder and lightning",
+            "electrical storms"
+            ]
+        },
+        {
+            "unitId": "text_4_p2_unit_3",
+            "unitTarget": "et",
+            "translations": [
+            "and",
+            "plus",
+            "along with",
+            "as well as"
+            ]
+        },
+        {
+            "unitId": "text_4_p2_unit_4",
+            "unitTarget": "la pluie",
+            "translations": [
+            "rain",
+            "rainfall",
+            "showers",
+            "precipitation"
+            ]
+        },
+        {
+            "unitId": "text_4_p2_unit_5",
+            "unitTarget": "sont prévus",
+            "translations": [
+            "are forecast",
+            "are expected",
+            "are predicted",
+            "will arrive"
+            ]
+        },
+        {
+            "unitId": "text_4_p2_unit_6",
+            "unitTarget": "vers",
+            "translations": [
+            "around",
+            "about",
+            "near",
+            "towards"
+            ]
+        },
+        {
+            "unitId": "text_4_p2_unit_7",
+            "unitTarget": "minuit",
+            "translations": [
+            "midnight",
+            "12 AM",
+            "the middle of the night",
+            "late tonight"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_4_p3",
+        "phraseTarget": "La question n'est pas s'il va pleuvoir,",
+        "targetDistractors":[
+            "La question n'est pas s'il va pleuvoir,",
+            "La question n'est pas s'il va pleuvoir,",
+            "La question n'est pas s'il va pleuvoir,"
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_4_p3_unit_1",
+            "unitTarget": "La question",
+            "translations": [
+            "The question",
+            "The issue",
+            "What matters",
+            "The real question"
+            ]
+        },
+        {
+            "unitId": "text_4_p3_unit_2", 
+            "unitTarget": "n'est pas",
+            "translations": [
+            "isn't",
+            "is not",
+            "is no longer",
+            "won't be"
+            ]
+        },
+        {
+            "unitId": "text_4_p3_unit_3",
+            "unitTarget": "s'il va",
+            "translations": [
+            "whether it will",
+            "if it's going to",
+            "whether it's going to",
+            "if it will"
+            ]
+        },
+        {
+            "unitId": "text_4_p3_unit_4",
+            "unitTarget": "pleuvoir",
+            "translations": [
+            "rain",
+            "pour",
+            "be raining",
+            "start raining"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_4_p4",
+        "phraseTarget": "c'est quand ça commencera.",
+        "targetDistractors": [
+            "c'est où ça commencera.",
+            "c'est comment ça commencera.",
+            "c'est pourquoi ça commencera."
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_4_p4_unit_1",
+            "unitTarget": "c'est",
+            "translations": [
+            "it's",
+            "the question is",
+            "what matters is",
+            "rather"
+            ]
+        },
+        {
+            "unitId": "text_4_p4_unit_2", 
+            "unitTarget": "quand",
+            "translations": [
+            "when",
+            "what time",
+            "at what point",
+            "exactly when"
+            ]
+        },
+        {
+            "unitId": "text_4_p4_unit_3",
+            "unitTarget": "ça",
+            "translations": [
+            "it",
+            "the rain",
+            "this",
+            "the storm"
+            ]
+        },
+        {
+            "unitId": "text_4_p4_unit_4",
+            "unitTarget": "commencera",
+            "translations": [
+            "will start",
+            "begins",
+            "will begin",
+            "starts"
+            ]
+        }
+        ]
+    },
+    {
+        "phraseId": "text_4_p5",
+        "phraseTarget": "Le vent va souffler très fort sous cette tempête.",
+        "targetDistractors": [
+            "Le vent va tomber très fort sous cette tempête.",
+            "Le vent va crier très fort sous cette tempête.",
+            "Le vent va souffler très doucement sous cette tempête."
+        ],
+        "semanticUnits": [
+        {
+            "unitId": "text_4_p5_unit_1",
+            "unitTarget": "Le vent",
+            "translations": [
+            "The wind",
+            "Wind speeds",
+            "Winds",
+            "The gusts"
+            ]
+        },
+        {
+            "unitId": "text_4_p5_unit_2", 
+            "unitTarget": "va souffler",
+            "translations": [
+            "will blow",
+            "is going to blow",
+            "will be blowing",
+            "will gust"
+            ]
+        },
+        {
+            "unitId": "text_4_p5_unit_3",
+            "unitTarget": "très fort",
+            "translations": [
+            "very hard",
+            "very strong",
+            "quite strong",
+            "extremely hard"
+            ]
+        },
+        {
+            "unitId": "text_4_p5_unit_4",
+            "unitTarget": "sous",
+            "translations": [
+            "during",
+            "with",
+            "in",
+            "throughout"
+            ]
+        },
+        {
+            "unitId": "text_4_p5_unit_5",
+            "unitTarget": "cette tempête",
+            "translations": [
+            "this storm",
+            "the storm",
+            "this weather system",
+            "these conditions"
+            ]
+        }
+        ]
+    },
+    {
+    "phraseId": "text_5_p1",
+    "phraseTarget": "Claire: Excusez-moi, comment trouvez-vous cette symphonie électronique?",
+    "targetDistractors": [
+    "Claire: Excusez-moi, où trouvez-vous cette symphonie électronique?",
+    "Claire: Excusez-moi, comment perdez-vous cette symphonie électronique?",
+    "Claire: Excusez-moi, comment trouvez-vous cette musique classique?"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_5_p1_unit_1",
+        "unitTarget": "Claire:",
+        "translations": [
+          "Claire:",
+          "Claire asks:",
+          "Claire says:",
+          "Reporter Claire:"
+        ]
+      },
+      {
+        "unitId": "text_5_p1_unit_2", 
+        "unitTarget": "Excusez-moi",
+        "translations": [
+          "Excuse me",
+          "Sorry to interrupt",
+          "Pardon me",
+          "Hi there"
+        ]
+      },
+      {
+        "unitId": "text_5_p1_unit_3",
+        "unitTarget": "comment",
+        "translations": [
+          "how",
+          "what",
+          "how do",
+          "in what way"
+        ]
+      },
+      {
+        "unitId": "text_5_p1_unit_4",
+        "unitTarget": "trouvez-vous",
+        "translations": [
+          "do you find",
+          "do you like",
+          "are you enjoying",
+          "do you think of"
+        ]
+      },
+      {
+        "unitId": "text_5_p1_unit_5",
+        "unitTarget": "cette symphonie électronique",
+        "translations": [
+          "this electronic symphony",
+          "this electronic music",
+          "this digital orchestra",
+          "this electronic performance"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_5_p2",
+    "phraseTarget": "Fille 1: Moi, je suis Sophie, et j'adore la fête!",
+      "targetDistractors": [
+    "Fille 1: Moi, je suis Sophie, et je déteste la fête!",
+    "Fille 1: Moi, je suis Marie, et j'adore la fête!",
+    "Fille 1: Moi, je suis Sophie, et j'adore la musique!"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_5_p2_unit_1",
+        "unitTarget": "Fille 1:",
+        "translations": [
+          "Girl 1:",
+          "First girl:",
+          "Young woman:",
+          "Festival-goer:"
+        ]
+      },
+      {
+        "unitId": "text_5_p2_unit_2", 
+        "unitTarget": "Moi",
+        "translations": [
+          "Me",
+          "Well",
+          "As for me",
+          "I"
+        ]
+      },
+      {
+        "unitId": "text_5_p2_unit_3",
+        "unitTarget": "je suis",
+        "translations": [
+          "I'm",
+          "I am",
+          "my name is",
+          "I'm called"
+        ]
+      },
+      {
+        "unitId": "text_5_p2_unit_4",
+        "unitTarget": "Sophie",
+        "translations": [
+          "Sophie",
+          "Sophie here",
+          "called Sophie",
+          "Sophie by the way"
+        ]
+      },
+      {
+        "unitId": "text_5_p2_unit_5",
+        "unitTarget": "et",
+        "translations": [
+          "and",
+          "and I",
+          "plus",
+          "also"
+        ]
+      },
+      {
+        "unitId": "text_5_p2_unit_6",
+        "unitTarget": "j'adore",
+        "translations": [
+          "I love",
+          "I absolutely love",
+          "I'm loving",
+          "I adore"
+        ]
+      },
+      {
+        "unitId": "text_5_p2_unit_7",
+        "unitTarget": "la fête",
+        "translations": [
+          "the party",
+          "this festival",
+          "the celebration",
+          "the event"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_5_p3",
+    "phraseTarget": "Autant que ces mélodies merveilleuses!",
+      "targetDistractors": [
+    "Autant que ces mélodies terribles!",
+    "Autant que ces danses merveilleuses!",
+    "Plus que ces mélodies merveilleuses!"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_5_p3_unit_1",
+        "unitTarget": "Autant que",
+        "translations": [
+          "As much as",
+          "Just like",
+          "Along with",
+          "And especially"
+        ]
+      },
+      {
+        "unitId": "text_5_p3_unit_2", 
+        "unitTarget": "ces mélodies merveilleuses",
+        "translations": [
+          "these wonderful melodies",
+          "these amazing tunes",
+          "this incredible music",
+          "these beautiful songs"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_6_p1",
+    "phraseTarget": "Claire: Craignez-vous que les concerts pourraient être annulés?",
+      "targetDistractors": [
+    "Claire: Espérez-vous que les concerts pourraient être annulés?",
+    "Claire: Craignez-vous que les concerts pourraient être reportés?",
+    "Claire: Craignez-vous que les films pourraient être annulés?"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_6_p1_unit_1",
+        "unitTarget": "Claire:",
+        "translations": [
+          "Claire:",
+          "Claire asks:",
+          "Claire continues:",
+          "The reporter:"
+        ]
+      },
+      {
+        "unitId": "text_6_p1_unit_2", 
+        "unitTarget": "Craignez-vous",
+        "translations": [
+          "Are you worried",
+          "Do you fear",
+          "Are you concerned",
+          "Are you afraid"
+        ]
+      },
+      {
+        "unitId": "text_6_p1_unit_3",
+        "unitTarget": "que",
+        "translations": [
+          "that",
+          "about",
+          "whether",
+          "if"
+        ]
+      },
+      {
+        "unitId": "text_6_p1_unit_4",
+        "unitTarget": "les concerts",
+        "translations": [
+          "the concerts",
+          "the shows",
+          "the performances",
+          "the music"
+        ]
+      },
+      {
+        "unitId": "text_6_p1_unit_5",
+        "unitTarget": "pourraient être",
+        "translations": [
+          "might be",
+          "could be",
+          "will be",
+          "may be"
+        ]
+      },
+      {
+        "unitId": "text_6_p1_unit_6",
+        "unitTarget": "annulés",
+        "translations": [
+          "cancelled",
+          "called off",
+          "postponed",
+          "shut down"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_6_p2",
+    "phraseTarget": "Fille 2: Si on s'inquiète, on s'ennuie.",
+      "targetDistractors": [
+        "Fille 2: Si on s'inquiète, on s'amuse.",
+        "Fille 2: Si on se détend, on s'ennuie.",
+        "Fille 2: Si on s'inquiète, on s'énerve."
+    ],
+    "semanticUnits": [
+      {
+        "unitId": "text_6_p2_unit_1",
+        "unitTarget": "Fille 2:",
+        "translations": [
+          "Girl 2:",
+          "Second girl:",
+          "Another festival-goer:",
+          "Her friend:"
+        ]
+      },
+      {
+        "unitId": "text_6_p2_unit_2", 
+        "unitTarget": "Si",
+        "translations": [
+          "If",
+          "When",
+          "Whenever",
+          "If you"
+        ]
+      },
+      {
+        "unitId": "text_6_p2_unit_3",
+        "unitTarget": "on s'inquiète",
+        "translations": [
+          "you worry",
+          "we worry",
+          "people worry",
+          "you stress out"
+        ]
+      },
+      {
+        "unitId": "text_6_p2_unit_4",
+        "unitTarget": "on s'ennuie",
+        "translations": [
+          "you get bored",
+          "we miss out",
+          "you're no fun",
+          "life's boring"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_6_p3",
+    "phraseTarget": "Il y a toujours des raisons d'être optimiste -",
+      "targetDistractors": [
+    "Il y a jamais des raisons d'être optimiste -",
+    "Il y a toujours des raisons d'être pessimiste -",
+    "Il y a parfois des raisons d'être optimiste -"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_6_p3_unit_1",
+        "unitTarget": "Il y a",
+        "translations": [
+          "There are",
+          "There's",
+          "You can find",
+          "There are always"
+        ]
+      },
+      {
+        "unitId": "text_6_p3_unit_2", 
+        "unitTarget": "toujours",
+        "translations": [
+          "always",
+          "still",
+          "constantly",
+          "forever"
+        ]
+      },
+      {
+        "unitId": "text_6_p3_unit_3",
+        "unitTarget": "des raisons",
+        "translations": [
+          "reasons",
+          "ways",
+          "things",
+          "causes"
+        ]
+      },
+      {
+        "unitId": "text_6_p3_unit_4",
+        "unitTarget": "d'être",
+        "translations": [
+          "to be",
+          "for being",
+          "to stay",
+          "to remain"
+        ]
+      },
+      {
+        "unitId": "text_6_p3_unit_5",
+        "unitTarget": "optimiste",
+        "translations": [
+          "optimistic",
+          "positive",
+          "hopeful",
+          "upbeat"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_6_p4",
+    "phraseTarget": "nous essayerons de profiter quand même!",
+      "targetDistractors": [
+    "nous essayerons de partir quand même!",
+    "nous réussirons à profiter quand même!",
+    "nous essayerons de profiter autrement!"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_6_p4_unit_1",
+        "unitTarget": "nous",
+        "translations": [
+          "we",
+          "we'll",
+          "all of us",
+          "everyone"
+        ]
+      },
+      {
+        "unitId": "text_6_p4_unit_2", 
+        "unitTarget": "essayerons",
+        "translations": [
+          "will try",
+          "are going to try",
+          "will attempt",
+          "plan to"
+        ]
+      },
+      {
+        "unitId": "text_6_p4_unit_3",
+        "unitTarget": "de",
+        "translations": [
+          "to",
+          "and",
+          "our best to",
+          "hard to"
+        ]
+      },
+      {
+        "unitId": "text_6_p4_unit_4",
+        "unitTarget": "profiter",
+        "translations": [
+          "enjoy ourselves",
+          "have fun",
+          "make the most of it",
+          "party"
+        ]
+      },
+      {
+        "unitId": "text_6_p4_unit_5",
+        "unitTarget": "quand même",
+        "translations": [
+          "anyway",
+          "regardless",
+          "no matter what",
+          "either way"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_7_p1",
+    "phraseTarget": "Fille 1: J'ai envie de danser même sous la pluie!",
+      "targetDistractors": [
+    "Fille 1: J'ai envie de chanter même sous la pluie!",
+    "Fille 1: J'ai peur de danser même sous la pluie!",
+    "Fille 1: J'ai envie de danser même sans la pluie!"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_7_p1_unit_1",
+        "unitTarget": "Fille 1:",
+        "translations": [
+          "Girl 1:",
+          "Sophie:",
+          "First girl:",
+          "The enthusiastic girl:"
+        ]
+      },
+      {
+        "unitId": "text_7_p1_unit_2", 
+        "unitTarget": "J'ai envie",
+        "translations": [
+          "I want",
+          "I feel like",
+          "I'm in the mood",
+          "I'm dying"
+        ]
+      },
+      {
+        "unitId": "text_7_p1_unit_3",
+        "unitTarget": "de",
+        "translations": [
+          "to",
+          "for",
+          "of",
+          "for some"
+        ]
+      },
+      {
+        "unitId": "text_7_p1_unit_4",
+        "unitTarget": "danser",
+        "translations": [
+          "dancing",
+          "to dance",
+          "a dance",
+          "moving to the music"
+        ]
+      },
+      {
+        "unitId": "text_7_p1_unit_5",
+        "unitTarget": "même",
+        "translations": [
+          "even",
+          "right",
+          "still",
+          "regardless"
+        ]
+      },
+      {
+        "unitId": "text_7_p1_unit_6",
+        "unitTarget": "sous",
+        "translations": [
+          "in",
+          "under",
+          "through",
+          "during"
+        ]
+      },
+      {
+        "unitId": "text_7_p1_unit_7",
+        "unitTarget": "la pluie",
+        "translations": [
+          "the rain",
+          "rain",
+          "a downpour",
+          "the storm"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_7_p2",
+    "phraseTarget": "Aucune tourmente, ou rien d'autre, ne pourrait nous arrêter.",
+      "targetDistractors": [
+    "Aucune tourmente, ou rien d'autre, ne pourrait nous aider.",
+    "Une seule tourmente, ou rien d'autre, ne pourrait nous arrêter.",
+    "Aucune tourmente, ou tout le reste, ne pourrait nous arrêter."
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_7_p2_unit_1",
+        "unitTarget": "Aucune tourmente",
+        "translations": [
+          "No storm",
+          "No tempest",
+          "No bad weather",
+          "No hurricane"
+        ]
+      },
+      {
+        "unitId": "text_7_p2_unit_2", 
+        "unitTarget": "ou",
+        "translations": [
+          "or",
+          "nor",
+          "and not",
+          "or even"
+        ]
+      },
+      {
+        "unitId": "text_7_p2_unit_3",
+        "unitTarget": "rien d'autre",
+        "translations": [
+          "anything else",
+          "nothing else",
+          "anything",
+          "whatever else"
+        ]
+      },
+      {
+        "unitId": "text_7_p2_unit_4",
+        "unitTarget": "ne pourrait",
+        "translations": [
+          "could",
+          "would be able to",
+          "can",
+          "has the power to"
+        ]
+      },
+      {
+        "unitId": "text_7_p2_unit_5",
+        "unitTarget": "nous",
+        "translations": [
+          "us",
+          "our group",
+          "our party",
+          "this crowd"
+        ]
+      },
+      {
+        "unitId": "text_7_p2_unit_6",
+        "unitTarget": "arrêter",
+        "translations": [
+          "stop",
+          "halt",
+          "prevent",
+          "keep from partying"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_7_p3",
+    "phraseTarget": "Claire: Avouez que vous êtes courageuses! Passez une excellente soirée.",
+      "targetDistractors": [
+    "Claire: Avouez que vous êtes peureuses! Passez une excellente soirée.",
+    "Claire: Avouez que vous êtes courageuses! Passez une terrible soirée.",
+    "Claire: Niez que vous êtes courageuses! Passez une excellente soirée."
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_7_p3_unit_1",
+        "unitTarget": "Claire:",
+        "translations": [
+          "Claire:",
+          "Claire responds:",
+          "The reporter:",
+          "Claire concludes:"
+        ]
+      },
+      {
+        "unitId": "text_7_p3_unit_2", 
+        "unitTarget": "Avouez",
+        "translations": [
+          "You have to admit",
+          "I must say",
+          "Admit it",
+          "You've got to agree"
+        ]
+      },
+      {
+        "unitId": "text_7_p3_unit_3",
+        "unitTarget": "que",
+        "translations": [
+          "that",
+          "you're",
+          "how",
+          "what"
+        ]
+      },
+      {
+        "unitId": "text_7_p3_unit_4",
+        "unitTarget": "vous êtes",
+        "translations": [
+          "you are",
+          "you're",
+          "you two are",
+          "you girls are"
+        ]
+      },
+      {
+        "unitId": "text_7_p3_unit_5",
+        "unitTarget": "courageuses",
+        "translations": [
+          "brave",
+          "courageous",
+          "fearless",
+          "bold"
+        ]
+      },
+      {
+        "unitId": "text_7_p3_unit_6",
+        "unitTarget": "Passez",
+        "translations": [
+          "Have",
+          "Enjoy",
+          "Spend",
+          "Make it"
+        ]
+      },
+      {
+        "unitId": "text_7_p3_unit_7",
+        "unitTarget": "une excellente soirée",
+        "translations": [
+          "a great evening",
+          "an excellent night",
+          "a wonderful time",
+          "a fantastic evening"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_8_p1",
+    "phraseTarget": "\"Une excellente soirée!\" crie le petit frère en souriant.",
+      "targetDistractors": [
+    "\"Une excellente soirée!\" crie le petit frère en pleurant.",
+    "\"Une terrible soirée!\" crie le petit frère en souriant.",
+    "\"Une excellente matinée!\" crie le petit frère en souriant."
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_8_p1_unit_1",
+        "unitTarget": "Une excellente soirée",
+        "translations": [
+          "A great evening",
+          "An excellent night",
+          "A wonderful time",
+          "What a fantastic evening"
+        ]
+      },
+      {
+        "unitId": "text_8_p1_unit_2", 
+        "unitTarget": "crie",
+        "translations": [
+          "shouts",
+          "yells",
+          "calls out",
+          "exclaims"
+        ]
+      },
+      {
+        "unitId": "text_8_p1_unit_3",
+        "unitTarget": "le petit frère",
+        "translations": [
+          "the little brother",
+          "her younger brother",
+          "the kid brother",
+          "the little boy"
+        ]
+      },
+      {
+        "unitId": "text_8_p1_unit_4",
+        "unitTarget": "en",
+        "translations": [
+          "while",
+          "as he's",
+          "with a",
+          "all"
+        ]
+      },
+      {
+        "unitId": "text_8_p1_unit_5",
+        "unitTarget": "souriant",
+        "translations": [
+          "smiling",
+          "grinning",
+          "beaming",
+          "with a smile"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_8_p2",
+    "phraseTarget": "Un oiseau chante tout bas dans sa cage au fond du salon,",
+      "targetDistractors": [
+    "Un oiseau crie tout fort dans sa cage au fond du salon,",
+    "Un chat chante tout bas dans sa cage au fond du salon,",
+    "Un oiseau chante tout bas dans sa cage au centre du salon,"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_8_p2_unit_1",
+        "unitTarget": "Un oiseau",
+        "translations": [
+          "A bird",
+          "The bird",
+          "A small bird",
+          "The pet bird"
+        ]
+      },
+      {
+        "unitId": "text_8_p2_unit_2", 
+        "unitTarget": "chante",
+        "translations": [
+          "sings",
+          "is singing",
+          "chirps",
+          "tweets"
+        ]
+      },
+      {
+        "unitId": "text_8_p2_unit_3",
+        "unitTarget": "tout bas",
+        "translations": [
+          "softly",
+          "quietly",
+          "in a low voice",
+          "very quietly"
+        ]
+      },
+      {
+        "unitId": "text_8_p2_unit_4",
+        "unitTarget": "dans",
+        "translations": [
+          "in",
+          "inside",
+          "from",
+          "within"
+        ]
+      },
+      {
+        "unitId": "text_8_p2_unit_5",
+        "unitTarget": "sa cage",
+        "translations": [
+          "its cage",
+          "the cage",
+          "his cage",
+          "the birdcage"
+        ]
+      },
+      {
+        "unitId": "text_8_p2_unit_6",
+        "unitTarget": "au fond",
+        "translations": [
+          "at the back",
+          "in the corner",
+          "at the far end",
+          "in the rear"
+        ]
+      },
+      {
+        "unitId": "text_8_p2_unit_7",
+        "unitTarget": "du salon",
+        "translations": [
+          "of the living room",
+          "of the lounge",
+          "of the room",
+          "of the family room"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_8_p3",
+    "phraseTarget": "pendant que Marie avec des larmes aux yeux parle: \"C'est nul!",
+      "targetDistractors": [
+    "pendant que Marie avec un sourire aux lèvres parle: \"C'est nul!",
+    "pendant que Pierre avec des larmes aux yeux parle: \"C'est nul!",
+    "pendant que Marie avec des larmes aux yeux chante: \"C'est nul!"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_8_p3_unit_1",
+        "unitTarget": "pendant que",
+        "translations": [
+          "while",
+          "as",
+          "at the same time",
+          "meanwhile"
+        ]
+      },
+      {
+        "unitId": "text_8_p3_unit_2", 
+        "unitTarget": "Marie",
+        "translations": [
+          "Marie",
+          "the girl",
+          "the teenager",
+          "his sister"
+        ]
+      },
+      {
+        "unitId": "text_8_p3_unit_3",
+        "unitTarget": "avec",
+        "translations": [
+          "with",
+          "having",
+          "through",
+          "amid"
+        ]
+      },
+      {
+        "unitId": "text_8_p3_unit_4",
+        "unitTarget": "des larmes",
+        "translations": [
+          "tears",
+          "teardrops",
+          "crying",
+          "weeping"
+        ]
+      },
+      {
+        "unitId": "text_8_p3_unit_5",
+        "unitTarget": "aux yeux",
+        "translations": [
+          "in her eyes",
+          "streaming down",
+          "welling up",
+          "flowing"
+        ]
+      },
+      {
+        "unitId": "text_8_p3_unit_6",
+        "unitTarget": "parle",
+        "translations": [
+          "speaks",
+          "says",
+          "cries out",
+          "complains"
+        ]
+      },
+      {
+        "unitId": "text_8_p3_unit_7",
+        "unitTarget": "C'est nul",
+        "translations": [
+          "This sucks",
+          "It's awful",
+          "This is terrible",
+          "It's not fair"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_9_p1",
+    "phraseTarget": "Tous mes amis sont là, mon cœur est brisé!\"",
+      "targetDistractors": [
+    "Tous mes amis sont ici, mon cœur est brisé!\"",
+    "Tous mes amis sont là, mon cœur est joyeux!\"",
+    "Quelques amis sont là, mon cœur est brisé!\""
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_9_p1_unit_1",
+        "unitTarget": "Tous",
+        "translations": [
+          "All",
+          "Every one of",
+          "Each of",
+          "All of"
+        ]
+      },
+      {
+        "unitId": "text_9_p1_unit_2", 
+        "unitTarget": "mes amis",
+        "translations": [
+          "my friends",
+          "my buddies",
+          "my group",
+          "my crew"
+        ]
+      },
+      {
+        "unitId": "text_9_p1_unit_3",
+        "unitTarget": "sont",
+        "translations": [
+          "are",
+          "will be",
+          "are going to be",
+          "are all"
+        ]
+      },
+      {
+        "unitId": "text_9_p1_unit_4",
+        "unitTarget": "là",
+        "translations": [
+          "there"
+        ]
+      },
+      {
+        "unitId": "text_9_p1_unit_5",
+        "unitTarget": "mon cœur",
+        "translations": [
+          "my heart",
+          "I'm heartbroken",
+          "my soul",
+          "my love"
+        ]
+      },
+      {
+        "unitId": "text_9_p1_unit_6",
+        "unitTarget": "est",
+        "translations": [
+          "is",
+          "feels",
+          "has been"
+        ]
+      },
+      {
+        "unitId": "text_9_p1_unit_7",
+        "unitTarget": "brisé",
+        "translations": [
+          "broken",
+          "shattered",
+          "crushed",
+          "destroyed"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_9_p2",
+    "phraseTarget": "Son père avec tendresse:",
+      "targetDistractors": [
+    "Son père avec colère:",
+    "Sa mère avec tendresse:",
+    "Son père avec tristesse:"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_9_p2_unit_1",
+        "unitTarget": "Son père",
+        "translations": [
+          "Her father",
+          "Her dad",
+          "The father",
+          "Dad"
+        ]
+      },
+      {
+        "unitId": "text_9_p2_unit_2", 
+        "unitTarget": "avec",
+        "translations": [
+          "with",
+          "in a tone of",
+          "showing",
+          "speaking with"
+        ]
+      },
+      {
+        "unitId": "text_9_p2_unit_3",
+        "unitTarget": "tendresse",
+        "translations": [
+          "tenderness",
+          "gentleness",
+          "love",
+          "care"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_9_p3",
+    "phraseTarget": "\"Calme-toi chérie, l'année prochaine...\"",
+      "targetDistractors": [
+    "\"Énerve-toi chérie, l'année prochaine...\"",
+    "\"Calme-toi chérie, l'année dernière...\"",
+    "\"Calme-toi mon fils, l'année prochaine...\""
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_9_p3_unit_1",
+        "unitTarget": "Calme-toi",
+        "translations": [
+          "Calm down",
+          "Take it easy",
+          "Relax",
+          "Don't worry"
+        ]
+      },
+      {
+        "unitId": "text_9_p3_unit_2", 
+        "unitTarget": "chérie",
+        "translations": [
+          "sweetheart",
+          "honey",
+          "dear",
+          "darling"
+        ]
+      },
+      {
+        "unitId": "text_9_p3_unit_3",
+        "unitTarget": "l'année prochaine",
+        "translations": [
+          "next year",
+          "the following year",
+          "the coming year"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_9_p4",
+    "phraseTarget": "Elle ne pouvait plus retenir son désespoir.",
+      "targetDistractors": [
+    "Elle ne pouvait plus retenir sa joie.",
+    "Elle pouvait encore retenir son désespoir.",
+    "Elle ne pouvait plus exprimer son désespoir."
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_9_p4_unit_1",
+        "unitTarget": "Elle",
+        "translations": [
+          "She",
+          "Marie",
+          "The girl",
+          "The teenager"
+        ]
+      },
+      {
+        "unitId": "text_9_p4_unit_2", 
+        "unitTarget": "ne pouvait plus",
+        "translations": [
+          "could no longer",
+          "couldn't anymore",
+          "was unable to",
+          "could not"
+        ]
+      },
+      {
+        "unitId": "text_9_p4_unit_3",
+        "unitTarget": "retenir",
+        "translations": [
+          "hold back",
+          "contain",
+          "control",
+          "suppress"
+        ]
+      },
+      {
+        "unitId": "text_9_p4_unit_4",
+        "unitTarget": "son désespoir",
+        "translations": [
+          "her despair",
+          "her anguish",
+          "her devastation",
+          "her emotions"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_10_p1",
+    "phraseTarget": "Ses pleurs devenaient de plus en plus forts,",
+      "targetDistractors": [
+    "Ses pleurs devenaient de plus en plus faibles,",
+    "Ses rires devenaient de plus en plus forts,",
+    "Ses pleurs restaient de plus en plus forts,"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_10_p1_unit_1",
+        "unitTarget": "Ses pleurs",
+        "translations": [
+          "Her crying",
+          "Her sobs",
+          "Her tears",
+          "Her weeping"
+        ]
+      },
+      {
+        "unitId": "text_10_p1_unit_2", 
+        "unitTarget": "devenaient",
+        "translations": [
+          "were getting",
+          "became",
+          "grew",
+          "turned"
+        ]
+      },
+      {
+        "unitId": "text_10_p1_unit_3",
+        "unitTarget": "de plus en plus",
+        "translations": [
+          "more and more",
+          "increasingly",
+          "progressively",
+          "ever more"
+        ]
+      },
+      {
+        "unitId": "text_10_p1_unit_4",
+        "unitTarget": "forts",
+        "translations": [
+          "loud",
+          "intense",
+          "strong",
+          "pronounced"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_10_p2",
+    "phraseTarget": "et dehors, les premières gouttes commençaient à tomber.",
+      "targetDistractors": [
+    "et dedans, les premières gouttes commençaient à tomber.",
+    "et dehors, les dernières gouttes commençaient à tomber.",
+    "et dehors, les premières gouttes arrêtaient de tomber."
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_10_p2_unit_1",
+        "unitTarget": "et",
+        "translations": [
+          "and",
+          "meanwhile",
+          "while",
+          "as"
+        ]
+      },
+      {
+        "unitId": "text_10_p2_unit_2", 
+        "unitTarget": "dehors",
+        "translations": [
+          "outside",
+          "outdoors",
+          "beyond the house",
+          "in the street"
+        ]
+      },
+      {
+        "unitId": "text_10_p2_unit_3",
+        "unitTarget": "les premières gouttes",
+        "translations": [
+          "the first drops",
+          "the first raindrops",
+          "the initial droplets",
+          "the beginning of rain"
+        ]
+      },
+      {
+        "unitId": "text_10_p2_unit_4",
+        "unitTarget": "commençaient",
+        "translations": [
+          "were starting",
+          "began",
+          "started",
+          "were beginning"
+        ]
+      },
+      {
+        "unitId": "text_10_p2_unit_5",
+        "unitTarget": "à",
+        "translations": [
+          "to",
+          "starting to",
+          "beginning to",
+          "now"
+        ]
+      },
+      {
+        "unitId": "text_10_p2_unit_6",
+        "unitTarget": "tomber",
+        "translations": [
+          "fall",
+          "drop",
+          "come down",
+          "descend"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_10_p3",
+    "phraseTarget": "\"Maintenant, il va pleuvoir, c'est sûr.\"",
+      "targetDistractors": [
+    "\"Maintenant, il va neiger, c'est sûr.\"",
+    "\"Maintenant, il va grêler, c'est sûr.\"",
+    "\"Maintenant, il va pleuvoir, c'est faux.\""
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_10_p3_unit_1",
+        "unitTarget": "Maintenant",
+        "translations": [
+          "Now",
+          "At this point",
+          "Right now",
+          "From now on"
+        ]
+      },
+      {
+        "unitId": "text_10_p3_unit_2", 
+        "unitTarget": "il va",
+        "translations": [
+          "it's going to",
+          "it will",
+          "we're going to get",
+          "it's about to"
+        ]
+      },
+      {
+        "unitId": "text_10_p3_unit_3",
+        "unitTarget": "pleuvoir",
+        "translations": [
+          "rain",
+          "pour",
+          "start raining",
+          "be raining"
+        ]
+      },
+      {
+        "unitId": "text_10_p3_unit_4",
+        "unitTarget": "c'est",
+        "translations": [
+          "that's",
+          "it's",
+          "I'm",
+          "for"
+        ]
+      },
+      {
+        "unitId": "text_10_p3_unit_5",
+        "unitTarget": "sûr",
+        "translations": [
+          "sure",
+          "certain",
+          "definite",
+          "guaranteed"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_10_p4",
+    "phraseTarget": "Soudain, la maison se remplit de lumière",
+      "targetDistractors": [
+    "Soudain, la maison se vide de lumière",
+    "Lentement, la maison se remplit de lumière",
+    "Soudain, la rue se remplit de lumière"
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_10_p4_unit_1",
+        "unitTarget": "Soudain",
+        "translations": [
+          "Suddenly",
+          "All of a sudden",
+          "Just then",
+          "At that moment"
+        ]
+      },
+      {
+        "unitId": "text_10_p4_unit_2", 
+        "unitTarget": "la maison",
+        "translations": [
+          "the house",
+          "the home",
+          "the room",
+          "their house"
+        ]
+      },
+      {
+        "unitId": "text_10_p4_unit_3",
+        "unitTarget": "se remplit",
+        "translations": [
+          "fills up",
+          "is filled",
+          "becomes flooded",
+          "lights up"
+        ]
+      },
+      {
+        "unitId": "text_10_p4_unit_4",
+        "unitTarget": "de",
+        "translations": [
+          "with",
+          "of",
+          "in",
+          "by"
+        ]
+      },
+      {
+        "unitId": "text_10_p4_unit_5",
+        "unitTarget": "lumière",
+        "translations": [
+          "light",
+          "brightness",
+          "illumination",
+          "a bright glow"
+        ]
+      }
+    ]
+  },
+  {
+    "phraseId": "text_10_p5",
+    "phraseTarget": "quand un éclair illumine la salle.",
+      "targetDistractors": [
+    "quand un éclair obscurcit la salle.",
+    "quand une lampe illumine la salle.",
+    "quand un éclair illumine la cuisine."
+  ],
+    "semanticUnits": [
+      {
+        "unitId": "text_10_p5_unit_1",
+        "unitTarget": "quand",
+        "translations": [
+          "when",
+          "as",
+          "while",
+          "the moment"
+        ]
+      },
+      {
+        "unitId": "text_10_p5_unit_2", 
+        "unitTarget": "un éclair",
+        "translations": [
+          "a lightning bolt",
+          "lightning",
+          "a flash of lightning",
+          "the lightning"
+        ]
+      },
+      {
+        "unitId": "text_10_p5_unit_3",
+        "unitTarget": "illumine",
+        "translations": [
+          "illuminates",
+          "lights up",
+          "brightens",
+          "flashes across"
+        ]
+      },
+      {
+        "unitId": "text_10_p5_unit_4",
+        "unitTarget": "la salle",
+        "translations": [
+          "the room",
+          "the living room",
+          "the space",
+          "the house"
+        ]
+      }
+    ]
+  }
+],
+  "solutions": [
+    {
+      "phraseId": "text_1_p1",
+      "primaryTranslation": "An amateur video shows people running",
+      "distractors": [
+        "An amateur video displays people hiding",
+        "An amateur video reveals people jumping",
+        "An amateur video displays people swimming"
+      ],
+      "alternatives": [
+        "A home video captures people running",
+        "An amateur recording shows folks rushing"
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "primaryTranslation": "while a lion crosses the city streets,",
+        "distractors": [
+    "while a lion skates the city streets,",
+    "while a lion avoids the city streets,",
+    "while a lion crosses the country roads,"
+  ],
+      "alternatives": [
+        "as a lion walks through the town streets,",
+        "when a lion goes through the urban roads,"
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "primaryTranslation": "and ends up taking a bath in a fountain.",
+        "distractors": [
+    "and ends up taking a nap in a fountain.",
+    "and ends up taking a bath in a pool.",
+    "and starts signing in a tub."
+  ],
+      "alternatives": [
+        "and finally has a dip in a fountain.",
+        "and eventually enjoys a soak in a water feature."
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "primaryTranslation": "Michel: The animal escaped from the local zoo - but honestly,",
+        "distractors": [
+    "Michel: The animal returned to the local zoo - but honestly,",
+    "Michel: The animal hid in the local zoo - but honestly,",
+    "Michel: The animal went to the local zoo - but honestly,"
+  ],
+      "alternatives": [
+        "Michel: The creature broke free from the city zoo - but frankly,",
+        "Michel: The beast got away from the municipal zoo - but really,"
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "primaryTranslation": "what does climate change have in store for us now?",
+        "distractors": [
+    "what does climate change have in store for them now?",
+    "what does weather change have in store for us now?",
+    "what does climate change have in store for us later?"
+  ],
+      "alternatives": [
+        "what will global warming bring us next?",
+        "what more does this climate change await us?"
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "primaryTranslation": "Our meteorologist Claire is reporting today from the Carhaix festival...",
+        "distractors": [
+    "Our meteorologist Claire is reporting tomorrow from the Carhaix festival...",
+    "Our meteorologist Claire is reporting today from the Paris festival...",
+    "Our journalist Claire is reporting today from the Carhaix festival..."
+  ],
+      "alternatives": [
+        "Weather presenter Claire joins us today from the festival in Carhaix...",
+        "Our weather reporter Claire is with us today live from the Carhaix event..."
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "primaryTranslation": "Hi Michel, the atmosphere here is fantastic,",
+        "distractors": [
+    "Hi Michel, the weather here is terrible,",
+    "Hi Michel, the weather here is fantastic,",
+    "Hi Michel, the sound here is fantastic,"
+  ],
+      "alternatives": [
+        "Hello Michel, the vibe here is amazing,",
+        "Hey Michel, the energy over here is incredible,"
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "primaryTranslation": "people are dancing to the electronic beats!",
+        "distractors": [
+    "people are singing to the electronic beats!",
+    "people are moving to the beat!",
+    "elders are dancing to the electronic beats!"
+  ],
+      "alternatives": [
+        "the crowd is moving to the rhythm of the music!",
+        "everyone is grooving to the electronic sound!"
+      ]
+    },
+    {
+      "phraseId": "text_3_p3",
+      "primaryTranslation": "But look at these clouds building up above us -",
+        "distractors": [
+    "But look at these birds chirping above us -",
+    "But look at these clouds vanishing before us -",
+    "But look at these bright clouds coming onto us -"
+  ],
+      "alternatives": [
+        "However, check out these storm clouds forming overhead -",
+        "Though observe these clouds growing over the festival -"
+      ]
+    },
+    {
+      "phraseId": "text_3_p4",
+      "primaryTranslation": "the storm is coming tonight over Brittany.",
+        "distractors": [
+    "the storm is leaving tonight towards Brittany.",
+    "the storm is coming over Brittany.",
+    "the storm is coming tonight past Normandy."
+  ],
+      "alternatives": [
+        "bad weather will hit Brittany this evening.",
+        "the thunderstorm arrives tonight across the region."
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "primaryTranslation": "It's still nice weather now, the sun is shining,",
+        "distractors": [
+    "It's still bad weather now, the sun is shining,",
+    "It's still nice weather now, the moon is shining,",
+    "It's no longer nice weather now, the sun is shining,"
+  ],
+      "alternatives": [
+        "The weather is still beautiful right now, sunshine is out,",
+        "We still have pleasant conditions currently, the sun's bright,"
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "primaryTranslation": "but lightning and rain are forecast around midnight.",
+        "distractors": [
+    "but lightning and snow are forecast around midnight.",
+    "but thunder and rain are forecast around midnight.",
+    "but lightning and rain are forecast around noon."
+  ],
+      "alternatives": [
+        "however thunder storms are expected near midnight.",
+        "though electrical storms and precipitation are predicted towards midnight."
+      ]
+    },
+    {
+      "phraseId": "text_4_p3",
+      "primaryTranslation": "The question isn't whether it will rain,",
+        "distractors": [
+    "The question is whether it will rain,",
+    "The question isn't whether it will snow,",
+    "The answer isn't whether it will rain,"
+  ],
+      "alternatives": [
+        "The issue is no longer if it's going to pour,",
+        "What matters isn't whether we'll get precipitation,"
+      ]
+    },
+    {
+      "phraseId": "text_4_p4",
+      "primaryTranslation": "it's when it will start.",
+        "distractors": [
+    "it's where it will start.",
+    "it's when it will stop.",
+    "it's how it will start."
+  ],
+      "alternatives": [
+        "rather when the rain begins.",
+        "but exactly when it's going to begin."
+      ]
+    },
+    {
+      "phraseId": "text_4_p5",
+      "primaryTranslation": "The wind will blow very hard during this storm.",
+        "distractors": [
+    "The wind will blow very softly during this storm.",
+    "The rain will blow very hard during this storm.",
+    "The wind will blow very hard after this storm."
+  ],
+      "alternatives": [
+        "Winds will be extremely strong throughout these conditions.",
+        "We'll have very strong gusts with this weather system."
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "primaryTranslation": "Claire: Excuse me, how do you find this electronic symphony?",
+        "distractors": [
+    "Claire: Excuse me, where do you find this electronic symphony?",
+    "Claire: Excuse me, how do you dance to this electronic symphony?",
+    "Claire: Excuse me, how do you listen to this electronic symphony?"
+  ],
+      "alternatives": [
+        "Claire: Sorry to interrupt, what do you think of this electronic music?",
+        "Claire: Pardon me, how are you enjoying this digital orchestra?"
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "primaryTranslation": "Girl 1: Well, I'm Sophie, and I absolutely love the party!",
+        "distractors": [
+    "Girl 1: Well, I'm Sophie, and I absolutely hate the party!",
+    "Girl 1: Well, I'm Sophie, and I adore any the party!",
+    "Girl 1: Well, I'm Sophie, and I'm in love with the music!"
+  ],
+      "alternatives": [
+        "Girl 1: Me, I'm called Sophie, and I adore this festival!",
+        "Girl 1: As for me, my name is Sophie, and I'm loving this celebration!"
+      ]
+    },
+    {
+      "phraseId": "text_5_p3",
+      "primaryTranslation": "Just like these wonderful melodies!",
+        "distractors": [
+    "Just like these terrible melodies!",
+    "Just like these wonderful dances!",
+    "More than these wonderful melodies!"
+  ],
+      "alternatives": [
+        "As much as these amazing tunes!",
+        "Along with this incredible music!"
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "primaryTranslation": "Claire: Are you worried the concerts might be cancelled?",
+        "distractors": [
+    "Claire: Are you hoping the concerts might be postponed?",
+    "Claire: Are you worried the concerts might be postponed?",
+    "Claire: Are you hoping the concerts might be called off?"
+  ],
+      "alternatives": [
+        "Claire: Do you fear the shows could be called off?",
+        "Claire: Are you concerned the performances may be shut down?"
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "primaryTranslation": "Girl 2: If you worry, you miss out on the fun.",
+        "distractors": [
+        "Girl 2: If you worry, you have more fun.",
+        "Girl 2: If you relax, you miss out on the fun.",
+        "Girl 2: If you worry, you get angry."
+    ],
+      "alternatives": [
+        "Girl 2: When people stress out, life gets boring.",
+        "Girl 2: If we get anxious, we're no fun."
+      ]
+    },
+    {
+      "phraseId": "text_6_p3",
+      "primaryTranslation": "There are always reasons to stay positive -",
+        "distractors": [
+    "There are always ways to stay positive -",
+    "There are always ways to stay negative -",
+    "There are sometimes reasons to stay positive -"
+  ],
+      "alternatives": [
+        "You can always find ways to be optimistic -",
+        "There are constantly reasons to remain hopeful -"
+      ]
+    },
+    {
+      "phraseId": "text_6_p4",
+      "primaryTranslation": "we'll try to enjoy ourselves anyway!",
+        "distractors": [
+    "we'll try to leave anyway!",
+    "we'll manage to enjoy ourselves anyway!",
+    "we plan on losing ourselves!"
+  ],
+      "alternatives": [
+        "we're going to have fun regardless!",
+        "we plan to party no matter what!"
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "primaryTranslation": "Girl 1: I want to dance even in the rain!",
+        "distractors": [
+    "Girl 1: I want to sing in the rain!",
+    "Girl 1: I'm dying to dance even under hail!",
+    "Girl 1: I want to stand still under the rain!"
+  ],
+      "alternatives": [
+        "Girl 1: I feel like dancing right through the storm!",
+        "Girl 1: I'm in the mood for dancing regardless of the weather!"
+      ]
+    },
+    {
+      "phraseId": "text_7_p2",
+      "primaryTranslation": "No storm, or anything else, could stop us.",
+        "distractors": [
+    "No storm, or other, will beat us.",
+    "No storm, or nothing else, will stop us.",
+    "No storm, or whatever, will stop us."
+  ],
+      "alternatives": [
+        "No tempest, nor whatever else, would be able to halt our party.",
+        "No bad weather, or any other thing, has the power to prevent us."
+      ]
+    },
+    {
+      "phraseId": "text_7_p3",
+      "primaryTranslation": "Claire: You have to admit you're brave! Have a great evening.",
+        "distractors": [
+    "Claire: You have to admit you're scared! Have a fine evening.",
+    "Claire: I must say you're brave! Have a fine evening.",
+    "Claire: You have to be bold! Have a scary night."
+  ],
+      "alternatives": [
+        "Claire: I must say you girls are fearless! Enjoy a wonderful night.",
+        "Claire: You've got to agree you're courageous! Spend a fantastic evening."
+      ]
+    },
+    {
+      "phraseId": "text_8_p1",
+      "primaryTranslation": "\"A great evening!\" shouts the little brother while smiling.",
+        "distractors": [
+    "\"A great evening!\" sayss the little brother while nudging.",
+    "\"A wonderful time!\" shouts the little brother while grudging.",
+    "\"A great evening!\" shouts the little brother while yawning ."
+  ],
+      "alternatives": [
+        "\"What a fantastic night!\" yells the kid brother with a grin.",
+        "\"An excellent evening!\" calls out the younger brother beaming."
+      ]
+    },
+    {
+      "phraseId": "text_8_p2",
+      "primaryTranslation": "A bird sings softly in its cage at the back of the living room,",
+        "distractors": [
+    "A bird sings in its cage outside the living room,",
+    "A bird sings softly outside its cage at the back of the living room,",
+    "A bird sings softly outside its cage at the front of the living room,"
+  ],
+      "alternatives": [
+        "The pet bird chirps quietly from the birdcage in the corner of the lounge,",
+        "A small bird tweets very quietly inside its cage at the far end of the family room,"
+      ]
+    },
+    {
+      "phraseId": "text_8_p3",
+      "primaryTranslation": "while Marie with tears in her eyes says: \"This sucks!",
+        "distractors": [
+    "while Marie sobs and whispers: \"This sucks!",
+    "while Marie thinks to herself in tears: \"This sucks!",
+    "while Marie talks to herself in bitter tears: \"This sucks!"
+  ],
+      "alternatives": [
+        "as Marie cries out with tears in her eyes: \"It's awful!",
+        "meanwhile the teenager complains amid her weeping: \"This is terrible!"
+      ]
+    },
+    {
+      "phraseId": "text_9_p1",
+      "primaryTranslation": "All my friends are there, my heart is broken!\"",
+        "distractors": [
+    "All my friends are here, my heart is broken!\"",
+    "All my buddies are there, they are heartbroken  !\"",
+    "Some friends are there, my heart is shattered!\""
+  ],
+      "alternatives": [
+        "Every one of my buddies is at the festival, I'm heartbroken!\"",
+        "My entire group is enjoying themselves there, my soul is crushed!\""
+      ]
+    },
+    {
+      "phraseId": "text_9_p2",
+      "primaryTranslation": "Her father, with tenderness:",
+        "distractors": [
+    "Her old man whispers :",
+    "Her dad, with a smirk:",
+    "Her father, whispers:"
+  ],
+      "alternatives": [
+        "Dad, speaking with gentleness:",
+        "The father, showing love:"
+      ]
+    },
+    {
+      "phraseId": "text_9_p3",
+      "primaryTranslation": "\"Calm down sweetheart, next year...\"",
+        "distractors": [
+    "\"Get on with it sweetheart, this year ...\"",
+    "\"Take it easy cherry, some day ...\"",
+    "\"Calm down cherry, one day...\""
+  ],
+      "alternatives": [
+        "\"Take it easy honey, the following year...\"",
+        "\"Don't worry darling, when it comes around again...\""
+      ]
+    },
+    {
+      "phraseId": "text_9_p4",
+      "primaryTranslation": "She could no longer hold back her despair.",
+        "distractors": [
+            "She could hold her devastation some more.",
+            "She could still hold back her emotions.",
+            "She was not able to hide her anguish."
+        ]
+    },
+    {
+      "phraseId": "text_10_p1",
+      "primaryTranslation": "Her crying became more and more intense,",
+        "distractors": [
+    "Her sobs became more and more quiet,",
+    "Her laughing grew more and more intense,",
+    "Her crying turned more and more salty,"
+  ],
+      "alternatives": [
+        "Her sobs grew increasingly loud,",
+        "Her weeping turned progressively stronger,"
+      ]
+    },
+    {
+      "phraseId": "text_10_p2",
+      "primaryTranslation": "and outside, the first raindrops were starting to fall.",
+        "distractors": [
+    "and inside, some raindrops were starting to fall.",
+    "and out there, some raindrops were starting to fall.",
+    "and outside, the raindrops stopped to fall."
+  ],
+      "alternatives": [
+        "while outdoors, the initial droplets began to come down.",
+        "as beyond the house, the beginning of rain started to descend."
+      ]
+    },
+    {
+      "phraseId": "text_10_p3",
+      "primaryTranslation": "\"Now it's going to rain, that's for sure.\"",
+        "distractors": [
+    "\"Now it's going to hail, for sure.\"",
+    "\"Now the rain will end, that's for sure.\"",
+    "\"Now it may rain, that's it.\""
+  ],
+      "alternatives": [
+        "\"At this point we're going to get rain, it's certain.\"",
+        "\"Right now it's about to pour, that's definite.\""
+      ]
+    },
+    {
+      "phraseId": "text_10_p4",
+      "primaryTranslation": "Suddenly, the house fills up with light",
+        "distractors": [
+    "Suddenly, the house is in fire",
+    "Suddenly, the house goes into darkness",
+    "Suddenly, the room goes into darkness"
+  ],
+      "alternatives": [
+        "All of a sudden, the room becomes flooded with brightness",
+        "Just then, their home lights up with illumination"
+      ]
+    },
+    {
+      "phraseId": "text_10_p5",
+      "primaryTranslation": "when lightning illuminates the room.",
+        "distractors": [
+    "when lightning darkens the room.",
+    "when a thunder fills the room.",
+    "when a. thunder breaks the silence in the room."
+  ],
+      "alternatives": [
+        "as a flash of lightning lights up the space.",
+        "while a lightning bolt brightens the living room."
+      ]
+    }
+  ]
+  } 

@@ -1,0 +1,3596 @@
+{
+  "projectMetadata": {
+    "title": "Le Mystère des Livres volés. Premiere partie",
+    "artist": "Zaho de Sagazan",
+    "songTitle": "La symphonie des éclairs",
+    "year": "2023"
+  },
+  "originalVocabulary": [
+    "il", "fait", "toujours", "beau", "au-dessus des", "nuages", "mais", "moi", "si", "j'étais", "un oiseau", "j'irais", "danser", "sous", "l'orage", "je", "traverserais", "les nuages", "comme", "le fait", "la lumière", "j'écouterais", "sous la pluie", "la symphonie", "des éclairs", "dès", "sa", "plus", "tendre", "enfance", "elle", "ne", "savait", "pas", "parler", "autrement", "qu'en", "criant", "tout bas", "pas faute", "d'essayer", "de", "les retenir", "ces", "cris", "et", "ces larmes", "qui", "les", "faisaient", "tant", "en", "grandissant", "rien", "ne", "s'est", "calmé", "petite", "tempête", "s'est", "trouvé", "des raisons", "de", "pleuvoir", "autant", "qui", "pourrait", "l'aimer", "franchement", "personne", "n'aimerait", "se retrouver", "au cœur", "d'une tempête", "avouez", "il y a", "des raisons", "de", "pleurer", "elle", "a", "ses raisons", "quand", "la tempête", "a", "su", "que", "des mélodies", "pouvaient", "s'échapper", "du vent", "et", "se retrouver", "dans", "le cœur", "des gens", "celle-ci", "s'est", "dit", "nulle", "raison", "d'envier", "le soleil", "je", "ferai", "danser", "les gens", "au rythme", "de", "mes", "pleurs", "la tourmente", "de", "mes chants", "viendra", "réchauffer", "les cœurs", "réchauffer", "mon cœur", "je suis", "de", "ces oiseaux", "qui", "nous", "font", "danser", "je", "traverserais", "tous les nuages", "pour", "trouver", "en", "chantant"
+  ],
+  "texts": [
+    {
+      "textId": "text_1",
+      "title": "La Partie d'Échecs",
+      "text": [
+        "Aujourd'hui il fait beau, le soleil réchauffe l'air,",
+        "et je suis sur le point de gagner ma première partie d'échecs.",
+        "Dans le magasin de téléphones, Shalin sourit en regardant les pièces…"
+      ]
+    },
+    {
+      "textId": "text_2",
+      "title": "La Déception",
+      "text": [
+        "« Voilà ! Échec et mat. Tu joues vraiment bien, petit oiseau. »",
+        "Polina est dévastée, elle a envie de pleurer.",
+        "« Pas faute d'essayer, Shalin, merci pour la partie ! »"
+      ]
+    },
+    {
+      "textId": "text_3",
+      "title": "Au Salon de Coiffure",
+      "text": [
+        "Polina traverse le parc pour retrouver sa maman dans le salon de coiffure où elle travaille.",
+        "« Qu'est-ce qui ne va pas, chérie ? Tu as l'air d'avoir le cœur brisé. »",
+        "« C'est nul, je ne gagnerai jamais contre Shalin. »",
+        "Justine arrive : « Salut Polina, tu aimerais danser ? »"
+      ]
+    },
+    {
+      "textId": "text_4",
+      "title": "Le Vol Mystérieux",
+      "text": [
+        "Polina et Justine bougent au rythme des mélodies.",
+        "À ce moment-là, dans la bibliothèque communautaire,",
+        "une main gantée feuillette un livre.",
+        "La main essaie avec du mal de déchirer l'étiquette électronique du livre.",
+        "Finalement, elle réussit et laisse l'étiquette entre des livres."
+      ]
+    },
+    {
+      "textId": "text_5",
+      "title": "L'Annonce du Bibliothécaire",
+      "text": [
+        "« Quelqu'un vole des livres à la bibliothèque »",
+        "annonce le bibliothécaire pendant la réunion communautaire.",
+        "Les gens ne font pas trop attention, mais Polina est intriguée.",
+        "Qui voudrait garder les livres quand on pourrait les emprunter ?"
+      ]
+    },
+    {
+      "textId": "text_6",
+      "title": "L'Orage et les Indices",
+      "text": [
+        "Un éclair frappe à l'extérieur, et la salle se remplit de lumière.",
+        "Les gens se rassemblent près des fenêtres. « C'est un gros orage »,",
+        "Quelqu'un se moque: « vos chants en sont responsables ».",
+        "Polina se tient devant les étiquettes déchirées et y applique du ruban adhésif.",
+        "Elle crie : « Maman, le voleur aurait utilisé des gants ! »"
+      ]
+    },
+    {
+      "textId": "text_7",
+      "title": "Une Nouvelle Tempête",
+      "text": [
+        "Le lendemain matin, des nuages sombres menacent d'une nouvelle tempête.",
+        "« Ce vent… Nous devrions nous dépêcher si nous voulons échapper à l'orage. »",
+        "Il commence à pleuvoir. Ils se précipitent pour se mettre à l'abri dans l'école.",
+        "Polina regarde dehors, un garçon se tient sous la pluie, il s'appelle Yanis."
+      ]
+    },
+    {
+      "textId": "text_8",
+      "title": "Rencontre avec Yanis",
+      "text": [
+        "« Salut, tu es Yanis. Tu habites dans le même bâtiment que moi. »",
+        "Yanis la regarde. « Je suis Polina. Pourquoi es-tu toujours seul ? »",
+        "Yanis répond tout bas : « Moi, je... franchement » - et commence à pleurer.",
+        "Ces larmes ne le laissent pas parler."
+      ]
+    },
+    {
+      "textId": "text_9",
+      "title": "Une Nouvelle Amitié",
+      "text": [
+        "« Calme-toi, Yanis. Tu sais, grandir n'est pas facile.",
+        "Ne laisse personne te dire comment vivre ton enfance.",
+        "Tu n'as nulle raison d'être triste, je serai ton amie,",
+        "mais il faut que tu m'aides à trouver le voleur de livres. »"
+      ]
+    },
+    {
+      "textId": "text_10",
+      "title": "Le Premier Suspect",
+      "text": [
+        "« Celle-ci, c'est Justine, elle vit au-dessus de moi, au quatrième étage.",
+        "Écoute bien, pour le moment il y a un suspect.",
+        "Il s'appelle Rachid le casse-noix, tu le connais ? »",
+        "Yanis, inquiet : « Autant j'aimerais vous aider",
+        "mais je vous avoue que j'ai très peur de lui. »"
+      ]
+    },
+    {
+      "textId": "text_11",
+      "title": "Surveillance à la Bibliothèque",
+      "text": [
+        "Les trois détectives observent Rachid à la bibliothèque,",
+        "mais il ne fait rien d'autre que lire pendant des heures.",
+        "Il passe toute la journée dans la biblio !",
+        "Si on veut l'attraper, il faudra s'y prendre autrement.."
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phraseId": "text_1_p1",
+      "phraseTarget": "Aujourd'hui il fait beau, le soleil réchauffe l'air,",
+      "targetDistractors": [
+        "Aujourd'hui il fait mauvais, le soleil réchauffe l'air,",
+        "Aujourd'hui il fait beau, la lune réchauffe l'air,",
+        "Hier il fait beau, le soleil réchauffe l'air,"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p1_unit_0",
+          "unitTarget": "Aujourd'hui",
+          "translations": [
+            "Today",
+            "This day"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_1",
+          "unitTarget": "il fait beau",
+          "translations": [
+            "the weather is nice",
+            "it's beautiful",
+            "it's sunny"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_2",
+          "unitTarget": "le soleil",
+          "translations": [
+            "the sun",
+            "sunlight"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_3",
+          "unitTarget": "réchauffe",
+          "translations": [
+            "warms",
+            "heats up",
+            "is warming"
+          ]
+        },
+        {
+          "unitId": "text_1_p1_unit_4",
+          "unitTarget": "l'air",
+          "translations": [
+            "the air",
+            "the atmosphere"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p2",
+      "phraseTarget": "et je suis sur le point de gagner ma première partie d'échecs.",
+      "targetDistractors": [
+        "et je suis sur le point de perdre ma première partie d'échecs.",
+        "et je suis sur le point de gagner ma dernière partie d'échecs.",
+        "et je suis sur le point de gagner ma première partie de cartes."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p2_unit_0",
+          "unitTarget": "et",
+          "translations": [
+            "and"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_1",
+          "unitTarget": "je suis",
+          "translations": [
+            "I am",
+            "I'm"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_2",
+          "unitTarget": "sur le point de",
+          "translations": [
+            "about to",
+            "on the verge of",
+            "just about to"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_3",
+          "unitTarget": "gagner",
+          "translations": [
+            "win",
+            "to win"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_4",
+          "unitTarget": "ma première",
+          "translations": [
+            "my first"
+          ]
+        },
+        {
+          "unitId": "text_1_p2_unit_5",
+          "unitTarget": "partie d'échecs",
+          "translations": [
+            "chess game",
+            "game of chess"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_1_p3",
+      "phraseTarget": "Dans le magasin de téléphones, Shalin sourit en regardant les pièces…",
+      "targetDistractors": [
+        "Dans le magasin de téléphones, Shalin pleure en regardant les pièces…",
+        "Dans le magasin de livres, Shalin sourit en regardant les pièces…",
+        "Dans le magasin de téléphones, Shalin sourit en touchant les pièces…"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_1_p3_unit_0",
+          "unitTarget": "Dans",
+          "translations": [
+            "In",
+            "Inside"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_1",
+          "unitTarget": "le magasin",
+          "translations": [
+            "the store",
+            "the shop"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_2",
+          "unitTarget": "de téléphones",
+          "translations": [
+            "of phones",
+            "phone store"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_3",
+          "unitTarget": "Shalin",
+          "translations": [
+            "Shalin"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_4",
+          "unitTarget": "sourit",
+          "translations": [
+            "smiles",
+            "is smiling"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_5",
+          "unitTarget": "en regardant",
+          "translations": [
+            "while looking at",
+            "as he looks at",
+            "looking at"
+          ]
+        },
+        {
+          "unitId": "text_1_p3_unit_6",
+          "unitTarget": "les pièces",
+          "translations": [
+            "the pieces",
+            "the chess pieces"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p1",
+      "phraseTarget": "« Voilà ! Échec et mat. Tu joues vraiment bien, petit oiseau. »",
+      "targetDistractors": [
+        "« Voilà ! Échec et mat. Tu joues vraiment mal, petit oiseau. »",
+        "« Voilà ! Échec et mat. Tu joues vraiment bien, petit chat. »",
+        "« Bravo ! Échec et mat. Tu joues vraiment bien, petit oiseau. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p1_unit_0",
+          "unitTarget": "Voilà",
+          "translations": [
+            "There you go",
+            "There",
+            "That's it"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_1",
+          "unitTarget": "Échec et mat",
+          "translations": [
+            "Checkmate"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_2",
+          "unitTarget": "Tu joues",
+          "translations": [
+            "You play",
+            "You're playing"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_3",
+          "unitTarget": "vraiment bien",
+          "translations": [
+            "really well",
+            "very well",
+            "truly well"
+          ]
+        },
+        {
+          "unitId": "text_2_p1_unit_4",
+          "unitTarget": "petit oiseau",
+          "translations": [
+            "little bird",
+            "birdie"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p2",
+      "phraseTarget": "Polina est dévastée, elle a envie de pleurer.",
+      "targetDistractors": [
+        "Polina est joyeuse, elle a envie de pleurer.",
+        "Polina est dévastée, elle a envie de rire.",
+        "Polina est dévastée, elle a envie de danser."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p2_unit_0",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_1",
+          "unitTarget": "est",
+          "translations": [
+            "is",
+            "feels"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_2",
+          "unitTarget": "dévastée",
+          "translations": [
+            "devastated",
+            "crushed",
+            "heartbroken"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_3",
+          "unitTarget": "elle a envie de",
+          "translations": [
+            "she feels like",
+            "she wants to",
+            "she has the urge to"
+          ]
+        },
+        {
+          "unitId": "text_2_p2_unit_4",
+          "unitTarget": "pleurer",
+          "translations": [
+            "crying",
+            "to cry",
+            "weeping"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_2_p3",
+      "phraseTarget": "« Pas faute d'essayer, Shalin, merci pour la partie ! »",
+      "targetDistractors": [
+        "« Pas faute d'essayer, Shalin, merci pour la leçon ! »",
+        "« Pas faute d'essayer, Martin, merci pour la partie ! »",
+        "« Pas faute de jouer, Shalin, merci pour la partie ! »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_2_p3_unit_0",
+          "unitTarget": "Pas faute d'essayer",
+          "translations": [
+            "Not for lack of trying",
+            "I tried my best",
+            "Can't say I didn't try"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_1",
+          "unitTarget": "Shalin",
+          "translations": [
+            "Shalin"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_2",
+          "unitTarget": "merci pour",
+          "translations": [
+            "thank you for",
+            "thanks for"
+          ]
+        },
+        {
+          "unitId": "text_2_p3_unit_3",
+          "unitTarget": "la partie",
+          "translations": [
+            "the game",
+            "the match"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p1",
+      "phraseTarget": "Polina traverse le parc pour retrouver sa maman dans le salon de coiffure où elle travaille.",
+      "targetDistractors": [
+        "Polina traverse le parc pour retrouver sa sœur dans le salon de coiffure où elle travaille.",
+        "Polina traverse la rue pour retrouver sa maman dans le salon de coiffure où elle travaille.",
+        "Polina traverse le parc pour retrouver sa maman dans le magasin de vêtements où elle travaille."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p1_unit_0",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_1",
+          "unitTarget": "traverse",
+          "translations": [
+            "crosses",
+            "goes through",
+            "walks across"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_2",
+          "unitTarget": "le parc",
+          "translations": [
+            "the park"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_3",
+          "unitTarget": "pour retrouver",
+          "translations": [
+            "to meet up with",
+            "to find",
+            "to go see"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_4",
+          "unitTarget": "sa maman",
+          "translations": [
+            "her mom",
+            "her mother"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_5",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "at"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_6",
+          "unitTarget": "le salon de coiffure",
+          "translations": [
+            "the hair salon",
+            "the beauty salon"
+          ]
+        },
+        {
+          "unitId": "text_3_p1_unit_7",
+          "unitTarget": "où elle travaille",
+          "translations": [
+            "where she works",
+            "where she's employed"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p2",
+      "phraseTarget": "« Qu'est-ce qui ne va pas, chérie ? Tu as l'air d'avoir le cœur brisé. »",
+      "targetDistractors": [
+        "« Qu'est-ce qui ne va pas, chérie ? Tu as l'air d'avoir la tête brisée. »",
+        "« Qu'est-ce qui va bien, chérie ? Tu as l'air d'avoir le cœur brisé. »",
+        "« Qu'est-ce qui ne va pas, ma fille ? Tu as l'air d'avoir le cœur brisé. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p2_unit_0",
+          "unitTarget": "Qu'est-ce qui",
+          "translations": [
+            "What",
+            "What is it that"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_1",
+          "unitTarget": "ne va pas",
+          "translations": [
+            "is wrong",
+            "isn't right",
+            "is the matter"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_2",
+          "unitTarget": "chérie",
+          "translations": [
+            "sweetheart",
+            "honey",
+            "dear"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_3",
+          "unitTarget": "Tu as l'air",
+          "translations": [
+            "You look like",
+            "You seem",
+            "It looks like you"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_4",
+          "unitTarget": "d'avoir",
+          "translations": [
+            "to have",
+            "like you have"
+          ]
+        },
+        {
+          "unitId": "text_3_p2_unit_5",
+          "unitTarget": "le cœur brisé",
+          "translations": [
+            "a broken heart",
+            "your heart broken"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p3",
+      "phraseTarget": "« C'est nul, je ne gagnerai jamais contre Shalin. »",
+      "targetDistractors": [
+        "« C'est super, je ne gagnerai jamais contre Shalin. »",
+        "« C'est nul, je ne perdrai jamais contre Shalin. »",
+        "« C'est nul, je ne gagnerai jamais contre Martin. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p3_unit_0",
+          "unitTarget": "C'est nul",
+          "translations": [
+            "It sucks",
+            "It's awful",
+            "This is terrible"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_1",
+          "unitTarget": "je ne gagnerai",
+          "translations": [
+            "I'll never win",
+            "I will never win"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_2",
+          "unitTarget": "jamais",
+          "translations": [
+            "never",
+            "not ever"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_3",
+          "unitTarget": "contre",
+          "translations": [
+            "against"
+          ]
+        },
+        {
+          "unitId": "text_3_p3_unit_4",
+          "unitTarget": "Shalin",
+          "translations": [
+            "Shalin"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_3_p4",
+      "phraseTarget": "Justine arrive : « Salut Polina, tu aimerais danser ? »",
+      "targetDistractors": [
+        "Justine arrive : « Salut Polina, tu aimerais chanter ? »",
+        "Justine arrive : « Bonjour Polina, tu aimerais danser ? »",
+        "Marie arrive : « Salut Polina, tu aimerais danser ? »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_3_p4_unit_0",
+          "unitTarget": "Justine",
+          "translations": [
+            "Justine"
+          ]
+        },
+        {
+          "unitId": "text_3_p4_unit_1",
+          "unitTarget": "arrive",
+          "translations": [
+            "arrives",
+            "comes in",
+            "shows up"
+          ]
+        },
+        {
+          "unitId": "text_3_p4_unit_2",
+          "unitTarget": "Salut",
+          "translations": [
+            "Hi",
+            "Hello",
+            "Hey"
+          ]
+        },
+        {
+          "unitId": "text_3_p4_unit_3",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_3_p4_unit_4",
+          "unitTarget": "tu aimerais",
+          "translations": [
+            "would you like to",
+            "do you want to"
+          ]
+        },
+        {
+          "unitId": "text_3_p4_unit_5",
+          "unitTarget": "danser",
+          "translations": [
+            "dance",
+            "to dance"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p1",
+      "phraseTarget": "Polina et Justine bougent au rythme des mélodies.",
+      "targetDistractors": [
+        "Polina et Justine chantent au rythme des mélodies.",
+        "Polina et Marie bougent au rythme des mélodies.",
+        "Polina et Justine bougent au rythme des chansons."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p1_unit_0",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_1",
+          "unitTarget": "et",
+          "translations": [
+            "and"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_2",
+          "unitTarget": "Justine",
+          "translations": [
+            "Justine"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_3",
+          "unitTarget": "bougent",
+          "translations": [
+            "move",
+            "are moving",
+            "dance"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_4",
+          "unitTarget": "au rythme",
+          "translations": [
+            "to the rhythm",
+            "to the beat"
+          ]
+        },
+        {
+          "unitId": "text_4_p1_unit_5",
+          "unitTarget": "des mélodies",
+          "translations": [
+            "of the melodies",
+            "of the music"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p2",
+      "phraseTarget": "À ce moment-là, dans la bibliothèque communautaire,",
+      "targetDistractors": [
+        "À ce moment-là, dans la bibliothèque municipale,",
+        "À ce moment-ci, dans la bibliothèque communautaire,",
+        "À ce moment-là, dans le magasin communautaire,"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p2_unit_0",
+          "unitTarget": "À ce moment-là",
+          "translations": [
+            "At that moment",
+            "Just then",
+            "At that time"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_1",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "at"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_2",
+          "unitTarget": "la bibliothèque",
+          "translations": [
+            "the library"
+          ]
+        },
+        {
+          "unitId": "text_4_p2_unit_3",
+          "unitTarget": "communautaire",
+          "translations": [
+            "community",
+            "public"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p3",
+      "phraseTarget": "une main gantée feuillette un livre.",
+      "targetDistractors": [
+        "une main gantée touche un livre.",
+        "une main nue feuillette un livre.",
+        "une main gantée feuillette un magazine."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p3_unit_0",
+          "unitTarget": "une main",
+          "translations": [
+            "a hand"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_1",
+          "unitTarget": "gantée",
+          "translations": [
+            "gloved",
+            "wearing gloves"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_2",
+          "unitTarget": "feuillette",
+          "translations": [
+            "flips through",
+            "leafs through",
+            "browses"
+          ]
+        },
+        {
+          "unitId": "text_4_p3_unit_3",
+          "unitTarget": "un livre",
+          "translations": [
+            "a book"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p4",
+      "phraseTarget": "La main essaie avec du mal de déchirer l'étiquette électronique du livre.",
+      "targetDistractors": [
+        "La main essaie avec du mal de déchirer l'étiquette électronique du magazine.",
+        "La main essaie facilement de déchirer l'étiquette électronique du livre.",
+        "La main essaie avec du mal de coller l'étiquette électronique du livre."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p4_unit_0",
+          "unitTarget": "La main",
+          "translations": [
+            "The hand"
+          ]
+        },
+        {
+          "unitId": "text_4_p4_unit_1",
+          "unitTarget": "essaie",
+          "translations": [
+            "tries",
+            "attempts",
+            "is trying"
+          ]
+        },
+        {
+          "unitId": "text_4_p4_unit_2",
+          "unitTarget": "avec du mal",
+          "translations": [
+            "with difficulty",
+            "struggling",
+            "having trouble"
+          ]
+        },
+        {
+          "unitId": "text_4_p4_unit_3",
+          "unitTarget": "de déchirer",
+          "translations": [
+            "to tear off",
+            "to rip",
+            "to remove"
+          ]
+        },
+        {
+          "unitId": "text_4_p4_unit_4",
+          "unitTarget": "l'étiquette électronique",
+          "translations": [
+            "the electronic tag",
+            "the security tag",
+            "the electronic label"
+          ]
+        },
+        {
+          "unitId": "text_4_p4_unit_5",
+          "unitTarget": "du livre",
+          "translations": [
+            "from the book",
+            "of the book"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_4_p5",
+      "phraseTarget": "Finalement, elle réussit et laisse l'étiquette entre des livres.",
+      "targetDistractors": [
+        "Finalement, elle échoue et laisse l'étiquette entre des livres.",
+        "Finalement, elle réussit et laisse l'étiquette entre des magazines.",
+        "Finalement, elle réussit et garde l'étiquette entre des livres."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_4_p5_unit_0",
+          "unitTarget": "Finalement",
+          "translations": [
+            "Finally",
+            "Eventually",
+            "In the end"
+          ]
+        },
+        {
+          "unitId": "text_4_p5_unit_1",
+          "unitTarget": "elle réussit",
+          "translations": [
+            "she succeeds",
+            "it succeeds",
+            "she manages"
+          ]
+        },
+        {
+          "unitId": "text_4_p5_unit_2",
+          "unitTarget": "et",
+          "translations": [
+            "and",
+            "then"
+          ]
+        },
+        {
+          "unitId": "text_4_p5_unit_3",
+          "unitTarget": "laisse",
+          "translations": [
+            "leaves",
+            "drops",
+            "places"
+          ]
+        },
+        {
+          "unitId": "text_4_p5_unit_4",
+          "unitTarget": "l'étiquette",
+          "translations": [
+            "the tag",
+            "the label",
+            "the sticker"
+          ]
+        },
+        {
+          "unitId": "text_4_p5_unit_5",
+          "unitTarget": "entre",
+          "translations": [
+            "between",
+            "among"
+          ]
+        },
+        {
+          "unitId": "text_4_p5_unit_6",
+          "unitTarget": "des livres",
+          "translations": [
+            "some books",
+            "the books",
+            "books"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p1",
+      "phraseTarget": "« Quelqu'un vole des livres à la bibliothèque »",
+      "targetDistractors": [
+        "« Quelqu'un achète des livres à la bibliothèque »",
+        "« Quelqu'un vole des magazines à la bibliothèque »",
+        "« Quelqu'un emprunte des livres à la bibliothèque »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p1_unit_0",
+          "unitTarget": "Quelqu'un",
+          "translations": [
+            "Someone",
+            "Somebody",
+            "A person"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_1",
+          "unitTarget": "vole",
+          "translations": [
+            "steals",
+            "is stealing",
+            "takes"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_2",
+          "unitTarget": "des livres",
+          "translations": [
+            "books",
+            "some books",
+            "the books"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_3",
+          "unitTarget": "à",
+          "translations": [
+            "from",
+            "at"
+          ]
+        },
+        {
+          "unitId": "text_5_p1_unit_4",
+          "unitTarget": "la bibliothèque",
+          "translations": [
+            "the library"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p2",
+      "phraseTarget": "annonce le bibliothécaire pendant la réunion communautaire.",
+      "targetDistractors": [
+        "annonce le directeur pendant la réunion communautaire.",
+        "annonce le bibliothécaire pendant la réunion municipale.",
+        "explique le bibliothécaire pendant la réunion communautaire."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p2_unit_0",
+          "unitTarget": "annonce",
+          "translations": [
+            "announces",
+            "declares",
+            "states"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_1",
+          "unitTarget": "le bibliothécaire",
+          "translations": [
+            "the librarian"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_2",
+          "unitTarget": "pendant",
+          "translations": [
+            "during",
+            "while"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_3",
+          "unitTarget": "la réunion",
+          "translations": [
+            "the meeting"
+          ]
+        },
+        {
+          "unitId": "text_5_p2_unit_4",
+          "unitTarget": "communautaire",
+          "translations": [
+            "community"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p3",
+      "phraseTarget": "Les gens ne font pas trop attention, mais Polina est intriguée.",
+      "targetDistractors": [
+        "Les gens ne font pas trop attention, mais Justine est intriguée.",
+        "Les gens font beaucoup attention, mais Polina est intriguée.",
+        "Les gens ne font pas trop attention, mais Polina est inquiète."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p3_unit_0",
+          "unitTarget": "Les gens",
+          "translations": [
+            "People",
+            "The people"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_1",
+          "unitTarget": "ne font pas",
+          "translations": [
+            "don't pay",
+            "aren't paying"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_2",
+          "unitTarget": "trop attention",
+          "translations": [
+            "too much attention",
+            "much attention"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_3",
+          "unitTarget": "mais",
+          "translations": [
+            "but",
+            "however"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_4",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_5_p3_unit_5",
+          "unitTarget": "est intriguée",
+          "translations": [
+            "is intrigued",
+            "is curious",
+            "is interested"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_5_p4",
+      "phraseTarget": "Qui voudrait garder les livres quand on pourrait les emprunter ?",
+      "targetDistractors": [
+        "Qui voudrait acheter les livres quand on pourrait les emprunter ?",
+        "Qui voudrait garder les magazines quand on pourrait les emprunter ?",
+        "Qui voudrait garder les livres quand on pourrait les acheter ?"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_5_p4_unit_0",
+          "unitTarget": "Qui",
+          "translations": [
+            "Who"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_1",
+          "unitTarget": "voudrait",
+          "translations": [
+            "would want",
+            "would like"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_2",
+          "unitTarget": "garder",
+          "translations": [
+            "keep",
+            "hold onto"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_3",
+          "unitTarget": "les livres",
+          "translations": [
+            "the books",
+            "books"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_4",
+          "unitTarget": "quand",
+          "translations": [
+            "when",
+            "while"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_5",
+          "unitTarget": "on pourrait",
+          "translations": [
+            "one could",
+            "we could",
+            "you could"
+          ]
+        },
+        {
+          "unitId": "text_5_p4_unit_6",
+          "unitTarget": "les emprunter",
+          "translations": [
+            "borrow them",
+            "check them out"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p1",
+      "phraseTarget": "Un éclair frappe à l'extérieur, et la salle se remplit de lumière.",
+      "targetDistractors": [
+        "Un éclair frappe à l'intérieur, et la salle se remplit de lumière.",
+        "Un éclair frappe à l'extérieur, et la salle se vide de lumière.",
+        "Un tonnerre frappe à l'extérieur, et la salle se remplit de lumière."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p1_unit_0",
+          "unitTarget": "Un éclair",
+          "translations": [
+            "Lightning",
+            "A flash of lightning"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_1",
+          "unitTarget": "frappe",
+          "translations": [
+            "strikes",
+            "hits"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_2",
+          "unitTarget": "à l'extérieur",
+          "translations": [
+            "outside",
+            "outdoors"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_3",
+          "unitTarget": "et",
+          "translations": [
+            "and"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_4",
+          "unitTarget": "la salle",
+          "translations": [
+            "the room",
+            "the hall"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_5",
+          "unitTarget": "se remplit",
+          "translations": [
+            "fills up",
+            "is filled"
+          ]
+        },
+        {
+          "unitId": "text_6_p1_unit_6",
+          "unitTarget": "de lumière",
+          "translations": [
+            "with light",
+            "of light"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p2",
+      "phraseTarget": "Les gens se rassemblent près des fenêtres. « C'est un gros orage »,",
+      "targetDistractors": [
+        "Les gens se rassemblent près des portes. « C'est un gros orage »,",
+        "Les gens se dispersent près des fenêtres. « C'est un gros orage »,",
+        "Les gens se rassemblent près des fenêtres. « C'est un petit orage »,"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p2_unit_0",
+          "unitTarget": "Les gens",
+          "translations": [
+            "People",
+            "The people"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_1",
+          "unitTarget": "se rassemblent",
+          "translations": [
+            "gather",
+            "come together",
+            "crowd together"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_2",
+          "unitTarget": "près des fenêtres",
+          "translations": [
+            "near the windows",
+            "by the windows"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_3",
+          "unitTarget": "C'est",
+          "translations": [
+            "It's",
+            "That's"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_4",
+          "unitTarget": "un gros",
+          "translations": [
+            "a big",
+            "a large"
+          ]
+        },
+        {
+          "unitId": "text_6_p2_unit_5",
+          "unitTarget": "orage",
+          "translations": [
+            "storm",
+            "thunderstorm"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p3",
+      "phraseTarget": "Quelqu'un se moque: « vos chants en sont responsables ».",
+      "targetDistractors": [
+        "Quelqu'un se moque: « vos danses en sont responsables ».",
+        "Quelqu'un se plaint: « vos chants en sont responsables ».",
+        "Quelqu'un se moque: « nos chants en sont responsables »."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p3_unit_0",
+          "unitTarget": "Quelqu'un",
+          "translations": [
+            "Someone",
+            "Somebody"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_1",
+          "unitTarget": "se moque",
+          "translations": [
+            "jokes",
+            "mocks",
+            "teases"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_2",
+          "unitTarget": "vos chants",
+          "translations": [
+            "your songs",
+            "your singing"
+          ]
+        },
+        {
+          "unitId": "text_6_p3_unit_3",
+          "unitTarget": "en sont responsables",
+          "translations": [
+            "are responsible for it",
+            "caused this",
+            "are to blame"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p4",
+      "phraseTarget": "Polina se tient devant les étiquettes déchirées et y applique du ruban adhésif.",
+      "targetDistractors": [
+        "Polina se tient devant les étiquettes déchirées et y applique de la colle.",
+        "Polina se tient derrière les étiquettes déchirées et y applique du ruban adhésif.",
+        "Polina se tient devant les livres déchirés et y applique du ruban adhésif."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p4_unit_0",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_6_p4_unit_1",
+          "unitTarget": "se tient",
+          "translations": [
+            "stands",
+            "is standing",
+            "positions herself"
+          ]
+        },
+        {
+          "unitId": "text_6_p4_unit_2",
+          "unitTarget": "devant",
+          "translations": [
+            "in front of",
+            "before",
+            "facing"
+          ]
+        },
+        {
+          "unitId": "text_6_p4_unit_3",
+          "unitTarget": "les étiquettes",
+          "translations": [
+            "the tags",
+            "the labels",
+            "the stickers"
+          ]
+        },
+        {
+          "unitId": "text_6_p4_unit_4",
+          "unitTarget": "déchirées",
+          "translations": [
+            "torn",
+            "ripped",
+            "damaged"
+          ]
+        },
+        {
+          "unitId": "text_6_p4_unit_5",
+          "unitTarget": "et",
+          "translations": [
+            "and"
+          ]
+        },
+        {
+          "unitId": "text_6_p4_unit_6",
+          "unitTarget": "y applique",
+          "translations": [
+            "applies to them",
+            "puts on them",
+            "sticks on them"
+          ]
+        },
+        {
+          "unitId": "text_6_p4_unit_7",
+          "unitTarget": "du ruban adhésif",
+          "translations": [
+            "tape",
+            "adhesive tape",
+            "sticky tape"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_6_p5",
+      "phraseTarget": "Elle crie : « Maman, le voleur aurait utilisé des gants ! »",
+      "targetDistractors": [
+        "Elle crie : « Maman, le voleur aurait utilisé des chaussures ! »",
+        "Elle murmure : « Maman, le voleur aurait utilisé des gants ! »",
+        "Elle crie : « Papa, le voleur aurait utilisé des gants ! »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_6_p5_unit_0",
+          "unitTarget": "Elle crie",
+          "translations": [
+            "She shouts",
+            "She yells",
+            "She calls out"
+          ]
+        },
+        {
+          "unitId": "text_6_p5_unit_1",
+          "unitTarget": "Maman",
+          "translations": [
+            "Mom",
+            "Mommy",
+            "Mother"
+          ]
+        },
+        {
+          "unitId": "text_6_p5_unit_2",
+          "unitTarget": "le voleur",
+          "translations": [
+            "the thief",
+            "the robber"
+          ]
+        },
+        {
+          "unitId": "text_6_p5_unit_3",
+          "unitTarget": "aurait utilisé",
+          "translations": [
+            "would have used",
+            "must have used",
+            "probably used"
+          ]
+        },
+        {
+          "unitId": "text_6_p5_unit_4",
+          "unitTarget": "des gants",
+          "translations": [
+            "gloves"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p1",
+      "phraseTarget": "Le lendemain matin, des nuages sombres menacent d'une nouvelle tempête.",
+      "targetDistractors": [
+        "Le lendemain matin, des nuages clairs menacent d'une nouvelle tempête.",
+        "Le lendemain soir, des nuages sombres menacent d'une nouvelle tempête.",
+        "Le lendemain matin, des nuages sombres annoncent une nouvelle tempête."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p1_unit_0",
+          "unitTarget": "Le lendemain",
+          "translations": [
+            "The next day",
+            "The following day"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_1",
+          "unitTarget": "matin",
+          "translations": [
+            "morning",
+            "in the morning"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_2",
+          "unitTarget": "des nuages",
+          "translations": [
+            "clouds",
+            "some clouds",
+            "the clouds"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_3",
+          "unitTarget": "sombres",
+          "translations": [
+            "dark",
+            "gloomy",
+            "threatening"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_4",
+          "unitTarget": "menacent",
+          "translations": [
+            "threaten",
+            "are threatening",
+            "warn of"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_5",
+          "unitTarget": "d'une nouvelle",
+          "translations": [
+            "of a new",
+            "with a new",
+            "of another"
+          ]
+        },
+        {
+          "unitId": "text_7_p1_unit_6",
+          "unitTarget": "tempête",
+          "translations": [
+            "storm",
+            "tempest"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p2",
+      "phraseTarget": "« Ce vent… Nous devrions nous dépêcher si nous voulons échapper à l'orage. »",
+      "targetDistractors": [
+        "« Ce vent… Nous devrions nous dépêcher si nous voulons éviter l'orage. »",
+        "« Cette pluie… Nous devrions nous dépêcher si nous voulons échapper à l'orage. »",
+        "« Ce vent… Nous devrions nous arrêter si nous voulons échapper à l'orage. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p2_unit_0",
+          "unitTarget": "Ce vent",
+          "translations": [
+            "This wind",
+            "The wind"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_1",
+          "unitTarget": "Nous devrions",
+          "translations": [
+            "We should",
+            "We ought to"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_2",
+          "unitTarget": "nous dépêcher",
+          "translations": [
+            "hurry up",
+            "rush",
+            "move quickly"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_3",
+          "unitTarget": "si",
+          "translations": [
+            "if",
+            "whether"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_4",
+          "unitTarget": "nous voulons",
+          "translations": [
+            "we want to",
+            "we wish to"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_5",
+          "unitTarget": "échapper à",
+          "translations": [
+            "escape from",
+            "avoid",
+            "get away from"
+          ]
+        },
+        {
+          "unitId": "text_7_p2_unit_6",
+          "unitTarget": "l'orage",
+          "translations": [
+            "the storm",
+            "the thunderstorm"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p3",
+      "phraseTarget": "Il commence à pleuvoir. Ils se précipitent pour se mettre à l'abri dans l'école.",
+      "targetDistractors": [
+        "Il commence à pleuvoir. Ils se précipitent pour se mettre à l'abri dans la maison.",
+        "Il commence à neiger. Ils se précipitent pour se mettre à l'abri dans l'école.",
+        "Il commence à pleuvoir. Ils se dépêchent pour se mettre à l'abri dans l'école."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p3_unit_0",
+          "unitTarget": "Il commence",
+          "translations": [
+            "It starts",
+            "It begins"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_1",
+          "unitTarget": "à pleuvoir",
+          "translations": [
+            "to rain",
+            "raining"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_2",
+          "unitTarget": "Ils",
+          "translations": [
+            "They"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_3",
+          "unitTarget": "se précipitent",
+          "translations": [
+            "rush",
+            "hurry",
+            "race"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_4",
+          "unitTarget": "pour",
+          "translations": [
+            "to",
+            "in order to"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_5",
+          "unitTarget": "se mettre à l'abri",
+          "translations": [
+            "take shelter",
+            "get shelter",
+            "find cover"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_6",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "inside"
+          ]
+        },
+        {
+          "unitId": "text_7_p3_unit_7",
+          "unitTarget": "l'école",
+          "translations": [
+            "the school"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_7_p4",
+      "phraseTarget": "Polina regarde dehors, un garçon se tient sous la pluie, il s'appelle Yanis.",
+      "targetDistractors": [
+        "Polina regarde dehors, un garçon se tient sous la pluie, il s'appelle Thomas.",
+        "Polina regarde dedans, un garçon se tient sous la pluie, il s'appelle Yanis.",
+        "Polina regarde dehors, une fille se tient sous la pluie, elle s'appelle Yanis."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_7_p4_unit_0",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_7_p4_unit_1",
+          "unitTarget": "regarde",
+          "translations": [
+            "looks",
+            "watches",
+            "gazes"
+          ]
+        },
+        {
+          "unitId": "text_7_p4_unit_2",
+          "unitTarget": "dehors",
+          "translations": [
+            "outside",
+            "outdoors"
+          ]
+        },
+        {
+          "unitId": "text_7_p4_unit_3",
+          "unitTarget": "un garçon",
+          "translations": [
+            "a boy",
+            "a young man"
+          ]
+        },
+        {
+          "unitId": "text_7_p4_unit_4",
+          "unitTarget": "se tient",
+          "translations": [
+            "stands",
+            "is standing"
+          ]
+        },
+        {
+          "unitId": "text_7_p4_unit_5",
+          "unitTarget": "sous la pluie",
+          "translations": [
+            "in the rain",
+            "under the rain"
+          ]
+        },
+        {
+          "unitId": "text_7_p4_unit_6",
+          "unitTarget": "il s'appelle",
+          "translations": [
+            "his name is",
+            "he's called"
+          ]
+        },
+        {
+          "unitId": "text_7_p4_unit_7",
+          "unitTarget": "Yanis",
+          "translations": [
+            "Yanis"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p1",
+      "phraseTarget": "« Salut, tu es Yanis. Tu habites dans le même bâtiment que moi. »",
+      "targetDistractors": [
+        "« Salut, tu es Yanis. Tu habites dans le même quartier que moi. »",
+        "« Bonjour, tu es Yanis. Tu habites dans le même bâtiment que moi. »",
+        "« Salut, tu es Thomas. Tu habites dans le même bâtiment que moi. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p1_unit_0",
+          "unitTarget": "Salut",
+          "translations": [
+            "Hi",
+            "Hello"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_1",
+          "unitTarget": "tu es",
+          "translations": [
+            "you are",
+            "you're"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_2",
+          "unitTarget": "Yanis",
+          "translations": [
+            "Yanis"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_3",
+          "unitTarget": "Tu habites",
+          "translations": [
+            "You live",
+            "You live in"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_4",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "at"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_5",
+          "unitTarget": "le même bâtiment",
+          "translations": [
+            "the same building",
+            "the same apartment building"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_6",
+          "unitTarget": "que",
+          "translations": [
+            "as",
+            "than"
+          ]
+        },
+        {
+          "unitId": "text_8_p1_unit_7",
+          "unitTarget": "moi",
+          "translations": [
+            "me",
+            "I do"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p2",
+      "phraseTarget": "Yanis la regarde. « Je suis Polina. Pourquoi es-tu toujours seul ? »",
+      "targetDistractors": [
+        "Yanis la regarde. « Je suis Justine. Pourquoi es-tu toujours seul ? »",
+        "Yanis la regarde. « Je suis Polina. Pourquoi es-tu souvent seul ? »",
+        "Yanis l'écoute. « Je suis Polina. Pourquoi es-tu toujours seul ? »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p2_unit_0",
+          "unitTarget": "Yanis",
+          "translations": [
+            "Yanis"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_1",
+          "unitTarget": "la regarde",
+          "translations": [
+            "looks at her",
+            "watches her"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_2",
+          "unitTarget": "Je suis",
+          "translations": [
+            "I am",
+            "I'm"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_3",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_4",
+          "unitTarget": "Pourquoi",
+          "translations": [
+            "Why",
+            "How come"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_5",
+          "unitTarget": "es-tu",
+          "translations": [
+            "are you",
+            "do you"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_6",
+          "unitTarget": "toujours",
+          "translations": [
+            "always",
+            "all the time"
+          ]
+        },
+        {
+          "unitId": "text_8_p2_unit_7",
+          "unitTarget": "seul",
+          "translations": [
+            "alone",
+            "by yourself"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p3",
+      "phraseTarget": "Yanis répond tout bas : « Moi, je... franchement » - et commence à pleurer.",
+      "targetDistractors": [
+        "Yanis répond tout haut : « Moi, je... franchement » - et commence à pleurer.",
+        "Yanis répond tout bas : « Moi, je... vraiment » - et commence à pleurer.",
+        "Yanis répond tout bas : « Moi, je... franchement » - et commence à rire."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p3_unit_0",
+          "unitTarget": "Yanis",
+          "translations": [
+            "Yanis"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_1",
+          "unitTarget": "répond",
+          "translations": [
+            "answers",
+            "responds",
+            "replies"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_2",
+          "unitTarget": "tout bas",
+          "translations": [
+            "quietly",
+            "in a low voice",
+            "softly"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_3",
+          "unitTarget": "Moi",
+          "translations": [
+            "Me",
+            "I"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_4",
+          "unitTarget": "je",
+          "translations": [
+            "I"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_5",
+          "unitTarget": "franchement",
+          "translations": [
+            "honestly",
+            "frankly",
+            "really"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_6",
+          "unitTarget": "et",
+          "translations": [
+            "and",
+            "then"
+          ]
+        },
+        {
+          "unitId": "text_8_p3_unit_7",
+          "unitTarget": "commence à pleurer",
+          "translations": [
+            "starts to cry",
+            "begins crying",
+            "starts crying"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_8_p4",
+      "phraseTarget": "Ces larmes ne le laissent pas parler.",
+      "targetDistractors": [
+        "Ces larmes ne le laissent pas dormir.",
+        "Ces pleurs ne le laissent pas parler.",
+        "Ces larmes ne lui permettent pas de parler."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_8_p4_unit_0",
+          "unitTarget": "Ces larmes",
+          "translations": [
+            "These tears",
+            "The tears"
+          ]
+        },
+        {
+          "unitId": "text_8_p4_unit_1",
+          "unitTarget": "ne",
+          "translations": [
+            "don't",
+            "do not"
+          ]
+        },
+        {
+          "unitId": "text_8_p4_unit_2",
+          "unitTarget": "le laissent",
+          "translations": [
+            "let him",
+            "allow him"
+          ]
+        },
+        {
+          "unitId": "text_8_p4_unit_3",
+          "unitTarget": "pas",
+          "translations": [
+            "not"
+          ]
+        },
+        {
+          "unitId": "text_8_p4_unit_4",
+          "unitTarget": "parler",
+          "translations": [
+            "speak",
+            "talk"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p1",
+      "phraseTarget": "« Calme-toi, Yanis. Tu sais, grandir n'est pas facile.",
+      "targetDistractors": [
+        "« Calme-toi, Yanis. Tu sais, grandir n'est pas difficile.",
+        "« Rassure-toi, Yanis. Tu sais, grandir n'est pas facile.",
+        "« Calme-toi, Thomas. Tu sais, grandir n'est pas facile."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p1_unit_0",
+          "unitTarget": "Calme-toi",
+          "translations": [
+            "Calm down",
+            "Relax",
+            "Take it easy"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_1",
+          "unitTarget": "Yanis",
+          "translations": [
+            "Yanis"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_2",
+          "unitTarget": "Tu sais",
+          "translations": [
+            "You know",
+            "You see"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_3",
+          "unitTarget": "grandir",
+          "translations": [
+            "growing up",
+            "to grow up"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_4",
+          "unitTarget": "n'est pas",
+          "translations": [
+            "isn't",
+            "is not"
+          ]
+        },
+        {
+          "unitId": "text_9_p1_unit_5",
+          "unitTarget": "facile",
+          "translations": [
+            "easy",
+            "simple"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p2",
+      "phraseTarget": "Ne laisse personne te dire comment vivre ton enfance.",
+      "targetDistractors": [
+        "Ne laisse personne te dire comment vivre ton avenir.",
+        "Ne laisse quelqu'un te dire comment vivre ton enfance.",
+        "Ne laisse personne te montrer comment vivre ton enfance."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p2_unit_0",
+          "unitTarget": "Ne laisse",
+          "translations": [
+            "Don't let",
+            "Don't allow"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_1",
+          "unitTarget": "personne",
+          "translations": [
+            "anyone",
+            "nobody",
+            "no one"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_2",
+          "unitTarget": "te dire",
+          "translations": [
+            "tell you",
+            "say to you"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_3",
+          "unitTarget": "comment",
+          "translations": [
+            "how",
+            "how to"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_4",
+          "unitTarget": "vivre",
+          "translations": [
+            "live",
+            "live through"
+          ]
+        },
+        {
+          "unitId": "text_9_p2_unit_5",
+          "unitTarget": "ton enfance",
+          "translations": [
+            "your childhood",
+            "your youth"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p3",
+      "phraseTarget": "Tu n'as nulle raison d'être triste, je serai ton amie,",
+      "targetDistractors": [
+        "Tu n'as nulle raison d'être triste, je serai ton ennemie,",
+        "Tu n'as nulle raison d'être heureux, je serai ton amie,",
+        "Tu n'as aucune raison d'être triste, je serai ton amie,"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p3_unit_0",
+          "unitTarget": "Tu n'as",
+          "translations": [
+            "You have",
+            "You don't have"
+          ]
+        },
+        {
+          "unitId": "text_9_p3_unit_1",
+          "unitTarget": "nulle",
+          "translations": [
+            "no",
+            "not a single",
+            "zero"
+          ]
+        },
+        {
+          "unitId": "text_9_p3_unit_2",
+          "unitTarget": "raison",
+          "translations": [
+            "reason",
+            "cause"
+          ]
+        },
+        {
+          "unitId": "text_9_p3_unit_3",
+          "unitTarget": "d'être",
+          "translations": [
+            "to be",
+            "for being"
+          ]
+        },
+        {
+          "unitId": "text_9_p3_unit_4",
+          "unitTarget": "triste",
+          "translations": [
+            "sad",
+            "unhappy"
+          ]
+        },
+        {
+          "unitId": "text_9_p3_unit_5",
+          "unitTarget": "je serai",
+          "translations": [
+            "I will be",
+            "I'll be"
+          ]
+        },
+        {
+          "unitId": "text_9_p3_unit_6",
+          "unitTarget": "ton amie",
+          "translations": [
+            "your friend",
+            "your girlfriend"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_9_p4",
+      "phraseTarget": "mais il faut que tu m'aides à trouver le voleur de livres. »",
+      "targetDistractors": [
+        "mais il faut que tu m'aides à trouver le voleur de vélos. »",
+        "mais il faut que je t'aide à trouver le voleur de livres. »",
+        "mais il faut que tu m'aides à attraper le voleur de livres. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_9_p4_unit_0",
+          "unitTarget": "mais",
+          "translations": [
+            "but",
+            "however"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_1",
+          "unitTarget": "il faut",
+          "translations": [
+            "it's necessary",
+            "you need to",
+            "you must"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_2",
+          "unitTarget": "que",
+          "translations": [
+            "that"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_3",
+          "unitTarget": "tu m'aides",
+          "translations": [
+            "you help me",
+            "you assist me"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_4",
+          "unitTarget": "à trouver",
+          "translations": [
+            "to find",
+            "to locate"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_5",
+          "unitTarget": "le voleur",
+          "translations": [
+            "the thief",
+            "the robber"
+          ]
+        },
+        {
+          "unitId": "text_9_p4_unit_6",
+          "unitTarget": "de livres",
+          "translations": [
+            "of books",
+            "book thief"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p1",
+      "phraseTarget": "« Celle-ci, c'est Justine, elle vit au-dessus de moi, au quatrième étage.",
+      "targetDistractors": [
+        "« Celle-ci, c'est Justine, elle vit au-dessous de moi, au quatrième étage.",
+        "« Celle-ci, c'est Marie, elle vit au-dessus de moi, au quatrième étage.",
+        "« Celle-ci, c'est Justine, elle vit au-dessus de moi, au troisième étage."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p1_unit_0",
+          "unitTarget": "Celle-ci",
+          "translations": [
+            "This one",
+            "This girl"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_1",
+          "unitTarget": "c'est",
+          "translations": [
+            "is",
+            "this is"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_2",
+          "unitTarget": "Justine",
+          "translations": [
+            "Justine"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_3",
+          "unitTarget": "elle vit",
+          "translations": [
+            "she lives",
+            "she lives in"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_4",
+          "unitTarget": "au-dessus de",
+          "translations": [
+            "above",
+            "upstairs from"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_5",
+          "unitTarget": "moi",
+          "translations": [
+            "me"
+          ]
+        },
+        {
+          "unitId": "text_10_p1_unit_6",
+          "unitTarget": "au quatrième étage",
+          "translations": [
+            "on the fourth floor",
+            "on the fourth level"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p2",
+      "phraseTarget": "Écoute bien, pour le moment il y a un suspect.",
+      "targetDistractors": [
+        "Écoute bien, pour le moment il y a deux suspects.",
+        "Regarde bien, pour le moment il y a un suspect.",
+        "Écoute bien, pour l'instant il y a un suspect."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p2_unit_0",
+          "unitTarget": "Écoute bien",
+          "translations": [
+            "Listen carefully",
+            "Pay attention"
+          ]
+        },
+        {
+          "unitId": "text_10_p2_unit_1",
+          "unitTarget": "pour le moment",
+          "translations": [
+            "for now",
+            "at the moment",
+            "right now"
+          ]
+        },
+        {
+          "unitId": "text_10_p2_unit_2",
+          "unitTarget": "il y a",
+          "translations": [
+            "there is",
+            "we have"
+          ]
+        },
+        {
+          "unitId": "text_10_p2_unit_3",
+          "unitTarget": "un suspect",
+          "translations": [
+            "a suspect",
+            "one suspect"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p3",
+      "phraseTarget": "Il s'appelle Rachid le casse-noix, tu le connais ?",
+      "targetDistractors": [
+        "Il s'appelle Rachid le casse-pieds, tu le connais ?",
+        "Il s'appelle Thomas le casse-noix, tu le connais ?",
+        "Il s'appelle Rachid le casse-noix, tu la connais ?"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p3_unit_0",
+          "unitTarget": "Il s'appelle",
+          "translations": [
+            "His name is",
+            "He's called"
+          ]
+        },
+        {
+          "unitId": "text_10_p3_unit_1",
+          "unitTarget": "Rachid",
+          "translations": [
+            "Rachid"
+          ]
+        },
+        {
+          "unitId": "text_10_p3_unit_2",
+          "unitTarget": "le casse-noix",
+          "translations": [
+            "the nutcracker",
+            "the nut-breaker"
+          ]
+        },
+        {
+          "unitId": "text_10_p3_unit_3",
+          "unitTarget": "tu",
+          "translations": [
+            "you"
+          ]
+        },
+        {
+          "unitId": "text_10_p3_unit_4",
+          "unitTarget": "le connais",
+          "translations": [
+            "know him",
+            "are familiar with him"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p4",
+      "phraseTarget": "Yanis, inquiet : « Autant j'aimerais vous aider",
+      "targetDistractors": [
+        "Yanis, inquiet : « Autant j'aimerais vous éviter",
+        "Yanis, content : « Autant j'aimerais vous aider",
+        "Yanis, inquiet : « Autant j'aimerais t'aider"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p4_unit_0",
+          "unitTarget": "Yanis",
+          "translations": [
+            "Yanis"
+          ]
+        },
+        {
+          "unitId": "text_10_p4_unit_1",
+          "unitTarget": "inquiet",
+          "translations": [
+            "worried",
+            "anxious",
+            "concerned"
+          ]
+        },
+        {
+          "unitId": "text_10_p4_unit_2",
+          "unitTarget": "Autant",
+          "translations": [
+            "As much as",
+            "While"
+          ]
+        },
+        {
+          "unitId": "text_10_p4_unit_3",
+          "unitTarget": "j'aimerais",
+          "translations": [
+            "I would like",
+            "I'd love to"
+          ]
+        },
+        {
+          "unitId": "text_10_p4_unit_4",
+          "unitTarget": "vous aider",
+          "translations": [
+            "help you",
+            "assist you both"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_10_p5",
+      "phraseTarget": "mais je vous avoue que j'ai très peur de lui. »",
+      "targetDistractors": [
+        "mais je vous avoue que j'ai très peur d'elle. »",
+        "mais je vous cache que j'ai très peur de lui. »",
+        "mais je vous avoue que j'ai peu peur de lui. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_10_p5_unit_0",
+          "unitTarget": "mais",
+          "translations": [
+            "but",
+            "however"
+          ]
+        },
+        {
+          "unitId": "text_10_p5_unit_1",
+          "unitTarget": "je vous avoue",
+          "translations": [
+            "I confess to you",
+            "I admit to you",
+            "I must tell you"
+          ]
+        },
+        {
+          "unitId": "text_10_p5_unit_2",
+          "unitTarget": "que",
+          "translations": [
+            "that"
+          ]
+        },
+        {
+          "unitId": "text_10_p5_unit_3",
+          "unitTarget": "j'ai",
+          "translations": [
+            "I have",
+            "I am"
+          ]
+        },
+        {
+          "unitId": "text_10_p5_unit_4",
+          "unitTarget": "très peur",
+          "translations": [
+            "very afraid",
+            "really scared",
+            "terrified"
+          ]
+        },
+        {
+          "unitId": "text_10_p5_unit_5",
+          "unitTarget": "de",
+          "translations": [
+            "of",
+            "about"
+          ]
+        },
+        {
+          "unitId": "text_10_p5_unit_6",
+          "unitTarget": "lui",
+          "translations": [
+            "him"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_11_p1",
+      "phraseTarget": "Les trois détectives observent Rachid à la bibliothèque,",
+      "targetDistractors": [
+        "Les trois détectives observent Rachid à l'école,",
+        "Les deux détectives observent Rachid à la bibliothèque,",
+        "Les trois détectives suivent Rachid à la bibliothèque,"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_11_p1_unit_0",
+          "unitTarget": "Les trois détectives",
+          "translations": [
+            "The three detectives",
+            "The three investigators"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_1",
+          "unitTarget": "observent",
+          "translations": [
+            "observe",
+            "watch",
+            "spy on"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_2",
+          "unitTarget": "Rachid",
+          "translations": [
+            "Rachid"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_3",
+          "unitTarget": "à",
+          "translations": [
+            "at",
+            "in"
+          ]
+        },
+        {
+          "unitId": "text_11_p1_unit_4",
+          "unitTarget": "la bibliothèque",
+          "translations": [
+            "the library"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_11_p2",
+      "phraseTarget": "mais il ne fait rien d'autre que lire pendant des heures.",
+      "targetDistractors": [
+        "mais il ne fait rien d'autre qu'écrire pendant des heures.",
+        "mais il fait beaucoup d'autres choses que lire pendant des heures.",
+        "mais il ne fait rien d'autre que lire pendant des minutes."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_11_p2_unit_0",
+          "unitTarget": "mais",
+          "translations": [
+            "but",
+            "however"
+          ]
+        },
+        {
+          "unitId": "text_11_p2_unit_1",
+          "unitTarget": "il",
+          "translations": [
+            "he"
+          ]
+        },
+        {
+          "unitId": "text_11_p2_unit_2",
+          "unitTarget": "ne fait",
+          "translations": [
+            "doesn't do",
+            "does not do"
+          ]
+        },
+        {
+          "unitId": "text_11_p2_unit_3",
+          "unitTarget": "rien d'autre que",
+          "translations": [
+            "nothing other than",
+            "nothing but",
+            "only"
+          ]
+        },
+        {
+          "unitId": "text_11_p2_unit_4",
+          "unitTarget": "lire",
+          "translations": [
+            "read",
+            "reading"
+          ]
+        },
+        {
+          "unitId": "text_11_p2_unit_5",
+          "unitTarget": "pendant",
+          "translations": [
+            "for",
+            "during"
+          ]
+        },
+        {
+          "unitId": "text_11_p2_unit_6",
+          "unitTarget": "des heures",
+          "translations": [
+            "hours",
+            "hours and hours"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_11_p3",
+      "phraseTarget": "Il passe toute la journée dans la biblio !",
+      "targetDistractors": [
+        "Il passe toute la matinée dans la biblio !",
+        "Il passe toute la journée dans l'école !",
+        "Elle passe toute la journée dans la biblio !"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_11_p3_unit_0",
+          "unitTarget": "Il passe",
+          "translations": [
+            "He spends",
+            "He passes"
+          ]
+        },
+        {
+          "unitId": "text_11_p3_unit_1",
+          "unitTarget": "toute la journée",
+          "translations": [
+            "the whole day",
+            "all day long",
+            "the entire day"
+          ]
+        },
+        {
+          "unitId": "text_11_p3_unit_2",
+          "unitTarget": "dans",
+          "translations": [
+            "in",
+            "at"
+          ]
+        },
+        {
+          "unitId": "text_11_p3_unit_3",
+          "unitTarget": "la biblio",
+          "translations": [
+            "the library",
+            "the lib"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_11_p4",
+      "phraseTarget": "Si on veut l'attraper, il faudra s'y prendre autrement.",
+      "targetDistractors": [
+        "Si on veut l'attraper, il faudra s'y prendre différemment.",
+        "Si on veut le trouver, il faudra s'y prendre autrement.",
+        "Si on veut l'attraper, il faudra s'y prendre rapidement."
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_11_p4_unit_0",
+          "unitTarget": "Si",
+          "translations": [
+            "If",
+            "Whether"
+          ]
+        },
+        {
+          "unitId": "text_11_p4_unit_1",
+          "unitTarget": "on veut",
+          "translations": [
+            "we want",
+            "one wants"
+          ]
+        },
+        {
+          "unitId": "text_11_p4_unit_2",
+          "unitTarget": "l'attraper",
+          "translations": [
+            "catch him",
+            "capture him",
+            "get him"
+          ]
+        },
+        {
+          "unitId": "text_11_p4_unit_3",
+          "unitTarget": "il faudra",
+          "translations": [
+            "we'll have to",
+            "it will be necessary to",
+            "we must"
+          ]
+        },
+        {
+          "unitId": "text_11_p4_unit_4",
+          "unitTarget": "s'y prendre",
+          "translations": [
+            "go about it",
+            "approach it",
+            "handle it"
+          ]
+        },
+        {
+          "unitId": "text_11_p4_unit_5",
+          "unitTarget": "autrement",
+          "translations": [
+            "differently",
+            "another way",
+            "in a different way"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_12_p1",
+      "phraseTarget": "Polina dit : « Il faudra entrer chez lui,",
+      "targetDistractors": [
+        "Polina dit : « Il faudra entrer chez elle,",
+        "Justine dit : « Il faudra entrer chez lui,",
+        "Polina dit : « Il faudra aller chez lui,"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_12_p1_unit_0",
+          "unitTarget": "Polina",
+          "translations": [
+            "Polina"
+          ]
+        },
+        {
+          "unitId": "text_12_p1_unit_1",
+          "unitTarget": "dit",
+          "translations": [
+            "says",
+            "tells them"
+          ]
+        },
+        {
+          "unitId": "text_12_p1_unit_2",
+          "unitTarget": "Il faudra",
+          "translations": [
+            "We'll have to",
+            "It will be necessary to",
+            "We must"
+          ]
+        },
+        {
+          "unitId": "text_12_p1_unit_3",
+          "unitTarget": "entrer",
+          "translations": [
+            "enter",
+            "go into",
+            "get into"
+          ]
+        },
+        {
+          "unitId": "text_12_p1_unit_4",
+          "unitTarget": "chez",
+          "translations": [
+            "at",
+            "into",
+            "to"
+          ]
+        },
+        {
+          "unitId": "text_12_p1_unit_5",
+          "unitTarget": "lui",
+          "translations": [
+            "his place",
+            "him"
+          ]
+        }
+      ]
+    },
+    {
+      "phraseId": "text_12_p2",
+      "phraseTarget": "c'est là qu'il garde tous les livres qu'il a volés. »",
+      "targetDistractors": [
+        "c'est là qu'il garde tous les magazines qu'il a volés. »",
+        "c'est là qu'il cache tous les livres qu'il a volés. »",
+        "c'est là qu'il garde tous les livres qu'il a achetés. »"
+      ],
+      "semanticUnits": [
+        {
+          "unitId": "text_12_p2_unit_0",
+          "unitTarget": "c'est là",
+          "translations": [
+            "that's where",
+            "it's there"
+          ]
+        },
+        {
+          "unitId": "text_12_p2_unit_1",
+          "unitTarget": "qu'il",
+          "translations": [
+            "that he",
+            "where he"
+          ]
+        },
+        {
+          "unitId": "text_12_p2_unit_2",
+          "unitTarget": "garde",
+          "translations": [
+            "keeps",
+            "stores",
+            "holds"
+          ]
+        },
+        {
+          "unitId": "text_12_p2_unit_3",
+          "unitTarget": "tous les livres",
+          "translations": [
+            "all the books",
+            "every book"
+          ]
+        },
+        {
+          "unitId": "text_12_p2_unit_4",
+          "unitTarget": "qu'il a volés",
+          "translations": [
+            "that he stole",
+            "he has stolen",
+            "that he's stolen"
+          ]
+        }
+      ]
+    }
+  ],
+"solutions": [
+  {
+    "phraseId": "text_1_p1",
+    "primaryTranslation": "Today the weather is nice, the sun warms the air,",
+    "alternatives": [
+      "Today it's beautiful, the sun heats up the air,",
+      "It's lovely today, the sun is warming the atmosphere,",
+      "Today it's pleasant, the sunshine warms the air,"
+    ],
+    "distractors": [
+      "Today the weather is cold, the sun warms the air,",
+      "Today the weather is nice, the moon warms the air,",
+      "Yesterday the weather was nice, the sun warms the air,"
+    ]
+  },
+  {
+    "phraseId": "text_1_p2",
+    "primaryTranslation": "and I'm about to win my first chess game.",
+    "alternatives": [
+      "and I'm on the verge of winning my first chess match.",
+      "and I'm close to winning my first game of chess.",
+      "and I'm going to win my first chess game."
+    ],
+    "distractors": [
+      "and I'm about to lose my first chess game.",
+      "and I'm about to win my last chess game.",
+      "and I'm about to start my first chess game."
+    ]
+  },
+  {
+    "phraseId": "text_1_p3",
+    "primaryTranslation": "In the phone store, Shalin smiles while looking at the pieces…",
+    "alternatives": [
+      "At the phone shop, Shalin grins as he watches the pieces…",
+      "In the mobile phone store, Shalin is smiling as he observes the pieces…",
+      "Inside the phone store, Shalin smiles watching the chess pieces…"
+    ],
+    "distractors": [
+      "In the phone store, Shalin frowns while looking at the pieces…",
+      "In the book store, Shalin smiles while looking at the pieces…",
+      "In the phone store, Shalin cries while looking at the pieces…"
+    ]
+  },
+  {
+    "phraseId": "text_2_p1",
+    "primaryTranslation": "\"There! Checkmate. You play really well, little bird.\"",
+    "alternatives": [
+      "\"That's it! Checkmate. You're a really good player, little bird.\"",
+      "\"Done! Checkmate. You play very well, little bird.\"",
+      "\"There you go! Checkmate. You're really skilled, little bird.\""
+    ],
+    "distractors": [
+      "\"There! Check. You play really well, little bird.\"",
+      "\"There! Checkmate. You play really badly, little bird.\"",
+      "\"There! Checkmate. You play really well, big bird.\""
+    ]
+  },
+  {
+    "phraseId": "text_2_p2",
+    "primaryTranslation": "Polina is devastated, she feels like crying.",
+    "alternatives": [
+      "Polina is crushed, she wants to cry.",
+      "Polina is heartbroken, she feels the urge to weep.",
+      "Polina is shattered, she has the desire to cry."
+    ],
+    "distractors": [
+      "Polina is delighted, she feels like crying.",
+      "Polina is devastated, she feels like laughing.",
+      "Polina is devastated, she feels like dancing."
+    ]
+  },
+  {
+    "phraseId": "text_2_p3",
+    "primaryTranslation": "\"Not for lack of trying, Shalin, thanks for the game!\"",
+    "alternatives": [
+      "\"I certainly tried my best, Shalin, thank you for the match!\"",
+      "\"Can't say I didn't try, Shalin, thanks for playing!\"",
+      "\"It wasn't from not trying, Shalin, thanks for the game!\""
+    ],
+    "distractors": [
+      "\"Not for lack of winning, Shalin, thanks for the game!\"",
+      "\"Not for lack of trying, Shalin, sorry for the game!\"",
+      "\"Not for lack of trying, Polina, thanks for the game!\""
+    ]
+  },
+  {
+    "phraseId": "text_3_p1",
+    "primaryTranslation": "Polina crosses the park to find her mom at the hair salon where she works.",
+    "alternatives": [
+      "Polina goes through the park to meet her mother at the hair salon where she's employed.",
+      "Polina walks across the park to see her mom at the hairdressing salon where she works.",
+      "Polina traverses the park to reach her mother at the hair salon where she's working."
+    ],
+    "distractors": [
+      "Polina crosses the street to find her mom at the hair salon where she works.",
+      "Polina crosses the park to find her dad at the hair salon where he works.",
+      "Polina crosses the park to find her mom at the bookstore where she works."
+    ]
+  },
+  {
+    "phraseId": "text_3_p2",
+    "primaryTranslation": "\"What's wrong, honey? You look like you have a broken heart.\"",
+    "alternatives": [
+      "\"What's the matter, sweetheart? You seem heartbroken.\"",
+      "\"What's bothering you, dear? You appear to be heartbroken.\"",
+      "\"What's troubling you, darling? You look devastated.\""
+    ],
+    "distractors": [
+      "\"What's right, honey? You look like you have a broken heart.\"",
+      "\"What's wrong, honey? You look like you have a happy heart.\"",
+      "\"What's wrong, stranger? You look like you have a broken heart.\""
+    ]
+  },
+  {
+    "phraseId": "text_3_p3",
+    "primaryTranslation": "\"This sucks, I'll never beat Shalin.\"",
+    "alternatives": [
+      "\"It's awful, I'll never win against Shalin.\"",
+      "\"This is terrible, I'll never defeat Shalin.\"",
+      "\"It's hopeless, I'll never beat Shalin.\""
+    ],
+    "distractors": [
+      "\"This rocks, I'll never beat Shalin.\"",
+      "\"This sucks, I'll always beat Shalin.\"",
+      "\"This sucks, I'll never beat Polina.\""
+    ]
+  },
+  {
+    "phraseId": "text_3_p4",
+    "primaryTranslation": "Justine arrives: \"Hi Polina, would you like to dance?\"",
+    "alternatives": [
+      "Justine shows up: \"Hello Polina, do you want to dance?\"",
+      "Justine comes over: \"Hey Polina, feel like dancing?\"",
+      "Justine appears: \"Hi Polina, care to dance?\""
+    ],
+    "distractors": [
+      "Justine leaves: \"Hi Polina, would you like to dance?\"",
+      "Justine arrives: \"Hi Polina, would you like to sing?\"",
+      "Justine arrives: \"Bye Polina, would you like to dance?\""
+    ]
+  },
+  {
+    "phraseId": "text_4_p1",
+    "primaryTranslation": "Polina and Justine move to the rhythm of the melodies.",
+    "alternatives": [
+      "Polina and Justine dance to the beat of the music.",
+      "Polina and Justine sway to the rhythm of the tunes.",
+      "Polina and Justine groove to the melody's rhythm."
+    ],
+    "distractors": [
+      "Polina and Justine stand still to the rhythm of the melodies.",
+      "Polina and Justine move against the rhythm of the melodies.",
+      "Polina and Justine move to the rhythm of the silence."
+    ]
+  },
+  {
+    "phraseId": "text_4_p2",
+    "primaryTranslation": "At that moment, in the community library,",
+    "alternatives": [
+      "Just then, at the local library,",
+      "At the same time, in the public library,",
+      "Meanwhile, in the neighborhood library,"
+    ],
+    "distractors": [
+      "At that moment, in the community school,",
+      "Later that day, in the community library,",
+      "At that moment, in the private library,"
+    ]
+  },
+  {
+    "phraseId": "text_4_p3",
+    "primaryTranslation": "a gloved hand flips through a book.",
+    "alternatives": [
+      "a hand wearing gloves leafs through a book.",
+      "a gloved hand browses through a book.",
+      "someone with gloves on turns the pages of a book."
+    ],
+    "distractors": [
+      "a bare hand flips through a book.",
+      "a gloved hand closes a book.",
+      "a gloved hand flips through a magazine."
+    ]
+  },
+  {
+    "phraseId": "text_4_p4",
+    "primaryTranslation": "The hand struggles to tear the electronic tag off the book.",
+    "alternatives": [
+      "The hand has trouble removing the electronic label from the book.",
+      "The hand finds it difficult to rip off the book's electronic tag.",
+      "The hand has a hard time tearing the electronic sticker from the book."
+    ],
+    "distractors": [
+      "The hand easily tears the electronic tag off the book.",
+      "The hand struggles to attach the electronic tag to the book.",
+      "The hand struggles to tear the paper tag off the book."
+    ]
+  },
+  {
+    "phraseId": "text_4_p5",
+    "primaryTranslation": "Finally, it succeeds and leaves the tag between some books.",
+    "alternatives": [
+      "Eventually, it manages and places the tag among the books.",
+      "At last, it works and hides the tag between books.",
+      "In the end, it succeeds and stuffs the tag between some books."
+    ],
+    "distractors": [
+      "Finally, it fails and leaves the tag between some books.",
+      "Finally, it succeeds and takes the tag from between some books.",
+      "Finally, it succeeds and leaves the book between some tags."
+    ]
+  },
+  {
+    "phraseId": "text_5_p1",
+    "primaryTranslation": "\"Someone is stealing books from the library\"",
+    "alternatives": [
+      "\"Somebody is taking books from the library\"",
+      "\"Someone is pilfering books from the library\"",
+      "\"Books are being stolen from the library\""
+    ],
+    "distractors": [
+      "\"Someone is returning books to the library\"",
+      "\"Someone is buying books from the library\"",
+      "\"Someone is donating books to the library\""
+    ]
+  },
+  {
+    "phraseId": "text_5_p2",
+    "primaryTranslation": "announces the librarian during the community meeting.",
+    "alternatives": [
+      "declares the librarian at the community gathering.",
+      "states the librarian during the public meeting.",
+      "says the librarian at the town meeting."
+    ],
+    "distractors": [
+      "asks the librarian during the community meeting.",
+      "announces the teacher during the community meeting.",
+      "announces the librarian during the school meeting."
+    ]
+  },
+  {
+    "phraseId": "text_5_p3",
+    "primaryTranslation": "People don't pay much attention, but Polina is intrigued.",
+    "alternatives": [
+      "The crowd doesn't really notice, but Polina is fascinated.",
+      "People aren't very interested, but Polina is curious.",
+      "The audience doesn't seem to care, but Polina is captivated."
+    ],
+    "distractors": [
+      "People pay close attention, but Polina is intrigued.",
+      "People don't pay much attention, but Polina is bored.",
+      "People don't pay much attention, but Justine is intrigued."
+    ]
+  },
+  {
+    "phraseId": "text_5_p4",
+    "primaryTranslation": "Who would want to keep books when you could borrow them?",
+    "alternatives": [
+      "Why would anyone want to keep books when they could check them out?",
+      "Who would choose to steal books when borrowing is possible?",
+      "Why would someone want to take books when they could just borrow them?"
+    ],
+    "distractors": [
+      "Who would want to return books when you could borrow them?",
+      "Who would want to keep books when you could buy them?",
+      "Who would want to keep magazines when you could borrow them?"
+    ]
+  },
+  {
+    "phraseId": "text_6_p1",
+    "primaryTranslation": "Lightning strikes outside, and the room fills with light.",
+    "alternatives": [
+      "A flash of lightning hits outdoors, and the room becomes bright.",
+      "Lightning flashes outside, and light floods the room.",
+      "A lightning bolt strikes outside, filling the room with brightness."
+    ],
+    "distractors": [
+      "Lightning strikes inside, and the room fills with light.",
+      "Thunder strikes outside, and the room fills with light.",
+      "Lightning strikes outside, and the room fills with darkness."
+    ]
+  },
+  {
+    "phraseId": "text_6_p2",
+    "primaryTranslation": "People gather near the windows. \"It's a big storm\",",
+    "alternatives": [
+      "Folks crowd around the windows. \"That's a major storm\",",
+      "People collect by the windows. \"It's quite a storm\",",
+      "Everyone moves to the windows. \"What a big storm\","
+    ],
+    "distractors": [
+      "People scatter from the windows. \"It's a big storm\",",
+      "People gather near the doors. \"It's a big storm\",",
+      "People gather near the windows. \"It's a small storm\","
+    ]
+  },
+  {
+    "phraseId": "text_6_p3",
+    "primaryTranslation": "Someone jokes: \"your songs are responsible for this.\"",
+    "alternatives": [
+      "Somebody teases: \"your singing caused this.\"",
+      "Someone laughs: \"your music is to blame for this.\"",
+      "A person jokes: \"your songs brought this on.\""
+    ],
+    "distractors": [
+      "Someone cries: \"your songs are responsible for this.\"",
+      "Someone jokes: \"your dances are responsible for this.\"",
+      "Someone jokes: \"your songs are innocent of this.\""
+    ]
+  },
+  {
+    "phraseId": "text_6_p4",
+    "primaryTranslation": "Polina stands in front of the torn tags and applies tape to them.",
+    "alternatives": [
+      "Polina positions herself before the damaged labels and puts tape on them.",
+      "Polina stands facing the ripped tags and sticks tape on them.",
+      "Polina places herself in front of the torn stickers and tapes them."
+    ],
+    "distractors": [
+      "Polina stands in front of the torn tags and applies glue to them.",
+      "Polina stands behind the torn tags and applies tape to them.",
+      "Polina stands in front of the torn books and applies tape to them."
+    ]
+  },
+  {
+    "phraseId": "text_6_p5",
+    "primaryTranslation": "She shouts: \"Mom, the thief must have used gloves!\"",
+    "alternatives": [
+      "She calls out: \"Mom, the burglar would have worn gloves!\"",
+      "She exclaims: \"Mother, the thief probably used gloves!\"",
+      "She yells: \"Mom, the thief likely had gloves on!\""
+    ],
+    "distractors": [
+      "She shouts: \"Mom, the thief must have used shoes!\"",
+      "She whispers: \"Mom, the thief must have used gloves!\"",
+      "She shouts: \"Dad, the thief must have used gloves!\""
+    ]
+  },
+  {
+    "phraseId": "text_7_p1",
+    "primaryTranslation": "The next morning, dark clouds threaten a new storm.",
+    "alternatives": [
+      "The following morning, dark clouds warn of another storm.",
+      "The next day morning, gloomy clouds threaten a fresh storm.",
+      "The following morning, threatening clouds promise a new storm."
+    ],
+    "distractors": [
+      "The next morning, bright clouds threaten a new storm.",
+      "The next evening, dark clouds threaten a new storm.",
+      "The next morning, dark clouds announce a new storm."
+    ]
+  },
+  {
+    "phraseId": "text_7_p2",
+    "primaryTranslation": "\"This wind… We should hurry if we want to escape the storm.\"",
+    "alternatives": [
+      "\"This wind… We ought to rush if we want to avoid the storm.\"",
+      "\"This wind… We should move quickly if we want to get away from the storm.\"",
+      "\"This wind… We'd better hurry if we want to escape the thunderstorm.\""
+    ],
+    "distractors": [
+      "\"This wind… We should hurry if we want to avoid the storm.\"",
+      "\"This rain… We should hurry if we want to escape the storm.\"",
+      "\"This wind… We should stop if we want to escape the storm.\""
+    ]
+  },
+  {
+    "phraseId": "text_7_p3",
+    "primaryTranslation": "It starts to rain. They rush to take shelter in the school.",
+    "alternatives": [
+      "It begins to rain. They hurry to find cover in the school.",
+      "Rain begins to fall. They rush to get shelter in the school building.",
+      "It's starting to rain. They quickly seek shelter in the school."
+    ],
+    "distractors": [
+      "It starts to snow. They rush to take shelter in the school.",
+      "It starts to rain. They rush to take shelter in the house.",
+      "It starts to rain. They walk slowly to take shelter in the school."
+    ]
+  },
+  {
+    "phraseId": "text_7_p4",
+    "primaryTranslation": "Polina looks outside, a boy is standing in the rain, his name is Yanis.",
+    "alternatives": [
+      "Polina glances outdoors, a boy stands in the rain, he's called Yanis.",
+      "Polina peers outside, a boy is out in the rain, named Yanis.",
+      "Polina looks out, a boy is standing in the rainfall, his name is Yanis."
+    ],
+    "distractors": [
+      "Polina looks outside, a boy is standing in the rain, his name is Thomas.",
+      "Polina looks inside, a boy is standing in the rain, his name is Yanis.",
+      "Polina looks outside, a girl is standing in the rain, her name is Yanis."
+    ]
+  },
+  {
+    "phraseId": "text_8_p1",
+    "primaryTranslation": "\"Hi, you're Yanis. You live in the same building as me.\"",
+    "alternatives": [
+      "\"Hello, you're Yanis. You live in the same apartment building as I do.\"",
+      "\"Hey, you're Yanis. You live in the same block as me.\"",
+      "\"Hi there, you're Yanis. You live in my building.\""
+    ],
+    "distractors": [
+      "\"Hi, you're Yanis. You live in the same apartment as me.\"",
+      "\"Hello, you're Yanis. You live in the same building as me.\"",
+      "\"Hi, you're Yanis. You work in the same building as me.\""
+    ]
+  },
+  {
+    "phraseId": "text_8_p2",
+    "primaryTranslation": "Yanis looks at her. \"I'm Polina. Why are you always alone?\"",
+    "alternatives": [
+      "Yanis gazes at her. \"My name is Polina. Why are you always by yourself?\"",
+      "Yanis stares at her. \"I'm Polina. How come you're always on your own?\"",
+      "Yanis watches her. \"I'm Polina. Why do you stay alone all the time?\""
+    ],
+    "distractors": [
+      "Yanis looks at her. \"I'm Polina. Why are you always happy?\"",
+      "Yanis looks away. \"I'm Polina. Why are you always alone?\"",
+      "Yanis looks at her. \"I'm Justine. Why are you always alone?\""
+    ]
+  },
+  {
+    "phraseId": "text_8_p3",
+    "primaryTranslation": "Yanis replies quietly: \"Me, I... honestly\" - and starts to cry.",
+    "alternatives": [
+      "Yanis answers softly: \"I, I... frankly\" - and begins to weep.",
+      "Yanis responds in a low voice: \"Me, I... really\" - and starts crying.",
+      "Yanis whispers: \"I, I... to be honest\" - and begins to cry."
+    ],
+    "distractors": [
+      "Yanis replies loudly: \"Me, I... honestly\" - and starts to cry.",
+      "Yanis replies quietly: \"Me, I... honestly\" - and starts to laugh.",
+      "Yanis replies quietly: \"You, you... honestly\" - and starts to cry."
+    ]
+  },
+  {
+    "phraseId": "text_8_p4",
+    "primaryTranslation": "These tears don't let him speak.",
+    "alternatives": [
+      "The tears won't allow him to talk.",
+      "His tears prevent him from speaking.",
+      "The tears keep him from being able to speak."
+    ],
+    "distractors": [
+      "These tears don't let him sleep.",
+      "These sobs don't let him speak.",
+      "These tears don't allow him to speak."
+    ]
+  },
+  {
+    "phraseId": "text_9_p1",
+    "primaryTranslation": "\"Calm down, Yanis. You know, growing up isn't easy.",
+    "alternatives": [
+      "\"Relax, Yanis. You see, getting older isn't simple.",
+      "\"Take it easy, Yanis. Listen, maturing isn't easy.",
+      "\"Settle down, Yanis. You know, growing up is hard.\""
+    ],
+    "distractors": [
+      "\"Calm down, Yanis. You know, growing up isn't difficult.",
+      "\"Get excited, Yanis. You know, growing up isn't easy.",
+      "\"Calm down, Yanis. You know, aging isn't easy.\""
+    ]
+  },
+  {
+    "phraseId": "text_9_p2",
+    "primaryTranslation": "Don't let anyone tell you how to live your childhood.",
+    "alternatives": [
+      "Don't allow anyone to dictate how you should live your childhood.",
+      "Never let people tell you how your childhood should be.",
+      "Don't permit anyone to tell you how to experience your childhood."
+    ],
+    "distractors": [
+      "Don't let anyone tell you how to live your future.",
+      "Don't let someone tell you how to live your childhood.",
+      "Don't let anyone show you how to live your childhood."
+    ]
+  },
+  {
+    "phraseId": "text_9_p3",
+    "primaryTranslation": "You have no reason to be sad, I'll be your friend,",
+    "alternatives": [
+      "There's no reason for you to be sad, I'll be your friend,",
+      "You don't have any reason to be unhappy, I'll be your friend,",
+      "You've got no cause to be sad, I'll be your friend,"
+    ],
+    "distractors": [
+      "You have no reason to be happy, I'll be your friend,",
+      "You have every reason to be sad, I'll be your friend,",
+      "You have no reason to be sad, I'll be your enemy,"
+    ]
+  },
+  {
+    "phraseId": "text_9_p4",
+    "primaryTranslation": "but you have to help me find the book thief.\"",
+    "alternatives": [
+      "but you need to assist me in finding the book thief.\"",
+      "but you must help me catch the book thief.\"",
+      "but you have to aid me in locating the book thief.\""
+    ],
+    "distractors": [
+      "but you have to help me find the book owner.\"",
+      "but you have to help me lose the book thief.\"",
+      "but you have to help me find the book seller.\""
+    ]
+  },
+  {
+    "phraseId": "text_10_p1",
+    "primaryTranslation": "\"This one is Justine, she lives above me, on the fourth floor.",
+    "alternatives": [
+      "\"That's Justine, she lives upstairs from me, on the fourth floor.",
+      "\"Here's Justine, she lives one floor above me, on the fourth floor.",
+      "\"This is Justine, she lives over me, on the fourth floor.\""
+    ],
+    "distractors": [
+      "\"This one is Justine, she lives below me, on the fourth floor.",
+      "\"This one is Polina, she lives above me, on the fourth floor.",
+      "\"This one is Justine, she lives above me, on the first floor.\""
+    ]
+  },
+  {
+    "phraseId": "text_10_p2",
+    "primaryTranslation": "Listen carefully, for now there is a suspect.",
+    "alternatives": [
+      "Listen well, at the moment we have a suspect.",
+      "Pay attention, right now there's a suspect.",
+      "Listen closely, for the time being there is one suspect."
+    ],
+    "distractors": [
+      "Listen carefully, for now there is a witness.",
+      "Listen poorly, for now there is a suspect.",
+      "Listen carefully, for the moment there is a suspect."
+    ]
+  },
+  {
+    "phraseId": "text_10_p3",
+    "primaryTranslation": "His name is Rachid the nutcracker, do you know him?\"",
+    "alternatives": [
+      "He's called Rachid the nutcracker, are you familiar with him?\"",
+      "His name is Rachid the nutcracker, have you heard of him?\"",
+      "He goes by Rachid the nutcracker, do you know him?\""
+    ],
+    "distractors": [
+      "His name is Rachid the nutcracker, do you hate him?\"",
+      "His name is Thomas the nutcracker, do you know him?\"",
+      "His name is Rachid the troublemaker, do you know him?\""
+    ]
+  },
+  {
+    "phraseId": "text_10_p4",
+    "primaryTranslation": "Yanis, worried: \"As much as I'd like to help you",
+    "alternatives": [
+      "Yanis, anxious: \"While I would love to help you",
+      "Yanis, concerned: \"Although I'd like to assist you",
+      "Yanis, uneasy: \"Even though I'd like to help you"
+    ],
+    "distractors": [
+      "Yanis, worried: \"As much as I'd like to ignore you",
+      "Yanis, happy: \"As much as I'd like to help you",
+      "Yanis, worried: \"Even if I'd like to help you"
+    ]
+  },
+  {
+    "phraseId": "text_10_p5",
+    "primaryTranslation": "but I must confess that I'm very afraid of him.\"",
+    "alternatives": [
+      "but I have to admit that I'm really scared of him.\"",
+      "but I must tell you that I'm terrified of him.\"",
+      "but I have to confess I'm very frightened of him.\""
+    ],
+    "distractors": [
+      "but I must confess that I'm very afraid of her.\"",
+      "but I must hide that I'm very afraid of him.\"",
+      "but I must confess that I'm slightly afraid of him.\""
+    ]
+  },
+  {
+    "phraseId": "text_11_p1",
+    "primaryTranslation": "The three detectives observe Rachid at the library,",
+    "alternatives": [
+      "The three investigators watch Rachid at the library,",
+      "The three detectives spy on Rachid at the library,",
+      "The three detectives study Rachid at the library,"
+    ],
+    "distractors": [
+      "The three detectives observe Rachid at the school,",
+      "The two detectives observe Rachid at the library,",
+      "The three detectives follow Rachid at the library,"
+    ]
+  },
+  {
+    "phraseId": "text_11_p2",
+    "primaryTranslation": "but he does nothing other than read for hours.",
+    "alternatives": [
+      "but he doesn't do anything except read for hours.",
+      "but all he does is read for hours on end.",
+      "but he only reads for hours and hours."
+    ],
+    "distractors": [
+      "but he does nothing other than write for hours.",
+      "but he does many other things than read for hours.",
+      "but he does nothing other than read for minutes."
+    ]
+  },
+  {
+    "phraseId": "text_11_p3",
+    "primaryTranslation": "He spends all day in the library!",
+    "alternatives": [
+      "He passes the whole day at the library!",
+      "He stays the entire day in the lib!",
+      "He's there all day long in the library!"
+    ],
+    "distractors": [
+      "He spends all night in the library!",
+      "He spends all day in the school!",
+      "He spends one hour in the library!"
+    ]
+  },
+  {
+    "phraseId": "text_11_p4",
+    "primaryTranslation": "If we want to catch him, we'll have to go about it differently..",
+    "alternatives": [
+      "If we want to trap him, we'll need to approach it another way..",
+      "If we want to get him, we must do it differently..",
+      "If we want to catch him, we'll have to try a different approach.."
+    ],
+    "distractors": [
+      "If we want to catch him, we'll have to go about it quickly..",
+      "If we want to avoid him, we'll have to go about it differently..",
+      "If we can catch him, we'll have to go about it differently.."
+    ]
+  },
+  {
+    "phraseId": "text_12_p1",
+    "primaryTranslation": "Polina says: \"We'll have to get into his place,",
+    "alternatives": [
+      "Polina states: \"We'll need to enter his home,",
+      "Polina declares: \"We must get into his house,",
+      "Polina announces: \"We'll have to go into his apartment,"
+    ],
+    "distractors": [
+      "Polina says: \"We'll have to get out of his place,",
+      "Polina whispers: \"We'll have to get into his place,",
+      "Polina says: \"We'll have to stay away from his place,"
+    ]
+  },
+  {
+    "phraseId": "text_12_p2",
+    "primaryTranslation": "that's where he keeps all the books he stole.\"",
+    "alternatives": [
+      "that's the place where he stores all the stolen books.\"",
+      "that's where he hides all the books he's taken.\"",
+      "it's there that he keeps all the books he's stolen.\""
+    ],
+    "distractors": [
+      "that's where he keeps all the books he bought.\"",
+      "that's where he returns all the books he stole.\"",
+      "that's where he keeps some of the books he stole.\""
+    ]
+  }
+]
+}

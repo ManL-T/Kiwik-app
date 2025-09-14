@@ -10,8 +10,10 @@ class UserProgress {
         // localStorage key
         this.storageKey = 'kiwik_userProgress';
         
-        // Data structure
-        this.data = null;
+        // Content tracking
+        this.currentContentId = null;
+        this.allContentData = {}; // Will hold all content progress data
+        this.data = null; // Current content data reference
         
         // Ready state
         this.isReady = false;
@@ -35,8 +37,8 @@ class UserProgress {
         this.loadUserProgress();
         
         // Mark as ready and emit event (following project pattern)
-        this.isReady = true;
-        this.eventBus.emit('userProgress:ready');
+        // this.isReady = true;
+        // this.eventBus.emit('userProgress:ready');
         
         console.log(`✅ UserProgress: [${new Date().toISOString()}] Batch cycling support complete and ready`);
     }
@@ -46,9 +48,15 @@ class UserProgress {
         console.log('📊 UserProgress: Setting up event listeners...');
         
         // Wait for GameData to load before initializing phrases
-        this.eventBus.on('gameData:loaded', () => {
+        this.eventBus.on('gameData:loaded', (projectMetadata) => {
             console.log('📊 UserProgress: GameData loaded, initializing phrase progress...');
+            this.setCurrentContent(projectMetadata);
             this.initializePhraseProgress();
+
+            // NOW mark as ready and emit event
+            this.isReady = true;
+            this.eventBus.emit('userProgress:ready');
+            console.log(`✅ UserProgress: Ready for content: ${this.currentContentId}`);
         });
         
         // Handle game start
@@ -91,42 +99,27 @@ class UserProgress {
 
     }
 
-    initializeNewSession() {
-        console.log('📊 UserProgress: Initializing new session');
+    // NEW: Set current content and switch data context
+    setCurrentContent(projectMetadata) {
+        this.currentContentId = projectMetadata.title;
+        console.log(`📊 UserProgress: Switched to content: ${this.currentContentId}`);
         
-        // Increment games played
-        this.data.gamesPlayed++;
+        // Initialize content data if doesn't exist
+        if (!this.allContentData[this.currentContentId]) {
+            console.log(`📊 UserProgress: Creating fresh data for new content: ${this.currentContentId}`);
+            this.allContentData[this.currentContentId] = this.createFreshProgressData();
+        }
         
-        // Start new game tracking
-        this.data.currentGame = {
-            gameNumber: this.data.gamesPlayed,
-            stages: 0,
-            textsPlayed: 0,  // This will be set when game ends based on cumulative total
-            levelUps: 0
-        };
-        
-        // Load levels from previous session if exists
-        const resumeData = this.loadLevelsFromLastSession();
-        
-        // Reset session data for new session
-        this.sessionData = {
-            startTime: new Date().toISOString(),
-            endTime: null,
-            lastActiveText: resumeData.lastActiveText || null,
-            attemptsByText: {},
-            currentLevels: {}
-            // REMOVED: textsPlayedThisGame tracking
-        };
-        
-        console.log('📊 UserProgress: New game started:', this.data.currentGame);
+        // Set current data reference to this content
+        this.data = this.allContentData[this.currentContentId];
+        console.log(`📊 UserProgress: Data context set for ${this.currentContentId}:`, this.data);
     }
-
 
 // 1. Update createFreshProgressData() in UserProgress.js to include new tracking
 createFreshProgressData() {
     console.log('📊 UserProgress: Creating fresh progress data structure...');
     
-    this.data = {
+    return {
         gamesPlayed: 0,
         phraseProgress: {},
         textLevels: {},
@@ -182,8 +175,6 @@ initializeNewSession() {
     console.log('📊 UserProgress: New game started:', this.data.currentGame);
 }
 
-
-
     loadLevelsFromLastSession() {
         const sessions = this.loadSessionHistory();
         if (!sessions || sessions.length === 0) {
@@ -212,27 +203,23 @@ initializeNewSession() {
                 const parsedData = JSON.parse(stored);
                 console.log('📊 UserProgress: Parsed localStorage data:', parsedData);
                 
-                // Validate structure
-                if (this.isValidProgressData(parsedData)) {
-                    this.data = parsedData;
-                    console.log('✅ UserProgress: Loaded existing valid progress data');
-                    
-                    // NEW: Initialize new systems if missing
-                    this.initializeNewSystems();
+                // Check if it's the new multi-content structure
+                if (this.isMultiContentData(parsedData)) {
+                    this.allContentData = parsedData;
+                    console.log('✅ UserProgress: Loaded existing multi-content data');
                 } else {
-                    console.log('⚠️ UserProgress: Invalid data structure, creating fresh data');
-                    this.createFreshProgressData();
+                    // Legacy single-content data - clear it as requested
+                    console.log('📊 UserProgress: Found legacy data - clearing as requested');
+                    this.allContentData = {};
                 }
             } else {
-                console.log('📊 UserProgress: No existing data, creating fresh data');
-                this.createFreshProgressData();
+                console.log('📊 UserProgress: No existing data');
+                this.allContentData = {};
             }
-            
-            console.log('📊 UserProgress: Final data structure:', this.data);
             
         } catch (error) {
             console.error('❌ UserProgress: Error loading progress:', error);
-            this.createFreshProgressData();
+            this.allContentData = {};
         }
     }
 
@@ -247,6 +234,26 @@ initializeNewSession() {
                     
         console.log('📊 UserProgress: Data validation result:', isValid);
         return isValid;
+    }
+
+    // Check if data is the new multi-content structure
+    isMultiContentData(data) {
+        // Multi-content data should have content names as top-level keys
+        // and each should contain the expected progress structure
+        if (!data || typeof data !== 'object') return false;
+        
+        // Check if any top-level key contains a valid progress structure
+        const keys = Object.keys(data);
+        if (keys.length === 0) return false;
+        
+        // Sample first key to see if it has progress structure
+        const firstKey = keys[0];
+        const firstContent = data[firstKey];
+        
+        return firstContent && 
+               typeof firstContent.gamesPlayed === 'number' &&
+               firstContent.phraseProgress &&
+               typeof firstContent.phraseProgress === 'object';
     }
     
     // NEW: Initialize new systems if missing from existing data
@@ -812,7 +819,7 @@ initializeNewSession() {
         
         try {
             console.log(`📊 UserProgress: [${timestamp}] Attempting JSON.stringify...`);
-            const jsonString = JSON.stringify(this.data, null, 2);
+            const jsonString = JSON.stringify(this.allContentData, null, 2);
             console.log(`📊 UserProgress: [${timestamp}] JSON.stringify successful, length: ${jsonString.length}`);
             console.log(`📊 UserProgress: [${timestamp}] First 500 chars of JSON:`, jsonString.substring(0, 500));
             
@@ -1033,34 +1040,6 @@ getTextStatsDebug() {
             console.log('🧹 UserProgress: Re-initializing phrase progress after clear...');
             this.initializePhraseProgress();
         }
-    }
-
-    createFreshProgressData() {
-        console.log('📊 UserProgress: Creating fresh progress data structure...');
-        
-        this.data = {
-            gamesPlayed: 0,
-            phraseProgress: {},
-            textLevels: {},
-            stageState: {
-                activeTexts: [],
-                currentStage: 1,
-                currentTextIndex: 0,
-                lastCompletedTextId: null,
-                lockedTextLevels: {
-                    'text_1': 1,
-                    'text_2': 1, 
-                    'text_3': 1
-                }
-            },
-            textStats: {},
-            // NEW: Game tracking data
-            gamesHistory: [],
-            currentGame: null,
-            lastStage: null
-        };
-        
-        console.log('📊 UserProgress: Fresh data created:', this.data);
     }
 
     // Helper method to get next text

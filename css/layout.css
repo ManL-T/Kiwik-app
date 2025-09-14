@@ -350,7 +350,9 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 2em;
+    padding: 1em;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 /* Content area layout */
@@ -378,10 +380,12 @@
 
 /* Display container layout */
 .display-container {
-    padding: 35px;
+    padding: 1em;
     width: calc(100vw - 20vw); 
     margin: 0 auto;
     text-align: left;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 .translation-option {
@@ -507,14 +511,32 @@
 
 
 /* Solution option layout */
+/* Solution option layout */
 .solution-option {
-    font-size: 6vh;          /* scales text with screen */
-    line-height: 1;    
-    padding: 3vh;
-    margin: 1vh;
-    display: block;
-    width: 100%;
-    text-align: left;
+        font-size: 5vh; /* reduced from 6vh */
+        line-height: 1.2;
+        padding: 1vh 0.5vw;
+        margin: 0.5vh 0;
+        display: block;
+        width: 100%;
+        text-align: left;
+        word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .solution-option {
+        font-size: 2.5vh;
+        padding: 0.8vh 0.5vw;
+        margin: 0.3vh 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .solution-option {
+        font-size: 2vh;
+        padding: 0.5vh 0.2vw;
+        margin: 0.2vh 0;
+    }
 }
 
 /* Overlay layout */

@@ -186,7 +186,7 @@ body {
 .phrase-status-mastered .phrase-text {
     background-color: rgba(0, 0, 0, 0.8);
     border: 1px solid rgba(22, 241, 253, 0.3);
-    color: rgba(12, 48, 50, 0.3); /*changed to darker*/
+    color: rgba(17, 87, 91, 0.3); /*changed to darker*/
 }
 
 /* Responsive theme adjustments */
