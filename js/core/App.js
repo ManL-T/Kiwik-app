@@ -3,9 +3,16 @@ class App {
     constructor() {
         console.log('🚀 App: Initializing...');
         this.eventBus = new EventBus();
+        
+        // Create shared FirebaseAdapter first
+        this.firebaseAdapter = new window.FirebaseAdapter();
+        
+        // Create AuthManager early (depends on FirebaseAdapter)
+        this.authManager = new AuthManager(this.eventBus, this.firebaseAdapter);
+        
         this.uiRenderer = new UIRenderer(this.eventBus);
         this.gameData = new GameData(this.eventBus);
-        this.userProgress = new UserProgress(this.eventBus, this.gameData);
+        this.userProgress = new UserProgress(this.eventBus, this.gameData, this.firebaseAdapter);
         this.timer = new Timer(this.eventBus);
         this.challengeManager = new ChallengeManager(this.eventBus, this.uiRenderer, this.gameData, this.userProgress);
         this.gameSession = new GameSession(this.eventBus, this.uiRenderer, this.challengeManager);        

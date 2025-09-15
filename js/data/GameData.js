@@ -20,10 +20,8 @@ class GameData {
             return;
         }
         console.log('📚 GameData: Loading selected song:', selectedSong);
-        this.loadSongData(selectedSong);
+        this.initializeAsync(selectedSong);
 
-        // Clear the selection after use
-        localStorage.removeItem('selectedSong');
         
         console.log('✅ GameData: Initialization complete');
     }
@@ -32,6 +30,12 @@ class GameData {
         this.eventBus.on('gameData:requestPhraseData', (phraseId) => {
             this.providePhraseData(phraseId);
         });
+    }
+
+    async initializeAsync(selectedSong) {
+        await this.loadSongData(selectedSong);
+        localStorage.removeItem('selectedSong');  // Only remove after loading completes
+        console.log('✅ GameData: Initialization complete');
     }
     
     // Load JSON file

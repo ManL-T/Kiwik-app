@@ -14,6 +14,9 @@
 <body>
      <div id="app"></div>
     
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
     <!-- Phase Challenge Modules -->
     <script src="js/phrase_challenges/Presentation.js"></script>
     <script src="js/phrase_challenges/Revision.js"></script>
@@ -23,6 +26,8 @@
     
     <!-- UI and Manager Modules -->
     <script src="js/ui/UIRenderer.js"></script>
+    <script src="js/managers/AuthManager.js"></script> 
+    <script src="js/managers/FirebaseAdapter.js"></script>
     <script src="js/managers/Navigation.js"></script>
     <script src="js/managers/EnergyBar.js"></script>
     <script src="js/managers/Timer.js"></script>
@@ -34,6 +39,20 @@
     <script src="js/core/EventBus.js"></script>
     <script src="js/core/GameSession.js"></script>
     <script src="js/core/App.js"></script>
+
+    <script>
+    // Simple Firebase test - doesn't interfere with your game
+setTimeout(() => {
+    if (window.app && window.app.userProgress && window.app.userProgress.isReady) {
+        showDebugInfo();
+    } else {
+        // Wait for UserProgress to be ready
+        eventBus.on('userProgress:ready', () => {
+            showDebugInfo();
+        });
+    }
+}, 1000);
+    </script>
     
 </body>
 </html>
