@@ -50,12 +50,12 @@ class Navigation {
     }
     
     goBackToLauncher() {
-        console.log('🧭 Navigation: Returning to launcher, saving session...');
+        console.log('🧭 Navigation: Returning to index.html, the old launcher , saving session...');
         this.eventBus.emit('userProgress:saveProgress');
         
         // Small delay to ensure save completes
         setTimeout(() => {
-            window.location.href = 'launcher.html';
+            window.location.href = 'index.html';
         }, 100);
     }
         

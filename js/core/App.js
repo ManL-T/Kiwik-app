@@ -12,9 +12,9 @@ class App {
         
         this.uiRenderer = new UIRenderer(this.eventBus);
         this.gameData = new GameData(this.eventBus);
-        this.userProgress = new UserProgress(this.eventBus, this.gameData, this.firebaseAdapter);
+        this.UserProgress = new UserProgress(this.eventBus, this.gameData, this.firebaseAdapter);
         this.timer = new Timer(this.eventBus);
-        this.challengeManager = new ChallengeManager(this.eventBus, this.uiRenderer, this.gameData, this.userProgress);
+        this.challengeManager = new ChallengeManager(this.eventBus, this.uiRenderer, this.gameData, this.UserProgress);
         this.gameSession = new GameSession(this.eventBus, this.uiRenderer, this.challengeManager);        
         this.navigation = new Navigation(this.eventBus);
     }
@@ -38,8 +38,8 @@ function startNewGame() {
 }
 
 function backToSite() {
-    // Go back to launcher
-    window.location.href = 'launcher.html';
+    // Go back to index.html, the old launcher
+    window.location.href = 'index.html';
 }
 
 
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🐛 DOMContentLoaded fired');
     setTimeout(() => {
         console.log('🐛 Timeout fired, checking window.app:', !!window.app);
-        console.log('🐛 Checking userProgress:', !!window.app?.userProgress);
-        if (window.app && window.app.userProgress) {
+        console.log('🐛 Checking UserProgress:', !!window.app?.UserProgress);
+        if (window.app && window.app.UserProgress) {
             console.log('🐛 Calling showDebugInfo...');
             showDebugInfo();
         } else {
@@ -60,9 +60,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function clearUserProgress() {
     console.log('🧹 Debug: Button clicked');
-    if (window.app && window.app.userProgress) {
+    if (window.app && window.app.UserProgress) {
         console.log('🧹 Debug: About to call clearProgress');
-        window.app.userProgress.clearProgress();
+        window.app.UserProgress.clearProgress();
         console.log('🧹 Debug: clearProgress completed');
         
         // Refresh the display
@@ -89,11 +89,11 @@ function showDebugInfo() {
         }
     }
     
-    const userProgress = window.app.userProgress;
+    const UserProgress = window.app.UserProgress;
     
     // Get the complete debug info from UserProgress
-    const progressInfo = userProgress.getDebugInfo();
-    const textStatsInfo = userProgress.getTextStatsDebug();
+    const progressInfo = UserProgress.getDebugInfo();
+    const textStatsInfo = UserProgress.getTextStatsDebug();
     
     // Combine both sections
     let html = '<strong style="color: #ffff00;">===== DEBUG INFO =====</strong><br><br>';
@@ -106,7 +106,7 @@ function showDebugInfo() {
 
 // Auto-refresh every 2 seconds
 setInterval(() => {
-    if (window.app && window.app.userProgress) {
+    if (window.app && window.app.UserProgress) {
         showDebugInfo();
     }
 }, 2000);

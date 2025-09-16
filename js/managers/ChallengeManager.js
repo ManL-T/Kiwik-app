@@ -1,13 +1,13 @@
 // js/managers/ChallengeManager.js - Updated with UserProgress Integration
 class ChallengeManager {
-    constructor(eventBus, uiRenderer, gameData, userProgress) {
+    constructor(eventBus, uiRenderer, gameData, UserProgress) {
         console.log(`🎯 ChallengeManager: [${new Date().toISOString()}] Initializing with UserProgress integration...`);
         
         // Store references
         this.eventBus = eventBus;
         this.uiRenderer = uiRenderer;
         this.gameData = gameData;
-        this.userProgress = userProgress;
+        this.UserProgress = UserProgress;
         
         // Assembly recipes for different challenge levels
         this.recipes = {
@@ -135,7 +135,7 @@ class ChallengeManager {
         
         // After GameData is ready, set starting position
         this.eventBus.on('userProgress:ready', () => {
-            const resumePosition = this.userProgress.getResumePosition();
+            const resumePosition = this.UserProgress.getResumePosition();
             const allTexts = this.gameData.getAllTexts();
             const startIndex = allTexts.findIndex(t => t.textId === resumePosition.startTextId);
             this.currentTextIndex = startIndex >= 0 ? startIndex : 0;
@@ -145,7 +145,7 @@ class ChallengeManager {
         // OPTION B: Check current state immediately (established pattern)
         const timestamp = new Date().toISOString();
         console.log(`🎯 ChallengeManager: [${timestamp}] Checking if UserProgress is already ready...`);
-        if (this.userProgress && this.userProgress.isReady) {
+        if (this.UserProgress && this.UserProgress.isReady) {
             console.log(`🎯 ChallengeManager: [${timestamp}] UserProgress already ready - updating flag`);
             this.userProgressReady = true;
             this.checkInitializationReadiness(timestamp);
@@ -268,7 +268,7 @@ class ChallengeManager {
     getCurrentPhraseId() {
         console.log('🎯 ChallengeManager: Finding next phrase with simple logic...');
         
-        const stageState = this.userProgress.data.stageState;
+        const stageState = this.UserProgress.data.stageState;
         const { activeTexts, currentTextIndex } = stageState;
         
         console.log('🎯 ChallengeManager: Current stage state:', stageState);
@@ -308,12 +308,12 @@ class ChallengeManager {
     lockTextLevelsForStage() {
         console.log(`🎯 ChallengeManager: Locking text levels for stage ${this.stageSystem.stageNumber}...`);
         
-        const stageState = this.userProgress.data.stageState;
+        const stageState = this.UserProgress.data.stageState;
         stageState.lockedTextLevels = {};
         
         // Lock current level for each text in the stage
         this.stageSystem.currentTexts.forEach(textId => {
-            const currentLevel = this.userProgress.getTextLevel(textId);
+            const currentLevel = this.UserProgress.getTextLevel(textId);
             stageState.lockedTextLevels[textId] = currentLevel;
             console.log(`🎯 ChallengeManager: Locked ${textId} at level ${currentLevel} for stage ${this.stageSystem.stageNumber}`);
         });
@@ -322,7 +322,7 @@ class ChallengeManager {
         stageState.activeTexts = [...this.stageSystem.currentTexts];
         stageState.currentStage = this.stageSystem.stageNumber;
         
-        this.userProgress.saveUserProgress();
+        this.UserProgress.saveUserProgress();
     }
 
 
@@ -335,7 +335,7 @@ class ChallengeManager {
 
         console.log('🎯 ChallengeManager: Advancing to next text...');
         
-        const stageState = this.userProgress.data.stageState;
+        const stageState = this.UserProgress.data.stageState;
         const oldTextIndex = stageState.currentTextIndex;
         const oldTextId = stageState.activeTexts[oldTextIndex];
 
@@ -344,7 +344,7 @@ class ChallengeManager {
 
 
         // Increment round count for completed text
-        this.userProgress.incrementRoundForText(oldTextId, completedLevel);
+        this.UserProgress.incrementRoundForText(oldTextId, completedLevel);
         
         // Move to next text
         stageState.currentTextIndex = (stageState.currentTextIndex + 1) % stageState.activeTexts.length;
@@ -364,7 +364,7 @@ class ChallengeManager {
         }
         
         // Save the updated state
-        this.userProgress.saveUserProgress();
+        this.UserProgress.saveUserProgress();
     }
 
     // check if phrase is completed (for this stage)
@@ -374,9 +374,9 @@ class ChallengeManager {
         const textId = this.extractTextId(phraseId);
         
         // Use LOCKED text level, not current level
-        const stageState = this.userProgress.data.stageState;
+        const stageState = this.UserProgress.data.stageState;
         const lockedTextLevel = stageState.lockedTextLevels[textId];
-        const phraseLevel = this.userProgress.getPhraseLevel(phraseId);
+        const phraseLevel = this.UserProgress.getPhraseLevel(phraseId);
         
         console.log(`🎯 ChallengeManager: ${phraseId} - phrase level: ${phraseLevel}, locked text level: ${lockedTextLevel}`);
         
@@ -393,7 +393,7 @@ class ChallengeManager {
         }
         
         // Condition 3: Already played in current session
-        const sessionData = this.userProgress.sessionData;
+        const sessionData = this.UserProgress.sessionData;
         if (sessionData.attemptsByText[textId]) {
             const hasCompletedAttempt = sessionData.attemptsByText[textId].some(attempt => 
                 attempt.phraseId === phraseId && attempt.correct === true
@@ -441,11 +441,11 @@ class ChallengeManager {
             console.log(`🎯 ChallengeManager: Added ${nextTextId} to stage ${this.stageSystem.stageNumber}`);
             
             // Update UserProgress stageState to match
-            const stageState = this.userProgress.data.stageState;
+            const stageState = this.UserProgress.data.stageState;
             stageState.activeTexts = [...this.stageSystem.currentTexts];
             
             // Lock the new text's level for this stage
-            const newTextLevel = this.userProgress.getTextLevel(nextTextId);
+            const newTextLevel = this.UserProgress.getTextLevel(nextTextId);
             stageState.lockedTextLevels[nextTextId] = newTextLevel;
             console.log(`🎯 ChallengeManager: Locked ${nextTextId} at level ${newTextLevel} for stage ${this.stageSystem.stageNumber}`);
             
@@ -455,7 +455,7 @@ class ChallengeManager {
             console.log(`🎯 ChallengeManager: New texts added this stage: ${this.stageSystem.newTextsAddedThisStage}`);
             
             // Save changes
-            this.userProgress.saveUserProgress();
+            this.UserProgress.saveUserProgress();
         } else {
             console.log(`🎯 ChallengeManager: No more texts available to add to stage ${this.stageSystem.stageNumber}`);
         }
@@ -463,7 +463,7 @@ class ChallengeManager {
 
     getNextAvailableText() {
         const allTexts = this.gameData.getAllTexts();
-        const activeTexts = this.userProgress.data.stageState.activeTexts;
+        const activeTexts = this.UserProgress.data.stageState.activeTexts;
         
         // Find first text not in active texts
         for (const text of allTexts) {
@@ -479,7 +479,7 @@ class ChallengeManager {
     // Create a new challenge (entry point) - now with text cover integration
     createChallenge() {
         // Check if this is the first challenge and levels need to be locked
-        const stageState = this.userProgress.data.stageState;
+        const stageState = this.UserProgress.data.stageState;
         if (!stageState.lockedTextLevels || Object.keys(stageState.lockedTextLevels).length === 0) {
             console.log('🎯 ChallengeManager: First challenge - locking text levels for stage');
             this.lockTextLevelsForStage();
@@ -509,7 +509,7 @@ class ChallengeManager {
         console.log(`🎯 ChallengeManager: Checking text cover - lastTextId: ${this.lastTextId}, currentTextId: ${textId}`);
         
         // Don't show for fully mastered texts
-        if (this.userProgress.isTextMastered(textId)) {
+        if (this.UserProgress.isTextMastered(textId)) {
             console.log(`🎯 ChallengeManager: ${textId} is fully mastered - no text cover`);
             return false;
         }
@@ -546,7 +546,7 @@ class ChallengeManager {
         console.log('🎯 ChallengeManager: Collecting text cover data for:', textId);
         
         // Get round display data
-        const roundDisplayData = this.userProgress.getTextRoundDisplay(textId);
+        const roundDisplayData = this.UserProgress.getTextRoundDisplay(textId);
         const level = roundDisplayData.level;
         const round = roundDisplayData.round;
         
@@ -562,7 +562,7 @@ class ChallengeManager {
         
         // Generate phrases with status
         const phrasesData = allPhrasesInText.map(phrase => {
-            const phraseLevel = this.userProgress.getPhraseLevel(phrase.phraseId);
+            const phraseLevel = this.UserProgress.getPhraseLevel(phrase.phraseId);
             const status = this.determinePhraseStatus(phraseLevel, level, round);
             const icon = this.getStatusIcon(status);
             
@@ -639,7 +639,7 @@ class ChallengeManager {
         console.log('🎯 ChallengeManager: DEBUG - Set this.currentPhrase to:', this.currentPhrase);
 
         // CREATE FRESH ATTEMPT FOR THIS PHRASE
-        this.userProgress.createFreshAttempt(phraseId);
+        this.UserProgress.createFreshAttempt(phraseId);
         console.log('🎯 ChallengeManager: Fresh attempt created for:', phraseId);
 
         // Track that this phrase is now played in current round
@@ -649,7 +649,7 @@ class ChallengeManager {
         const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
         
         // Use LOCKED text level, not current level
-        const stageState = this.userProgress.data.stageState;
+        const stageState = this.UserProgress.data.stageState;
         const lockedTextLevel = stageState.lockedTextLevels[textId];
         
         console.log(`🎯 ChallengeManager: Text ${textId} locked level: ${lockedTextLevel}`);
@@ -881,7 +881,7 @@ class ChallengeManager {
     getLockedTextLevel(textId) {
         if (!this.textCurrentLevels[textId]) {
             // First encounter - lock the current level
-            this.textCurrentLevels[textId] = this.userProgress.getTextLevel(textId);
+            this.textCurrentLevels[textId] = this.UserProgress.getTextLevel(textId);
             this.currentStageTexts.add(textId);
             console.log(`🔒 ChallengeManager: Locked ${textId} at level ${this.textCurrentLevels[textId]} for this stage`);
         }
@@ -892,9 +892,9 @@ class ChallengeManager {
         console.log(`🎯 ChallengeManager: Stage ${this.stageSystem.stageNumber} completed! Starting stage ${this.stageSystem.stageNumber + 1}`);
         
         // Increment stage count in UserProgress BEFORE updating internal counter
-        if (this.userProgress.data.currentGame) {
-            this.userProgress.data.currentGame.stages++;
-            console.log(`🎯 ChallengeManager: Incremented stage count to ${this.userProgress.data.currentGame.stages} for game ${this.userProgress.data.currentGame.gameNumber}`);
+        if (this.UserProgress.data.currentGame) {
+            this.UserProgress.data.currentGame.stages++;
+            console.log(`🎯 ChallengeManager: Incremented stage count to ${this.UserProgress.data.currentGame.stages} for game ${this.UserProgress.data.currentGame.gameNumber}`);
         }
         
         // Create new stage inheriting all texts from previous stage
@@ -908,7 +908,7 @@ class ChallengeManager {
         console.log(`🎯 ChallengeManager: Stage ${this.stageSystem.stageNumber} starting with texts:`, this.stageSystem.currentTexts);
         
         // Clear the session attempts to reset "completed" status for new stage
-        this.userProgress.sessionData.attemptsByText = {};
+        this.UserProgress.sessionData.attemptsByText = {};
         
         // Lock text levels for the new stage
         this.lockTextLevelsForStage();

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Kiwik - Learn Languages Through Music</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <!-- <link rel="stylesheet" href="css/theme-default.css"> -->
+    <link rel="stylesheet" href="css/theme-arcade.css">
+    <!-- <link rel="stylesheet" href="css/progress-display.css"> -->
+</head>
+<body>
+     <div id="app"></div>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Phase Challenge Modules -->
+    <script src="js/phrase_challenges/Presentation.js"></script>
+    <script src="js/phrase_challenges/Revision.js"></script>
+    <script src="js/phrase_challenges/Retrieval.js"></script>
+    <script src="js/phrase_challenges/ReadyOrNot.js"></script>
+    <script src="js/phrase_challenges/Solution.js"></script>
+    
+    <!-- UI and Manager Modules -->
+    <script src="js/ui/UIRenderer.js"></script>
+    <script src="js/managers/AuthManager.js"></script> 
+    <script src="js/managers/FirebaseAdapter.js"></script>
+    <script src="js/managers/Navigation.js"></script>
+    <script src="js/managers/EnergyBar.js"></script>
+    <script src="js/managers/Timer.js"></script>
+    <script src="js/managers/ChallengeManager.js"></script>
+    <script src="js/managers/UserProgress.js"></script>
+    
+    <!-- Data and Core Modules -->
+    <script src="js/data/GameData.js"></script>
+    <script src="js/core/EventBus.js"></script>
+    <script src="js/core/GameSession.js"></script>
+    <script src="js/core/App.js"></script>
+
+    <script>
+    // Simple Firebase test - doesn't interfere with your game
+setTimeout(() => {
+    if (window.app && window.app.userProgress && window.app.userProgress.isReady) {
+        showDebugInfo();
+    } else {
+        // Wait for UserProgress to be ready
+        window.app.eventBus.on('userProgress:ready', () => {
+            showDebugInfo();
+        });
+    }
+}, 1000);
+    </script>
+    
+</body>
+</html>

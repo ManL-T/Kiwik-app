@@ -2,57 +2,656 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiwik - Learn Languages Through Music</title>
-    <link rel="stylesheet" href="css/layout.css">
-    <!-- <link rel="stylesheet" href="css/theme-default.css"> -->
-    <link rel="stylesheet" href="css/theme-arcade.css">
-    <!-- <link rel="stylesheet" href="css/progress-display.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'VCR OSD Neue', sans-serif;
+            background-color: #0a0909;
+            color: rgb(9, 248, 168);
+            min-height: 100vh;
+        }
+
+        @font-face {
+        font-family: 'VCR OSD Neue';  /* Name you want to use for the font */
+        src: url('css/VCRosdNEUE.ttf') format('truetype'); /* Path to your .ttf file */
+        font-weight: normal;
+        font-style: normal;
+        }
+
+        /* Header */
+        header {
+            padding: 1rem;
+            position: relative;
+            background-color:rgb(9, 248, 168);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color:rgb(9, 9, 9)
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #0a0a0a;
+            transition: 0.3s;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color:rgb(8, 220, 149);
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 1rem;
+        }
+
+        .nav-menu li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #070d0c;
+        }
+
+        .nav-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .nav-menu a {
+            color: #100e0e;
+            text-decoration: none;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 1rem 0;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        /* .hero-text title {
+            font-size: 5vw;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .hero-text body {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            text-align: center;
+        } */
+
+        .target-language {
+            font-size: 1.1rem;
+            background: #cbcaca;
+            color:#0c0d0d;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            position: relative;
+        }
+
+        /* .target-language::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 2px;
+            background-color: #ffffff;
+        } */
+
+
+        .vids {
+            display: flex;
+            justify-content: center; /* Horizontal centering */
+            align-items: center;    /* Vertical centering */
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .how-works {
+            display: flex;
+            justify-content: center; /* Horizontal centering */
+            align-items: center;    /* Vertical centering */
+            height: 200px; 
+        }   
+
+        .how-to {
+            display: flex;
+            justify-content: center; /* Horizontal centering */
+            align-items: center;    /* Vertical centering */
+            height: 200px; 
+        }
+
+
+
+        /* Song Cards */
+        .songs-section {
+            padding: 2rem 1rem 2rem;
+        }
+
+        .songs-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 1fr;
+        }
+
+        .song-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .song-card {
+            background-color: #b8d4d1;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .song-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .song-info {
+            background-color: #ffffff;
+            color: #2a3f3b;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .song-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .song-artist {
+            font-size: 1rem;
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+
+            .nav-menu {
+                position: static;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                background: none;
+            }
+
+            .nav-menu ul {
+                display: flex;
+                gap: 2rem;
+                padding: 0;
+            }
+
+            .nav-menu li {
+                border: none;
+                padding: 0;
+            }
+
+            main {
+                padding: 3rem 2rem;
+            }
+
+            .hero-text {
+                font-size: 1.5rem;
+                margin-bottom: 4rem;
+            }
+
+            .songs-section {
+                padding: 0 2rem 3rem;
+            }
+
+            .songs-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .song-card {
+                aspect-ratio: 16 / 9;
+            }
+
+        }
+    </style>
 </head>
 <body>
-     <div id="app"></div>
-    
-    <!-- Firebase Configuration -->
-    <script src="firebase-config.js"></script>
-    
-    <!-- Phase Challenge Modules -->
-    <script src="js/phrase_challenges/Presentation.js"></script>
-    <script src="js/phrase_challenges/Revision.js"></script>
-    <script src="js/phrase_challenges/Retrieval.js"></script>
-    <script src="js/phrase_challenges/ReadyOrNot.js"></script>
-    <script src="js/phrase_challenges/Solution.js"></script>
-    
-    <!-- UI and Manager Modules -->
-    <script src="js/ui/UIRenderer.js"></script>
-    <script src="js/managers/AuthManager.js"></script> 
-    <script src="js/managers/FirebaseAdapter.js"></script>
-    <script src="js/managers/Navigation.js"></script>
-    <script src="js/managers/EnergyBar.js"></script>
-    <script src="js/managers/Timer.js"></script>
-    <script src="js/managers/ChallengeManager.js"></script>
-    <script src="js/managers/UserProgress.js"></script>
-    
-    <!-- Data and Core Modules -->
-    <script src="js/data/GameData.js"></script>
-    <script src="js/core/EventBus.js"></script>
-    <script src="js/core/GameSession.js"></script>
-    <script src="js/core/App.js"></script>
+    <header>
+        <div class="header-content">
+            <div class="logo">FrazeKraze</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#language">native: English</a></li>
+                    <li><a href="#" onclick="openAuthModal()">log in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-text">
+            <!-- <h3>The only really fun and efficient way to learn a language</h3> -->
+        
+            <h2>F R A Z E - K R A Z E</h2>
+            <h3>Beat your favourite songs' vocabulary</h3>
+
+            </div>
+
+            <div class="vids">
+                <div class="how-works"><h3>How this works</h3>
+                <div class="video-tutorial"></div>
+                </div>
+                <div class="how-to"><h3>How to Play</h3>
+                <div class="video-tutorial"></div>
+                </div>
+            </div>
+
+        
+    </main>
+
+    <section class="songs-section">
+        <div class="target-language">playing in... Français</div>
+        <div class="songs-grid">
+            <div class="song-item">
+                <div class="song-card" onclick="launchGame('la_fievre_beginner')"><img src="assets/images/la-fievre.png"></div>
+                <div class="song-info">
+                    <div class="song-title">La fièvre</div>
+                    <div class="song-artist">Julien Doré</div>
+                </div>
+            </div>
+            <div class="song-item">
+                <div class="song-card" onclick="launchGame('grande_deception')"><img src="assets/images/la-symphonie-des-eclairs.png"></div>
+                <div class="song-info">
+                    <div class="song-title">La symphonie des éclairs</div>
+                    <div class="song-artist">La Grande Déception</div>
+                </div>
+            </div>
+            <div class="song-item">
+                <div class="song-card" onclick="launchGame('game_1')"><img src="assets/images/la-symphonie-des-eclairs.png"></div>
+                <div class="song-info">
+                    <div class="song-title">La symphonie des éclairs </div>
+                    <div class="song-artist">Le Mystère des Livres volés. Premiere partie</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
-    // Simple Firebase test - doesn't interfere with your game
-setTimeout(() => {
-    if (window.app && window.app.userProgress && window.app.userProgress.isReady) {
-        showDebugInfo();
-    } else {
-        // Wait for UserProgress to be ready
-        eventBus.on('userProgress:ready', () => {
-            showDebugInfo();
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        function launchGame(songId) {
+            // Store the selected song for the game
+            localStorage.setItem('selectedSong', songId);
+            // Navigate to the game
+            window.location.href = 'game.html';
+        }
+    </script>
+
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+
+    <!-- Firebase and Auth Scripts -->
+    <script src="js/managers/FirebaseAdapter.js"></script>
+    <script src="js/managers/AuthManager.js"></script>
+    <script src="js/core/EventBus.js"></script>
+
+    <script>
+    // Initialize auth system for launcher
+    let eventBus, firebaseAdapter, authManager;
+    let currentUser = null;
+
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('🚀 Launcher: Initializing authentication...');
+        
+        // Initialize components
+        eventBus = new EventBus();
+        firebaseAdapter = new FirebaseAdapter();
+        authManager = new AuthManager(eventBus, firebaseAdapter);
+        
+        // Setup auth event listeners
+        setupAuthEventListeners();
+        
+        console.log('✅ Launcher: Authentication initialized');
+    });
+
+    function setupAuthEventListeners() {
+        // Listen for auth state changes
+        eventBus.on('auth:statusChanged', (data) => {
+            console.log('🔐 Launcher: Auth status changed:', data.isAuthenticated ? 'logged in' : 'logged out');
+            currentUser = data.user;
+            updateMenuAuthState(data.isAuthenticated, data.user);
+        });
+        
+        // Handle successful login
+        eventBus.on('auth:loginSuccess', (data) => {
+            console.log('✅ Launcher: Login successful');
+            closeAuthModal();
+            showAuthSuccess('Welcome back!');
+        });
+        
+        // Handle successful registration
+        eventBus.on('auth:registerSuccess', (data) => {
+            console.log('✅ Launcher: Registration successful');
+            closeAuthModal();
+            showAuthSuccess('Account created successfully!');
+        });
+        
+        // Handle login errors
+        eventBus.on('auth:loginError', (data) => {
+            console.log('❌ Launcher: Login error:', data.message);
+            showAuthError(data.message);
+            setAuthLoading(false);
+        });
+        
+        // Handle registration errors
+        eventBus.on('auth:registerError', (data) => {
+            console.log('❌ Launcher: Registration error:', data.message);
+            showAuthError(data.message);
+            setAuthLoading(false);
+        });
+        
+        // Handle logout success
+        eventBus.on('auth:logoutSuccess', () => {
+            console.log('✅ Launcher: Logout successful');
+            showAuthSuccess('Logged out successfully!');
         });
     }
-}, 1000);
+
+    // Global auth functions
+    function openAuthModal() {
+        console.log('🔐 Launcher: Opening auth modal...');
+        
+        // Load auth template
+        fetch('templates/screens/auth.html')
+            .then(response => {
+                console.log('✅ Fetch response received:', response.status);
+                return response.text();
+            })
+            .then(html => {
+                console.log('✅ HTML content loaded, length:', html.length);
+                console.log('✅ First 100 chars:', html.substring(0, 100));
+                
+                // Create overlay container
+                const overlay = document.createElement('div');
+                overlay.id = 'authModalContainer';
+                console.log('✅ Overlay element created:', overlay);
+                
+                overlay.innerHTML = html;
+                console.log('✅ HTML content set to overlay');
+                
+                // Add to body
+                document.body.appendChild(overlay);
+                console.log('✅ Overlay appended to body');
+                
+                // Check if it's actually in the DOM
+                const check = document.getElementById('authModalContainer');
+                console.log('✅ DOM check after insertion:', !!check);
+                
+                // Focus on email field
+                setTimeout(() => {
+                    const emailField = document.getElementById('email');
+                    console.log('✅ Email field found:', !!emailField);
+                    if (emailField) emailField.focus();
+                }, 100);
+                
+                console.log('✅ Launcher: Auth modal opened');
+            })
+            .catch(error => {
+                console.error('❌ Launcher: Error loading auth modal:', error);
+                alert('Error loading login form. Please refresh and try again.');
+            });
+    }
+
+    function closeAuthModal() {
+        console.log('🔐 Launcher: Closing auth modal...');
+        
+        const container = document.getElementById('authModalContainer');
+        if (container) {
+            container.remove();
+            console.log('✅ Launcher: Auth modal closed');
+        }
+    }
+
+    function login(email, password) {
+        console.log('🔐 Launcher: Attempting login...');
+        
+        // Show loading state
+        setAuthLoading(true);
+        hideAuthError();
+        
+        // Emit login event
+        eventBus.emit('auth:login', { email, password });
+    }
+
+    function register(email, password, username) {
+        console.log('🔐 Launcher: Attempting registration...');
+        
+        // Show loading state
+        setAuthLoading(true);
+        hideAuthError();
+        
+        // Emit register event
+        eventBus.emit('auth:register', { email, password, username });
+    }
+
+    function logout() {
+        console.log('🔐 Launcher: Attempting logout...');
+        
+        if (confirm('Are you sure you want to log out?')) {
+            eventBus.emit('auth:logout');
+        }
+    }
+
+    // Update menu based on auth state
+    function updateMenuAuthState(isAuthenticated, user) {
+        const navMenu = document.querySelector('.nav-menu ul');
+        if (!navMenu) return;
+        
+        // Find the login menu item
+        const loginItem = navMenu.querySelector('li:last-child');
+        if (!loginItem) return;
+        
+        if (isAuthenticated && user) {
+            // Show user email and logout option
+            const userEmail = user.email;
+            const displayEmail = userEmail.length > 20 ? userEmail.substring(0, 17) + '...' : userEmail;
+            
+            loginItem.innerHTML = `<a href="#" onclick="logout()">${displayEmail} | log out</a>`;
+        } else {
+            // Show login option
+            loginItem.innerHTML = `<a href="#" onclick="openAuthModal()">log in</a>`;
+        }
+    }
+
+    // Auth feedback functions
+    function showAuthSuccess(message) {
+        // Simple success message - you can enhance this
+        const successDiv = document.createElement('div');
+        successDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            z-index: 10001;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        `;
+        successDiv.textContent = message;
+        
+        document.body.appendChild(successDiv);
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+            if (successDiv.parentNode) {
+                successDiv.parentNode.removeChild(successDiv);
+            }
+        }, 3000);
+    }
+
+    // These functions are called from the auth.html template
+    function showAuthError(message) {
+        const errorDiv = document.getElementById('authError');
+        if (errorDiv) {
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+    }
+
+    function hideAuthError() {
+        const errorDiv = document.getElementById('authError');
+        if (errorDiv) {
+            errorDiv.style.display = 'none';
+        }
+    }
+
+    function setAuthLoading(loading) {
+        const submitBtn = document.getElementById('authSubmitBtn');
+        const form = document.getElementById('authForm');
+        
+        if (submitBtn && form) {
+            if (loading) {
+                submitBtn.disabled = true;
+                const isRegisterMode = document.getElementById('usernameField').style.display !== 'none';
+                submitBtn.textContent = isRegisterMode ? 'Signing up...' : 'Logging in...';
+                form.style.opacity = '0.7';
+            } else {
+                submitBtn.disabled = false;
+                const isRegisterMode = document.getElementById('usernameField').style.display !== 'none';
+                submitBtn.textContent = isRegisterMode ? 'Sign Up' : 'Log In';
+                form.style.opacity = '1';
+            }
+        }
+    }
+
+    // Auth modal functions
+    let isRegisterMode = false;
+
+    function toggleAuthMode() {
+        isRegisterMode = !isRegisterMode;
+        
+        const title = document.getElementById('authTitle');
+        const inviteCodeField = document.getElementById('inviteCodeField');
+        const usernameField = document.getElementById('usernameField');
+        const submitBtn = document.getElementById('authSubmitBtn');
+        const toggleText = document.getElementById('authToggleText');
+        const toggleLink = document.getElementById('authToggleLink');
+        
+        if (isRegisterMode) {
+            // Switch to register mode
+            title.textContent = 'Sign Up';
+            inviteCodeField.style.display = 'block';
+            usernameField.style.display = 'block';
+            submitBtn.textContent = 'Sign Up';
+            toggleText.textContent = 'Already have an account?';
+            toggleLink.textContent = 'Log in';
+            
+            // Make fields required in register mode
+            document.getElementById('inviteCode').required = true;
+            document.getElementById('username').required = true;
+        } else {
+            // Switch to login mode
+            title.textContent = 'Log In';
+            inviteCodeField.style.display = 'none';
+            usernameField.style.display = 'none';
+            submitBtn.textContent = 'Log In';
+            toggleText.textContent = "Don't have an account?";
+            toggleLink.textContent = 'Sign up';
+            
+            // Fields not required in login mode
+            document.getElementById('inviteCode').required = false;
+            document.getElementById('username').required = false;
+        }
+        
+        // Clear any error messages
+        hideAuthError();
+        
+        // Clear form
+        document.getElementById('authForm').reset();
+    }
+
+    function handleAuthSubmit(event) {
+        event.preventDefault();
+        
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const username = document.getElementById('username').value;
+        const inviteCode = document.getElementById('inviteCode').value;
+        
+        if (isRegisterMode) {
+            // Validate invitation code ONLY for registration
+            if (!inviteCode || inviteCode.toUpperCase() !== 'FRAZE-ALPHA-TEST') {
+                showAuthError('Invalid invitation code. Please check your code and try again.');
+                return;
+            }
+            
+            register(email, password, username);
+        } else {
+            // Login - no invitation code needed
+            login(email, password);
+        }
+    }
     </script>
-    
 </body>
 </html>
