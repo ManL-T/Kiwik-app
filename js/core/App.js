@@ -97,10 +97,22 @@ function showDebugInfo() {
     
     // Combine both sections
     let html = '<strong style="color: #ffff00;">===== DEBUG INFO =====</strong><br><br>';
-    html += progressInfo + '<br>';
-    html += textStatsInfo + '<br><br>';
-    html += '<strong>Press Debug Button to Clear All Data</strong>';
-    
+
+    // Format progressInfo object
+    html += '<strong style="color: #00ffff;">📊 PROGRESS:</strong><br>';
+    html += `Games Played: ${progressInfo.gamesPlayed}<br>`;
+    html += `Total Phrases: ${progressInfo.totalPhrases} | Mastered: ${progressInfo.masteredPhrases} (${progressInfo.masteredPercentage}%)<br>`;
+    html += `Total Texts: ${progressInfo.totalTexts}<br>`;
+    html += `Current Stage: ${progressInfo.currentStage}<br><br>`;
+
+    // Format textStatsInfo object  
+    html += '<strong style="color: #00ffff;">📚 TEXT STATS:</strong><br>';
+    Object.entries(textStatsInfo).forEach(([textId, textData]) => {
+        html += `${textId}: L1(${textData.level1?.rounds || 0}) L2(${textData.level2?.rounds || 0}) L3(${textData.level3?.rounds || 0})<br>`;
+    });
+
+    html += '<br><strong>Press Debug Button to Clear All Data</strong>';
+
     debugDiv.innerHTML = html;
 }
 

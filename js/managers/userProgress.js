@@ -18,9 +18,9 @@ class UserProgress {
         this.firebaseAdapter = firebaseAdapter;        
 
         // Content tracking
-        this.currentContentId = null;
-        this.allContentData = {}; // Will hold all content progress data
-        this.data = null; // Current content data reference
+        this.currentGameId = null;
+        this.allContentData = {}; // Will hold all content, all different songs' content, played so far by the user
+        this.data = null; // Current content data (the current song's content) reference
         
         // Ready state
         this.isReady = false;
@@ -77,6 +77,11 @@ class UserProgress {
             if (stored) {
                 const parsedData = JSON.parse(stored);
                 console.log('📊 UserProgress: Parsed localStorage data:', parsedData);
+
+                // Write Firestore data to actual localStorage
+                console.log('📊 UserProgress: Transferring Firestore data to localStorage...');
+                localStorage.setItem(this.storageKey, stored);
+                console.log('✅ UserProgress: Data successfully transferred to localStorage');
                 
                 // Check if it's the new multi-content structure
                 if (this.isMultiContentData(parsedData)) {
@@ -91,6 +96,10 @@ class UserProgress {
                 console.log('📊 UserProgress: No existing data');
                 this.allContentData = {};
             }
+
+                // 🆕 NEW: Clear localStorage when no Firestore data exists
+                // localStorage.removeItem(this.storageKey);
+                // console.log('📊 UserProgress: Cleared localStorage (no Firestore data)');
             
             // Initialize data with defaults - will be populated when GameData loads
             // this.data = this.createFreshProgressData();
@@ -118,11 +127,11 @@ class UserProgress {
         console.log('📊 UserProgress: Setting up event listeners...');
         
         // Wait for GameData to load before initializing phrases
-        this.eventBus.on('gameData:loaded', (projectMetadata) => {
+        this.eventBus.on('gameData:loaded', async (projectMetadata) => {
             console.log('📊 UserProgress: GameData loaded, initializing phrase progress...');
-            this.setCurrentContent(projectMetadata);
+            await this.setCurrentContent(projectMetadata);
             this.initializePhraseProgress();
-            console.log(`✅ UserProgress: Ready for content: ${this.currentContentId}`);
+            console.log(`✅ UserProgress: Ready for content: ${this.currentGameId}`);
         });
         
         // Handle game start
@@ -184,20 +193,33 @@ class UserProgress {
                typeof firstContent.phraseProgress === 'object';
     }
 
-    // NEW: Set current content and switch data context
-    setCurrentContent(projectMetadata) {
-        this.currentContentId = projectMetadata.title;
-        console.log(`📊 UserProgress: Switched to content: ${this.currentContentId}`);
+    async setCurrentContent(projectMetadata) {
+        this.currentGameId = projectMetadata.gameId;
+        console.log(`📊 UserProgress: Switching to game: ${this.currentGameId}`);
         
-        // Initialize content data if doesn't exist
-        if (!this.allContentData[this.currentContentId]) {
-            console.log(`📊 UserProgress: Creating fresh data for new content: ${this.currentContentId}`);
-            this.allContentData[this.currentContentId] = this.createFreshProgressData();
+        // Always create fresh data first (fallback)
+        const freshData = this.createFreshProgressData();
+        
+        try {
+            // Try to load existing data from Firestore
+            const existingData = await this.firebaseAdapter.loadGameDocument(this.currentGameId);
+            
+            if (existingData) {
+                this.allContentData[this.currentGameId] = JSON.parse(existingData);
+                console.log(`✅ UserProgress: Loaded existing data for ${this.currentGameId}`);
+            } else {
+                this.allContentData[this.currentGameId] = freshData;
+                console.log(`📊 UserProgress: No existing data, using fresh for ${this.currentGameId}`);
+            }
+        } catch (error) {
+            console.error(`❌ UserProgress: Error loading ${this.currentGameId}:`, error);
+            this.allContentData[this.currentGameId] = freshData;
+            console.log(`📊 UserProgress: Using fresh data due to error for ${this.currentGameId}`);
         }
         
-        // Set current data reference to this content
-        this.data = this.allContentData[this.currentContentId];
-        console.log(`📊 UserProgress: Data context set for ${this.currentContentId}:`, this.data);
+        // This ALWAYS gets set, no matter what happens above
+        this.data = this.allContentData[this.currentGameId];
+        console.log(`📊 UserProgress: Data context set for ${this.currentGameId}`);
     }
 
     // 1. Update createFreshProgressData() in UserProgress.js to include new tracking
@@ -271,7 +293,7 @@ class UserProgress {
         this.initializeAllTextStats();
         
         // Save after initialization
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     initializeStageState() {
@@ -490,7 +512,7 @@ class UserProgress {
         this.checkTextLevelProgression(phraseId);
         
         // Save progress
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     checkTextLevelProgression(phraseId) {
@@ -547,7 +569,7 @@ class UserProgress {
     setTextLevel(textId, level) {
         console.log(`📊 UserProgress: Setting ${textId} to level ${level}`);
         this.data.textLevels[textId] = level;
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     isTextMastered(textId) {
@@ -601,20 +623,33 @@ class UserProgress {
     }
     
     // Save progress to Firebase
+    // Replace the existing saveUserProgress() method in UserProgress.js with this fixed version
     saveUserProgress() {
         const timestamp = new Date().toISOString();
         console.log(`📊 UserProgress: [${timestamp}] saveUserProgress called`);
-        console.log(`📊 UserProgress: [${timestamp}] Data to save:`, this.allContentData);
+        
+        // Check if we have current content set
+        if (!this.currentGameId || !this.data) {
+            console.error(`❌ UserProgress: [${timestamp}] Cannot save - no current content set`);
+            return false;
+        }
+        
+        console.log(`📊 UserProgress: [${timestamp}] Saving data for content: ${this.currentGameId}`);
+        console.log(`📊 UserProgress: [${timestamp}] Data to save:`, this.data);
         
         try {
             console.log(`📊 UserProgress: [${timestamp}] Attempting JSON.stringify...`);
-            const jsonString = JSON.stringify(this.allContentData, null, 2);
+            const jsonString = JSON.stringify(this.data, null, 2);
             console.log(`📊 UserProgress: [${timestamp}] JSON.stringify successful, length: ${jsonString.length}`);
             console.log(`📊 UserProgress: [${timestamp}] First 500 chars of JSON:`, jsonString.substring(0, 500));
             
-            console.log(`📊 UserProgress: [${timestamp}] Attempting FirebaseAdapter save...`);
-            this.firebaseAdapter.setItem(this.storageKey, jsonString);
-            console.log(`✅ UserProgress: [${timestamp}] FirebaseAdapter save completed`);
+            // Use gameId as document key (once you add it to JSON files)
+            // For now, we'll use currentGameId but this will change to gameId
+            const documentKey = this.currentGameId; // This will become projectMetadata.gameId
+            
+            console.log(`📊 UserProgress: [${timestamp}] Saving to document: ${documentKey}`);
+            this.firebaseAdapter.setItem(documentKey, jsonString);
+            console.log(`✅ UserProgress: [${timestamp}] Save completed`);
             return true;
             
         } catch (error) {
@@ -623,6 +658,19 @@ class UserProgress {
             console.error(`📊 UserProgress: [${timestamp}] Error details - stack:`, error.stack);
             return false;
         }
+    }
+
+    saveToFirestore() {
+        if (!this.currentGameId || !this.data) {
+            console.error('❌ UserProgress: Cannot save to Firestore - no game data');
+            return false;
+        }
+        
+        console.log(`📊 UserProgress: Saving ${this.currentGameId} to Firestore`);
+        
+        const jsonString = JSON.stringify(this.data, null, 2);
+        this.firebaseAdapter.persistToFirestore(this.currentGameId, jsonString);
+        return true;
     }
 
     // helper method to initialize phrase progress
@@ -669,7 +717,7 @@ class UserProgress {
         });
         
         console.log('📊 UserProgress: TextStats initialized for', textsProcessed.size, 'texts');
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     // Initialize tracking for a specific text/level
@@ -703,7 +751,7 @@ class UserProgress {
         });
         
         console.log(`📊 UserProgress: Recorded attempt for ${phraseId} at level${level}: result ${result}`);
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     // Increment round for a text/level
@@ -711,7 +759,7 @@ class UserProgress {
         this.initializeTextStats(textId, level);
         this.data.textStats[textId][`level${level}`].rounds++;
         console.log(`📊 UserProgress: Incremented round for ${textId} level${level} to ${this.data.textStats[textId][`level${level}`].rounds}`);
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     // Helper method to extract textId from phraseId
@@ -772,7 +820,7 @@ class UserProgress {
         
         // Save sessions to Firebase
         try {
-            this.firebaseAdapter.setItem('kiwik_sessions', JSON.stringify(existingSessions));
+            this.firebaseAdapter.persistToFirestore(this.currentGameId, JSON.stringify(this.data));
             console.log('✅ UserProgress: Session saved successfully');
         } catch (error) {
             console.error('❌ UserProgress: Error saving session:', error);
@@ -836,7 +884,7 @@ class UserProgress {
         console.log('🧹 UserProgress: Clearing all progress...');
         this.allContentData = {};
         this.data = this.createFreshProgressData();
-        this.saveUserProgress();
+        // this.saveUserProgress();
         console.log('✅ UserProgress: Progress cleared');
     }
 
@@ -862,7 +910,7 @@ class UserProgress {
             this.initializeSinglePhrase(phraseId);
         }
         this.data.phraseProgress[phraseId].level = level;
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     // Get all phrase IDs for a text
@@ -913,7 +961,7 @@ class UserProgress {
     // Update stage state
     updateStageState(newState) {
         this.data.stageState = { ...this.data.stageState, ...newState };
-        this.saveUserProgress();
+        // this.saveUserProgress();
     }
 
     // Get stage state

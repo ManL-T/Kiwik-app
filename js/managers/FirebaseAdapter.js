@@ -62,7 +62,7 @@ class FirebaseAdapter {
             if (this.auth.currentUser) {
                 console.log('✅ FirebaseAdapter: User authenticated, loading data...');
                 this.currentUserId = this.auth.currentUser.uid;
-                await this.loadToCache();
+                // No automatic loading - documents will be loaded on-demand by gameId
             } else {
                 console.log('⚠️ FirebaseAdapter: No authenticated user, waiting for login...');
                 this.currentUserId = null;
@@ -79,40 +79,40 @@ class FirebaseAdapter {
         }
     }
     
-    async loadToCache() {
+    async loadGameDocument(gameId) {
+        // Wait for Firebase to be ready first
+        await this.waitUntilReady();
+        
         try {
             const { doc, getDoc } = this.firestoreMethods;
             
-            // Load main progress
-            const progressDoc = await getDoc(doc(this.db, 'users', this.currentUserId, 'data', 'kiwik_userProgress'));
-            if (progressDoc.exists()) {
-                this.cache['kiwik_userProgress'] = progressDoc.data().value;
-                console.log('🔥 FirebaseAdapter: Loaded progress data to cache');
-            }
+            console.log(`🔥 FirebaseAdapter: Loading game document: ${gameId}`);
+            const gameDoc = await getDoc(doc(this.db, 'users', this.currentUserId, 'data', gameId));
             
-            // Load sessions
-            const sessionsDoc = await getDoc(doc(this.db, 'users', this.currentUserId, 'data', 'kiwik_sessions'));
-            if (sessionsDoc.exists()) {
-                this.cache['kiwik_sessions'] = sessionsDoc.data().value;
-                console.log('🔥 FirebaseAdapter: Loaded sessions data to cache');
+            if (gameDoc.exists()) {
+                this.cache[gameId] = gameDoc.data().value;
+                console.log(`🔥 FirebaseAdapter: Loaded ${gameId} data to cache`);
+                return gameDoc.data().value;
+            } else {
+                console.log(`🔥 FirebaseAdapter: No existing data for ${gameId}`);
+                return null;
             }
-            
         } catch (error) {
-            console.error('❌ FirebaseAdapter: Error loading to cache:', error);
+            console.error(`❌ FirebaseAdapter: Error loading ${gameId}:`, error);
+            return null;
         }
     }
     
     // Synchronous interface - works immediately with cache
     setItem(key, value) {
-        console.log(`🔥 FirebaseAdapter: Setting ${key} in cache`);
-        
-        // Store in cache immediately (synchronous)
         this.cache[key] = value;
-        
-        // Queue for Firebase save
-        this.queueSave(key, value);
-        
-        return true; // Synchronous return like localStorage
+        return true; // No Firebase queuing
+    }
+
+    // at end of game saves to Firestore
+    persistToFirestore(gameId, data) {
+        console.log(`🔥 FirebaseAdapter: Persisting ${gameId} to Firestore`);
+        this.queueSave(gameId, data);
     }
     
     getItem(key) {
@@ -214,9 +214,7 @@ class FirebaseAdapter {
                 // If user changed, clear cache and reload
                 if (oldUserId !== this.currentUserId) {
                     console.log('🔥 FirebaseAdapter: User changed, reloading data...');
-                    this.cache = {};
-                    this.loadToCache();
-                }
+                    this.cache = {};                }
             } else {
                 // User logged out
                 console.log('🔥 FirebaseAdapter: User logged out, clearing cache');
