@@ -47,39 +47,81 @@ function showDebugInfo() {
     }
 
     const userProgress = window.app.userProgress;
+    
+    // Use existing methods
     const debugInfo = userProgress.getDebugInfo();
-    const progressData = userProgress.getCurrentData();
-    const sessionData = userProgress.sessionData;
+    const textStats = userProgress.getTextStatsDebug();
+    const currentData = userProgress.getCurrentData();
 
-    let html = '<strong style="color: #ffff00;">===== DEBUG INFO =====</strong><br><br>';
+    let html = '<strong style="color: #ffff00;">===== DEBUG INFO =====</strong><br>';
 
-    // Progress overview
-    html += '<strong style="color: #00ffff;">📊 PROGRESS:</strong><br>';
-    const totalPhrases = Object.keys(progressData.phraseProgress).length;
-    const masteredPhrases = Object.values(progressData.phraseProgress).filter(p => p.level === 'mastered').length;
+    // Game title on its own line
+    const projectMetadata = userProgress.gameData.getProjectMetadata();
+    const gameTitle = projectMetadata ? projectMetadata.title : 'La Grande Déception';
+    html += `${gameTitle}<br>`;
+    
+    // Texts and phrases count
+    html += `${debugInfo.totalUniqueTexts} texts<br>`;
+    html += `${debugInfo.totalPhrases} phrases<br>`;
 
-    html += `Total Phrases: ${totalPhrases} | Mastered: ${masteredPhrases}<br><br>`;
+    // Progress section
+    html += '<strong style="color: #00ffff;">📊 PROGRESS</strong><br>';
+    html += `Total Games: ${debugInfo.gamesPlayed}<br>`;
+    html += `Total Mastered Phrases: ${debugInfo.masteredPhrases} (${debugInfo.masteredPercentage}%)<br>`;
+    
+    if (currentData.lastStage) {
+        html += `Last Stage: Stage ${currentData.lastStage.stageNumber} [${currentData.lastStage.texts.join(', ')}]<br>`;
+    } else {
+        html += `Last Stage: None<br>`;
+    }
+    
+    html += `Next Text: ${debugInfo.nextText}<br>`;
 
-    // Text and phrase levels
-    html += '<strong style="color: #00ffff;">📚 LEVELS:</strong><br>';
-    const textGroups = {};
-    Object.entries(progressData.phraseProgress).forEach(([phraseId, data]) => {
-        const textId = phraseId.substring(0, phraseId.lastIndexOf('_'));
-        if (!textGroups[textId]) textGroups[textId] = [];
-        textGroups[textId].push({ phraseId, level: data.level });
-    });
+    // Text stats section
+    html += '<strong style="color: #00ffff;">📈 TEXT STATS</strong><br>';
+    if (textStats && typeof textStats === 'object') {
+        Object.keys(textStats).sort().forEach(textId => {
+            const textData = textStats[textId];
+            const levelDisplays = [];
+            
+            for (let level = 1; level <= 3; level++) {
+                const levelKey = `level${level}`;
+                const levelData = textData[levelKey];
+                
+                if (levelData && levelData.rounds > 0) {
+                    let levelDisplay = `L${level} R${levelData.rounds}`;
+                    
+                    if (levelData.attempts) {
+                        const sortedAttempts = Object.entries(levelData.attempts).sort((a, b) => {
+                            const numA = parseInt(a[0].split('_')[2].substring(1));
+                            const numB = parseInt(b[0].split('_')[2].substring(1));
+                            return numA - numB;
+                        });
+                        
+                        sortedAttempts.forEach(([phraseId, attempts]) => {
+                            const phraseNum = phraseId.split('_')[2];
+                            const attemptStr = attempts.map(a => a === 'mastered' ? 'M' : a).join(',');
+                            levelDisplay += ` ${phraseNum}(${attemptStr})`;
+                        });
+                    }
+                    
+                    levelDisplays.push(levelDisplay);
+                }
+            }
+            
+            if (levelDisplays.length > 0) {
+                html += `${textId} ${levelDisplays.join(', ')}<br>`;
+            }
+        });
+    }
 
-    Object.entries(textGroups).forEach(([textId, phrases]) => {
-        const textLevel = progressData.textLevels?.[textId] || 1;
-        html += `${textId} (L${textLevel}): `;
-        html += phrases.map(p => {
-            const pNum = p.phraseId.split('_')[2];
-            return `${pNum}:${p.level === 'mastered' ? 'M' : p.level}`;
-        }).join(', ');
-        html += '<br>';
-    });
-
-    html += '<br><strong>Press Debug Button to Clear All Data</strong>';
+    if (window.app && window.app.gameAnalytics) {
+        const analyticsDebug = window.app.gameAnalytics.getDebugInfo();
+        if (analyticsDebug && analyticsDebug.textStatsDisplay) {
+            html += '<br><strong style="color: #ff00ff;">📊 ANALYTICS STATS</strong><br>';
+            html += analyticsDebug.textStatsDisplay + '<br>';
+        }
+    }
 
     document.getElementById('debugInfo').innerHTML = html;
 }

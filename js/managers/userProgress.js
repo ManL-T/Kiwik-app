@@ -141,9 +141,15 @@ class UserProgress {
         });
 
         // Track skipped phrases
-        this.eventBus.on('userProgress:phraseSkipped', (phraseId) => {
-            console.log(`📊 UserProgress: Phrase skipped: ${phraseId}`);
-            this.markCurrentAttemptSkipped();
+        // this.eventBus.on('userProgress:phraseSkipped', (phraseId) => {
+        //     console.log(`📊 UserProgress: Phrase skipped: ${phraseId}`);
+        //     this.markCurrentAttemptSkipped();
+        // });
+
+        // Track mastered phrases
+        this.eventBus.on('userProgress:phraseMastered', (phraseId) => {
+            this.setPhraseLevel(phraseId, 'mastered');
+            this.checkTextLevelProgression(phraseId);
         });
 
         // Track incorrect attempts  
@@ -454,6 +460,15 @@ class UserProgress {
         } else {
             console.log(`📊 UserProgress: Phrase ${phraseId} ${outcome} - no progression`);
         }
+
+        // Record the attempt:
+        const textId = this.extractTextId(phraseId);
+        const playedLevel = this.data.stageState.lockedTextLevels[textId];
+        this.eventBus.emit('analytics:attemptRecorded', {
+            phraseId: phraseId,
+            playedLevel: playedLevel,
+            resultingLevel: this.currentAttempt.resultingLevel
+        });
         
         // Save attempt to session data
         this.saveAttemptToSession();
@@ -536,24 +551,30 @@ class UserProgress {
             console.log(`📊 UserProgress: Phrase ${id} is at level ${level}`);
         });
         
-        // Check if all phrases are at level 2 or higher (advance to level 2)
-        // or all phrases are mastered (advance to level 3/mastered)
+        // Get all phrase levels
         const phraseLevels = textPhrases.map(id => this.data.phraseProgress[id].level);
         
+        // Check for all possible level progressions
+        const allMastered = phraseLevels.every(level => level === 'mastered');
+        const allAtLevel3Plus = phraseLevels.every(level => 
+            level === 'mastered' || (typeof level === 'number' && level >= 3)
+        );
         const allAtLevel2Plus = phraseLevels.every(level => 
             level === 'mastered' || (typeof level === 'number' && level >= 2)
         );
-        const allMastered = phraseLevels.every(level => level === 'mastered');
         
         let newTextLevel = currentTextLevel;
         
-        if (allMastered && currentTextLevel < 3) {
+        // Check all possible progressions
+        if (allMastered && currentTextLevel < 'mastered') {
+            newTextLevel = 'mastered';
+        } else if (allAtLevel3Plus && currentTextLevel < 3) {
             newTextLevel = 3;
         } else if (allAtLevel2Plus && currentTextLevel < 2) {
             newTextLevel = 2;
         }
         
-        if (newTextLevel > currentTextLevel) {
+        if (newTextLevel > currentTextLevel || (newTextLevel === 'mastered' && currentTextLevel !== 'mastered')) {
             console.log(`🎉 UserProgress: Text ${textId} leveled up from ${currentTextLevel} to ${newTextLevel}!`);
             this.setTextLevel(textId, newTextLevel);
             
@@ -735,6 +756,7 @@ class UserProgress {
             console.log(`📊 UserProgress: Initialized textStats for ${textId} level${level}`);
         }
     }
+
 
     // Record an attempt result for textStats
     recordAttemptInTextStats(phraseId, level, result) {
@@ -926,6 +948,11 @@ class UserProgress {
     incrementRoundForText(textId) {
         const level = this.getTextLevel(textId);
         this.incrementTextStatsRound(textId, level);
+        // add round to Game Analytics
+        this.eventBus.emit('analytics:roundCompleted', {
+            textId: textId,
+            level: level
+        });
     }
 
     // Check if phrase is completed for current stage

@@ -60,6 +60,13 @@ class ChallengeManager {
         this.gameDataReady = false;
         this.userProgressReady = false;
         this.initializationComplete = false;
+
+        // Current attempt tracking
+        this.currentAttempt = {
+            wasSkipped: false,
+            hasIncorrectAnswers: false,
+            hasCorrectAnswer: false
+        };
         
         // Initialize phase modules
         this.initializePhases();
@@ -89,7 +96,8 @@ class ChallengeManager {
     setupEventListeners() {
         // Phase completion events
         this.eventBus.on('presentation:skipToSolution', () => {
-            this.eventBus.emit('userProgress:phraseSkipped', this.currentPhrase);
+            // this.eventBus.emit('userProgress:phraseSkipped', this.currentPhrase);
+            this.currentAttempt.wasSkipped = true; // ✅ Just track it
             this.jumpToPhase('Solution');
         });
 
@@ -116,12 +124,24 @@ class ChallengeManager {
         this.eventBus.on('solution:correct', () => {
             console.log('🎯 ChallengeManager: Correct answer - stopping timer immediately');
             this.eventBus.emit('timer:stop');
-            this.eventBus.emit('userProgress:correctAnswer', this.currentPhrase);
+
+            // NOW determine the final outcome
+            if (this.currentAttempt.wasSkipped && !this.currentAttempt.hasIncorrectAnswers) {
+                // Skipped cleanly = mastered
+                this.eventBus.emit('userProgress:phraseMastered', this.currentPhrase);
+            } else if (!this.currentAttempt.hasIncorrectAnswers) {
+                // Normal correct progression
+                this.eventBus.emit('userProgress:phraseCorrect', this.currentPhrase);
+            }
+            // If has incorrect answers, no progression (already handled)
+
             this.handleChallengeComplete();
+
         });
         
         this.eventBus.on('solution:incorrect', () => {
             console.log('🎯 ChallengeManager: DEBUG - solution:incorrect received, currentPhrase is:', this.currentPhrase);
+            this.currentAttempt.hasIncorrectAnswers = true;
             this.handleIncorrectAnswer();
         });
         
@@ -325,8 +345,6 @@ class ChallengeManager {
         this.UserProgress.saveUserProgress();
     }
 
-
-
     // New method: advance to next text in sequence
     advanceToNextText() {
         // Clear round state for new text/round
@@ -505,6 +523,14 @@ class ChallengeManager {
         this.startChallengeAssembly(phraseId);
     }
 
+    resetAttemptTracking() {
+        this.currentAttempt = {
+            wasSkipped: false,
+            hasIncorrectAnswers: false,
+            hasCorrectAnswer: false
+        };
+    }
+
     shouldShowTextCover(textId) {
         console.log(`🎯 ChallengeManager: Checking text cover - lastTextId: ${this.lastTextId}, currentTextId: ${textId}`);
         
@@ -638,6 +664,8 @@ class ChallengeManager {
         this.currentPhrase = phraseId;
         console.log('🎯 ChallengeManager: DEBUG - Set this.currentPhrase to:', this.currentPhrase);
 
+        this.resetAttemptTracking();
+        
         // CREATE FRESH ATTEMPT FOR THIS PHRASE
         this.UserProgress.createFreshAttempt(phraseId);
         console.log('🎯 ChallengeManager: Fresh attempt created for:', phraseId);
@@ -909,6 +937,13 @@ class ChallengeManager {
         
         // Clear the session attempts to reset "completed" status for new stage
         this.UserProgress.sessionData.attemptsByText = {};
+
+        // add analytics event for new stage start
+        this.eventBus.emit('analytics:stageStarted', {
+            stageNumber: this.stageSystem.stageNumber,
+            activeTexts: [...this.stageSystem.currentTexts],
+            lockedTextLevels: {...this.UserProgress.data.stageState.lockedTextLevels}
+        });
         
         // Lock text levels for the new stage
         this.lockTextLevelsForStage();

@@ -13,6 +13,7 @@ class App {
         this.uiRenderer = new UIRenderer(this.eventBus);
         this.gameData = new GameData(this.eventBus);
         this.UserProgress = new UserProgress(this.eventBus, this.gameData, this.firebaseAdapter);
+        this.gameAnalytics = new GameAnalytics(this.eventBus, this.firebaseAdapter);
         this.timer = new Timer(this.eventBus);
         this.challengeManager = new ChallengeManager(this.eventBus, this.uiRenderer, this.gameData, this.UserProgress);
         this.gameSession = new GameSession(this.eventBus, this.uiRenderer, this.challengeManager);        
@@ -62,11 +63,44 @@ function clearUserProgress() {
     console.log('🧹 Debug: Button clicked');
     if (window.app && window.app.UserProgress) {
         console.log('🧹 Debug: About to call clearProgress');
-        window.app.UserProgress.clearProgress();
-        console.log('🧹 Debug: clearProgress completed');
         
-        // Refresh the display
-        showDebugInfo();
+        // Get current game ID - fail if not found
+        const currentGameId = window.app.UserProgress.currentGameId;
+        if (!currentGameId) {
+            console.error('🧹 Debug: No current game ID found - cannot clear');
+            return;
+        }
+        
+        // Clear local UserProgress data
+        window.app.UserProgress.clearProgress();
+        console.log('🧹 Debug: UserProgress cleared');
+        
+        // Clear GameAnalytics in-memory data
+        if (window.app.gameAnalytics) {
+            // Reset GameAnalytics tracking data for this game
+            delete window.app.gameAnalytics.trackingData.games[currentGameId];
+            // Re-initialize empty tracking for this game
+            window.app.gameAnalytics.initializeGameTracking(currentGameId);
+            console.log('🧹 Debug: GameAnalytics cleared and reinitialized');
+        }
+        
+        console.log('🧹 Debug: Clearing Firebase for:', currentGameId);
+        
+        // Clear Firebase documents
+        window.app.firebaseAdapter.persistToFirestore(currentGameId, null);
+        const statsKey = `stats_${currentGameId}`;
+        window.app.firebaseAdapter.persistToFirestore(statsKey, null);
+        
+        // Clear cache
+        window.app.firebaseAdapter.setItem(currentGameId, null);
+        window.app.firebaseAdapter.setItem(statsKey, null);
+        
+        // Refresh display after operations complete
+        setTimeout(() => {
+            showDebugInfo();
+        }, 1000);
+        
+        console.log('🧹 Debug: All clear operations completed');
     }
 }
 
@@ -110,6 +144,48 @@ function showDebugInfo() {
     Object.entries(textStatsInfo).forEach(([textId, textData]) => {
         html += `${textId}: L1(${textData.level1?.rounds || 0}) L2(${textData.level2?.rounds || 0}) L3(${textData.level3?.rounds || 0})<br>`;
     });
+
+    // Add GameAnalytics display as additional section
+    if (window.app && window.app.gameAnalytics) {
+        const currentGameId = 'fr_en_002'; // Use current game ID
+        const textStatsDisplay = window.app.gameAnalytics.generateTextStatsDisplay(currentGameId);
+        if (textStatsDisplay) {
+            html += '<br><strong style="color: #ff00ff;">📊 ANALYTICS STATS:</strong><br>';
+            html += textStatsDisplay + '<br>';
+        }
+    }
+
+    // Add GameAnalytics display as additional section
+    console.log('🐛 DEBUG: Checking GameAnalytics availability');
+    console.log('🐛 DEBUG: window.app exists:', !!window.app);
+    console.log('🐛 DEBUG: window.app.gameAnalytics exists:', !!(window.app && window.app.gameAnalytics));
+    console.log('🐛 DEBUG: GameAnalytics trackingData:', JSON.stringify(window.app.gameAnalytics.trackingData, null, 2));
+
+
+    if (window.app && window.app.gameAnalytics) {
+        console.log('🐛 DEBUG: GameAnalytics found, calling generateTextStatsDisplay');
+        const currentGameId = 'fr_en_002';
+        console.log('🐛 DEBUG: Using gameId:', currentGameId);
+        
+        const textStatsDisplay = window.app.gameAnalytics.generateTextStatsDisplay(currentGameId);
+        console.log('🐛 DEBUG: generateTextStatsDisplay returned:', textStatsDisplay);
+        console.log('🐛 DEBUG: textStatsDisplay type:', typeof textStatsDisplay);
+        console.log('🐛 DEBUG: textStatsDisplay length:', textStatsDisplay ? textStatsDisplay.length : 'null/undefined');
+        
+        if (textStatsDisplay) {
+            console.log('🐛 DEBUG: Adding analytics stats to HTML');
+            html += '<br><strong style="color: #ff00ff;">📊 ANALYTICS STATS:</strong><br>';
+            html += textStatsDisplay + '<br>';
+        } else {
+            console.log('🐛 DEBUG: textStatsDisplay is falsy, not adding to HTML');
+            html += '<br><strong style="color: #ff00ff;">📊 ANALYTICS STATS:</strong><br>';
+            html += 'No analytics data returned<br>';
+        }
+    } else {
+        console.log('🐛 DEBUG: GameAnalytics not found');
+        html += '<br><strong style="color: #ff00ff;">📊 ANALYTICS STATS:</strong><br>';
+        html += 'GameAnalytics not available<br>';
+    }
 
     html += '<br><strong>Press Debug Button to Clear All Data</strong>';
 

@@ -338,12 +338,34 @@
             navMenu.classList.toggle('active');
         });
 
-        function launchGame(songId) {
-            // Store the selected song for the game
-            localStorage.setItem('selectedSong', songId);
-            // Navigate to the game
-            window.location.href = 'game.html';
+
+    // SECURE VERSION: Modified launchGame function with authentication gate
+    function launchGame(songId) {
+        console.log('🎮 LaunchGame: Attempting to launch game for:', songId);
+        
+        // SECURITY CHECK: Verify user is authenticated before allowing game access
+        if (!currentUser) {
+            console.log('🔐 LaunchGame: User not authenticated, opening auth modal');
+            
+            // Store the song they wanted to play for after login
+            localStorage.setItem('pendingGame', songId);
+            
+            // Show authentication modal instead of launching game
+            openAuthModal();
+            return;
         }
+        
+        console.log('✅ LaunchGame: User authenticated, launching game for:', currentUser.email);
+        
+        // Store the selected song for the game
+        localStorage.setItem('selectedSong', songId);
+        
+        // Clear any pending game (in case this was called after auth)
+        localStorage.removeItem('pendingGame');
+        
+        // Navigate to the game - now secured!
+        window.location.href = 'game.html';
+    }
     </script>
 
     <!-- Firebase Configuration -->
@@ -361,6 +383,12 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         console.log('🚀 Launcher: Initializing authentication...');
+
+        // Check if auth is required and open modal
+        if (localStorage.getItem('authRequired')) {
+            localStorage.removeItem('authRequired');
+            setTimeout(() => openAuthModal(), 500);
+        }
         
         // Initialize components
         eventBus = new EventBus();
@@ -379,6 +407,17 @@
             console.log('🔐 Launcher: Auth status changed:', data.isAuthenticated ? 'logged in' : 'logged out');
             currentUser = data.user;
             updateMenuAuthState(data.isAuthenticated, data.user);
+            
+            // NEW: Auto-launch pending game after authentication
+            if (data.isAuthenticated) {
+                const pendingGame = localStorage.getItem('pendingGame');
+                if (pendingGame) {
+                    console.log('🎮 Launcher: Auto-launching pending game:', pendingGame);
+                    setTimeout(() => {
+                        launchGame(pendingGame);
+                    }, 500); // Small delay to ensure UI is ready
+                }
+            }
         });
         
         // Handle successful login
@@ -386,6 +425,12 @@
             console.log('✅ Launcher: Login successful');
             closeAuthModal();
             showAuthSuccess('Welcome back!');
+            
+            // NEW: Check for pending game launch
+            const pendingGame = localStorage.getItem('pendingGame');
+            if (pendingGame) {
+                showAuthSuccess('Launching your game...');
+            }
         });
         
         // Handle successful registration
@@ -393,6 +438,12 @@
             console.log('✅ Launcher: Registration successful');
             closeAuthModal();
             showAuthSuccess('Account created successfully!');
+            
+            // NEW: Check for pending game launch
+            const pendingGame = localStorage.getItem('pendingGame');
+            if (pendingGame) {
+                showAuthSuccess('Welcome! Launching your game...');
+            }
         });
         
         // Handle login errors
@@ -413,6 +464,9 @@
         eventBus.on('auth:logoutSuccess', () => {
             console.log('✅ Launcher: Logout successful');
             showAuthSuccess('Logged out successfully!');
+            
+            // NEW: Clear any pending games on logout
+            localStorage.removeItem('pendingGame');
         });
     }
 
