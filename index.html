@@ -383,12 +383,6 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         console.log('🚀 Launcher: Initializing authentication...');
-
-        // Check if auth is required and open modal
-        if (localStorage.getItem('authRequired')) {
-            localStorage.removeItem('authRequired');
-            setTimeout(() => openAuthModal(), 500);
-        }
         
         // Initialize components
         eventBus = new EventBus();

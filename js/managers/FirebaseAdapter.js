@@ -16,12 +16,6 @@ class FirebaseAdapter {
     }
 
     async waitUntilReady() {
-        if (!this.currentUserId) {
-            console.log('🔐 FirebaseAdapter: Authentication required, redirecting to login');
-            // Redirect to auth modal instead of throwing error
-            window.location.href = 'index.html';
-            return null;
-        }
         return new Promise((resolve) => {
             if (this.isFirebaseReady) {
                 resolve();
@@ -89,11 +83,11 @@ class FirebaseAdapter {
         // Wait for Firebase to be ready first
         await this.waitUntilReady();
 
-        if (!this.currentUserId) {
-            localStorage.setItem('authRequired', 'true');
-            window.location.href = 'index.html';
-            return null;
-        }
+        // SECURITY: Check authentication AFTER Firebase is ready
+        // if (!this.currentUserId) {
+        //     console.error('❌ FirebaseAdapter: Cannot load game document - user not authenticated');
+        //     return null;
+        // }
         
         try {
             const { doc, getDoc } = this.firestoreMethods;
@@ -123,11 +117,11 @@ class FirebaseAdapter {
 
     // at end of game saves to Firestore
     persistToFirestore(gameId, data) {
-        if (!this.currentUserId) {
-            localStorage.setItem('authRequired', 'true');
-            window.location.href = 'index.html';
-            return;
-        }
+        // if (!this.currentUserId) {
+        //     localStorage.setItem('authRequired', 'true');
+        //     window.location.href = 'index.html';
+        //     return;
+        // }
         console.log(`🔥 FirebaseAdapter: Persisting ${gameId} to Firestore`);
         this.queueSave(gameId, data);
     }
