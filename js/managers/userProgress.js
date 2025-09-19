@@ -112,15 +112,22 @@ class UserProgress {
     }
 
     getTextRoundDisplay(textId) {
-    const textLevel = this.getTextLevel(textId);
-    const levelKey = `level${textLevel}`;
-    
-    if (!this.data.textStats[textId] || !this.data.textStats[textId][levelKey]) {
-        return 1; // Default round
+        const textLevel = this.getTextLevel(textId);
+        const levelKey = `level${textLevel}`;
+        
+        let completedRounds = 0;
+        if (this.data.textStats[textId] && this.data.textStats[textId][levelKey]) {
+            completedRounds = this.data.textStats[textId][levelKey].rounds || 0;
+        }
+        
+        // Current round = completed rounds + 1
+        const currentRound = completedRounds + 1;
+        
+        return {
+            level: textLevel,
+            round: currentRound
+        };
     }
-    
-    return this.data.textStats[textId][levelKey].rounds || 1;
-}
     
     // Setup event listeners
     setupEventListeners() {
@@ -947,8 +954,13 @@ class UserProgress {
     // increments round for text
     incrementRoundForText(textId) {
         const level = this.getTextLevel(textId);
-        this.incrementTextStatsRound(textId, level);
-        // add round to Game Analytics
+        
+        // Simply increment the round count (structure should already exist)
+        this.data.textStats[textId][`level${level}`].rounds++;
+        
+        console.log(`📊 UserProgress: Incremented round for ${textId} level${level} to ${this.data.textStats[textId][`level${level}`].rounds}`);
+        
+        // Notify GameAnalytics
         this.eventBus.emit('analytics:roundCompleted', {
             textId: textId,
             level: level

@@ -146,16 +146,6 @@ function showDebugInfo() {
     });
 
     // Add GameAnalytics display as additional section
-    if (window.app && window.app.gameAnalytics) {
-        const currentGameId = 'fr_en_002'; // Use current game ID
-        const textStatsDisplay = window.app.gameAnalytics.generateTextStatsDisplay(currentGameId);
-        if (textStatsDisplay) {
-            html += '<br><strong style="color: #ff00ff;">📊 ANALYTICS STATS:</strong><br>';
-            html += textStatsDisplay + '<br>';
-        }
-    }
-
-    // Add GameAnalytics display as additional section
     console.log('🐛 DEBUG: Checking GameAnalytics availability');
     console.log('🐛 DEBUG: window.app exists:', !!window.app);
     console.log('🐛 DEBUG: window.app.gameAnalytics exists:', !!(window.app && window.app.gameAnalytics));
@@ -164,7 +154,11 @@ function showDebugInfo() {
 
     if (window.app && window.app.gameAnalytics) {
         console.log('🐛 DEBUG: GameAnalytics found, calling generateTextStatsDisplay');
-        const currentGameId = 'fr_en_002';
+        const currentGameId = window.app.UserProgress.currentGameId;
+        if (!currentGameId) {
+            console.log('🐛 DEBUG: No current game ID found');
+            return;
+        }
         console.log('🐛 DEBUG: Using gameId:', currentGameId);
         
         const textStatsDisplay = window.app.gameAnalytics.generateTextStatsDisplay(currentGameId);

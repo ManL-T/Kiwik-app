@@ -10,7 +10,7 @@
   "texts": [
     {
       "textId": "text_1",
-      "title": "Une Première Rencontre",
+      "title": "Chapitre 1. Une Première Rencontre",
       "text": [
         "- C'est ton premier cours de danse ?",
         "- Oui, je suis un peu lassé d'être seul.",
@@ -20,7 +20,7 @@
     },
     {
       "textId": "text_2",
-      "title": "Notes Personnelles",
+      "title": "Chapitre 2. Notes Personnelles",
       "text": [
         "Je veux écrire ce qui a changé.",
         "On m'a déplacé de bureau aujourd'hui.",
@@ -30,7 +30,7 @@
     },
     {
       "textId": "text_3",
-      "title": "Réflexions sur la Vie",
+      "title": "Chapitre 3. Réflexions sur la Vie",
       "text": [
         "Le monde tourne autour du soleil sur la Terre,",
         "Mes vertèbres portent le poids de mes peines,",
@@ -40,7 +40,7 @@
     },
     {
       "textId": "text_4",
-      "title": "Réflexions du Matin",
+      "title": "Chapitre 4. Réflexions du Matin",
       "text": [
         "Je ne peux plus attendre.",
         "C'est déjà un peu juste.",
@@ -49,7 +49,7 @@
     },
     {
       "textId": "text_5",
-      "title": "Message à un Ami",
+      "title": "Chapitre 5. Message à un Ami",
       "text": [
         "Salut. Tout va bien avec ton projet ?",
         "C'est bon de te revoir enfin."
@@ -57,7 +57,7 @@
     },
     {
       "textId": "text_6",
-      "title": "Pensées Nocturnes",
+      "title": "Chapitre 6. Pensées Nocturnes",
       "text": [
         "Je crois qu'on peut faire changer les choses.",
         "Est-ce qu'il faut douter quand tout tombe ?",
@@ -66,7 +66,7 @@
     },
     {
       "textId": "text_7",
-      "title": "Observations Marines",
+      "title": "Chapitre 7. Observations Marines",
       "text": [
         "Je vois comme tout s'use et se réchauffer.",
         "Les poissons nagent où tout a coulé.",
@@ -75,7 +75,7 @@
     },
     {
       "textId": "text_8",
-      "title": "Souvenirs d'Été",
+      "title": "Chapitre 8. Souvenirs d'Été",
       "text": [
         "Sur les plages de l'époque, les uns cherchaient",
         "La beauté dans un simple collier,",
@@ -84,7 +84,7 @@
     },
     {
       "textId": "text_9",
-      "title": "Message d'un Ami",
+      "title": "Chapitre 9. Message d'un Ami",
       "text": [
         "Il m'a dit que je suis comme",
         "une sœur à moi, mais on sait",
@@ -95,7 +95,7 @@
     },
     {
       "textId": "text_10",
-      "title": "Espoir Quotidien",
+      "title": "Chapitre 10. Espoir Quotidien",
       "text": [
         "Jusqu'à ce que nous trouvions dans la vie",
         "En vers qui nous guide si bien,",
@@ -104,7 +104,7 @@
     },
     {
       "textId": "text_11",
-      "title": "Simplicité",
+      "title": "Chapitre 11. Simplicité",
       "text": [
         "Ça arrive comme ça parfois."
       ]

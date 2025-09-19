@@ -10,7 +10,7 @@
   "texts": [
     {
       "textId": "text_1",
-      "title": "Le Journal du Matin (1)",
+      "title": "Chapitre 1. Le Journal du Matin (1)",
       "text": [
         "Une vidéo amateur montre des gens qui courent",
         "alors qu'un lion traverse les rues de la ville,",
@@ -19,7 +19,7 @@
     },
     {
       "textId": "text_2", 
-      "title": "Le Journal du Matin (2)",
+      "title": "Chapitre 2. Le Journal du Matin (2)",
       "text": [
         "Michel: L'animal s'est échappé du zoo local - mais franchement,",
         "que nous réserve encore ce réchauffement climatique?",
@@ -28,7 +28,7 @@
     },
     {
       "textId": "text_3",
-      "title": "La Météo (1)",
+      "title": "Chapitre 3. La Météo (1)",
       "text": [
         "Salut Michel, ici l'ambiance est fantastique,",
         "les gens dansent au rythme des beats!",
@@ -38,7 +38,7 @@
     },
     {
       "textId": "text_4",
-      "title": "La Météo (2)",
+      "title": "Chapitre 4. La Météo (2)",
       "text": [
         "Il fait encore beau maintenant, le soleil brille,",
         "mais des éclairs et la pluie sont prévus vers minuit.",
@@ -49,7 +49,7 @@
     },
     {
       "textId": "text_5",
-      "title": "Entretien au Festival (1)",
+      "title": "Chapitre 5. Entretien au Festival (1)",
       "text": [
         "Claire: Excusez-moi, comment trouvez-vous cette symphonie électronique?",
         "Fille 1: Moi, je suis Sophie, et j'adore la fête!",
@@ -58,7 +58,7 @@
     },
     {
       "textId": "text_6",
-      "title": "Entretien au Festival (2)",
+      "title": "Chapitre 6. Entretien au Festival (2)",
       "text": [
         "Claire: Craignez-vous que les concerts pourraient être annulés?",
         "Fille 2: Si on s'inquiète, on s'ennuie.",
@@ -68,7 +68,7 @@
     },
     {
       "textId": "text_7",
-      "title": "Entretien au Festival (3)",
+      "title": "Chapitre 7. Entretien au Festival (3)",
       "text": [
         "Fille 1: J'ai envie de danser même sous la pluie!",
         "Aucune tourmente, ou rien d'autre, ne pourrait nous arrêter.",
@@ -77,7 +77,7 @@
     },
     {
       "textId": "text_8",
-      "title": "Le Salon Familial (1)",
+      "title": "Chapitre 8. Le Salon Familial (1)",
       "text": [
         "Une excellente soirée! crie le petit frère en souriant.",
         "Un oiseau chante tout bas dans sa cage au fond du salon,",
@@ -86,7 +86,7 @@
     },
     {
       "textId": "text_9",
-      "title": "Le Salon Familial (2)",
+      "title": "Chapitre 9. Le Salon Familial (2)",
       "text": [
         "Tous mes amis sont là, mon cœur est brisé!",
         "Son père avec tendresse:",
@@ -96,7 +96,7 @@
     },
     {
       "textId": "text_10",
-      "title": "Le Salon Familial (3)",
+      "title": "Chapitre 10. Le Salon Familial (3)",
       "text": [
         "Ses pleurs devenaient de plus en plus forts,",
         "et dehors, les premières gouttes commençaient à tomber.",

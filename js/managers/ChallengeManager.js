@@ -131,7 +131,7 @@ class ChallengeManager {
                 this.eventBus.emit('userProgress:phraseMastered', this.currentPhrase);
             } else if (!this.currentAttempt.hasIncorrectAnswers) {
                 // Normal correct progression
-                this.eventBus.emit('userProgress:phraseCorrect', this.currentPhrase);
+                this.eventBus.emit('userProgress:correctAnswer', this.currentPhrase);
             }
             // If has incorrect answers, no progression (already handled)
 

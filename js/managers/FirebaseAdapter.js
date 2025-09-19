@@ -82,12 +82,6 @@ class FirebaseAdapter {
     async loadGameDocument(gameId) {
         // Wait for Firebase to be ready first
         await this.waitUntilReady();
-
-        // SECURITY: Check authentication AFTER Firebase is ready
-        // if (!this.currentUserId) {
-        //     console.error('❌ FirebaseAdapter: Cannot load game document - user not authenticated');
-        //     return null;
-        // }
         
         try {
             const { doc, getDoc } = this.firestoreMethods;
@@ -117,11 +111,6 @@ class FirebaseAdapter {
 
     // at end of game saves to Firestore
     persistToFirestore(gameId, data) {
-        // if (!this.currentUserId) {
-        //     localStorage.setItem('authRequired', 'true');
-        //     window.location.href = 'index.html';
-        //     return;
-        // }
         console.log(`🔥 FirebaseAdapter: Persisting ${gameId} to Firestore`);
         this.queueSave(gameId, data);
     }

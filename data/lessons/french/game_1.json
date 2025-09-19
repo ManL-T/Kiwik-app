@@ -12,7 +12,7 @@
   "texts": [
     {
       "textId": "text_1",
-      "title": "La Partie d'Échecs",
+      "title": "Chapitre 1. La Partie d'Échecs",
       "text": [
         "Aujourd'hui il fait beau, le soleil réchauffe l'air,",
         "et je suis sur le point de gagner ma première partie d'échecs.",
@@ -21,7 +21,7 @@
     },
     {
       "textId": "text_2",
-      "title": "La Déception",
+      "title": "Chapitre 2. La Déception",
       "text": [
         "« Voilà ! Échec et mat. Tu joues vraiment bien, petit oiseau. »",
         "Polina est dévastée, elle a envie de pleurer.",
@@ -30,7 +30,7 @@
     },
     {
       "textId": "text_3",
-      "title": "Au Salon de Coiffure",
+      "title": "Chapitre 3. Au Salon de Coiffure",
       "text": [
         "Polina traverse le parc pour retrouver sa maman dans le salon de coiffure où elle travaille.",
         "« Qu'est-ce qui ne va pas, chérie ? Tu as l'air d'avoir le cœur brisé. »",
@@ -40,7 +40,7 @@
     },
     {
       "textId": "text_4",
-      "title": "Le Vol Mystérieux",
+      "title": "Chapitre 4. Le Vol Mystérieux",
       "text": [
         "Polina et Justine bougent au rythme des mélodies.",
         "À ce moment-là, dans la bibliothèque communautaire,",
@@ -51,7 +51,7 @@
     },
     {
       "textId": "text_5",
-      "title": "L'Annonce du Bibliothécaire",
+      "title": "Chapitre 5. L'Annonce du Bibliothécaire",
       "text": [
         "« Quelqu'un vole des livres à la bibliothèque »",
         "annonce le bibliothécaire pendant la réunion communautaire.",
@@ -61,7 +61,7 @@
     },
     {
       "textId": "text_6",
-      "title": "L'Orage et les Indices",
+      "title": "Chapitre 6. L'Orage et les Indices",
       "text": [
         "Un éclair frappe à l'extérieur, et la salle se remplit de lumière.",
         "Les gens se rassemblent près des fenêtres. « C'est un gros orage »,",
@@ -72,7 +72,7 @@
     },
     {
       "textId": "text_7",
-      "title": "Une Nouvelle Tempête",
+      "title": "Chapitre 7. Une Nouvelle Tempête",
       "text": [
         "Le lendemain matin, des nuages sombres menacent d'une nouvelle tempête.",
         "« Ce vent… Nous devrions nous dépêcher si nous voulons échapper à l'orage. »",
@@ -82,7 +82,7 @@
     },
     {
       "textId": "text_8",
-      "title": "Rencontre avec Yanis",
+      "title": "Chapitre 8. Rencontre avec Yanis",
       "text": [
         "« Salut, tu es Yanis. Tu habites dans le même bâtiment que moi. »",
         "Yanis la regarde. « Je suis Polina. Pourquoi es-tu toujours seul ? »",
@@ -92,7 +92,7 @@
     },
     {
       "textId": "text_9",
-      "title": "Une Nouvelle Amitié",
+      "title": "Chapitre 9. Une Nouvelle Amitié",
       "text": [
         "« Calme-toi, Yanis. Tu sais, grandir n'est pas facile.",
         "Ne laisse personne te dire comment vivre ton enfance.",
@@ -102,7 +102,7 @@
     },
     {
       "textId": "text_10",
-      "title": "Le Premier Suspect",
+      "title": "Chapitre 10. Le Premier Suspect",
       "text": [
         "« Celle-ci, c'est Justine, elle vit au-dessus de moi, au quatrième étage.",
         "Écoute bien, pour le moment il y a un suspect.",
@@ -113,7 +113,7 @@
     },
     {
       "textId": "text_11",
-      "title": "Surveillance à la Bibliothèque",
+      "title": "Chapitre 11. Surveillance à la Bibliothèque",
       "text": [
         "Les trois détectives observent Rachid à la bibliothèque,",
         "mais il ne fait rien d'autre que lire pendant des heures.",
